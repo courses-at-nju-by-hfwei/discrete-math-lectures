@@ -1,1 +1,37 @@
 % marriage.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{
+      \href{https://youtu.be/Qcv1IqHWAzg}{The Stable Marriage Problem (SMP)}}
+    Given \blue{$n$ men} and \blue{$n$ women},
+    where each person has a \purple{preference list}, \\
+    to establish a \red{stable} marriage.
+  \end{exampleblock}
+
+  \vspace{0.30cm}
+  \fig{width = 0.60\textwidth}{figs/4-men-women}
+
+  \pause
+  \[
+    \set{\red{xb}, yc, zd, \red{wa}}
+  \]
+  \[
+    (x, a) \text{ is an unstable pair}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \blue{\set{xa, yb, zd, wc}}
+  \]
+
+  \fig{width = 0.80\textwidth}{figs/4-men-women}
+
+  \begin{theorem}[The Gale-Shapley Algorithm (1962)]
+    It is always possible to solve SMP.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
