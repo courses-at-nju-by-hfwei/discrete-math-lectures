@@ -2,11 +2,21 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    Self-contained (自包含; 自给自足)
+
+    \fig{width = 0.50\textwidth}{figs/axiomatic-systems}
+
+    Syntax {\it vs.} Semantics (语法与语义对立统一)
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    {\bf \large \red{三个公理系统:} 逻辑、集合论、\gray{图论}、抽象代数(群论)}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -28,19 +38,82 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.30\textwidth}{figs/elements-ch}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.55\textwidth}{figs/elements-ch}
+    \column{0.50\textwidth}
+      \fig{width = 0.50\textwidth}{figs/hilbert-geometry}
+  \end{columns}
 
+  \vspace{0.30cm}
   \begin{enumerate}[(1)]
-    \item To draw a straight line from any point to any point.
+    \item To draw a straight \blue{line} from any \blue{point} to any point.
     \item To extend a finite straight line continuously in a straight line.
     \item To describe a circle with any center and radius.
     \item That all right angles are equal to one another.
-    \item The parallel postulate.
+    \item \red{The parallel postulate}.
   \end{enumerate}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Axiomatic System for a \red{Four-point Geometry}}
+    \blue{\bf \textit{Undefined terms:}} point, line, is on
+
+    \vspace{0.50cm}
+    \purple{\bf \textit{Axioms:}}
+    \begin{enumerate}[(1)]
+      \item There are exactly four \teal{points}.
+      \item It is impossible for three \teal{points} to \teal{be on} the same line.
+      \item For every pair of distinct \teal{points} $x$ and $y$,
+        there is a unique \teal{line} $l$ such that $x$ \teal{is on} $l$
+        and $y$ \teal{is on} $l$.
+      \item Given a \teal{line} $l$ and a \teal{point} $x$ that is not \teal{on} $l$,
+        there is a unique \teal{line} $m$ such that $x$ \teal{is on} $m$
+        and no \teal{point} on $l$ is also \teal{on} $m$.
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}
+    There are at least two distinct lines.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Syntax {\it vs.} Semantics
+
+    \pause
+    \vspace{0.30cm}
+    \fig{width = 0.70\textwidth}{figs/point-loop}
+    \[
+      \text{point}: \red{\cdot} \qquad
+      \text{line}: \red{\bigcirc} \qquad
+      \text{is on}: \red{\bigodot}
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{\bf \large 什么样的推理是正确的?}
+
+    \fig{width = 0.70\textwidth}{figs/euler-logic}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{center}
+    \fig{width = 0.60\textwidth}{figs/see-you-next-week}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
