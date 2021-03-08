@@ -2,6 +2,7 @@
 
 \usepackage{lmodern}
 \usepackage{xeCJK}
+\usepackage{verbatim}
 
 \usetheme{CambridgeUS} % try Madrid, Pittsburgh
 \usecolortheme{beaver}
@@ -136,60 +137,3 @@
 
 \usepackage{tikz}
 \usepackage{tikz-qtree}
-
-\newcommand{\beginkw}{\text{\bf begin}}
-% \newcommand{\endtoken}{\text{\bf end}}
-\newcommand{\printkw}{\text{\bf print}}
-\newcommand{\intkw}{\text{\bf int}}
-\newcommand{\floatkw}{\text{\bf float}}
-\newcommand{\mainkw}{\text{\bf main}}
-\newcommand{\voidkw}{\text{\bf void}}
-\newcommand{\id}{\text{\bf id}}
-\newcommand{\ifkw}{\text{\bf if}}
-\newcommand{\thenkw}{\text{\bf then}}
-\newcommand{\elsekw}{\text{\bf else}}
-\newcommand{\comparison}{\text{\bf comparison}}
-\newcommand{\relop}{\text{\bf relop}}
-\newcommand{\ws}{\text{\textcolor{gray}{\bf ws}}}
-\newcommand{\num}{\text{\bf num}}
-\newcommand{\intnum}{\text{\bf integer}}
-\newcommand{\floatnum}{\text{\bf real}}
-\newcommand{\scinum}{\text{\bf sci}}
-\newcommand{\assign}{\text{\bf assign}}
-\newcommand{\literal}{\text{\bf literal}}
-\newcommand{\comment}{\text{\bf comment}}
-\newcommand{\lp}{\text{\bf LP}}
-\newcommand{\rp}{\text{\bf RP}}
-\newcommand{\lb}{\text{\bf LB}}
-\newcommand{\rb}{\text{\bf RB}}
-\newcommand{\semicolon}{\text{\bf SC}}
-\newcommand{\blank}{\text{\bf blank}}
-\newcommand{\tab}{\text{\bf tab}}
-\newcommand{\n}{\text{\bf n}}
-\newcommand{\digit}{\text{\bf digit}}
-\renewcommand{\line}{\text{\bf newline}}
-\newcommand{\gotokw}{\text{\bf goto}}
-\newcommand{\op}{\text{\bf op}}
-\newcommand{\False}{\text{\bf False}}
-\newcommand{\param}{\text{\bf param}}
-\newcommand{\call}{\text{\bf call}}
-\newcommand{\return}{\text{\bf return}}
-
-\newcommand{\rel}[1]{\xrightarrow{#1}}
-\newcommand{\dstar}{\xRightarrow[]{\ast}}
-\newcommand{\dplus}{\xRightarrow[]{+}}
-\newcommand{\lm}{\xRightarrow[\text{lm}]{}}
-\renewcommand{\rm}{\xRightarrow[\text{rm}]{}}
-\newcommand{\dpluslm}{\xRightarrow[\text{lm}]{+}}
-\newcommand{\dstarlm}{\xRightarrow[\text{lm}]{\ast}}
-\newcommand{\dplusrm}{\xRightarrow[\text{rm}]{+}}
-\newcommand{\dstarrm}{\xRightarrow[\text{rm}]{\ast}}
-
-\newcommand{\first}{\textsc{First}}
-\newcommand{\follow}{\textsc{Follow}}
-
-\renewcommand{\action}{\textsc{action}}
-\newcommand{\goto}{\textsc{goto}}
-
-\newcommand{\token}{\texttt{token}}
-\newcommand{\closure}{\textsc{closure}}

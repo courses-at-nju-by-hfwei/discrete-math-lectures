@@ -1,0 +1,162 @@
+% prop-logic-syntax.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Proposition (命题)]
+    A {\it proposition} is a sentence that is either true or false,
+    (but not both).
+  \end{definition}
+
+  \vspace{0.30cm}
+  \pause
+  \begin{exampleblock}{Which are propositions?}
+    \begin{enumerate}
+      \item $1 + 1 = 2$
+      \item $X + 6 = 0$
+      \item $X = X$
+      \item 哥德巴赫猜想。
+      \item Today is rainy.
+      \item Tomorrow is Friday.
+      \item This sentence is false.
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{Forget ``Propositions''!!!}
+
+    \vspace{0.50cm}
+    Mathematical logic is \red{\it NOT} about propositions,
+    but about \blue{the }
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[命题逻辑的语言]
+      
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[公式 (Formula)]
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{8pt}
+      \item 每个命题符号 $A_{i}$ 都是公式;
+      \item 如果 $\alpha$ 和 $\beta$都是公式,
+        则 $(\lnot \alpha)$, $(\alpha \land \beta)$, $(\alpha \lor \beta)$,
+        $(\alpha \to \beta)$ 和 $(\alpha \leftrightarrow \beta)$ 也是公式;
+      \item \red{除此之外, 别无其它。}
+    \end{enumerate}
+  \end{definition}
+
+  \input{tables/connectives}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}[公式的括号匹配性质]
+    每个公式中左右括号的数目相同。
+  \end{lemma}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    对公式的\red{结构}作归纳。
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[归纳原理]
+    令 $P(\alpha)$ 为一个关于公式的性质。假设
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{8pt}
+      \item 对所有的命题符号 $A_{i}$, 性质 $P(A_{i})$ 成立; 并且
+      \item 对所有的公式$\alpha$和$\beta$, 如果 $P(\alpha)$和$P(\beta)$成立,
+        则 $P((\lnot \alpha))$, $P(\alpha \;\red{\ast}\; \beta)$ 也成立,
+    \end{enumerate}
+    那么 $P(\alpha)$ 对所有的公式 $\alpha$ 都成立。
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[公式的长度]
+    公式$\alpha$的长度 $|\alpha|$ 定义如下:
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{8pt}
+      \item 如果 $\alpha$ 是命题符号, 则 $|\alpha| = 1$;
+      \item 如果 $\alpha = (\lnot \beta)$, 则 $|\alpha| = 1 + |\beta|$;
+      \item 如果 $\alpha = (\beta \ast \gamma)$, 则 $|\alpha| = 1 + |\beta| + |\gamma|$。
+    \end{enumerate}
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{exampleblock}{作业题}
+    假设公式 $\alpha$ 不含 ``$\lnot$'' 符号。
+
+    请证明, $\alpha$ 中超过四分之一的符号是命题符号。
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    关于``公式''的\blue{约定}
+
+    \vspace{0.60cm}
+    \begin{columns}
+      \column{0.20\textwidth}
+      \column{0.60\textwidth}
+        \begin{itemize}
+          \setlength{\itemsep}{6pt}
+          \item 最外层的括号可以省略
+          \item 优先级: $\lnot$, $\land$, $\lor$, $\to$, $\leftrightarrow$
+          \item 结合性: 右结合 ($\alpha \land \beta \land \gamma$,
+            $\alpha \to \beta \to \gamma$)
+        \end{itemize}
+      \column{0.20\textwidth}
+    \end{columns}
+
+    \pause
+    \vspace{1.00cm}
+    \red{不要过分依赖这些约定; 尽情地使用括号吧}
+
+    \[
+      \xout{P \land Q \to R}
+    \]
+    \[
+      (P \land Q) \to R
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{用符号形式表示下列命题}
+    \begin{enumerate}[<+->][(1)]
+      \setlength{\itemsep}{8pt}
+      \item 或者你没有给我写信, 或者它在途中丢失了
+      \item 我们不能既写作业又打游戏
+      \item 如果中国足球队夺冠, 我就好好学习
+      \item 如果张三和李四都不去, 王五就去
+      \item 如果周六不下雨, 我就去看电影, 否则就去图书馆
+      \item 我今天进城, 除非下雨
+      \item 如果你来了, 那么他是否唱歌将取决于你是否伴奏
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
