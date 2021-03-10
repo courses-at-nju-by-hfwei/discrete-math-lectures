@@ -2,19 +2,23 @@
 
 \begin{table}
   \centering
+  % \resizebox{0.90\textwidth}{!}{%
   \begin{tabular}{|c||c|c|c|c|}
     \hline
     符号& 名称 & 英文读法 & 中文读法 & \LaTeX \\
     \hline \hline
-    $\lnot$ & negation & not & 非 & \\
+    $\lnot$ & \incell{negation}{(否定)} & not & 非 & \verb|\lnot| \\
     \hline
-    $\land$ & conjunction & and & 与 &   \\
+    $\land$ & \incell{conjunction}{(合取)} & and & 与 & \verb|\land| \\
     \hline
-    $\lor$ & disjunction & or & 或  & \\
+    $\lor$ & \incell{disjunction}{(析取)} & or & 或 & \verb|\lor| \\
     \hline
-    $\to$ & conditional & implies (if then) & 蕴含 (如果, 那么) &   \\
+    $\to$ & conditional & \incell{implies}{(if then)}
+      & \incell{蕴含}{(如果, 那么)} & \verb|\to| \\
     \hline
-    $\leftrightarrow$ & biconditional & if and only if & 当且仅当 &   \\
+    $\leftrightarrow$ & biconditional & if and only if
+      & 当且仅当 & \verb|\leftrightarrow| \\
     \hline
-    \end{tabular}
+    \end{tabular}%
+  %}
 \end{table}

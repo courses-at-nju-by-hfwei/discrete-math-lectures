@@ -2,22 +2,27 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Proposition (命题)]
-    A {\it proposition} is a sentence that is either true or false,
-    (but not both).
+  \begin{definition}[命题 (Proposition)]
+    \red{\bf 命题}是可以判定真假的陈述句 (不可既真又假)。
   \end{definition}
 
   \vspace{0.30cm}
   \pause
-  \begin{exampleblock}{Which are propositions?}
+  \begin{exampleblock}{以下哪些是命题?}
     \begin{enumerate}
       \item $1 + 1 = 2$
       \item $X + 6 = 0$
-      \item $X = X$
-      \item 哥德巴赫猜想。
-      \item Today is rainy.
-      \item Tomorrow is Friday.
-      \item This sentence is false.
+      \pause
+      \item 中国是一个伟大的国家
+      \item 你饿了吗?
+      \item 你要好好休息
+      \pause
+      \item 哥德巴赫猜想
+      \pause
+      \item 今天是雨天
+      \item 明天是周五
+      \pause
+      \item 这句话是假话
     \end{enumerate}
   \end{exampleblock}
 \end{frame}
@@ -26,11 +31,10 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    \red{Forget ``Propositions''!!!}
+    \red{忘掉``命题''!!!}
 
-    \vspace{0.50cm}
-    Mathematical logic is \red{\it NOT} about propositions,
-    but about \blue{the }
+    \vspace{1.00cm}
+    逻辑不关心单个命题的真假, 而关心命题之间的关系
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -38,7 +42,22 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[命题逻辑的语言]
-      
+    命题逻辑的语言包括以下3部分:
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{5pt}
+      \item 任意多个\blue{\bf 命题符号}: $A_{0}$, $A_{1}$, $P$, $Q$, $\dots$;
+      \item 5个\blue{\bf 逻辑联词}:
+        % \begin{description}
+        %   \setlength{\itemsep}{5pt}
+        %   \item[否定符号] $\lnot$
+        %   \item[合取符号] $\land$
+        %   \item[析取符号] $\lor$
+        %   \item[蕴含符号] $\to$
+        %   \item[双蕴含符号] $\leftrightarrow$
+        % \end{description}
+        \input{tables/connectives}
+      \item 左括号、右括号
+    \end{enumerate}
   \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -48,15 +67,13 @@
   \begin{definition}[公式 (Formula)]
     \begin{enumerate}[(1)]
       \setlength{\itemsep}{8pt}
-      \item 每个命题符号 $A_{i}$ 都是公式;
+      \item 每个命题符号都是公式;
       \item 如果 $\alpha$ 和 $\beta$都是公式,
         则 $(\lnot \alpha)$, $(\alpha \land \beta)$, $(\alpha \lor \beta)$,
         $(\alpha \to \beta)$ 和 $(\alpha \leftrightarrow \beta)$ 也是公式;
       \item \red{除此之外, 别无其它。}
     \end{enumerate}
   \end{definition}
-
-  \input{tables/connectives}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -69,7 +86,11 @@
   \pause
   \vspace{0.60cm}
   \begin{center}
-    对公式的\red{结构}作归纳。
+    \red{\large \bf 数学归纳法}
+
+    \pause
+    \vspace{0.50cm}
+    {\large 对公式的\blue{\bf 结构}作归纳}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -82,7 +103,7 @@
       \setlength{\itemsep}{8pt}
       \item 对所有的命题符号 $A_{i}$, 性质 $P(A_{i})$ 成立; 并且
       \item 对所有的公式$\alpha$和$\beta$, 如果 $P(\alpha)$和$P(\beta)$成立,
-        则 $P((\lnot \alpha))$, $P(\alpha \;\red{\ast}\; \beta)$ 也成立,
+        则 $P((\lnot \alpha))$, $P((\alpha \;\red{\ast}\; \beta))$ 也成立,
     \end{enumerate}
     那么 $P(\alpha)$ 对所有的公式 $\alpha$ 都成立。
   \end{theorem}
@@ -104,7 +125,7 @@
   \pause
   \vspace{0.30cm}
   \begin{exampleblock}{作业题}
-    假设公式 $\alpha$ 不含 ``$\lnot$'' 符号。
+    假设公式 $\alpha$ 中不含 ``$\lnot$'' 符号。
 
     请证明, $\alpha$ 中超过四分之一的符号是命题符号。
   \end{exampleblock}
@@ -114,12 +135,12 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    关于``公式''的\blue{约定}
+    关于``公式''的\blue{\bf 约定}
 
     \vspace{0.60cm}
     \begin{columns}
-      \column{0.20\textwidth}
-      \column{0.60\textwidth}
+      \column{0.15\textwidth}
+      \column{0.70\textwidth}
         \begin{itemize}
           \setlength{\itemsep}{6pt}
           \item 最外层的括号可以省略
@@ -127,7 +148,7 @@
           \item 结合性: 右结合 ($\alpha \land \beta \land \gamma$,
             $\alpha \to \beta \to \gamma$)
         \end{itemize}
-      \column{0.20\textwidth}
+      \column{0.15\textwidth}
     \end{columns}
 
     \pause
@@ -146,7 +167,7 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{用符号形式表示下列命题}
+  \begin{exampleblock}{用命题逻辑公式表示下列命题}
     \begin{enumerate}[<+->][(1)]
       \setlength{\itemsep}{8pt}
       \item 或者你没有给我写信, 或者它在途中丢失了
