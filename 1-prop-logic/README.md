@@ -1,1 +1,1 @@
-# 1-logic
+# 1-prop-logic

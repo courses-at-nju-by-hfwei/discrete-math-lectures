@@ -12,10 +12,10 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    命题逻辑公式的语义就是该公式的\red{``真 ($T/1$)''、``假 ($F/0$)''}值。
+    命题逻辑公式的\blue{\bf 语义}就是该公式的\red{``真 ($T/1/\top$)''、``假 ($F/0/\bot$)''}值。
 
     \[
-      (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
+      \alpha = (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
     \]
 
     \pause
@@ -25,11 +25,11 @@
     \begin{columns}
       \column{0.25\textwidth}
       \column{0.50\textwidth}
-        \begin{itemize}
+        \begin{enumerate}[(1)]
           \setlength{\itemsep}{6pt}
           \item $\alpha$ 中所含命题符号的真假值; 与
-          \item 逻辑连接符号的含义
-        \end{itemize}
+          \item 逻辑联词的语义
+        \end{enumerate}
       \column{0.25\textwidth}
     \end{columns}
   \end{center}
@@ -49,7 +49,7 @@
   \pause
   \vspace{0.30cm}
   \[
-    \alpha: (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
+    \alpha = (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
   \]
 
   \[
@@ -61,24 +61,46 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    使用\red{\bf 真值表}定义\blue{\bf 逻辑联接符的语义}
+    使用\red{\bf 真值表}定义\blue{\bf 逻辑联词的语义}
+
+    \vspace{0.30cm}
+    \begin{definition}[真值表 (Truth Table)]
+      \input{tables/truth-table}
+    \end{definition}
+
+    \vspace{0.60cm}
+    ``如果中国足球队夺冠, 我就好好学习''
   \end{center}
-
-  \begin{definition}[真值表 (Truth Table)]
-    \input{tables/truth-table}
-  \end{definition}
-
-  ``如果中国足球队夺冠, 我就好好学习''
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[真值指派的扩张 ($\bar{v}$)]
-    令 $\bar{S}$ 为只含有 $S$ 中命题符号的公式集。
-    $S$ 上的真值指派 $v$ 的扩张是一个从 $\bar{S}$ 到真假值的映射
+  \[
+    \alpha = (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
+  \]
+
+  \[
+    v(A) = v(B) = T, \quad v(C) = F
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \alpha \text{ 的真值为}\; T
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[真值指派的扩张 ($\overline{v}$)]
+    令 $S$ 为一个命题符号的集合。
+    令 $\overline{S}$ 为只含有 $S$ 中命题符号的公式集。
+
+    $S$ 上的\red{\bf 真值指派 $v$ 的扩张}是一个从 $\overline{S}$ 到真假值的映射
     \[
-      \bar{v}: \bar{S} \to \set{T, F}.
+      \overline{v}: \overline{S} \to \set{T, F}.
     \]
   \end{definition}
 
@@ -86,29 +108,33 @@
   \[
     \alpha: (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
   \]
+
   \[
     v(A) = v(B) = T, \quad v(C) = F
   \]
 
   \pause
   \[
-    \bar{v}(\alpha) = \pause T
+    \red{\boxed{\overline{v}(\alpha) = T}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{构造下列公式的真值表}
+  \begin{exampleblock}{课堂练习: 构造下列公式的真值表}
     \[
       \lnot P \lor Q
     \]
+
     \[
       (P \land Q) \lor (\lnot P \land \lnot Q)
     \]
+
     \[
       (P \land Q) \land \lnot P
     \]
+
     \[
       (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
     \]
@@ -119,15 +145,20 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[满足 (Satisfy)]
-    如果 $\bar{v}(\alpha) = T$, 则称真值指派 $v$ \red{\bf 满足}公式 $\alpha$。
+    如果 $\overline{v}(\alpha) = T$, 则称真值指派 $v$ \red{\bf 满足}公式 $\alpha$。
   \end{definition}
 
   \pause
   \[
-    \alpha: (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
+    \alpha = (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
   \]
+
   \[
     v(A) = v(B) = T, \quad v(C) = F
+  \]
+
+  \[
+    \red{\boxed{\overline{v}(\alpha) = T}}
   \]
 
   \[
@@ -139,12 +170,33 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[可满足的 (Satisfiable)]
+    如果存在某个真值指派满足公式 $\alpha$, 则 $\alpha$ 是可满足的。
+  \end{definition}
+
+  \[
+    \lnot P \lor Q \text{ 是{可满足的}}
+  \]
+
+  \[
+    \alpha = (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
+    \text{ 是{可满足的}}
+  \]
+
+  \[
+    (P \land Q) \land \lnot P \text{ 是\red{不可满足的} (unsatisfiable)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[命题逻辑公式的可满足性问题 (Satisfiability; \red{\bf SAT})]
+    任给一个命题逻辑公式 $\alpha$, $\alpha$ 是可满足的吗?
   \end{definition}
 
   \pause
-  \vspace{0.60cm}
-  \begin{definition}[可满足性问题 (Satisfiability)]
-  \end{definition}
+  \vspace{0.50cm}
+  \fig{width = 0.50\textwidth}{figs/millionaire}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -154,25 +206,31 @@
     \begin{center}
       设 $\Sigma$ 为一个公式集。\\[10pt]
 
-      $\Sigma$ \red{\bf 重言蕴含} 公式 $\alpha$,
+      $\Sigma$ \red{\bf 重言蕴含}公式 $\alpha$,
       记为 $\Sigma \models \alpha$, \\[5pt]
 
       如果\blue{每个}满足 $\Sigma$ 中\blue{所有}公式的真值指派都满足 $\alpha$。
     \end{center}
   \end{definition}
 
-  \vspace{0.30cm}
-  \begin{center}
-    $\Sigma:$ 前提  \qquad $\alpha:$ 结论
-  \end{center}
+  \pause
+  \[
+    \set{\alpha} \models \beta \to \alpha
+  \]
 
   \pause
   \[
-    \set{A, \lnot A} \models B
+    \set{\alpha \land \beta} \models \alpha
   \]
+
   \pause
   \[
-    \set{\alpha \land \beta} \models \alpha
+    \set{\alpha \to \beta, \alpha} \models \beta
+  \]
+
+  \pause
+  \[
+    \set{\alpha, \lnot \alpha} \models \beta
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -180,9 +238,32 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}
-    请证明: $\Sigma \cup \set{a} \models \beta$
+    请证明: $\Sigma \cup \set{\alpha} \models \beta$
     \blue{当且仅当} $\Sigma \models (\alpha \to \beta)$。
   \end{theorem}
+
+  \pause
+  \[
+    v_{\Sigma}: \text{ 满足 $\Sigma$ 中所有公式的任一真值指派}
+  \]
+
+  \[
+    v_{\Sigma \cup \set{\alpha}}:
+    \text{ 满足 $\Sigma \cup \set{\alpha}$ 中所有公式的任一真值指派}
+  \]
+
+  \pause
+  \begin{lemma}
+    如果 $\overline{v_{\Sigma \cup \set{\alpha}}}(\beta) = T$,
+    则 $\overline{v_{\Sigma}}(\alpha \to \beta) = T$。
+  \end{lemma}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{lemma}
+    如果 $\overline{v_{\Sigma}}(\alpha \to \beta) = T$,
+    则 $\overline{v_{\Sigma \cup \set{\alpha}}}(\beta) = T$。
+  \end{lemma}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -215,22 +296,37 @@
 
   \begin{center}
     重言式在所有真值指派下均为真。
+    \[
+      \alpha = (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
+    \]
   \end{center}
 
   \pause
-  \vspace{0.60cm}
+  \vspace{0.30cm}
   \begin{definition}[矛盾式/永假式 (Contradiction)]
     若公式 $\alpha$ 在所有真值指派下均为假, 则称 $\alpha$ 为\red{\bf 矛盾式}。
   \end{definition}
+
+  \[
+    (P \land Q) \land \lnot P \text{ 是\red{不可满足的}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[重言等价]
+  \begin{definition}[重言等价 (Tautologically Equivalent)]
     如果 $\alpha \models \beta$ 且 $\beta \models \alpha$,
-    则称 $\alpha$ 与 $\beta$ 重言等价, 记为 $\alpha \equiv \beta$。
+    则称 $\alpha$ 与 $\beta$ \red{\bf 重言等价}, 记为 $\alpha \equiv \beta$。
   \end{definition}
+
+  \[
+    (B \to (A \to C)) \equiv (B \land A) \to C
+  \]
+
+  \[
+    (((B \to (A \to C)) \leftrightarrow ((B \land A) \to C)))
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -260,10 +356,10 @@
       \]
     \item[德摩根 (De Morgan) 律:]
       \[
-        \lnot (A \land B) \leftrightarrow (\lnot A \land \lnot B)
+        \lnot (A \land B) \leftrightarrow (\lnot A \lor \lnot B)
       \]
       \[
-        \lnot (A \lor B) \leftrightarrow (\lnot A \lor \lnot B)
+        \lnot (A \lor B) \leftrightarrow (\lnot A \land \lnot B)
       \]
   \end{description}
 \end{frame}
@@ -275,7 +371,7 @@
     \setlength{\itemsep}{8pt}
     \item[双重否定律:]
       \[
-        ((\lnot (\lnot A)) \leftrightarrow A)
+        \lnot \lnot A \leftrightarrow A
       \]
     \item[排中律:]
       \[
