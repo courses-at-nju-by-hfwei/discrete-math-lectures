@@ -2,57 +2,102 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.60\textwidth}{figs/euler-logic}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
   \begin{center}
-    数理逻辑的萌芽时期
+    逻辑是研究\blue{\bf 推理/证明} (Inference/Proof) 的一门学科。
 
-    \fig{width = 0.70\textwidth}{figs/three}
-    Socrates $\qquad\quad$ Plato $\qquad\quad$ Aristotle
+    \vspace{0.30cm}
+    \fig{width = 0.60\textwidth}{figs/euler-logic}
+
+    \vspace{0.30cm}
+    \red{\bf 什么样的推理是正确/合法 (Valid) 的?}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \red{\set{\alpha, \beta, \gamma, \dots}} \;\cyan{\models}\; \blue{\tau}
+  \]
+
+  \vspace{0.50cm}
+  \begin{center}
+    \cyan{\bf 正确性:} 如果\red{\bf 前提} $\alpha$, $\beta$, $\gamma$, $\dots$ 都为真,
+    那么\blue{\bf 结论} $\tau$ 也为真。
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.35\textwidth}{figs/Leibniz.jpg}
+  \begin{center}
+    证明就是一系列根据\cyan{\bf 推理规则}将公式不断变形的步骤。
+
+    \[
+      \red{\set{\alpha, \beta, \gamma, \dots}} \;\cyan{\vdash}\; \blue{\tau}
+    \]
+
+    \[
+      \ndnoname{\alpha \qquad \beta \qquad \gamma}{\tau}
+    \]
+
+    \pause
+    \vspace{0.50cm}
+    每一步推理都必须是正确的
+
+    \pause
+    \vspace{0.60cm}
+    \red{\bf 什么样的推理是正确/合法 (Valid) 的?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \fig{width = 0.60\textwidth}{figs/math-tree}
+
+    \vspace{0.30cm}
+    逻辑要研究的是\red{\bf 不依赖于具体领域知识}的推理
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \ndnoname{P \text{ 是真的} \qquad {Q \text{ 是真的}}}{P \text{ 与}\; Q \text{ 都是真的}}
+    \qquad \ndnoname{P \qquad Q}{P \;\red{\land}\; Q}
+  \]
 
   \pause
+  \vspace{0.50cm}
+  \[
+    \ndnoname{\text{如果 $P$ 是真的, 则 $Q$ 是真的} \qquad {\text{$P$ 是真的}}}{\text{$Q$ 是真的}}
+    \qquad \ndnoname{P \;\red{\to}\; Q \qquad P}{Q}
+  \]
+
+  \vspace{0.50cm}
+  \[
+    \ndnoname{\text{如果 $P$ 是真的, 则 $Q$ 是真的} \qquad {\text{$Q$ 是假的}}}{\text{$P$ 是假的}}
+    \qquad \ndnoname{P \to Q \qquad \red{\lnot}\; Q}{\red{\lnot}\; P}
+  \]
+
+  \pause
+  \vspace{0.50cm}
   \begin{center}
-    Gottfried Wilhelm Leibniz (莱布尼茨 1646 -- 1716)
+    \blue{这些都是人类最基本的思维规律}
   \end{center}
 \end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{``我有一个梦想 $\ldots$''}
-  \begin{quote}
-    建立一个能够涵盖人类思维活动的\red{\large ``通用符号演算系统''},\\
-    让人们的思维方式变得像数学运算那样清晰。\\[8pt]
-
-    一旦有争论, 不管是科学上的还是哲学上的,
-    人们只要坐下来\red{\LARGE 算一算},
-    就可以毫不费力地辨明谁是对的。
-  \end{quote}
-
-  \vspace{0.80cm}
-  \begin{quote}
-    \centerline{\red{\LARGE Let us calculate [calculemus].}}
-  \end{quote}
-\end{frame}
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.60\textwidth}{figs/syntax-semantics}
+  \begin{center}
+    \fig{width = 0.40\textwidth}{figs/logic-logo}
+
+    \vspace{0.80cm}
+    逻辑就是\red{\bf 用数学的方法}研究\blue{\bf 人类基本思维规律}的一门学科
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
