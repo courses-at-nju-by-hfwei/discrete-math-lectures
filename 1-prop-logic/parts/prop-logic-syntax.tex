@@ -181,3 +181,41 @@
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{用命题逻辑公式表示下列命题}
+    某公司要从赵、钱、孙、李、吴5名员工中选派某些人出国考察。\\
+    由于某些不可描述的原因, 选派要求如下:
+
+    \begin{columns}
+      \column{0.50\textwidth}
+        \begin{enumerate}[(1)]
+          \item 若赵去, 钱也去;
+          \item 李、吴两人中必有一人去;
+          \item 钱、孙两人中去且仅去一人;
+          \item 孙、李两人同去或同不去;
+          \item 若吴去, 则赵、钱也去;
+          \item 只有孙去, 赵才会去。
+        \end{enumerate}
+      \column{0.50\textwidth}
+        \uncover<3->{
+          \begin{enumerate}[(1)]
+            \item $\teal{Z \to Q}$;
+            \item $\teal{L \lor W}$;
+            \item $\teal{(Q \land \lnot S) \lor (S \land \lnot Q)}$;
+            \item $\teal{(S \land L) \lor (\lnot S \land \lnot L)}$;
+            \item $\teal{W \to Z \land Q}$;
+            \item $\teal{Z \to S}$。
+          \end{enumerate}
+        }
+    \end{columns}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \blue{P,\; Q,\; R,\; S,\; T\;}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

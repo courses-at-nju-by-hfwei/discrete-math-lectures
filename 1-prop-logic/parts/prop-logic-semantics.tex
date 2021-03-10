@@ -414,6 +414,39 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{exampleblock}{使用命题逻辑进行推理}
+    某公司要从赵、钱、孙、李、吴5名员工中选派某些人出国考察。\\
+    由于某些不可描述的原因, 选派要求如下:
+
+    \begin{columns}
+      \column{0.50\textwidth}
+        \begin{enumerate}[(1)]
+          \item 若赵去, 钱也去;
+          \item 李、吴两人中必有一人去;
+          \item 钱、孙两人中去且仅去一人;
+          \item 孙、李两人同去或同不去;
+          \item 若吴去, 则赵、钱也去;
+          \item 只有孙去, 赵才会去。
+        \end{enumerate}
+      \column{0.50\textwidth}
+        \begin{enumerate}[(1)]
+          \item $\teal{Z \to Q}$;
+          \item $\teal{L \lor W}$;
+          \item $\teal{(Q \land \lnot S) \lor (S \land \lnot Q)}$;
+          \item $\teal{(S \land L) \lor (\lnot S \land \lnot L)}$;
+          \item $\teal{W \to Z \land Q}$;
+          \item $\teal{Z \to S}$。
+        \end{enumerate}
+    \end{columns}
+
+    \vspace{0.50cm}
+    \blue{请使用形式化推理的方法帮该公司判断应选哪些人出国考察。}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{definition}[合取范式 (Conjunctive Normal Form)]
     我们称公式 $\alpha$ 是\red{\bf 合取范式}, 如果它形如
     \[
