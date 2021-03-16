@@ -34,9 +34,9 @@
       \column{0.70\textwidth}
         \begin{enumerate}[(1)]
           \setlength{\itemsep}{6pt}
-          \item 对变元的解释
           \item 确定量词的论域
           \item 对常数符号、函数符号、谓词符号的解释
+          \item 对\blue{自由}变元的解释 (赋值函数 $s$)
         \end{enumerate}
       \column{0.15\textwidth}
     \end{columns}
@@ -50,15 +50,204 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{definition}[$(\U, s) \models \alpha$]
+    \begin{center}
+      $\U$ 与 $s$ 满足公式 $\alpha$:
+    \end{center}
+    \[
+      (\U, s) \models \alpha
+    \]
+    \begin{itemize}
+      \item 将$\alpha$中的常数符号、函数符号、谓词符号按照数学结构 $\U$ 进行解释
+      \item 将量词的论域限制在集合 $|\U|$ 上,
+      \item 将自由变元 $x$ 解释为 $s(x)$,
+      \item 这样就将公式 $\alpha$ 翻译成了某个数学领域中的命题
+      \item 使用数学领域知识我们知道该命题成立
+    \end{itemize}
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \alpha: \forall x.\; (x \times x \neq 1 + 1)
+  \]
+
+  \pause
+  \vspace{0.80cm}
+  \begin{center}
+    $\alpha$ 在数学结构 $\U = \Q$ 中为真
+
+    \vspace{0.60cm}
+
+    $\alpha$ 在数学结构 $\U = \R$ 中为假
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{definition}[语义蕴含 (Logically Imply)]
+    \begin{center}
+      令 $\Sigma$ 为一个公式集, $\alpha$ 为一个公式。 \\[8pt]
+      $\Sigma$ \red{\bf 语义蕴含} $\alpha$, 记为 $\Sigma \models \alpha$, \\[8pt]
+      如果\red{每个}满足$\Sigma$中\blue{所有}公式的\red{结构$\U$与赋值$s$}都满足$\alpha$。
+    \end{center}
+  \end{definition}
+
+  \[
+    \forall x.\; P(x) \models P(y)
+  \]
+
+  \pause
+  \[
+    P(y) \not\models \forall x.\; P(x)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \alpha: \forall x \forall y \forall z ((Pxy \land Pyz) \to Pxz)
+  \]
+
+  \[
+    \beta: \forall x \forall y ((Pxy \land Pyx) \to x = y)
+  \]
+
+  \[
+    \gamma: \forall x \exists y Pxy \to \exists y \forall x Pxy
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    \set{\alpha, \beta} \models \gamma\; ?
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \set{\alpha} \models \beta \text{ 简记为 } \;\alpha \models \beta
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[语义等价 (Logically Equivalent)]
+    如果 $\alpha \models \beta$ 且 $\beta \models \alpha$,
+    则称 $\alpha$ 与 $\beta$ \red{\bf 语义等价}, 记为 $\alpha \equiv \beta$。
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[普遍有效的 (Valid)]
+    如果 $\emptyset \models \alpha$, 则称 $\alpha$ 是\red{\bf 普遍有效的},
+    记为 $\models \alpha$。
+  \end{definition}
+
+  \vspace{0.60cm}
+  \begin{center}
+    普遍有效的公式在\red{所有可能的结构$\U$与所有可能的赋值$s$}下均为真。
+
+    \[
+      \forall x.\; P(x) \models P(y)
+    \]
+
+    \[
+      \forall x.\; P(x) \to P(y)
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \lnot \forall x \alpha \leftrightarrow \exists x \lnot \alpha
+  \]
+
+  \[
+    \lnot \exists x \alpha \leftrightarrow \forall x \lnot \alpha
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \forall x \forall y \alpha \leftrightarrow \forall y \forall x \alpha
+  \]
+
+  \[
+    \exists x \exists y \alpha \leftrightarrow \exists y \exists x \alpha
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \forall x \alpha \land \forall x \beta
+      \leftrightarrow \forall x (\alpha \land \beta)
+  \]
+
+  \[
+    \exists x \alpha \lor \exists x \beta
+      \leftrightarrow \exists x (\alpha \lor \beta)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \forall x \alpha \to \exists x \alpha
+  \]
+
+  \[
+    \exists x \forall y \alpha \to \forall y \exists x \alpha
+  \]
+
+  \pause
+  \[
+    \forall x \alpha \lor \forall x \beta \to \forall x (\alpha \lor \beta)
+  \]
+
+  \[
+    \exists x (\alpha \land \beta) \to \exists x \alpha \land \exists x \beta
+  \]
+
+  \pause
+  \[
+    \forall x (\alpha \to \beta) \to (\exists x \alpha \to \exists x \beta)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    给定如下``前提'', 请判断``结论''是否有效, 并说明理由。\\
+    前提如下:
+    \begin{enumerate}[(1)]
+      \item 每个人或者喜欢美剧, 或者喜欢韩剧 (可以同时喜欢二者);
+      \item 任何人如果他喜欢抗日神剧, 他就不喜欢美剧;
+      \item 有的人不喜欢韩剧。
+    \end{enumerate}
+
+    结论: 有的人不喜欢抗日神剧 (\emph{幸亏如此})。
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  例子
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
