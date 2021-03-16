@@ -7,3 +7,146 @@
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\forall\text{-elim}$}
+  \begin{center}
+    \[
+      \nd{\forall x \alpha}{\alpha[t/x]}{\forall x\text{-elim}}
+    \]
+
+    where $t$ is \red{\bf free} for $x$ in $\alpha$
+  \end{center}
+
+  \pause
+  \[
+    \alpha: \exists y (x < y)
+  \]
+  \[
+    \forall x \exists y (x < y)
+  \]
+
+  \pause
+  \[
+    \forall x \exists y (x < y) \;\to\; \exists y (\blue{t} < y)
+  \]
+
+  \pause
+  \[
+    \xout{\forall x \exists y (x < y) \;\to\; \exists y (\red{y} < y)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\forall$\text{-intro}}
+  \begin{center}
+    \[
+      \nd{\stackrel{[t]}{\stackrel{\vdots}{\alpha[t/x]}}}
+        {\forall x \alpha}{\forall x\text{-intro}}
+    \]
+    where, $t$ is \red{\bf fresh} variable never used elsewhere
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$\forall$-推理规则的应用}
+    \[
+      \set{\forall x (P(x) \to Q(x)), \forall x P(x)} \vdash \forall x Q(x)
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$\forall$-推理规则的应用}
+    \[
+      \set{P(t), \forall x (P(x) \to \lnot Q(x))} \vdash \lnot Q(t)
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\exists\text{-intro}$}
+  \begin{center}
+    \[
+      \nd{\alpha[t/x]}{\exists x \alpha}{\exists x\text{-intro}}
+    \]
+    where $t$ is \red{\bf free} for $x$ in $\alpha$
+  \end{center}
+
+  \pause
+  \[
+    \alpha: \forall y (x = y)
+  \]
+
+  \pause
+  \[
+  \]
+
+  \pause
+  \[
+    \xout{\exists x \forall y (x = y)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\exists\text{-elim}$}
+  \begin{center}
+    \[
+      \nd{\exists x \alpha \qquad \stackrel{\big[\alpha[t/x]\big]}{\stackrel{\vdots}{\beta}}}{\beta}{\exists\text{-elim}}
+    \]
+  where $t$ does not occur in $\beta$
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\exists$\text{-推理规则的应用}}
+  \[
+    \forall x P(x) \vdash \exists x P(x)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\exists$\text{-推理规则的应用}}
+  \[
+    \set{\forall x (P(x) \to Q(x)), \exists x P(x)} \vdash \exists x Q(x)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\forall, \exists$-推理规则的应用}
+  \[
+    \set{\exists x P(x), \forall x \forall y (P(x) \to Q(y))} \vdash \forall y Q(y)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\forall, \exists$-推理规则的应用}
+  \begin{exampleblock}{}
+    给定如下``前提'', 请判断``结论''是否有效, 并说明理由。\\
+    前提如下:
+    \begin{enumerate}[(1)]
+      \item 每个人或者喜欢美剧, 或者喜欢韩剧 (可以同时喜欢二者);
+      \item 任何人如果他喜欢抗日神剧, 他就不喜欢美剧;
+      \item 有的人不喜欢韩剧。
+    \end{enumerate}
+
+    结论: 有的人不喜欢抗日神剧 (\emph{幸亏如此})。
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\forall, \exists$-推理规则的应用}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
