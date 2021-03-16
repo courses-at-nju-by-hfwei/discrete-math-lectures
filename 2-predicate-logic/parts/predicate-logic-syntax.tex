@@ -13,23 +13,59 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
   \begin{definition}[命题逻辑的语言]
-    命题逻辑的语言包括以下3部分:
-    \begin{enumerate}[(1)]
+    一阶谓词逻辑的语言包括以下7部分: \\[5pt]
+    \begin{description}
       \setlength{\itemsep}{5pt}
-      \item
+      \item [逻辑联词:] $\lnot, \land, \lor, \to, \leftrightarrow$
+      \item [\red{量词符号:}] $\forall$ (全称量词), $\exists$ (存在量词)
+      \item [变元符号:] $x, y, z, \dots$
+      \item [左右括号:] $(, )$
+      \item [\cyan{常数符号:}] 零个或多个常数符号
+      \item [\blue{函数符号:}] $n$-元函数符号 ($n \in \N^{+}$)
+      \item [\red{谓词符号:}] $n$-元谓词符号 ($n \in \N^{+}$)
+    \end{description}
+  \end{definition}
+
+  \pause
+  \begin{center}
+    $Q:$ 为什么没有命题符号 $P, Q, \dots$?
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    初等数论的语言 $L = \set{\textbf{\cyan{0}},
+      \blue{S}, \blue{+}, \blue{\times}, \red{<}, \red{=}}$
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[项 (Item)]
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{8pt}
+      \item 每个变元 $x, y, z, \dots$ 都是一个项;
+      \item 每个常数符号都是一个项;
+      \item 如果 $t_{1}, t_{2}, \dots, t_{n}$ 是项,
+        且 $f$ 为一个 $n$ 元函数符号, \\
+        则 $f(t_{1}, t_{2}, \dots, t_{n})$ 也是项;
+      \item 除此之外, 别无其它。
     \end{enumerate}
   \end{definition}
+
+  \[
+    x
+  \]
+  \[
+    {\bf 0}
+  \]
+  \[
+    S{\bf 0} \qquad +(x, SSS0) \qquad \times(+(x, SSS0), y)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -38,39 +74,85 @@
   \begin{definition}[公式 (Formula)]
     \begin{enumerate}[(1)]
       \setlength{\itemsep}{8pt}
-      \item 
+      \item 如果 $t_{1}, \dots, t_{n}$ 是项, 且 $P$ 是一个 $n$ 元谓词符号, \\
+        则 $P(t_{1}, \dots, t_{n})$ 为公式, 称为{\bf 原子公式};
+      \item 如果 $\alpha$ 与 $\beta$ 都是公式, 则 $(\lnot \alpha)$
+        与 $(\alpha \;\red{\ast}\; \beta)$ 都是公式;
+      \item 如果 $\alpha$ 是公式, 则 \red{$\forall x.\; \alpha$}
+        与 \red{$\exists x.\; \alpha$} 也是公式;
+      \item 除此之外, 别无其它。
     \end{enumerate}
   \end{definition}
+
+  \begin{center}
+    约定:
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    初等数论的语言 $L = \set{\textbf{\cyan{0}},
+      \blue{S}, \blue{+}, \blue{\times}, \red{<}, \red{=}}$
+  \end{center}
+
+  \begin{enumerate}[<+->][(1)]
+    \setlength{\itemsep}{5pt}
+    \item 0 不是任何自然数的后继
+      \[
+        \forall x. \lnot (Sx = 0)
+      \]
+    \item 两个自然数相等当且进当它们的后继相等
+      \[
+        \forall x, y.\; (x = y \leftrightarrow Sx = Sy)
+      \]
+    \item $x$ 是素数 \\
+      ($x > 1$ 且 $x$ 没有除自身和1之外的因子)
+      \[
+        S0 < x \land \forall y, z.\; (y < x \land z < x) \to \lnot (y \times z = x)
+      \]
+    \item 给定任何性质 (谓词) $P(x)$, 自然数上的数学归纳原理
+      \[
+        (P(0) \land \forall x.\; (P(x) \to P(Sx))) \to (\forall x.\; P(x))
+      \]
+    \item 哥德巴赫猜想 (任一大于2的偶数, 都可表示成两个素数之和)
+  \end{enumerate}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \lim_{x \to a} f(x) = l
+  \]
+  \[
+    \forall \epsilon \in \R^{+}.\; \exists \delta \in \R^{+}.\;
+      \forall x \in \R^{+}.\; (0 < |x - a| < \delta \to |f(x) - l| < \epsilon)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  A function $f$ from $\mathbb{R}$ to $\mathbb{R}$ is called
+  \begin{itemize}
+    \item \emph{pointwise continuous} if
+      for every $x \in \mathbb{R}$
+      and every real number $\epsilon > 0$,
+      there exists real $\delta > 0$ such that
+      for every $y \in \mathbb{R}$ with $|x - y| < \delta$,
+      we have that $|f(x) -  f(y)|< \epsilon$.
+    \item \emph{uniformly continuous} if
+      for every real number $\epsilon > 0$,
+      there exists real $\delta > 0$ such that
+      for every $x, y \in \mathbb{R}$ with $|x - y| < \delta$,
+      we have that $|f(x) -  f(y)|< \epsilon$.
+  \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{用命题逻辑公式表示下列命题}
-    \begin{enumerate}[<+->][(1)]
-      \setlength{\itemsep}{8pt}
-      \item
-    \end{enumerate}
-  \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
