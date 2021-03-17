@@ -2,18 +2,7 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{center}
-    一阶谓词逻辑的语法
-
-    \fig{width = 0.60\textwidth}{figs/syntax-semantics}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
   \begin{exampleblock}{例子: 谓词 (Predicate)}
-    \pause
     \begin{enumerate}[<+->][(1)]
       \setlength{\itemsep}{6pt}
       \item 张三是个法外狂徒
@@ -23,12 +12,22 @@
     \end{enumerate}
   \end{exampleblock}
 
-  \pause
   \vspace{0.30cm}
+  \uncover<5->{
+    \begin{center}
+      一元谓词表达了个体的性质 \\[8pt]
+      多元谓词表达了个体之间的关系 \\[8pt]
+      零元谓词即命题逻辑中的命题符号 ($P:$ 张三是个法外狂徒)
+  \end{center}}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{center}
-    一元谓词表达了个体的性质 \\[6pt]
-    多元谓词表达了个体之间的关系 \\[6pt]
-    零元谓词即命题逻辑中的命题 ($P:$ 张三是个法外狂徒)
+    一阶谓词逻辑的语法
+
+    \fig{width = 0.60\textwidth}{figs/syntax-semantics}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -40,7 +39,8 @@
     \begin{description}
       \setlength{\itemsep}{5pt}
       \item [逻辑联词:] $\lnot, \land, \lor, \to, \leftrightarrow$
-      \item [\purple{量词符号:}] $\forall$ (forall; 全称量词), $\exists$ (exists; 存在量词)
+      \item [\purple{量词符号:}] $\forall$ (\purple{forall}; 全称量词),
+        $\exists$ (\purple{exists}; 存在量词)
       \item [变元符号:] $x, y, z, \dots$
       \item [左右括号:] $(, )$
       \pause
@@ -50,24 +50,19 @@
       \item [\red{谓词符号:}] $n$-元谓词符号 $P, Q, R, \dots$ ($n \in \N$), \teal{表达个体的性质与关系}
     \end{description}
   \end{definition}
+
+  \pause
+  \[
+    \text{初等数论的语言:} \qquad
+    L = \set{\textbf{\cyan{0}}, \blue{S}, \blue{+}, \blue{\times}, \red{<}, \red{=}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    初等数论的语言
-    \[
-      L = \set{\textbf{\cyan{0}}, \blue{S}, \blue{+}, \blue{\times}, \red{<}, \red{=}}
-    \]
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{center}
-    ``项''是一阶谓词逻辑要讨论的\red{个体}对象, 它本身无所谓真假。
+    ``项''是一阶谓词逻辑要讨论的\red{个体}对象, 它本身无所谓真假
   \end{center}
 
   \begin{definition}[项 (Term)]
@@ -99,7 +94,7 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    公式刻画了\red{个体的性质}或者\red{个体之间的关系}, 它的语义就是它的真假值。
+    公式刻画了\red{个体的性质}或者\red{个体之间的关系}, 它的语义就是它的真假值
   \end{center}
 
   \begin{definition}[公式 (Formula)]
@@ -131,29 +126,43 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
+    \ndnoname{\text{每个人都是要死的 \qquad 苏格拉底是人}}{\text{苏格拉底是要死的}}
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    \ndnoname{\forall x.\; H(x) \to M(x) \qquad H(s)}{M(s)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
     L = \set{\textbf{\cyan{0}}, \blue{S}, \blue{+}, \blue{\times}, \red{<}, \red{=}}
   \]
 
   \begin{enumerate}[<+->][(1)]
-    \setlength{\itemsep}{6pt}
+    \setlength{\itemsep}{8pt}
     \item 0 不是任何自然数的后继
-      \[
-        \forall x.\; \lnot (Sx = 0)
-      \]
+      % \[
+      %   \forall x.\; \lnot (Sx = 0)
+      % \]
     \item 两个自然数相等当且仅当它们的后继相等
-      \[
-        \forall x.\; \forall y.\; (x = y \leftrightarrow Sx = Sy)
-      \]
+      % \[
+      %   \forall x.\; \forall y.\; (x = y \leftrightarrow Sx = Sy)
+      % \]
     \item $x$ 是素数 ($x > 1$ 且 $x$ 没有除自身和1之外的因子)
-      \[
-        \text{Prime}(x): S0 < x \land \forall y.\; \forall z.\; (y < x \land z < x) \to \lnot (y \times z = x)
-      \]
+      % \[
+      %   \text{Prime}(x): S0 < x \land \forall y.\; \forall z.\; (y < x \land z < x) \to \lnot (y \times z = x)
+      % \]
     \item 哥德巴赫猜想 (任一大于2的偶数, 都可表示成两个素数之和)
-      \begin{align*}
-        &\forall x.\; (SS0 < 2 \land (\exists y.\; 2 \times y = x)) \to \\
-          &\quad (\exists x_{1}.\; \exists x_{2}.\; \text{Prime}(x_{1}) \land \text{Prime}(x_{2})
-            \land x_{1} + x_{2} = x)
-      \end{align*}
+      % \begin{align*}
+      %   &\forall x.\; (SS0 < 2 \land (\exists y.\; 2 \times y = x)) \to \\
+      %     &\quad (\exists x_{1}.\; \exists x_{2}.\; \text{Prime}(x_{1}) \land \text{Prime}(x_{2})
+      %       \land x_{1} + x_{2} = x)
+      % \end{align*}
   \end{enumerate}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -195,43 +204,8 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{本周作业之一: 使用一阶谓词逻辑公式表达下列概念}
-    A function $f$ from $\mathbb{R}$ to $\mathbb{R}$ is called
-    \begin{enumerate}[(1)]
-      \setlength{\itemsep}{10pt}
-      \item \blue{\it pointwise continuous} (连续的) if
-        for every $x \in \mathbb{R}$
-        and every real number $\epsilon > 0$,
-        there exists real $\delta > 0$ such that
-        for every $y \in \mathbb{R}$ with $|x - y| < \delta$,
-        we have that $|f(x) -  f(y)|< \epsilon$.
-      \item \blue{\it uniformly continuous} (一致连续的) if
-        for every real number $\epsilon > 0$,
-        there exists real $\delta > 0$ such that
-        for every $x, y \in \mathbb{R}$ with $|x - y| < \delta$,
-        we have that $|f(x) -  f(y)|< \epsilon$.
-    \end{enumerate}
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \[
-    \ndnoname{\text{每个人都是要死的 \qquad 苏格拉底是人}}{\text{苏格拉底是要死的}}
-  \]
-
-  \pause
-  \[
-    \ndnoname{\forall x.\; H(x) \to M(x) \qquad H(s)}{M(s)}
-  \]
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
   \begin{center}
-    以下概念与程序设计语言中相应的概念类似, 我们举例说明, 不作定义
+    以下概念与程序设计语言中相应概念类似, 此处举例说明, 不作正式定义
   \end{center}
 
   \begin{definition}[作用域 (Scope)、约束变元 (Bind)、自由变元 (Free)]
@@ -249,5 +223,10 @@
   \begin{definition}[改名 (Rename)]
     为尽量避免重名, 可将约束变元或自由变元\red{\bf 改名}为\blue{新鲜(fresh)}变元
   \end{definition}
+
+  \[
+    \Big(\forall x.\; \forall y.\; \big(P(x, y) \land Q(y, z)\big)\Big)
+      \land \exists \blue{t}.\; P(\blue{t}, \teal{v})
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

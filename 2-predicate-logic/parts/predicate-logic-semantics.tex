@@ -96,12 +96,7 @@
   \end{definition}
 
   \[
-    \forall x.\; P(x) \models P(y)
-  \]
-
-  \pause
-  \[
-    P(y) \not\models \forall x.\; P(x)
+    \set{\forall x.\; P(x)} \models P(y)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -236,6 +231,29 @@
 
   \[
     \exists x (\alpha \land \beta) \to \exists x \alpha \land \exists x \beta
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    要求: $\beta$ 中不含 $x$
+  \end{center}
+
+  \[
+    \forall x.\; (\alpha \lor \beta) \leftrightarrow (\forall x.\; \alpha) \lor \beta
+  \]
+  \[
+    \forall x.\; (\alpha \land \beta) \leftrightarrow (\forall x.\; \alpha) \land \beta
+  \]
+
+  \pause
+  \[
+    \exists x.\; (\alpha \lor \beta) \leftrightarrow (\exists x.\; \alpha) \lor \beta
+  \]
+  \[
+    \exists x.\; (\alpha \land \beta) \leftrightarrow (\exists x.\; \alpha) \land \beta
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
