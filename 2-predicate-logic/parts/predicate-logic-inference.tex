@@ -3,7 +3,8 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    {\Large 一阶谓词逻辑的自然推理 (演绎; 推演) 系统}
+    {\Large 一阶谓词逻辑的自然推理 (演绎; 推演) 系统} \\[10pt]
+    \teal{简化版本}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -12,28 +13,38 @@
 \begin{frame}{$\forall\text{-elim}$}
   \begin{center}
     \[
-      \nd{\forall x \alpha}{\alpha[t/x]}{\forall x\text{-elim}}
+      \nd{\forall x.\; \alpha}{\alpha[t/x]}{\forall x\text{-elim}}
     \]
 
-    where $t$ is \red{\bf free} for $x$ in $\alpha$
+    where $t$ is \red{free} for $x$ in $\alpha$
   \end{center}
 
   \pause
   \[
-    \alpha: \exists y (x < y)
-  \]
-  \[
-    \forall x \exists y (x < y)
+    \forall x.\; \blue{P(x)} \vdash P(c)
   \]
 
   \pause
   \[
-    \forall x \exists y (x < y) \;\to\; \exists y (\blue{t} < y)
+    \forall x.\; \blue{\exists y.\; (x < y)} \vdash \exists y.\; (\red{c} < y)
   \]
 
   \pause
   \[
-    \xout{\forall x \exists y (x < y) \;\to\; \exists y (\red{y} < y)}
+    \forall x.\; \blue{\exists y.\; (x < y)} \nvdash \exists y.\; (\red{y} < y)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{$\forall$\text{-elim}推理规则的应用}
+  \[
+    \ndnoname{\text{每个人都是要死的 \qquad 苏格拉底是人}}{\text{苏格拉底是要死的}}
+  \]
+
+  \vspace{0.80cm}
+  \[
+    \ndnoname{\forall x.\; H(x) \to M(x) \qquad H(s)}{M(s)}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -43,9 +54,12 @@
   \begin{center}
     \[
       \nd{\stackrel{[t]}{\stackrel{\vdots}{\alpha[t/x]}}}
-        {\forall x \alpha}{\forall x\text{-intro}}
+        {\forall x.\; \alpha}{\forall x\text{-intro}}
     \]
-    where, $t$ is \red{\bf fresh} variable never used elsewhere
+    where, $t$ is a \red{fresh} variable
+
+    \vspace{0.80cm}
+    ``任取 $t$, 如果能证明 $\alpha$ 对 $t$ 成立, 则 $\alpha$ 对所有 $x$ 成立''
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -54,7 +68,7 @@
 \begin{frame}{}
   \begin{exampleblock}{$\forall$-推理规则的应用}
     \[
-      \set{\forall x (P(x) \to Q(x)), \forall x P(x)} \vdash \forall x Q(x)
+      \Big\{P(t), \forall x (P(x) \to \lnot Q(x))\Big\} \vdash \lnot Q(t)
     \]
   \end{exampleblock}
 \end{frame}
@@ -64,7 +78,7 @@
 \begin{frame}{}
   \begin{exampleblock}{$\forall$-推理规则的应用}
     \[
-      \set{P(t), \forall x (P(x) \to \lnot Q(x))} \vdash \lnot Q(t)
+      \Big\{\forall x.\; (P(x) \to Q(x)), \forall x.\; P(x)\Big\} \vdash \forall x.\; Q(x)
     \]
   \end{exampleblock}
 \end{frame}
@@ -74,23 +88,14 @@
 \begin{frame}{$\exists\text{-intro}$}
   \begin{center}
     \[
-      \nd{\alpha[t/x]}{\exists x \alpha}{\exists x\text{-intro}}
+      \nd{\alpha[t/x]}{\exists x.\; \alpha}{\exists x\text{-intro}}
     \]
     where $t$ is \red{\bf free} for $x$ in $\alpha$
   \end{center}
 
   \pause
   \[
-    \alpha: \forall y (x = y)
-  \]
-
-  \pause
-  \[
-  \]
-
-  \pause
-  \[
-    \xout{\exists x \forall y (x = y)}
+    P(c) \vdash \exists x.\; P(x)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -98,10 +103,14 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{$\exists\text{-elim}$}
   \begin{center}
+    % \[
+    %   \nd{\exists x.\; \alpha \qquad [x_{0}] \qquad
+    %     \stackrel{\big[\alpha[x_{0}/x]\big]}{\stackrel{\vdots}{\beta}}}{\beta}{\exists\text{-elim}}
+    % \]
     \[
-      \nd{\exists x \alpha \qquad \stackrel{\big[\alpha[t/x]\big]}{\stackrel{\vdots}{\beta}}}{\beta}{\exists\text{-elim}}
+      \nd{\exists x.\; \alpha}{\alpha[x_{0}/x]}{\exists\text{-elim}}
     \]
-  where $t$ does not occur in $\beta$
+  where $x_{0}$ is \red{free} for $x$ in $\beta$
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -109,7 +118,7 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{$\exists$\text{-推理规则的应用}}
   \[
-    \forall x P(x) \vdash \exists x P(x)
+    \forall x.\; P(x) \vdash \exists x.\; P(x)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -117,7 +126,8 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{$\exists$\text{-推理规则的应用}}
   \[
-    \set{\forall x (P(x) \to Q(x)), \exists x P(x)} \vdash \exists x Q(x)
+    \Big\{\forall x.\; (P(x) \to Q(x)), \exists x.\; P(x)\Big\}
+      \vdash \exists x.\; Q(x)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -125,28 +135,33 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{$\forall, \exists$-推理规则的应用}
   \[
-    \set{\exists x P(x), \forall x \forall y (P(x) \to Q(y))} \vdash \forall y Q(y)
+    \Big\{\exists x.\; P(x), \forall x.\; \forall y.\; (P(x) \to Q(y))\Big\}
+      \vdash \forall y.\; Q(y)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{$\forall, \exists$-推理规则的应用}
-  \begin{exampleblock}{}
-    给定如下``前提'', 请判断``结论''是否有效, 并说明理由。\\
-    前提如下:
+  \begin{exampleblock}{请使用一阶谓词逻辑公式表达下列命题与推理}
+    给定如下``前提'', 请判断``结论''是否有效, 并说明理由。\\[10pt]
+    {\bf 前提:}
     \begin{enumerate}[(1)]
       \item 每个人或者喜欢美剧, 或者喜欢韩剧 (可以同时喜欢二者);
       \item 任何人如果他喜欢抗日神剧, 他就不喜欢美剧;
       \item 有的人不喜欢韩剧。
     \end{enumerate}
 
-    结论: 有的人不喜欢抗日神剧 (\emph{幸亏如此})。
+    \vspace{0.20cm}
+    {\bf 结论:} 有的人不喜欢抗日神剧 ({\it 幸亏如此})。
   \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{$\forall, \exists$-推理规则的应用}
+  \pause
+  \vspace{0.50cm}
+  \[
+    \ndnoname{\forall x.\; A(x) \lor K(x) \qquad
+      \forall x.\; J(x) \to \lnot A(x) \qquad
+      \exists x.\; \lnot K(x)}{\exists x.\; \lnot J(x)}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

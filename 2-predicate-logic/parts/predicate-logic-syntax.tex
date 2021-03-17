@@ -217,25 +217,13 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{请使用一阶谓词逻辑公式表达下列命题}
-    给定如下``前提'', 请判断``结论''是否有效, 并说明理由。\\[10pt]
-    {\bf 前提:}
-    \begin{enumerate}[(1)]
-      \item 每个人或者喜欢美剧, 或者喜欢韩剧 (可以同时喜欢二者);
-      \item 任何人如果他喜欢抗日神剧, 他就不喜欢美剧;
-      \item 有的人不喜欢韩剧。
-    \end{enumerate}
-
-    \vspace{0.20cm}
-    {\bf 结论:} 有的人不喜欢抗日神剧 ({\it 幸亏如此})。
-  \end{exampleblock}
+  \[
+    \ndnoname{\text{每个人都是要死的 \qquad 苏格拉底是人}}{\text{苏格拉底是要死的}}
+  \]
 
   \pause
-  \vspace{0.50cm}
   \[
-    \ndnoname{\forall x.\; A(x) \lor K(x) \qquad
-      \forall x.\; J(x) \to \lnot A(x) \qquad
-      \exists x.\; \lnot K(x)}{\exists x.\; \lnot J(x)}
+    \ndnoname{\forall x.\; H(x) \to M(x) \qquad H(s)}{M(s)}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
