@@ -13,29 +13,26 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    一阶谓词逻辑公式的\blue{\bf 语义}就是该公式的\red{``真 ($T/1/\top$)''、``假 ($F/0/\bot$)''}值。
-
+    一阶谓词逻辑公式的\blue{\bf 语义}就是该公式的\red{``真假''}值
     \[
       \forall x.\; Sx > {\bf 0}
     \]
-    \pause
     \[
       \forall x.\; \exists y.\; (y < x)
     \]
-    \pause
     \[
       x > {\bf 0}
     \]
 
     \pause
     \vspace{0.60cm}
-    一阶谓词逻辑公式$\alpha$的真假值取决于
+    一阶谓词逻辑公式的真假值取决于
     \begin{columns}
       \column{0.15\textwidth}
       \column{0.70\textwidth}
         \begin{enumerate}[(1)]
           \setlength{\itemsep}{6pt}
-          \item 确定量词的论域
+          \item 对量词论域(universe)的解释, 限定个体范围
           \item 对常数符号、函数符号、谓词符号的解释
           \item 对\blue{自由}变元的解释 (赋值函数 $s$)
         \end{enumerate}
@@ -59,11 +56,12 @@
       (\U, s) \models \alpha
     \]
     \begin{itemize}
-      \item 将$\alpha$中的常数符号、函数符号、谓词符号按照数学结构 $\U$ 进行解释
+      \setlength{\itemsep}{6pt}
+      \item 将$\alpha$中的常数符号、函数符号、谓词符号按照结构 $\U$ 进行解释,
       \item 将量词的论域限制在集合 $|\U|$ 上,
       \item 将自由变元 $x$ 解释为 $s(x)$,
-      \item 这样就将公式 $\alpha$ 翻译成了某个数学领域中的命题
-      \item 使用数学领域知识我们知道该命题成立
+      \item 这样就将公式 $\alpha$ 翻译成了某个数学领域中的命题,
+      \item 然后, 使用数学领域知识我们知道该命题成立
     \end{itemize}
   \end{definition}
 \end{frame}
@@ -111,21 +109,25 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    \alpha: \forall x \forall y \forall z ((Pxy \land Pyz) \to Pxz)
+    \alpha: \forall x \forall y \forall z ((P(x, y) \land P(y, z)) \to P(x, z))
   \]
 
   \[
-    \beta: \forall x \forall y ((Pxy \land Pyx) \to x = y)
+    \beta: \forall x \forall y ((P(x, y) \land P(y, x)) \to x = y)
   \]
 
   \[
-    \gamma: \forall x \exists y Pxy \to \exists y \forall x Pxy
+    \gamma: \forall x \exists y P(x, y) \to \exists y \forall x P(x, y)
+  \]
+
+  \vspace{0.50cm}
+  \[
+    \red{\set{\alpha, \beta} \models \gamma\; ?}
   \]
 
   \pause
-  \vspace{0.60cm}
   \[
-    \set{\alpha, \beta} \models \gamma\; ?
+    \blue{\U = \N \qquad P(x, y): x \le y}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -142,26 +144,34 @@
     如果 $\alpha \models \beta$ 且 $\beta \models \alpha$,
     则称 $\alpha$ 与 $\beta$ \red{\bf 语义等价}, 记为 $\alpha \equiv \beta$。
   \end{definition}
+
+  \[
+    \lnot (\forall x.\; \alpha) \equiv \exists x.\; \lnot \alpha
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    相当于命题逻辑中的``重言式'', 可用于公式推导
+  \end{center}
+
   \begin{definition}[普遍有效的 (Valid)]
     如果 $\emptyset \models \alpha$, 则称 $\alpha$ 是\red{\bf 普遍有效的},
     记为 $\models \alpha$。
   \end{definition}
 
+  \pause
   \vspace{0.60cm}
   \begin{center}
     普遍有效的公式在\red{所有可能的结构$\U$与所有可能的赋值$s$}下均为真。
 
     \[
-      \forall x.\; P(x) \models P(y)
+      (\forall x.\; P(x)) \to P(y) \text{ 是普遍有效的}
     \]
-
     \[
-      \forall x.\; P(x) \to P(y)
+      \forall x.\; P(x) \models P(y)
     \]
   \end{center}
 \end{frame}
@@ -170,11 +180,11 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    \lnot \forall x \alpha \leftrightarrow \exists x \lnot \alpha
+    \red{\boxed{\lnot \forall x \alpha \leftrightarrow \exists x \lnot \alpha}}
   \]
 
   \[
-    \lnot \exists x \alpha \leftrightarrow \forall x \lnot \alpha
+    \red{\boxed{\lnot \exists x \alpha \leftrightarrow \forall x \lnot \alpha}}
   \]
 
   \[
@@ -227,32 +237,5 @@
   \[
     \exists x (\alpha \land \beta) \to \exists x \alpha \land \exists x \beta
   \]
-
-  \pause
-  \[
-    \forall x (\alpha \to \beta) \to (\exists x \alpha \to \exists x \beta)
-  \]
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{}
-    给定如下``前提'', 请判断``结论''是否有效, 并说明理由。\\
-    前提如下:
-    \begin{enumerate}[(1)]
-      \item 每个人或者喜欢美剧, 或者喜欢韩剧 (可以同时喜欢二者);
-      \item 任何人如果他喜欢抗日神剧, 他就不喜欢美剧;
-      \item 有的人不喜欢韩剧。
-    \end{enumerate}
-
-    结论: 有的人不喜欢抗日神剧 (\emph{幸亏如此})。
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  例子
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
