@@ -1,0 +1,20 @@
+% truth-table-chain-implies.tex
+
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    $\alpha$ & $\beta$ & $\lnot \alpha$ &
+    $\alpha \land \beta$ & $\alpha \lor \beta$ &
+    $\alpha \to \beta$ & $\alpha \leftrightarrow \beta$ \\
+    \hline \hline
+    $T$ & $T$ & $F$ & \red{$T$} & $T$ & $T$ & \cyan{$T$} \\
+    \hline
+    $T$ & $F$ & $F$ & $F$ & $T$ & \violet{$F$} & $F$ \\
+    \hline
+    $F$ & $T$ & $T$ & $F$ & $T$ & $T$ & $F$ \\
+    \hline
+    $F$ & $F$ & $T$ & $F$ & \purple{$F$} & $T$ & \cyan{$T$} \\
+    \hline
+  \end{tabular}
+\end{table}

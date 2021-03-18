@@ -191,7 +191,7 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{``$\lor$''推理规则的应用}
+  \begin{exampleblock}{``$\lor$''-推理规则的应用}
     \[
       q \to r \vdash (p \lor q) \to (p \lor r)
     \]
@@ -201,15 +201,14 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{推理规则的应用}
+  \begin{exampleblock}{$\lor$-推理规则的应用}
     \[
       p \land (q \lor r) \vdash (p \land q) \lor (p \land r)
     \]
   \end{exampleblock}
 
-  \pause
   \vspace{0.60cm}
-  \begin{exampleblock}{推理规则的应用}
+  \begin{exampleblock}{$\lor$-推理规则的应用 (请自行练习)}
     \[
       (p \land q) \lor (p \land r) \vdash p \land (q \lor r)
     \]
@@ -231,19 +230,19 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{``$\bot$''推理规则的应用}
+  \begin{exampleblock}{``$\bot$''-推理规则的应用}
     \[
       \lnot p \lor q \vdash p \to q
     \]
   \end{exampleblock}
 
-  \pause
-  \vspace{0.60cm}
-  \begin{exampleblock}{``$\bot$''推理规则的应用}
-    \[
-      p \to q \vdash \lnot p \lor q
-    \]
-  \end{exampleblock}
+  % \pause
+  % \vspace{0.60cm}
+  % \begin{exampleblock}{``$\bot$''-推理规则的应用}
+  %   \[
+  %     p \to q \vdash \lnot p \lor q
+  %   \]
+  % \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -258,41 +257,45 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{``$\lnot$''推理规则的应用}
+  \begin{exampleblock}{``$\lnot$''-推理规则的应用}
     \[
       \set{p \to q, p \to \lnot q} \vdash \lnot p
     \]
   \end{exampleblock}
 
-  \pause
-  \vspace{0.60cm}
-  \begin{exampleblock}{``$\lnot$''推理规则的应用}
-    \[
-      \set{(p \land \lnot q) \to r, \lnot r, p} \vdash q
-    \]
-  \end{exampleblock}
-  \begin{center}
-    (提示: $\lnot \lnot q \vdash q$)
-  \end{center}
+  % \pause
+  % \vspace{0.60cm}
+  % \begin{exampleblock}{``$\lnot$''-推理规则的应用}
+  %   \[
+  %     \set{(p \land \lnot q) \to r, \lnot r, p} \vdash q
+  %   \]
+  % \end{exampleblock}
+  % \begin{center}
+  %   (提示: $\lnot \lnot q \vdash q$)
+  % \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{``$\lnot$''推理规则的应用}
+  \begin{exampleblock}{``$\lnot$''-推理规则的应用}
     \[
       \nd{\lnot p \to \bot}{p}{
         \text{RAA}/x \text{, reductio ad absurdum (反证法)}}
     \]
   \end{exampleblock}
 
-  \pause
-  \vspace{0.60cm}
-  \begin{exampleblock}{``$\lnot$''推理规则的应用}
-    \[
-      \vdash p \lor \lnot p \qquad \text{(排中律; Law of the Excluded Middle (LEM))}
-    \]
-  \end{exampleblock}
+  \begin{center}
+    (提示: $\lnot \lnot q \vdash q$)
+  \end{center}
+
+  % \pause
+  % \vspace{0.60cm}
+  % \begin{exampleblock}{``$\lnot$''-推理规则的应用}
+  %   \[
+  %     \vdash p \lor \lnot p \qquad \text{(排中律; Law of the Excluded Middle (LEM))}
+  %   \]
+  % \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -346,8 +349,9 @@
     如果 $\Sigma \vdash \alpha$, 则 $\Sigma \models \alpha$。
   \end{theorem}
 
-  \pause
-  \vspace{0.60cm}
+  \vspace{0.30cm}
+  \fig{width = 0.50\textwidth}{figs/syntax-semantics}
+  \vspace{0.30cm}
 
   \begin{theorem}[命题逻辑的完备性 (Completeness)]
     如果 $\Sigma \models \alpha$, 则 $\Sigma \vdash \alpha$。
@@ -363,22 +367,5 @@
 %     \vspace{0.60cm}
 %     语法与语义是``对立统一''的
 %   \end{center}
-% \end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \[
-%     (A \to (B \to C)) \to ((A \land B) \to C)
-%   \]
-%
-%   \pause
-%   \fig{width = 0.85\textwidth}{figs/chain-implication-proof}
-% \end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \fig{width = 0.20\textwidth}{figs/chain-implication-proof-tree}
 % \end{frame}
 %%%%%%%%%%%%%%%%%%%%
