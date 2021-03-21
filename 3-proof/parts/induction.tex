@@ -1,0 +1,108 @@
+% induction.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[第一数学归纳法 (The First Mathematical Induction)]
+    令 $P(n)$ 表示关于自然数 $n$ 的某个性质。
+    如果
+    \begin{enumerate}[(i)]
+      \setlength{\itemsep}{8pt}
+      \item $P(0)$ 成立;
+      \item 对任意自然数 $n$, 如果 $P(n)$ 成立, 则 $P(n+1)$ 成立。
+    \end{enumerate}
+    那么, $P(n)$ 对所有自然数 $n$ 都成立。
+  \end{theorem}
+
+  \pause
+  \[
+    \nd{P(0) \qquad \forall n \in \N.\; \Big(P(n) \to P(n+1) \Big)}{
+      \forall n \in \N.\; P(n)}{\text{第一数学归纳法}}
+  \]
+
+  \pause
+  \[
+    \biggl(P(0) \land \forall n \in \N.\; \Big(P(n) \to P(n+1) \Big) \biggr)
+	  \to \forall n \in \N.\; P(n).
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[第二数学归纳法 (The Second Mathematical Induction)]
+    令 $Q(n)$ 表示关于自然数 $n$ 的某个性质。
+    如果
+    \begin{enumerate}[(i)]
+      \setlength{\itemsep}{8pt}
+      \item $Q(0)$ 成立;
+      \item 对任意自然数 $n$, 如果 $Q(1), Q(2), \dots, Q(n)$ 都成立, 则 $Q(n+1)$ 成立。
+    \end{enumerate}
+    那么, $Q(n)$ 对所有自然数 $n$ 都成立。
+  \end{theorem}
+
+  \pause
+  \[
+    \nd{Q(0) \;\; \forall n \in \N.\; \Big(\big(Q(1) \land \dots \land Q(n)\big) \to Q(n+1) \Big)}{
+      \forall n \in \N.\; Q(n)}{\text{第二数学归纳法}}
+  \]
+
+  \pause
+  \[
+    \biggl(Q(0) \land \forall n \in \N.\; \Big(\big(Q(1) \land \cdots \land Q(n)\big) \to Q(n+1) \Big) \biggr)
+      \to \forall n \in \N.\; Q(n).
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[数学归纳法]
+    第一数学归纳法与第二数学归纳法等价。
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    {\red{$Q:$} 第二数学归纳法也被称为\red{\bf ``强'' (Strong)} 数学归纳法, 它强在何处?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}
+    第二数学归纳法蕴含第一数学归纳法。
+  \end{lemma}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}
+    第一数学归纳法蕴含第二数学归纳法。
+  \end{lemma}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{\bf \Large 数学归纳法从何而来?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[良序原理 (The Well-Ordering Principle)]
+    \red{自然数集}的任意\blue{非空}子集都有一个最小元。
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}{}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
