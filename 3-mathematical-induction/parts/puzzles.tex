@@ -1,0 +1,96 @@
+% puzzles.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{The Blue-eyed Islanders Puzzle}
+    There is an island upon which a tribe resides. \pause
+    The tribe consists of 1000 people, with various eye colours. \pause
+    Yet, \red{\bf their religion forbids them to know their own eye color,
+    or even to discuss the topic}; \pause
+    thus, each resident can (and does) see the eye colors of all other residents,
+    but has no way of discovering his or her own (there are no reflective surfaces). \pause
+    If a tribesperson does discover his or her own eye color,
+    then their religion compels them to
+    \blue{\bf commit ritual suicide at noon the following day in the village square
+    for all to witness}. \pause
+    All the tribespeople are \cyan{\bf highly logical and devout},
+    and they all know that each other is also highly logical and devout
+    (and they all know that they all know that each other is highly logical and devout,
+    and so forth).
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    Of the 1000 islanders,
+    it turns out that \teal{\bf 100 of them have blue eyes and 900 of them have brown eyes},
+    although the islanders are not initially aware of these statistics
+    (each of them can of course only see 999 of the 1000 tribespeople). \pause\\[6pt]
+
+    One day, a \purple{\bf blue-eyed foreigner} visits to the island
+    and wins the complete trust of the tribe. \pause\\[6pt]
+
+    One evening, he addresses the entire tribe to thank them
+    for their hospitality. \pause\\[6pt]
+
+    However, not knowing the customs,
+    the foreigner makes the mistake of mentioning eye color in his address,
+    remarking ``\teal{\bf how unusual it is to see another blue-eyed person
+    like myself in this region of the world''}. \pause\\[6pt]
+
+    \violet{\bf What effect, if anything, does this {\it faux pas} have on the tribe?}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    The foreigner \red{\bf has no effect}, \pause \\[6pt]
+    because his comments do \blue{\bf not} tell the tribe anything \\[6pt]
+    that they do not already know \pause \\[15pt]
+    (everyone in the tribe can already see that \\[6pt]
+    there are several blue-eyed people in their tribe).
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{\bf 100 days after the address, \\[6pt]
+    all the blue eyed people commit suicide.}
+
+    \pause
+    \vspace{0.80cm}
+    \begin{theorem}[The Blue-eyed Islanders Puzzle]
+      \begin{center}
+        Suppose that the tribe had $n > 0$ blue-eyed people. \\[6pt]
+        Then $n$ days after the traveller's address, \\[6pt]
+        all $n$ blue-eyed people commit suicide.
+      \end{center}
+    \end{theorem}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{By induction on the number $n$ of blue-eyed people in the tribe.}
+
+    \pause
+    \vspace{0.80cm}
+    \begin{description}
+      \setlength{\itemsep}{8pt}
+      \item[基础步骤:] $n = 1$. \\
+        \uncover<3->{这个唯一的蓝眼人的内心独白: 你直接念我身份证吧}
+      \item[归纳假设:] 假设命题对 $n$ 个蓝眼人的情况也成立。
+      \item[归纳步骤:]
+        \uncover<5->{}
+    \end{description}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
