@@ -10,14 +10,22 @@
   \end{theorem}
 
   \pause
+  \vspace{0.30cm}
   \[
-    (a+1)^p = a^p+ \binom{p}{1} a^{p-1} + \binom{p}{2} a^{p-2}
-      + \dots + \binom{p}{p-1}a + 1
+    (a+1)^p = \blue{a^p} + \binom{p}{1} a^{p-1} + \binom{p}{2} a^{p-2}
+      + \dots + \binom{p}{p-1}a + \blue{1}
   \]
 
   \pause
+  \vspace{0.30cm}
   \[
-    \binom{p}{k} = \left( \frac{p!}{k!(p-k)!} \right)
+    \binom{p}{k} = \frac{p (p-1) \dots (p-k+1)}{k!} \quad (1 \le k \le p-1)
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    (a + 1)^{p} \equiv a + 1\; (\mathrm{mod}\; p)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -28,7 +36,7 @@
     任何一个\blue{缺失了一格的} $2^{n} \times 2^{n}$ 的网格都可以被 $L$ 型填满。
   \end{exampleblock}
 
-  \fig{width = 0.70\textwidth}{figs/L-tiling-case-2}
+  \fig{width = 0.75\textwidth}{figs/L-tiling-case-2}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -37,7 +45,7 @@
   \begin{definition}[Line Map]
     \begin{itemize}
       \item A blank circle is a line map;
-      \item A line map with a straight line drawn across it is a line map.
+      \item A line map with a chord (弦) is a line map.
     \end{itemize}
   \end{definition}
 
@@ -82,7 +90,7 @@
 \begin{frame}{}
   \begin{exampleblock}{}
     \[
-      \binom{n}{k} = \frac{n!}{k! (n-k)!}
+      \binom{n}{k} = \frac{n!}{k! (n-k)!} \in \N \quad (0 \le k \le n)
     \]
   \end{exampleblock}
 \end{frame}

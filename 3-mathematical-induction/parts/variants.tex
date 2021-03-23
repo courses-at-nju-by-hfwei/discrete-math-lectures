@@ -1,0 +1,95 @@
+% variants.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    对于任何自然数 $n$, $13^{n}$ 都可以写成两个自然数的平方之和。
+  \end{theorem}
+
+  \begin{eqnarray*}
+    13^{n+1} &=& 13 \cdot \red{13^n} \\
+    &=& (2^2+3^2)(\red{a^2 + b^2}) \\
+    &=& \blue{(\underbrace{2a+3b}_x)^2 + (\underbrace{3a-2b}_y)^2} \\
+    &=& x^2+y^2
+  \end{eqnarray*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    对于任何自然数 $n$, $13^{n}$ 都可以写成两个自然数的平方之和。
+  \end{theorem}
+
+  \pause
+  \[
+    13^0 = 1^2 + 0^2
+  \]
+  \pause
+  \[
+    13^1 = 2^2 + 3^2
+  \]
+  \pause
+  \begin{eqnarray*}
+    13^{n+2} &=& 13^2\cdot \red{13^n} \\
+    &=& 13^2(\red{a^2 + b^2}) \\
+    &=& (\underbrace{13a}_x)^2 + (\underbrace{13b}_y)^2 \\
+    &=& x^2+y^2
+  \end{eqnarray*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{align*}
+      f(1, 1) &= 2 \\
+      f(m+1, n) &= f(m,n) + 2(m+n) \\
+      f(m, n+1) &= f(m,n) + 2(m+n-1)
+    \end{align*}
+    请证明,
+    \[
+      \forall m, n \in \N^{+}.\; f(m,n) = (m+n)^{2} - (m+n) - 2n + 2
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+    \red{Double Induction (Induciton Twice)}
+
+    \pause
+    \[
+      f(1, 1)
+    \]
+    \pause
+    \[
+      f(k, 1) \to f(k+1, 1)
+    \]
+    \pause
+    \[
+      f(\red{h}, k) \to f(\red{h}, k+1) \text{ for any } h
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{align*}
+      f(1, 1) &= 2 \\
+      f(m+1, n) &= f(m,n) + 2(m+n) \\
+      f(m, n+1) &= f(m,n) + 2(m+n-1)
+    \end{align*}
+    请证明,
+    \[
+      \forall m, n \in \N^{+}.\; f(m,n) = (m+n)^{2} - (m+n) - 2n + 2
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+    \red{对 $m + n$ 作归纳}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
