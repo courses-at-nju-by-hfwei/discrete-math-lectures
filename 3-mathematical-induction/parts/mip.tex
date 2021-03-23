@@ -2,19 +2,52 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
+  \begin{theorem}[Fermat's Little Theorem]
+    对于任意自然数 $a$ 与素数 $p$,
     \[
-      \binom{n}{k} = \frac{n!}{k! (n-k)!}
+      a^{p} \equiv a \;(\mathrm{mod}\; p).
     \]
-  \end{exampleblock}
+  \end{theorem}
+
+  \pause
+  \[
+    (a+1)^p = a^p+ \binom{p}{1} a^{p-1} + \binom{p}{2} a^{p-2}
+      + \dots + \binom{p}{p-1}a + 1
+  \]
+
+  \pause
+  \[
+    \binom{p}{k} = \left( \frac{p!}{k!(p-k)!} \right)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
-    knuth draw lines
+  \begin{exampleblock}{Tiling Puzzle}
+    任何一个\blue{缺失了一格的} $2^{n} \times 2^{n}$ 的网格都可以被 $L$ 型填满。
   \end{exampleblock}
+
+  \fig{width = 0.70\textwidth}{figs/L-tiling-case-2}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Line Map]
+    \begin{itemize}
+      \item A blank circle is a line map;
+      \item A line map with a straight line drawn across it is a line map.
+    \end{itemize}
+  \end{definition}
+
+  \fig{width = 0.40\textwidth}{figs/n=4-color}
+
+  \pause
+  \vspace{-0.50cm}
+  \begin{theorem}
+    Any line map can be two-colored.
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -34,8 +67,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
-    \fig{width = 0.50\textwidth}{figs/n=4-color}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Josephus Problem}
+    \fig{width = 0.50\textwidth}{figs/Josephus}
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,7 +81,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{}
+    \[
+      \binom{n}{k} = \frac{n!}{k! (n-k)!}
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Horse Paradox}
     所有马的颜色都相同。
   \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    对马的数目 $n$ 作归纳
+
+    \pause
+    \fig{width = 0.50\textwidth}{figs/induction-horses}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

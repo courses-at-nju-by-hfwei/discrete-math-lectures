@@ -3,13 +3,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}[第一数学归纳法 (The First Mathematical Induction)]
-    令 $P(n)$ 表示关于自然数 $n$ 的某个性质。
+    设 $P(n)$ 是关于自然数的一个性质。
     如果
     \begin{enumerate}[(i)]
       \setlength{\itemsep}{8pt}
       \item $P(0)$ 成立;
       \item 对任意自然数 $n$, 如果 $P(n)$ 成立, 则 $P(n+1)$ 成立。
     \end{enumerate}
+    \vspace{0.20cm}
     那么, $P(n)$ 对所有自然数 $n$ 都成立。
   \end{theorem}
 
@@ -30,25 +31,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}[第二数学归纳法 (The Second Mathematical Induction)]
-    令 $Q(n)$ 表示关于自然数 $n$ 的某个性质。
+    设 $Q(n)$ 是关于自然数的一个性质。
     如果
     \begin{enumerate}[(i)]
       \setlength{\itemsep}{8pt}
       \item $Q(0)$ 成立;
-      \item 对任意自然数 $n$, 如果 $Q(1), Q(2), \dots, Q(n)$ 都成立, 则 $Q(n+1)$ 成立。
+      \item 对任意自然数 $n$, 如果 $Q(0), Q(1), \dots, Q(n)$ 都成立, \\ 则 $Q(n+1)$ 成立。
     \end{enumerate}
+    \vspace{0.20cm}
     那么, $Q(n)$ 对所有自然数 $n$ 都成立。
   \end{theorem}
 
   \pause
   \[
-    \nd{Q(0) \;\; \forall n \in \N.\; \Big(\big(Q(1) \land \dots \land Q(n)\big) \to Q(n+1) \Big)}{
+    \nd{Q(0) \;\; \forall n \in \N.\; \Big(\big(Q(0) \land \dots \land Q(n)\big) \to Q(n+1) \Big)}{
       \forall n \in \N.\; Q(n)}{\text{第二数学归纳法}}
   \]
 
   \pause
   \[
-    \biggl(Q(0) \land \forall n \in \N.\; \Big(\big(Q(1) \land \cdots \land Q(n)\big) \to Q(n+1) \Big) \biggr)
+    \biggl(Q(0) \land \forall n \in \N.\; \Big(\big(Q(0) \land \cdots \land Q(n)\big) \to Q(n+1) \Big) \biggr)
       \to \forall n \in \N.\; Q(n).
   \]
 \end{frame}
@@ -73,6 +75,11 @@
   \begin{lemma}
     第二数学归纳法蕴含第一数学归纳法。
   \end{lemma}
+
+  \pause
+  \[
+    Q(n) \triangleq P(n)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -81,13 +88,20 @@
   \begin{lemma}
     第一数学归纳法蕴含第二数学归纳法。
   \end{lemma}
+
+  \pause
+  \[
+    P(n) \triangleq Q(0) \land \cdots \land Q(n)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    \red{\bf \Large 数学归纳法为何成立?}
+    \red{\bf \large 数学归纳法为何成立?}
+
+    \fig{width = 0.40\textwidth}{figs/why}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,19 +109,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    Peano 公理体系刻画了自然数的递归结构
+    Peano 公理体系刻画了\red{\bf 自然数的递归结构}
   \end{center}
 
-  \begin{columns}
-    \column{0.70\textwidth}
-      \begin{definition}{Peano Axioms}
-        \begin{enumerate}[(1)]
-          \item 
+  \begin{definition}[Peano Axioms]
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{6pt}
+      \item 0 是自然数;
+      \item 如果 $n$ 是自然数, 则它的后继 ${\bf S}n$ 也是自然数;
+      \item 0 不是任何自然数的后继;
+      \item 两个自然数相等当且仅当它们的后继相等;
+      \item \red{\bf 数学归纳原理:} 如果
+        \begin{enumerate}[(i)]
+          \setlength{\itemsep}{8pt}
+          \item $P(0)$ 成立;
+          \item 对任意自然数 $n$, 如果 $P(n)$ 成立, 则 $P(n+1)$ 成立。
         \end{enumerate}
-      \end{definition}
-    \column{0.30\textwidth}
-      \fig{width = 0.80\textwidth}{figs/Peano}
-  \end{columns}
+        那么, $P(n)$ 对所有自然数 $n$ 都成立。
+    \end{enumerate}
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -122,6 +142,101 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}{}
+    良序原理与(第一)数学归纳法等价。
   \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}
+    (第一)数学归纳法蕴含良序原理。
+  \end{lemma}
+
+  \pause
+  \begin{proof}
+    \begin{center}
+      \red{By mathematical induction on the size $n$ of non-empty subsets of $\mathbb{N}$.}
+
+      \vspace{-0.30cm}
+      \[
+        P(k): \text{All subsets of size $k$ contain a minimum.}
+      \]
+
+      \pause
+      \begin{description}[Inductive Hypothesis:]
+        \item[Basis Step:] $P(1)$
+        \item[\textcolor{cyan}{Inductive Hypothesis:}] $P(n)$
+        \item[Inductive Step:] $P(n) \to P(n+1)$
+          \only<4>{
+            \begin{itemize}
+              \item $A' \gets A \setminus {a}$
+              \item $x \gets \min A'$
+              \item Compare $x$ with $a$
+            \end{itemize}
+          }
+      \end{description}
+
+      \only<5>{
+        \vspace{-0.50cm}
+        \[
+          \red{\forall n \in \mathbb{N}: P(n) \quad \text{\it vs. } \quad P(\infty)}
+        \]
+      }
+    \end{center}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}
+    (第一)数学归纳法蕴含良序原理。
+  \end{lemma}
+
+  \begin{center}
+    \red{$P(n):$ 任何一个\blue{含有 $\le n$ 的某个自然数}的自然数子集都有最小元}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}
+    良序原理蕴含(第一)数学归纳法。
+  \end{lemma}
+
+  \begin{center}
+    \red{\bf 反证法} \\[6pt]
+
+    设 $P(0)$ 成立且$\forall n \in \N.\; P(n) \to P(n+1)$ 成立, \\
+    但 $\forall n \in \N.\; P(n)$ 不成立 \\[6pt]
+
+    \pause
+    \[
+      A = \set{k \in \N \mid \lnot P(k)} \neq \emptyset
+    \]
+    \pause
+    \[
+      m \triangleq \min A \quad \text{(by 良序原理)} \pause \qquad \red{\lnot P(m)}
+    \]
+    \pause
+    \[
+      m \neq 0 \pause \qquad m \ge 1
+    \]
+    \pause
+    \[
+      n \triangleq m - 1
+        \pause \blue{\qquad P(n)}
+        \pause \qquad P(n + 1)
+        \pause \qquad \red{P(m)}
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.70\textwidth}{figs/learn-by-examples}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
