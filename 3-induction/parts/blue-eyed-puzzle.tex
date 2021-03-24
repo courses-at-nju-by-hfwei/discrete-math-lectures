@@ -2,6 +2,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.80\textwidth}{figs/xkcd-blue-eyes}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.95\textwidth}{figs/what-new-blue-eyed-puzzle-overview}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{The Blue-eyed Islanders Puzzle}
     There is an island upon which a tribe resides. \pause
     The tribe consists of 1000 people, with various eye colours. \pause
@@ -9,12 +21,12 @@
     or even to discuss the topic}; \pause
     thus, each resident can (and does) see the eye colors of all other residents,
     but has no way of discovering his or her own (there are no reflective surfaces). \pause
-    If a tribesperson does discover his or her own eye color,
+    \blue{\bf If} a tribesperson does discover his or her own eye color,
     then their religion compels them to
     \blue{\bf commit ritual suicide at noon the following day in the village square
     for all to witness}. \pause
     All the tribespeople are \cyan{\bf highly logical and devout},
-    and they all know that each other is also highly logical and devout
+    \teal{\bf and} they all know that each other is also highly logical and devout
     (and they all know that they all know that each other is highly logical and devout,
     and so forth).
   \end{exampleblock}
@@ -25,7 +37,8 @@
 \begin{frame}{}
   \begin{exampleblock}{}
     Of the 1000 islanders,
-    it turns out that \teal{\bf 100 of them have blue eyes and 900 of them have brown eyes},
+    it turns out that \blue{\bf 100 of them have blue eyes}
+    and \brown{\bf 900 of them have brown eyes},
     although the islanders are not initially aware of these statistics
     (each of them can of course only see 999 of the 1000 tribespeople). \pause\\[6pt]
 
@@ -40,7 +53,7 @@
     remarking ``\teal{\bf how unusual it is to see another blue-eyed person
     like myself in this region of the world''}. \pause\\[6pt]
 
-    \violet{\bf What effect, if anything, does this {\it faux pas} have on the tribe?}
+    \violet{\bf What effect, if anything, does this {\it faux pas (失礼)} have on the tribe?}
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,15 +95,43 @@
     \red{By induction on the number $n$ of blue-eyed people in the tribe.}
 
     \pause
-    \vspace{0.80cm}
+    \vspace{0.30cm}
     \begin{description}
       \setlength{\itemsep}{8pt}
-      \item[基础步骤:] $n = 1$. \\
-        \uncover<3->{这个唯一的蓝眼人的内心独白: 你直接念我身份证吧}
-      \item[归纳假设:] 假设命题对 $n$ 个蓝眼人的情况也成立。
-      \item[归纳步骤:]
-        \uncover<5->{}
+      \item[基础步骤:] $n = 1$. \\ \pause
+        这个\blue{\bf 唯一的蓝眼人}的内心独白: 你直接念我身份证吧 \pause
+      \item[归纳假设:] 有$n$个蓝眼人时, 前 $n-1$ 天无人自杀, 第$n$天集体自杀。\pause
+      \item[归纳步骤:] 考虑恰有 $n+1$ 个蓝眼人的情况。 \\[6pt] \pause
+        每个\blue{\bf 蓝眼人}都如此推理: 我看到了 $n$ 个蓝眼人, 他们应该在第 $n$ 天集体自杀。
+        \\[6pt] \pause
+        但是, 每个蓝眼人都在等其它$n$个蓝眼人自杀, 因此, 第 $n$ 天无人自杀。
+        \\[6pt] \pause
+        每个\blue{\bf 蓝眼人}继续推理: 一定不止 $n$ 个蓝眼人, 但是我看到的其余人都不是蓝眼。
+        \\[6pt] \pause
+        所以, \purple{\bf ``小丑竟是我自己''}。
     \end{description}
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    ``\teal{\bf how unusual it is to see another blue-eyed person
+    like myself in this region of the world''}.
+
+    \fig{width = 0.40\textwidth}{figs/what-happend-little-girl}
+
+    \pause
+    考虑 $n = 1, n = 2$ 的简单情况
+
+    \pause
+    \vspace{0.30cm}
+    ``\purple{我不知道} $\dots$'' \\[6pt]
+    ``\purple{我知道} $\dots$'' \\[6pt]
+    ``\purple{我知道}\teal{你知道} $\dots$'' \\[6pt]
+    ``\purple{我知道}\teal{你知道}\cyan{我知道} $\dots$''
+  \end{center}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
