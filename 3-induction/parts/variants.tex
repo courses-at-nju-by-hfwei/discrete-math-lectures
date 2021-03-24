@@ -40,70 +40,114 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{}
+%     \begin{align*}
+%       f(1, 1) &= 2 \\
+%       f(m+1, n) &= f(m,n) + 2(m+n) \\
+%       f(m, n+1) &= f(m,n) + 2(m+n-1)
+%     \end{align*}
+%     请证明,
+%     \[
+%       \forall m, n \in \N^{+}.\; f(m,n) = (m+n)^{2} - (m+n) - 2n + 2
+%     \]
+%   \end{exampleblock}
+%
+%   \pause
+%   \begin{center}
+%     \red{Double Induction (Induciton Twice)}
+%
+%     \pause
+%     \[
+%       f(1, 1)
+%     \]
+%     \pause
+%     \[
+%       f(k, 1) \to f(k+1, 1)
+%     \]
+%     \pause
+%     \[
+%       f(\red{h}, k) \to f(\red{h}, k+1) \text{ for any } h
+%     \]
+%   \end{center}
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{}
+%     \begin{align*}
+%       f(1, 1) &= 2 \\
+%       f(m+1, n) &= f(m,n) + 2(m+n) \\
+%       f(m, n+1) &= f(m,n) + 2(m+n-1)
+%     \end{align*}
+%     请证明,
+%     \[
+%       \forall m, n \in \N^{+}.\; f(m,n) = (m+n)^{2} - (m+n) - 2n + 2
+%     \]
+%   \end{exampleblock}
+%
+%   \pause
+%   \begin{center}
+%     \red{对 $m + n$ 作归纳}
+%   \end{center}
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{Josephus Problem}
     \fig{width = 0.50\textwidth}{figs/Josephus}
+
+    \[
+      J(12) = 9
+    \]
   \end{exampleblock}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
-    \begin{align*}
-      f(1, 1) &= 2 \\
-      f(m+1, n) &= f(m,n) + 2(m+n) \\
-      f(m, n+1) &= f(m,n) + 2(m+n-1)
-    \end{align*}
-    请证明,
-    \[
-      \forall m, n \in \N^{+}.\; f(m,n) = (m+n)^{2} - (m+n) - 2n + 2
-    \]
-  \end{exampleblock}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{center}
+        $2n$ 个人
+      \end{center}
+      \fig{width = 0.80\textwidth}{figs/2n-people}
+
+      \pause
+      \[
+        J(2n) = 2J(n) - 1, n \ge 1
+      \]
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+        $2n + 1$ 个人
+      \end{center}
+      \fig{width = 0.80\textwidth}{figs/2n+1-people}
+
+      \pause
+      \[
+        J(2n + 1) = 2J(n) + 1, n \ge 1
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    J(1) &= 1 \\[8pt]
+    J(2n) &= 2J(n) - 1, n \ge 1 \\[8pt]
+    J(2n + 1) &= 2J(n) + 1, n \ge 1
+  \end{align*}
 
   \pause
-  \begin{center}
-    \red{Double Induction (Induciton Twice)}
-
-    \pause
-    \[
-      f(1, 1)
-    \]
-    \pause
-    \[
-      f(k, 1) \to f(k+1, 1)
-    \]
-    \pause
-    \[
-      f(\red{h}, k) \to f(\red{h}, k+1) \text{ for any } h
-    \]
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{}
-    \begin{align*}
-      f(1, 1) &= 2 \\
-      f(m+1, n) &= f(m,n) + 2(m+n) \\
-      f(m, n+1) &= f(m,n) + 2(m+n-1)
-    \end{align*}
-    请证明,
-    \[
-      \forall m, n \in \N^{+}.\; f(m,n) = (m+n)^{2} - (m+n) - 2n + 2
-    \]
-  \end{exampleblock}
-
-  \pause
-  \begin{center}
-    \red{对 $m + n$ 作归纳}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  gcd
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.55\textwidth}{figs/concrete-mathematics-book}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/knuth}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
