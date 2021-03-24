@@ -4,6 +4,12 @@ Lectures on [Discrete Mathematics @ software.nju.edu.cn](https://github.com/orgs
 
 ## 周历
 
+### 阅读材料
+- 《离散数学结构》
+- 《离散数学及其应用》
+- 《计算机科学中的数学》
+- 《具体数学》
+
 | 周次 | 日期 (周四) | 主题 | 阅读材料 |
 | :---: | :---: | :---: | :---: |
 | 1 | 2021-03-04 | [0-overview](https://github.com/courses-at-nju-by-hfwei/discrete-math-lectures/tree/main/0-overview) | |

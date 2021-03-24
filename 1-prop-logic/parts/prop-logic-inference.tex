@@ -288,14 +288,29 @@
   \begin{center}
     (提示: $\lnot \lnot q \vdash q$)
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
 
-  % \pause
-  % \vspace{0.60cm}
-  % \begin{exampleblock}{``$\lnot$''-推理规则的应用}
-  %   \[
-  %     \vdash p \lor \lnot p \qquad \text{(排中律; Law of the Excluded Middle (LEM))}
-  %   \]
-  % \end{exampleblock}
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \[
+      \vdash p \lor \lnot p \qquad \text{(排中律; Law of the Excluded Middle (LEM))}
+    \]
+  \end{exampleblock}
+
+  \setcounter{equation}{0}
+  \begin{align}
+    \blue{\lnot (p \lor \lnot p)} & \qquad (\text{引入假设}) \\
+    \red{[p]}                     & \qquad (\text{引入假设}) \\
+    \red{p \lor \lnot p}          & \qquad (\lor\text{-intro-left}) \\
+    \red{\bot}                    & \qquad (\bot\text{-intro}) \\
+    \purple{\lnot p}              & \qquad (\lnot\text{-intro}) \\
+    \blue{p \lor \lnot p}         & \qquad (\lor\text{-intro-right}) \\
+    \blue{\bot}                   & \qquad (\bot\text{-intro}) \\
+    \lnot\lnot (p \lor \lnot p)   & \qquad (\lnot\text{-intro}) \\
+    p \lor \lnot p                & \qquad (\lnot\lnot\text{-elim})
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -357,15 +372,4 @@
     如果 $\Sigma \models \alpha$, 则 $\Sigma \vdash \alpha$。
   \end{theorem}
 \end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{center}
-%     \fig{width = 0.60\textwidth}{figs/syntax-semantics}
-%
-%     \vspace{0.60cm}
-%     语法与语义是``对立统一''的
-%   \end{center}
-% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
