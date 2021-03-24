@@ -1,0 +1,184 @@
+% mip.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Tiling Puzzle}
+    任何一个\blue{缺失了一格的} $2^{n} \times 2^{n}$ 的网格都可以被 $L$ 型填满。
+  \end{exampleblock}
+
+  \fig{width = 0.75\textwidth}{figs/L-tiling-case-2}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Line Map]
+    \begin{itemize}
+      \item A blank circle is a line map;
+      \item A line map with a chord (弦) is a line map.
+    \end{itemize}
+  \end{definition}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/n=4-color}
+    \column{0.50\textwidth}
+      \uncover<3->{
+        \fig{width = 0.80\textwidth}{figs/n=5-color}
+      }
+  \end{columns}
+
+  \pause
+  \vspace{-0.30cm}
+  \begin{theorem}
+    Any line map can be two-colored.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{The Tower of Hanoi}
+    \fig{width = 0.50\textwidth}{figs/hanoi}
+
+    \vspace{0.30cm}
+    \begin{center}
+      $\textsc{Hanoi}(n, A, B, C):$ 借助于$B$柱, 将$n$个盘子从$A$柱移到$C$柱
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \[
+    T_{n}: \text{the \red{\bf minimum} number of moves for $n$ disks}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.45\textwidth}{figs/hanoi-solution}
+
+  \pause
+  \vspace{-0.80cm}
+  \[
+    T(n) \;\red{\le}\; 2T(n-1) + 1 \qquad (n \ge 1)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    考虑\green{\bf 第一次}以及\yellow{\bf 最后一次}移动\purple{\bf 最大盘}时的情况 \\
+    \pause
+    \red{\bf 另外 $(n-1)$ 个盘子一定在同一个柱子上}
+  \end{center}
+
+  \fig{width = 0.40\textwidth}{figs/hanoi-lower-bound}
+
+  \pause
+  \vspace{-0.80cm}
+  \[
+    T(n) \;\red{\ge}\; 2T(n-1) + 1 \qquad (n \ge 1)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    T(0) &= 0, \\[6pt]
+    T(n) &\;\red{=}\; 2T(n-1) + 1, \quad n \ge 1
+  \end{align*}
+
+  \pause
+  \[
+    T(n) = 2^{n} - 1, \quad n \ge 0
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Fermat's Little Theorem]
+    对于任意自然数 $a$ 与任意素数 $p$,
+    \[
+      a^{p} \equiv a \;(\mathrm{mod}\; p).
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{对自然数 $a$ 作归纳} \pause \blue{(对于任意素数 $p$)}
+  \end{center}
+
+  \pause
+  \[
+    (a+1)^p = \purple{a^p} + \binom{p}{1} a^{p-1} + \binom{p}{2} a^{p-2}
+      + \dots + \binom{p}{p-1}a + \purple{1}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \binom{p}{k} = \frac{\blue{p} (p-1) \dots (p-k+1)}{k!} \equiv 0 \;(\mathrm{mod}\; p)
+      \quad (1 \le k \le p-1)
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    (a + 1)^{p} \equiv a + 1\; (\mathrm{mod}\; p)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \[
+      \binom{n}{k} = \frac{n!}{k! (n-k)!} \in \N \quad (0 \le k \le n)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{对自然数 $n$ 作归纳} \blue{(对于任意的 $0 \le k \le n$)}
+  \end{center}
+
+  \pause
+  \[
+    \binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    k = 0 \qquad k = n + 1 \qquad 1 \le k \le n
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Horse Paradox}
+    所有马的颜色都相同。
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{对马的数目 $n \ge 1$ 作归纳}
+
+    \pause
+    \fig{width = 0.50\textwidth}{figs/induction-horses}
+  \end{center}
+
+  \pause
+  \[
+    \blue{n = 1 \centernot\implies n = 2}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
