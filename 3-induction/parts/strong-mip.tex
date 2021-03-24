@@ -2,11 +2,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
-    \[
-      F(n) \;\text{是偶数, 当且仅当}\; F(n+3) \;\text{是偶数。}
-    \]
+  \begin{exampleblock}{算术基本定理 (The Fundamental Theorem of Arithmetic)}
+    任何一个$\ge 2$的自然数都可以\blue{(唯一)}写为若干素数的乘积。
   \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{对自然数 $n$ 作强数学归纳}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -14,66 +18,104 @@
 \begin{frame}{}
   \begin{exampleblock}{}
     \begin{center}
-      设 $\ast$ 是一个满足结合律的二元运算符。 请证明,
+      设 $\ast$ 是一个满足结合律的二元运算符, 即
       \[
-        a_{1} \ast a_{2} \ast \dots \ast a_{n}
+        (a \ast b) \ast c = a \ast (b \ast c).
       \]
+      请证明, $a_{1} \ast a_{2} \ast \dots \ast a_{n}\; (n \ge 3)$
       的值与括号的使用方式无关。
     \end{center}
   \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{算术基本定理}
-    Prove that every integer greater than 2 can be written as product of primes.
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{对 $n$ 作强数学归纳}
+  \end{center}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{}
-    请证明, 只用4分与5分邮票, 就可以组成12分及以上的每种邮资。 \\[8pt]
-
-    (每个不小于12的整数都可以写成若干个4或5的和。)
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{堆盒子游戏}
-    现有 $n$ 个盒子堆在一起。
-    你可以移动这些盒子, 每次移动只能将一堆盒子分成不为空的两堆盒子,
-    最后得到 $n$ 堆盒子, 即每堆只有一个盒子时, 游戏结束。 \\[8pt]
-    每次移动盒子时, 如果将高度为 $a + b$ 的盒子堆拆分成高度为 $a$ 和 $b$ 的两堆,
-    玩家可以得 $ab$ 分。 \\[8pt]
-    玩家的总得分是每次移动盒子得分的总和。
-    请问, 如何才能得到最高分?
-  \end{exampleblock}
-
-  +fig
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{lemma}{}
-    任何一种平铺$n$个盒子的方法, 得分都是 $\frac{n(n-1)}{2}$。
-  \end{lemma}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{}
-    只用以下三种图示拼出 $2 \times n$ 的形状, 有几种不同的拼法?
-  \end{exampleblock}
-
+  \pause
   \[
-    T(n) = ? T(n-1) + ?? T(n-2) + \dots
+    (\dots) \;\red{\ast}\; (\dots)
   \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{align*}
+      F_{0} &= 0, \qquad F_{1} = 1, \\[6pt]
+      F_{n} &= F(n-1) + F(n-2) \quad (n \ge 2)
+    \end{align*}
+    \[
+      \text{请证明:}\; F(n) \;\text{是偶数当且仅当}\; F(n+3) \;\text{是偶数。}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{center}
+    \red{对 $n$ 作归纳}
+
+    \pause
+    \vspace{0.30cm}
+    \blue{基础步骤:} 命题对 $n = 0, 1$ 成立
+
+    \pause
+    \vspace{0.30cm}
+    \blue{归纳假设:} $F(n)$是偶数当且仅当$F(n+3)$是偶数
+
+    \pause
+    \begin{align*}
+      F(n+1) &= \cyan{F(n)} + \teal{F(n-1)} \\[6pt]
+      F(n+4) &= \cyan{F(n+3)} + \teal{F(n+2)}
+    \end{align*}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Tiling Puzzle}
+    只用$1 \times 1$ 与 $1 \times 2$两种矩形,
+    拼出 $1 \times n$ 的形状, 有几种不同的拼法?
+    \fig{width = 0.50\textwidth}{figs/1xn}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.40\textwidth}{figs/1x1-tiling}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/1x2-tiling}
+
+  \pause
+  \vspace{-0.30cm}
+  \begin{align*}
+    T_{0} &= 0, \qquad T_{1} = 1, \\[6pt]
+    T_{n} &= \blue{T(n-1)} + \red{T(n-2)} \quad (n \ge 2)
+  \end{align*}
+
+  \pause
+  \[
+    \cyan{\boxed{F_{n} = T_{n}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \cyan{\boxed{F_{n} = T_{n}}}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    F_{2n} = \teal{(F_{n})^{2}} + \violet{(F_{n-1})^{2}}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \fig{width = 0.70\textwidth}{figs/f2n-proof}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
