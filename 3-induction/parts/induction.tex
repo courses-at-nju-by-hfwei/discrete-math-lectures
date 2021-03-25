@@ -136,11 +136,9 @@
   \begin{definition}[良序原理 (The Well-Ordering Principle)]
     \red{自然数集}的任意\blue{非空}子集都有一个最小元。
   \end{definition}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
+  \pause
+  \vspace{0.60cm}
   \begin{theorem}{}
     良序原理与(第一)数学归纳法等价。
   \end{theorem}
@@ -160,7 +158,7 @@
 
       \vspace{-0.30cm}
       \[
-        P(k): \text{All subsets of size $k$ contain a minimum.}
+        P(n): \text{All subsets of size $n$ contain a minimum.}
       \]
 
       \pause
@@ -196,6 +194,20 @@
 
   \begin{center}
     \red{$P(n):$ 任何一个\blue{含有 $\le n$ 的某个自然数}的自然数子集都有最小元}
+
+    \pause
+    \vspace{0.20cm}
+    \[
+      P(0)
+    \]
+    \pause
+    \[
+      P(n) \to P(n + 1)
+    \]
+    \pause
+    \[
+      \exists x.\; x \le n \qquad \forall x.\; x \ge n + 1
+    \]
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -209,8 +221,9 @@
   \begin{center}
     \red{\bf 反证法} \\[6pt]
 
+    \pause
     设 $P(0)$ 成立且$\forall n \in \N.\; P(n) \to P(n+1)$ 成立, \\
-    但 $\forall n \in \N.\; P(n)$ 不成立 \\[6pt]
+    但 $\exists n \in \N.\; P(n)$ 不成立 \\[6pt]
 
     \pause
     \[

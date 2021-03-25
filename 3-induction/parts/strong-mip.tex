@@ -62,12 +62,12 @@
 
     \pause
     \vspace{0.30cm}
-    \blue{归纳假设:} $F(n)$是偶数当且仅当$F(n+3)$是偶数
+    \blue{归纳假设:} 对任意 $n \le k$, $F(n)$是偶数当且仅当$F(n+3)$是偶数
 
     \pause
     \begin{align*}
-      F(n+1) &= \cyan{F(n)} + \teal{F(n-1)} \\[6pt]
-      F(n+4) &= \cyan{F(n+3)} + \teal{F(n+2)}
+      F(k+1) &= \cyan{F(k)} + \teal{F(k-1)} \\[6pt]
+      F(k+4) &= \cyan{F(k+3)} + \teal{F(k+2)}
     \end{align*}
   \end{center}
 \end{frame}
@@ -91,7 +91,7 @@
   \pause
   \vspace{-0.30cm}
   \begin{align*}
-    T_{0} &= 0, \qquad T_{1} = 1, \\[6pt]
+    T_{0} &= 1, \qquad T_{1} = 1, \\[6pt]
     T_{n} &= \blue{T(n-1)} + \red{T(n-2)} \quad (n \ge 2)
   \end{align*}
 
