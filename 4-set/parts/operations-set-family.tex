@@ -1,0 +1,76 @@
+% operations-set-family.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large Set Operations (II)}
+    % {\Large Set Family $\set{A_{\alpha}: \alpha \in I}$}
+  \end{center}
+
+  \[
+    \text{\Large $\bigcap \qquad \bigcup$}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \bigcup_{j = 1}^{n} A_j \triangleq A_1 \cup A_2 \cup \cdots \cup A_n \qquad 
+    \bigcap_{j = 1}^{n} A_j \triangleq A_1 \cap A_2 \cap \cdots \cap A_n
+  \]
+
+  \pause
+  \vspace{1.00cm}
+  \[
+    \bigcup_{j = 1}^{\infty} A_j \triangleq A_1 \cup A_2 \cup \cdots \qquad 
+    \bigcap_{j = 1}^{\infty} A_j \triangleq A_1 \cap A_2 \cap \cdots 
+  \]
+
+  \pause
+  \[
+    \bigcup_{\alpha \in I} A_{\alpha} \triangleq \Big\{x \mid \red{\exists} \alpha \in I: x \in A_{\alpha}\Big\} \qquad
+    \bigcap_{\alpha \in I} A_{\alpha} \triangleq \Big\{x \mid \red{\forall} \alpha \in I: x \in A_{\alpha}\Big\}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[DeMorgan's Law (UD Exercise $8.9$)]
+    \[
+      X \setminus \bigcup_{\alpha \in I} A_{\alpha} = \bigcap_{\alpha \in I} (X \setminus A_{\alpha})
+    \]
+
+    \[
+      X \setminus \bigcap_{\alpha \in I} A_{\alpha} = \bigcup_{\alpha \in I} (X \setminus A_{\alpha})
+    \]
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.35\textwidth}{figs/prove-it}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{DeMorgan's Law (UD Problem $8.14$)}
+    \[
+      A = \mathbb{R} \setminus \bigcap_{n \in \mathbb{Z}^{+}} (\mathbb{R} \setminus \set{-n, -n+1, \cdots, 0, \cdots, n-1, n})
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    X_n = \set{-n, -n+1, \cdots, 0, \cdots, n-1, n}
+  \]
+
+  \pause
+  \begin{align*}
+    \onslide<3->{A &= \mathbb{R} \setminus \bigcap_{n \in \mathbb{Z}^{+}} (\mathbb{R} \setminus X_n) \\}
+      \onslide<4->{&= \mathbb{R} \setminus \Big(\mathbb{R} \setminus \bigcup_{n \in \mathbb{Z}^{+}} X_n \Big) \\}
+      \onslide<5->{&= \mathbb{R} \setminus \Big(\mathbb{R} \setminus \mathbb{Z} \Big) \\}
+      \onslide<6->{&= \mathbb{Z}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%

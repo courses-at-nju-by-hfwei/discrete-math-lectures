@@ -1,0 +1,122 @@
+% axioms.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large Axiomatic Set Theory \blue{(ZFC)}}
+  \end{center}
+
+  \vspace{0.80cm}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fig{width = 0.50\textwidth}{figs/Zermelo}{\centerline{Ernst Zermelo (1871--1953)}}
+    \column{0.45\textwidth}
+      \fig{width = 0.48\textwidth}{figs/Fraenkel}{\centerline{Abraham Fraenkel (1891--1965)}}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{center}
+%     {\Large First-order Language}
+%   \end{center}
+% 
+%   \begin{columns}
+%     \column{0.30\textwidth}
+%     \column{0.40\textwidth}
+%       \begin{description}[Connectives:]
+% 	\item[Parentheses:] $(,)$
+% 	\item[Variables:] $x, y, z, \cdots$
+% 	\item[Connectives:] $\land$, $\lor$, $\lnot$, $\to$, $\leftrightarrow$
+% 	\item[Quantifiers:] $\forall$, $\exists$
+% 	\item[Equality:] $=$
+% 	  \pause \vspace{0.50cm}
+% 	\item[Constants:] $a, b, c, \cdots$
+% 	\item[Functions:] $f, g, h, \cdots$
+% 	\item[Predicates:] $R, P, Q, \cdots$
+%       \end{description}
+%     \column{0.30\textwidth}
+%   \end{columns}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large First-order Language for Sets \red{$\lset{} = \set{\in}$}}
+  \end{center}
+
+  \begin{columns}
+    \column{0.30\textwidth}
+    \column{0.40\textwidth}
+      \begin{description}[Connectives:]
+	\item[Parentheses:] $(,)$
+	\item[Variables:] \textcolor<2->{red}{$x, y, z, \cdots$}
+	\item[Connectives:] $\land$, $\lor$, $\lnot$, $\to$, $\leftrightarrow$
+	\item[Quantifiers:] $\forall$, $\exists$
+	\item[Equality:] $=$
+	\vspace{0.50cm}
+	\item[Constants:]
+	\item[Functions:] 
+	\item[Predicates:] \red{$\in$}
+      \end{description}
+    \column{0.30\textwidth}
+  \end{columns}
+
+  \uncover<3->{
+    \begin{center}
+      \red{\large Everything we consider in $\lset{}$ is a set.}
+    \end{center}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{$Q:$ What is \blue{``$\in$''}?} \\[10pt]
+    \red{$Q:$ What are \blue{``sets''}?} \\[40pt]
+
+    \pause
+    We don't define them directly. \\[10pt]
+    We only describe their properties in an \red{axiomatic} way.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/elements-ch}
+
+  \begin{enumerate}[(1)]
+    \item To draw a straight line from any point to any point.
+    \item To extend a finite straight line continuously in a straight line.
+    \item To describe a circle with any center and radius.
+    \item That all right angles are equal to one another.
+    \item The parallel postulate.
+  \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[$\notin$]
+    \[
+      x \notin A \triangleq \lnot (x \in A).
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[$\subseteq$]
+    \[
+      A \subseteq B \triangleq \forall x (x \in A \implies x \in B)
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\input{parts/axioms-PURP}
+%%%%%%%%%%%%%%%

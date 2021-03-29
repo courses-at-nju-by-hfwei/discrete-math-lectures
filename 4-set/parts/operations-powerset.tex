@@ -1,0 +1,122 @@
+% operations-powerset.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large Set Operations (III)}
+  \end{center}
+
+  \[
+    \ps{X}
+  \]
+
+  % \pause
+  % \[
+  %   2^{X} = \set{0,1}^{X}
+  % \]
+
+  % \fig{width = 0.50\textwidth}{figs/powerset-2-x-notation}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\boxed{S \in \ps{X} \iff S \subseteq X}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    Prove that for any set $S$:
+    \[
+      \set{\emptyset, \set{\emptyset}} \in \ps{\ps{\ps{S}}}
+    \]
+  \end{exampleblock}
+
+  \begin{proof}
+    \pause
+    \[
+      \set{\emptyset, \set{\emptyset}} \in \ps{\ps{\ps{S}}} \iff \set{\emptyset, \set{\emptyset}} \subseteq \ps{\ps{S}}
+    \]
+
+    \pause
+    \hrule
+    \begin{columns}
+      \column{0.50\textwidth}
+	\[
+	  \red{\emptyset \in \ps{\ps{S}}}
+	\]
+
+	\uncover<4->{
+	  \[
+	    \iff \emptyset \subseteq \ps{S}
+	  \]
+	}
+      \column{0.50\textwidth}
+        \[
+	  \red{\set{\emptyset} \in \ps{\ps{S}}}
+	\]
+
+	\uncover<5->{
+	  \[
+	    \iff \set{\emptyset} \subseteq \ps{S}
+	  \]
+	}
+	\uncover<6->{
+	  \[
+	    \iff \emptyset \in \ps{S}
+	  \]
+	}
+	\uncover<7->{
+	  \[
+	    \iff \emptyset \subseteq S
+	  \]
+	}
+    \end{columns}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Exercise $9.4$}
+    \[
+      \ps{A} \cap \ps{B} = \ps{A \cap B}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \begin{proof}
+    \begin{align*}
+      \onslide<2->{&\textcolor{white}{\iff}\;\; x \in \ps{A} \cap \ps{B} \\}
+      \onslide<3->{&\iff x \in \ps{A} \land x \in \ps{B} \\}
+      \onslide<4->{&\iff x \subseteq A \land x \subseteq B \\}
+      \onslide<5->{&\iff x \subseteq A \cap B \\}
+      \onslide<6->{&\iff x \in \ps{A \cap B}}
+    \end{align*}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{UD Problem $9.9$}
+    \[
+      \bigcap_{\alpha \in I} \ps{A_{\alpha}} = \ps{\bigcap_{\alpha \in I} A_{\alpha}}
+    \]
+  \end{exampleblock}
+
+  \begin{proof}
+    \begin{align*}
+      \onslide<2->{&\textcolor{white}{\iff}\;\; x \in \bigcap_{\alpha \in I} \ps{A_{\alpha}} \\}
+      \onslide<3->{&\iff \forall \alpha \in I: x \in \ps{A_{\alpha}} \\}
+      \onslide<4->{&\iff \forall \alpha \in I: x \subseteq A_{\alpha} \\}
+      \onslide<5->{&\iff x \subseteq \bigcap_{\alpha \in I} A_{\alpha} \\}
+      \onslide<6->{&\iff x \in \ps{\bigcap_{\alpha \in I} A_{\alpha}}}
+    \end{align*}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%

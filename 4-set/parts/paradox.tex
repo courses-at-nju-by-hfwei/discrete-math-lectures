@@ -1,0 +1,101 @@
+% paradox.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fig{width = 0.50\textwidth}{figs/Frege-old}{\centerline{Gottlob Frege (1848--1925)}}
+    \column{0.45\textwidth}
+      \fig{width = 0.40\textwidth}{figs/frege-arithmetic}
+      \begin{center}
+	{``Basic Laws of Arithmetic'' \\ (1893 \& 1903)}
+      \end{center}
+  \end{columns}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{quote}
+    对于一个科学工作者来说，最不幸的事情莫过于:
+    当他的工作接近完成时, 却发现那大厦的基础已经动摇。
+
+    \hfill --- 《附录二》, 1902
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+% \begin{quote}
+%   就正直与风度而言，我认为在我所知的范围内，
+%   无人可超越 Frege 对于真理的献身精神。
+% \end{quote}
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.20\textwidth}{figs/Russell}{\vspace{-0.30cm}\centerline{Bertrand Russell (1872--1970)}}
+
+  \begin{columns}
+    \pause
+    \column{0.30\textwidth}
+      \fig{width = 0.60\textwidth}{figs/russell-philosophy}
+    \pause
+    \column{0.30\textwidth}
+      \fig{width = 0.60\textwidth}{figs/russell-pm}
+    \pause
+    \column{0.30\textwidth}
+      \fig{width = 0.80\textwidth}{figs/russell-nobel}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[概括原则]
+    \blue{For any predicate $\psi(x)$}, there is a \red{set} $X$:
+    \[
+      X = \set{x \mid \psi(x)}.
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{definition}[Russell's Paradox]
+    \[
+      \blue{\psi(x) \triangleq ``x \notin x"}
+    \]
+
+    \pause
+    \[
+      R = \set{x \mid x \notin x}
+    \]
+
+    \pause
+    \[
+      \red{Q: R \in R\;?}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{$Q:$ } 既然朴素集合论存在悖论，你是如何做作业的?
+    \vspace{0.60cm}
+    \fig{width = 0.20\textwidth}{figs/cannot-see}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \fig{width = 0.40\textwidth}{figs/have-to-fix-it}
+
+    \pause
+    \vspace{0.20cm}
+    \begin{theorem}[Russell's Paradox]
+      \[
+        \set{x \mid x \notin x} \text{ is \red{\it not} a set.}
+      \]
+    \end{theorem}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
