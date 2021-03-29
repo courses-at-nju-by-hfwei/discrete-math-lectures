@@ -9,13 +9,47 @@
   \[
     \ps{X}
   \]
+\end{frame}
+%%%%%%%%%%%%%%%
 
-  % \pause
-  % \[
-  %   2^{X} = \set{0,1}^{X}
-  % \]
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[幂集 (Powerset)]
+    \[
+      \ps(A) = \Bset{X \mid X \subseteq A}
+    \]
+  \end{definition}
 
-  % \fig{width = 0.50\textwidth}{figs/powerset-2-x-notation}
+  \[
+    A = \set{1, 2, 3}
+  \]
+  \[
+    \ps(A) = \set{\emptyset,
+      \set{1}, \set{2}, \set{3},
+      \set{1, 2}, \set{1, 3}, \set{2, 3},
+      \set{1, 2, 3}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    |A| = n
+  \]
+
+  \pause
+  \[
+    |\ps{A}| = 2^{n}
+  \]
+
+  \pause
+  \fig{width = 0.70\textwidth}{figs/powerset-2-x-notation}
+
+  \pause
+  \[
+    \ps{A} = 2^{A} = \set{0,1}^{A}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -29,8 +63,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{}
-    Prove that for any set $S$:
+  \begin{exampleblock}{请证明}
     \[
       \set{\emptyset, \set{\emptyset}} \in \ps{\ps{\ps{S}}}
     \]
@@ -46,35 +79,34 @@
     \hrule
     \begin{columns}
       \column{0.50\textwidth}
-	\[
-	  \red{\emptyset \in \ps{\ps{S}}}
-	\]
+        \[
+          \red{\emptyset \in \ps{\ps{S}}}
+        \]
 
-	\uncover<4->{
-	  \[
-	    \iff \emptyset \subseteq \ps{S}
-	  \]
-	}
+        \uncover<4->{
+          \[
+            \iff \emptyset \subseteq \ps{S}
+          \]
+        }
       \column{0.50\textwidth}
         \[
-	  \red{\set{\emptyset} \in \ps{\ps{S}}}
-	\]
-
-	\uncover<5->{
-	  \[
-	    \iff \set{\emptyset} \subseteq \ps{S}
-	  \]
-	}
-	\uncover<6->{
-	  \[
-	    \iff \emptyset \in \ps{S}
-	  \]
-	}
-	\uncover<7->{
-	  \[
-	    \iff \emptyset \subseteq S
-	  \]
-	}
+          \red{\set{\emptyset} \in \ps{\ps{S}}}
+        \]
+        \uncover<5->{
+          \[
+            \iff \set{\emptyset} \subseteq \ps{S}
+          \]
+        }
+        \uncover<6->{
+          \[
+            \iff \emptyset \in \ps{S}
+          \]
+        }
+        \uncover<7->{
+          \[
+            \iff \emptyset \subseteq S
+          \]
+        }
     \end{columns}
   \end{proof}
 \end{frame}
@@ -82,41 +114,42 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{UD Exercise $9.4$}
+  \begin{exampleblock}{请证明}
     \[
       \ps{A} \cap \ps{B} = \ps{A \cap B}
     \]
   \end{exampleblock}
 
   \pause
-  \begin{proof}
-    \begin{align*}
-      \onslide<2->{&\textcolor{white}{\iff}\;\; x \in \ps{A} \cap \ps{B} \\}
-      \onslide<3->{&\iff x \in \ps{A} \land x \in \ps{B} \\}
-      \onslide<4->{&\iff x \subseteq A \land x \subseteq B \\}
-      \onslide<5->{&\iff x \subseteq A \cap B \\}
-      \onslide<6->{&\iff x \in \ps{A \cap B}}
-    \end{align*}
-  \end{proof}
+  \vspace{0.30cm}
+  对于任意 $x$,
+  \begin{align*}
+    \onslide<3->{&\textcolor{white}{\iff}\;\; x \in \ps{A} \cap \ps{B} \\[6pt]}
+    \onslide<4->{&\iff x \in \ps{A} \land x \in \ps{B} \\[6pt]}
+    \onslide<5->{&\iff x \subseteq A \land x \subseteq B \\[6pt]}
+    \onslide<6->{&\iff x \subseteq A \cap B \\[6pt]}
+    \onslide<7->{&\iff x \in \ps{A \cap B}}
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{UD Problem $9.9$}
+  \begin{exampleblock}{请证明}
     \[
       \bigcap_{\alpha \in I} \ps{A_{\alpha}} = \ps{\bigcap_{\alpha \in I} A_{\alpha}}
     \]
   \end{exampleblock}
 
-  \begin{proof}
-    \begin{align*}
-      \onslide<2->{&\textcolor{white}{\iff}\;\; x \in \bigcap_{\alpha \in I} \ps{A_{\alpha}} \\}
-      \onslide<3->{&\iff \forall \alpha \in I: x \in \ps{A_{\alpha}} \\}
-      \onslide<4->{&\iff \forall \alpha \in I: x \subseteq A_{\alpha} \\}
-      \onslide<5->{&\iff x \subseteq \bigcap_{\alpha \in I} A_{\alpha} \\}
-      \onslide<6->{&\iff x \in \ps{\bigcap_{\alpha \in I} A_{\alpha}}}
-    \end{align*}
-  \end{proof}
+  \pause
+  \vspace{0.30cm}
+  对于任意 $x$,
+  \begin{align*}
+    \onslide<3->{&\textcolor{white}{\iff}\;\; x \in \bigcap_{\alpha \in I} \ps{A_{\alpha}} \\[6pt]}
+    \onslide<4->{&\iff \forall \alpha \in I: x \in \ps{A_{\alpha}} \\[6pt]}
+    \onslide<5->{&\iff \forall \alpha \in I: x \subseteq A_{\alpha} \\[6pt]}
+    \onslide<6->{&\iff x \subseteq \bigcap_{\alpha \in I} A_{\alpha} \\[6pt]}
+    \onslide<7->{&\iff x \in \ps{\bigcap_{\alpha \in I} A_{\alpha}}}
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%

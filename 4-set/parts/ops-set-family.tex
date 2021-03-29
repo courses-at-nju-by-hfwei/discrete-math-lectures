@@ -4,7 +4,6 @@
 \begin{frame}{}
   \begin{center}
     {\Large 集合的运算 (II)}
-    % {\Large Set Family $\set{A_{\alpha}: \alpha \in I}$}
   \end{center}
 
   \[
@@ -15,21 +14,76 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{definition}[广义并 (Arbitrary Union)]
+    设 $\mathbb{M}$ 是一组集合 (a {\it collection} of sets)
+    \[
+      \bigcup \mathbb{M} = \Bset{x \mid \exists A \in \mathbb{M}.\; x \in A}
+    \]
+  \end{definition}
+
+  \pause
   \[
-    \bigcup_{j = 1}^{n} A_j \triangleq A_1 \cup A_2 \cup \cdots \cup A_n \qquad
+    \mathbb{M} = \set{\set{1, 2}, \set{\set{1, 2}, 3}, \set{4, 5}}
+  \]
+
+  \pause
+  \[
+    \bigcup \mathbb{M} = \pause\set{1, 2, 3, 4, 5, \red{\set{1, 2}}}
+  \]
+
+  \pause
+  \[
+    \bigcup \emptyset = \pause \emptyset
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \bigcup_{j = 1}^{n} A_j \triangleq A_1 \cup A_2 \cup \cdots \cup A_n
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \bigcup_{j = 1}^{\infty} A_j \triangleq A_1 \cup A_2 \cup \cdots
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \bigcup_{\alpha \in I} A_{\alpha} \triangleq \Big\{x \mid \red{\exists} \alpha \in I: x \in A_{\alpha}\Big\}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[广义交 (Arbitrary Intersection)]
+    设 $\mathbb{M}$ 是一组集合 (a {\it collection} of sets)
+    \[
+      \bigcap \mathbb{M} = \Bset{x \mid \forall A \in \mathbb{M}.\; x \in A}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
     \bigcap_{j = 1}^{n} A_j \triangleq A_1 \cap A_2 \cap \cdots \cap A_n
   \]
 
   \pause
-  \vspace{1.00cm}
+  \vspace{0.50cm}
   \[
-    \bigcup_{j = 1}^{\infty} A_j \triangleq A_1 \cup A_2 \cup \cdots \qquad
     \bigcap_{j = 1}^{\infty} A_j \triangleq A_1 \cap A_2 \cap \cdots
   \]
 
   \pause
+  \vspace{0.50cm}
   \[
-    \bigcup_{\alpha \in I} A_{\alpha} \triangleq \Big\{x \mid \red{\exists} \alpha \in I: x \in A_{\alpha}\Big\} \qquad
     \bigcap_{\alpha \in I} A_{\alpha} \triangleq \Big\{x \mid \red{\forall} \alpha \in I: x \in A_{\alpha}\Big\}
   \]
 \end{frame}
@@ -37,24 +91,26 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[DeMorgan's Law (UD Exercise $8.9$)]
+  \begin{theorem}[德摩根律]
     \[
       X \setminus \bigcup_{\alpha \in I} A_{\alpha} = \bigcap_{\alpha \in I} (X \setminus A_{\alpha})
     \]
 
     \[
-      X \setminus \bigcap_{\alpha \in I} A_{\alpha} = \bigcup_{\alpha \in I} (X \setminus A_{\alpha})
+      \teal{X \setminus \bigcap_{\alpha \in I} A_{\alpha} = \bigcup_{\alpha \in I} (X \setminus A_{\alpha})}
     \]
   \end{theorem}
 
   \pause
-  \fig{width = 0.35\textwidth}{figs/prove-it}
+  \vspace{0.30cm}
+  \begin{proof}
+  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{DeMorgan's Law (UD Problem $8.14$)}
+  \begin{exampleblock}{德摩根律的应用}
     \[
       A = \mathbb{R} \setminus \bigcap_{n \in \mathbb{Z}^{+}} (\mathbb{R} \setminus \set{-n, -n+1, \cdots, 0, \cdots, n-1, n})
     \]

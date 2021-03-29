@@ -139,7 +139,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}{吸收律 (Absorption Law)}
+  \begin{theorem}[吸收律 (Absorption Law)]
     \[
       A \cup (A \cap B) = A
     \]
@@ -162,36 +162,126 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[集合的差 (Set Difference)]
-    
+  \begin{definition}[集合的差 (Set Difference); \blue{相对补} (Relative Complement)]
+    \[
+      A \setminus B = \set{x \mid x \in A \land x \notin B}
+    \]
   \end{definition}
 
   \vspace{0.30cm}
-  \fig{width = 0.40\textwidth}{figs/venn-intersection}
+  \fig{width = 0.40\textwidth}{figs/venn-relative-complement}
+  \[
+    A = \set{2, 5, 6} \quad B = \set{1, 2, 4, 7, 9}
+  \]
+  \[
+    A \setminus B = \set{5, 6} \qquad
+    B \setminus A = \set{1, 4, 7, 9}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[DeMorgan's Law (Theorem $7.4\; (15)$)]
-    Let $X$ denote a set, and $A, B \subseteq X$.
+  \begin{definition}[绝对补 (Absolute Complement)]
+    \red{设全集为$U$。}
+    \[
+      \overline{A} = U \setminus A = \set{x \mid x \in U \land x \notin A}
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \blue{\bf 不存在绝对的全集 (Universal Set)!!!}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    设全集为 $U$
+  \end{center}
+  \[
+    \overline{\overline{A}} = A
+  \]
+
+  \[
+    \overline{U} = \emptyset
+  \]
+
+  \[
+    \overline{\emptyset} = U
+  \]
+
+  \[
+    A \cup \overline{A} = U
+  \]
+
+  \[
+    A \cap \overline{A} = \emptyset
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    设全集为 $U$。
+    \[
+      A \setminus B = A \cap \overline{B}
+    \]
+    \[
+      A \setminus B = A \setminus (A \cap B)
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[德摩根律]
+    设全集为 $U$。
 
     \[
-      X \setminus (A \cup B) = (X \setminus A) \cap (X \setminus B)
+      \overline{A \cup B} = \overline{A} \cap \overline{B}
+    \]
+    \[
+      \overline{A \cap B} = \overline{A} \cup \overline{B}
     \]
   \end{theorem}
 
   \pause
-  \vspace{0.50cm}
-  \[
-    \red{Q: A, B \subseteq X?}
-  \]
-
-  \begin{theorem}[DeMorgan's Law]
-    Let $A, B, C$ be three sets.
-
+  \begin{theorem}[德摩根律]
     \[
       C \setminus (A \cup B) = (C \setminus A) \cap (C \setminus B)
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C)
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      A \subseteq B \implies \overline{B} \subseteq \overline{A}
+    \]
+    \[
+      A \subseteq B \implies (B \setminus A) \cup A = B
     \]
   \end{theorem}
 \end{frame}
@@ -287,21 +377,10 @@
     A \cap B = A \cap C \implies B = C
   \]
 
-  \fig{width = 0.40\textwidth}{figs/is-it-true}
+  \fig{width = 0.60\textwidth}{figs/is-it-true}
 
   \[
     A \oplus B = A \oplus C \implies B = C
   \]
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.65\textwidth}{figs/ud-set-op-laws}
 \end{frame}
 %%%%%%%%%%%%%%%
