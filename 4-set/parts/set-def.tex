@@ -2,20 +2,32 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{quote}
-    我们将集合理解为
-    任何将我们思想中那些确定而彼此独立的对象放在一起而形成的聚合。
-
-    \hfill --- Georg Cantor《超穷数理论基础》
-  \end{quote}
-
-  \fig{width = 0.15\textwidth}{figs/Cantor}{\centerline{Georg Cantor (1845--1918)}}
+  \begin{definition}[集合]
+    \red{\bf 集合}就是任何一个\blue{有明确定义的}对象的\blue{整体}。
+  \end{definition}
 
   \pause
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.45\textwidth}{figs/cantor-book}
+    \column{0.50\textwidth}
+      \fig{width = 0.40\textwidth}{figs/Cantor}
+      {\centerline{\teal{Georg Cantor (1845--1918)}}}
+  \end{columns}
+
+  \begin{definition}[集合]
+    我们将\red{\bf 集合}理解为任何将\blue{我们思想中那些确定而彼此独立的对象}放在一起而形成的\blue{聚合}。
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{theorem}[概括原则]
-    \blue{For any predicate $\psi(x)$}, there is a \red{set} $X$:
+    对于任意性质/谓词 $P(x)$, 都存在一个集合 $X$:
     \[
-      X = \set{x \mid \psi(x)}
+      X = \set{x \mid P(x)}
     \]
   \end{theorem}
 \end{frame}
@@ -23,5 +35,78 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    A = \set{2, 3, 5, 7}
+  \]
+
+  \[
+    B = \set{x \mid x < 10 \land \textrm{Prime}(x)}
+  \]
+
+  \[
+    C = \set{x \mid x \;\text{是方程}\; x^{4} - 17x^3 + 101x^2 - 247x + 210 = 0 \;\text{的根}}
+  \]
+
+  \pause
+  \[
+    3 \;\red{\in}\; A
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[外延性原理 (Extensionality)]
+    两个集合相等当且仅当它们有相同的元素。
+    \[
+      \forall A.\; \forall B.\; \Big(\forall x.\; (x \in A \leftrightarrow x \in B)
+        \leftrightarrow A = B \Big)
+    \]
+  \end{definition}
+
+  \vspace{0.50cm}
+  \begin{center}
+    集合完全由它的元素决定
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[子集]
+    设 $A$、$B$ 是任意两个集合。\\[8pt]
+
+    $A \subseteq B$ 表示 $A$ 是 $B$ 的\red{子集} (subset)
+    \[
+      A \subseteq B \iff \forall x \in A.\; (x \in A \to x \in B)
+    \]
+
+    $A \subset B$ 表示 $A$ 是 $B$ 的\red{真子集} (proper subset)
+    \[
+      A \subset B \iff A \subseteq B \land A \neq B
+    \]
+  \end{definition}
+
+  \[
+    \set{1, 2} \subseteq \set{1, 2, 3}
+    \qquad \set{1, 2} \subset \set{1, 2, 3}
+    \qquad \set{1, 4} \lnot\subseteq \set{1, 2, 3}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    两个集合相等当且仅当它们互为子集。
+    \[
+      A = B \iff A \subseteq B \land B \subseteq A
+    \]
+  \end{theorem}
+
+  \vspace{0.30cm}
+  \begin{center}
+    这是证明两个集合相等的常用方法
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%

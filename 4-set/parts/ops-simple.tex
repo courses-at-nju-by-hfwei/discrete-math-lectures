@@ -1,0 +1,307 @@
+% ops-simple.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\Large 集合的运算 (I)}
+  \end{center}
+
+  \[
+    \text{\Large $\cap \qquad \cup \qquad \setminus \qquad \Delta$}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[集合的并 (Union)]
+    \[
+      A \cup B \triangleq \set{x \mid x \in A \lor x \in B}
+    \]
+  \end{definition}
+
+  \vspace{0.30cm}
+  \fig{width = 0.40\textwidth}{figs/venn-union}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    A \cup \emptyset = A
+  \]
+
+  \pause
+  \[
+    A \cup A = A
+  \]
+
+  \[
+    A \cup B = B \cup A
+  \]
+
+  \[
+    (A \cup B) \cup C = A \cup (B \cup C)
+  \]
+
+  \pause
+  \[
+    A \subseteq A \cup B
+  \]
+
+  \[
+    B \subseteq A \cup B
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[集合的交 (Intersection)]
+    \[
+      A \cup B \triangleq \set{x \mid x \in A \land x \in B}
+    \]
+  \end{definition}
+
+  \vspace{0.30cm}
+  \fig{width = 0.40\textwidth}{figs/venn-intersection}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    A \cap \emptyset = \emptyset
+  \]
+
+  \pause
+  \[
+    A \cap A = A
+  \]
+
+  \[
+    A \cap B = B \cap A
+  \]
+
+  \[
+    (A \cap B) \cap C = A \cap (B \cap C)
+  \]
+
+  \pause
+  \[
+    A \cap B \subseteq A
+  \]
+
+  \[
+    A \cap B \subseteq B
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[分配律 (Distributive Law)]
+    \[
+      A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+    \]
+    \[
+      A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
+    \]
+  \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.90\textwidth}{figs/distributive-proof}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.85\textwidth}{figs/kiss}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[分配律 (Distributive Law)]
+    \[
+      A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+    \]
+  \end{theorem}
+
+  \begin{proof}
+    对于任意$x$,
+    \begin{align}
+      x \in A \cup (B \cap C)
+    \end{align}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}{吸收律 (Absorption Law)}
+    \[
+      A \cup (A \cap B) = A
+    \]
+    \[
+      A \cap (A \cup B) = A
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      A \subseteq B \iff A \cup B = B \iff A \cap B = A
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[集合的差 (Set Difference)]
+    
+  \end{definition}
+
+  \vspace{0.30cm}
+  \fig{width = 0.40\textwidth}{figs/venn-intersection}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[DeMorgan's Law (Theorem $7.4\; (15)$)]
+    Let $X$ denote a set, and $A, B \subseteq X$.
+
+    \[
+      X \setminus (A \cup B) = (X \setminus A) \cap (X \setminus B)
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \red{Q: A, B \subseteq X?}
+  \]
+
+  \begin{theorem}[DeMorgan's Law]
+    Let $A, B, C$ be three sets.
+
+    \[
+      C \setminus (A \cup B) = (C \setminus A) \cap (C \setminus B)
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[对称差 (Symmetric Difference)]
+    \[
+      A \;\Delta\; B = (A \setminus B) \cup (B \setminus A)
+    \]
+  \end{definition}
+
+  \[
+    A \;\Delta\; B = \set{x \mid (x \in A) \;\red{\oplus}\; (x \in B)}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.40\textwidth}{figs/venn-symmetric-difference}
+
+  \pause
+  \[
+    A \;\Delta\; B = (A \cup B) \setminus (A \cap B)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    A \;\Delta\; B \;\Delta\; C
+  \]
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/3set-venn-symmetric-difference}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    A \oplus \emptyset = A
+  \]
+
+  \pause
+  \[
+    A \oplus A = \emptyset
+  \]
+
+  \[
+    A \oplus B = B \oplus A
+  \]
+
+  \[
+    (A \oplus B) \oplus C = A \oplus (B \oplus C)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    (A \oplus B) \oplus C = A \oplus (B \oplus C)
+  \]
+
+  \begin{proof}
+    
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    A \cap (B \oplus C) = (A \cap B) \oplus (A \cap C)
+  \]
+
+  \pause
+  \[
+    A \cup (B \oplus C) \neq (A \cup B) \oplus (A \cup C)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    A \cup B = A \cup C \implies B = C
+  \]
+
+  \[
+    A \cap B = A \cap C \implies B = C
+  \]
+
+  \fig{width = 0.40\textwidth}{figs/is-it-true}
+
+  \[
+    A \oplus B = A \oplus C \implies B = C
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.65\textwidth}{figs/ud-set-op-laws}
+\end{frame}
+%%%%%%%%%%%%%%%
