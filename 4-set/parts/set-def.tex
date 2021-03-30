@@ -16,6 +16,7 @@
       {\centerline{\teal{Georg Cantor (1845--1918)}}}
   \end{columns}
 
+  \pause
   \begin{definition}[集合]
     我们将\red{\bf 集合}理解为任何将\blue{我们思想中那些确定而彼此独立的对象}放在一起而形成的\blue{聚合}。
   \end{definition}
@@ -46,10 +47,23 @@
   \[
     C = \set{x \mid x \;\text{是方程}\; x^{4} - 17x^3 + 101x^2 - 247x + 210 = 0 \;\text{的根}}
   \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \set{2n \mid n \in \N}
+  \]
 
   \pause
   \[
-    3 \;\red{\in}\; A
+    \set{p/q \mid p, q \in \Z, q \neq 0}
+  \]
+
+  \pause
+  \[
+    \set{(t, 2t+1) \mid t \in \Z}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -57,11 +71,12 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[外延性原理 (Extensionality)]
-    两个集合相等当且仅当它们有相同的元素。
-    \[
-      \forall A.\; \forall B.\; \Big(\forall x.\; (x \in A \leftrightarrow x \in B)
-        \leftrightarrow A = B \Big)
-    \]
+    两个集合相等 $(A = B)$ 当且仅当它们包含相同的元素。
+    % \[
+    %   \forall A.\; \forall B.\;
+    %     \Big(\big(\forall x.\; (x \in A \leftrightarrow x \in B)\big)
+    %       \leftrightarrow A = B \Big)
+    % \]
   \end{definition}
 
   \vspace{0.50cm}
@@ -76,12 +91,12 @@
   \begin{definition}[子集]
     设 $A$、$B$ 是任意两个集合。\\[8pt]
 
-    $A \subseteq B$ 表示 $A$ 是 $B$ 的\red{子集} (subset)
+    $A \subseteq B$ 表示 $A$ 是 $B$ 的\red{子集} (subset):
     \[
       A \subseteq B \iff \forall x \in A.\; (x \in A \to x \in B)
     \]
 
-    $A \subset B$ 表示 $A$ 是 $B$ 的\red{真子集} (proper subset)
+    $A \subset B$ 表示 $A$ 是 $B$ 的\red{真子集} (proper subset):
     \[
       A \subset B \iff A \subseteq B \land A \neq B
     \]
@@ -90,7 +105,7 @@
   \[
     \set{1, 2} \subseteq \set{1, 2, 3}
     \qquad \set{1, 2} \subset \set{1, 2, 3}
-    \qquad \set{1, 4} \lnot\subseteq \set{1, 2, 3}
+    \qquad \set{1, 4} \not\subseteq \set{1, 2, 3}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -106,7 +121,7 @@
 
   \vspace{0.30cm}
   \begin{center}
-    这是证明两个集合相等的常用方法
+    这是证明两个集合相等的基本方法
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
