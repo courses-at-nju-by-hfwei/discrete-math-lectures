@@ -26,24 +26,17 @@
     \column{0.30\textwidth}
     \column{0.40\textwidth}
       \begin{description}[Connectives:]
-	\item[Parentheses:] $(,)$
-	\item[Variables:] \textcolor<2->{red}{$x, y, z, \cdots$}
-	\item[Connectives:] $\land$, $\lor$, $\lnot$, $\to$, $\leftrightarrow$
-	\item[Quantifiers:] $\forall$, $\exists$
-	\item[Equality:] $=$
-	\vspace{0.50cm}
-	\item[Constants:]
-	\item[Functions:]
-	\item[Predicates:] \red{$\in$}
+        \item[Parentheses:]
+        \item[Variables:]
+        \item[Connectives:]
+        \item[Quantifiers:]
+        \vspace{0.50cm}
+        \item[Constants:]
+        \item[Functions:]
+        \item[Predicates:] \red{$\in$}
       \end{description}
     \column{0.30\textwidth}
   \end{columns}
-
-  \uncover<3->{
-    \begin{center}
-      \red{\large Everything we consider in $\lset{}$ is a set.}
-    \end{center}
-  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -76,22 +69,9 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[$\notin$]
-    \[
-      x \notin A \triangleq \lnot (x \in A).
-    \]
-  \end{definition}
-
-  \pause
-  \vspace{0.50cm}
-  \begin{definition}[$\subseteq$]
-    \[
-      A \subseteq B \triangleq \forall x (x \in A \implies x \in B)
-    \]
-  \end{definition}
+  \fig{width = 0.90\textwidth}{figs/axiomatic-set-theory-class}
+  \begin{center}
+    \teal{\url{https://www.youtube.com/watch?v=AAJB9l-HAZs}}
+  \end{center}
 \end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\input{parts/axioms-PURP}
 %%%%%%%%%%%%%%%
