@@ -17,18 +17,18 @@
   \begin{definition}[广义并 (Arbitrary Union)]
     设 $\mathbb{M}$ 是一组集合 (a {\it collection} of sets)
     \[
-      \bigcup \mathbb{M} = \Bset{x \mid \exists A \in \mathbb{M}.\; x \in A}
+      \bigcup \mathbb{M} = \Bset{x \mid \red{\exists} A \in \mathbb{M}.\; x \in A}
     \]
   \end{definition}
 
   \pause
   \[
-    \mathbb{M} = \set{\set{1, 2}, \set{\set{1, 2}, 3}, \set{4, 5}}
+    \mathbb{M} = \Bset{\set{1, 2}, \set{\set{1, 2}, 3}, \set{4, 5}}
   \]
 
   \pause
   \[
-    \bigcup \mathbb{M} = \pause\set{1, 2, 3, 4, 5, \red{\set{1, 2}}}
+    \bigcup \mathbb{M} = \pause\Bset{1, 2, 3, 4, 5, \red{\set{1, 2}}}
   \]
 
   \pause
@@ -53,7 +53,8 @@
   \pause
   \vspace{0.50cm}
   \[
-    \bigcup_{\alpha \in I} A_{\alpha} \triangleq \Big\{x \mid \red{\exists} \alpha \in I: x \in A_{\alpha}\Big\}
+    \bigcup_{\blue{\alpha \in I}} A_{\alpha} \triangleq
+      \Big\{x \mid \red{\exists} \alpha \in I.\; x \in A_{\alpha}\Big\}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -63,9 +64,24 @@
   \begin{definition}[广义交 (Arbitrary Intersection)]
     设 $\mathbb{M}$ 是一组集合 (a {\it collection} of sets)
     \[
-      \bigcap \mathbb{M} = \Bset{x \mid \forall A \in \mathbb{M}.\; x \in A}
+      \bigcap \mathbb{M} = \Bset{x \mid \red{\forall} A \in \mathbb{M}.\; x \in A}
     \]
   \end{definition}
+
+  \pause
+  \[
+    \mathbb{M} = \Bset{\set{1, 2}, \set{\set{1, 2}, 3}, \set{4, 5}}
+  \]
+
+  \pause
+  \[
+    \bigcap \mathbb{M} = \pause\emptyset
+  \]
+
+  \pause
+  \[
+    \bigcap \emptyset = \pause U \;(\text{or \red{Undefined}})
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -84,7 +100,8 @@
   \pause
   \vspace{0.50cm}
   \[
-    \bigcap_{\alpha \in I} A_{\alpha} \triangleq \Big\{x \mid \red{\forall} \alpha \in I: x \in A_{\alpha}\Big\}
+    \bigcap_{\blue{\alpha \in I}} A_{\alpha} \triangleq
+      \Big\{x \mid \red{\forall} \alpha \in I.\; x \in A_{\alpha}\Big\}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -103,30 +120,40 @@
 
   \pause
   \vspace{0.30cm}
-  \begin{proof}
-  \end{proof}
+  \begin{center}
+    对任意 $x$,
+  \end{center}
+  \setcounter{equation}{0}
+  \begin{align}
+    &x \in X \setminus \bigcup_{\alpha \in I} A_{\alpha} \\[6pt]
+    \uncover<3->{\iff & x \in X \land \lnot(\exists \alpha \in I.\; x \in A_{\alpha}) \\[6pt]}
+    \uncover<4->{\iff & x \in X \land (\forall \alpha \in I.\; x \notin A_{\alpha}) \\[6pt]}
+    \uncover<5->{\red{\iff} & \forall \alpha \in I.\; (x \in X \land x \notin A_{\alpha}) \\[6pt]}
+    \uncover<6->{\iff & x \in \bigcap_{\alpha \in I} (X \setminus A_{\alpha})}
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{exampleblock}{德摩根律的应用}
+    请化简集合 $A$:
     \[
       A = \mathbb{R} \setminus \bigcap_{n \in \mathbb{Z}^{+}} (\mathbb{R} \setminus \set{-n, -n+1, \cdots, 0, \cdots, n-1, n})
     \]
   \end{exampleblock}
 
-  \pause
-  \[
-    X_n = \set{-n, -n+1, \cdots, 0, \cdots, n-1, n}
-  \]
+  % \pause
+  % \[
+  %   X_n = \set{-n, -n+1, \cdots, 0, \cdots, n-1, n}
+  % \]
 
-  \pause
-  \begin{align*}
-    \onslide<3->{A &= \mathbb{R} \setminus \bigcap_{n \in \mathbb{Z}^{+}} (\mathbb{R} \setminus X_n) \\}
-      \onslide<4->{&= \mathbb{R} \setminus \Big(\mathbb{R} \setminus \bigcup_{n \in \mathbb{Z}^{+}} X_n \Big) \\}
-      \onslide<5->{&= \mathbb{R} \setminus \Big(\mathbb{R} \setminus \mathbb{Z} \Big) \\}
-      \onslide<6->{&= \mathbb{Z}}
-  \end{align*}
+  % \pause
+  % \begin{align*}
+  %   \onslide<3->{A &= \mathbb{R} \setminus \bigcap_{n \in \mathbb{Z}^{+}} (\mathbb{R} \setminus X_n) \\}
+  %     \onslide<4->{&= \mathbb{R} \setminus \Big(\mathbb{R} \setminus \bigcup_{n \in \mathbb{Z}^{+}} X_n \Big) \\}
+  %     \onslide<5->{&= \mathbb{R} \setminus \Big(\mathbb{R} \setminus \mathbb{Z} \Big) \\}
+  %     \onslide<6->{&= \mathbb{Z}}
+  % \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
