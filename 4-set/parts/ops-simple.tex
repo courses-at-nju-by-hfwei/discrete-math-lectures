@@ -7,7 +7,7 @@
   \end{center}
 
   \[
-    \text{\Large $\cap \qquad \cup \qquad \setminus \qquad \Delta$}
+    \text{\Large $\cup \qquad \cap \qquad \setminus \qquad \Delta$}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -59,7 +59,7 @@
 \begin{frame}{}
   \begin{definition}[集合的交 (Intersection)]
     \[
-      A \cup B \triangleq \set{x \mid x \in A \land x \in B}
+      A \cap B \triangleq \set{x \mid x \in A \land x \in B}
     \]
   \end{definition}
 
@@ -105,7 +105,7 @@
       A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
     \]
     \[
-      A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
+      \teal{A \cap (B \cup C) = (A \cap B) \cup (A \cap C)}
     \]
   \end{theorem}
 
@@ -128,12 +128,18 @@
     \]
   \end{theorem}
 
-  \begin{proof}
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
     对于任意$x$,
-    \begin{align}
-      x \in A \cup (B \cap C)
-    \end{align}
-  \end{proof}
+  \end{center}
+  \begin{align}
+    \uncover<3->{&x \in A \cup (B \cap C) \\[6pt]}
+    \uncover<4->{\iff & (x \in A) \lor (x \in B \land x \in C) \\[6pt]}
+    \uncover<5->{\red{\iff} & (x \in A \lor x \in B) \land (x \in A \lor x \in C) \\[6pt]}
+    \uncover<6->{\iff & (x \in A \cup B) \land (x \in A \lor C) \\[6pt]}
+    \uncover<7->{\iff & x \in (A \cup B) \cap (A \cup C)}
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -144,9 +150,22 @@
       A \cup (A \cap B) = A
     \]
     \[
-      A \cap (A \cup B) = A
+      \teal{A \cap (A \cup B) = A}
     \]
   \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    对任意$x$,
+  \end{center}
+  \pause
+  \setcounter{equation}{0}
+  \begin{align}
+    &x \in A \cup (A \cap B) \\[6pt]
+    \iff & x \in A \lor (x \in A \land x \in B) \\[6pt]
+    \red{\iff} & x \in A
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -154,9 +173,51 @@
 \begin{frame}{}
   \begin{theorem}
     \[
-      A \subseteq B \iff A \cup B = B \iff A \cap B = A
+      A \subseteq B \iff A \cup B = B \;\purple{\iff A \cap B = A}
     \]
   \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \[
+        A \subseteq B \implies A \cup B \subseteq B
+      \]
+      \uncover<3->{
+        \begin{center}
+          对任意 $x$,
+        \end{center}
+        \setcounter{equation}{0}
+        \begin{align}
+          &x \in A \cup B \\[6pt]
+          \implies & x \in A \lor x \in B \\[6pt]
+          \red{\implies} & x \in B \lor x \in B \\[6pt]
+          \implies & x \in B
+        \end{align}
+      }
+    \column{0.50\textwidth}
+      \[
+        A \subseteq B \implies B \subseteq A \cup B
+      \]
+      \uncover<4->{
+        \begin{center}
+          对任意 $x$,
+        \end{center}
+        \setcounter{equation}{0}
+        \begin{align}
+          &x \in B \\[6pt]
+          \red{\implies} &x \in A \lor x \in B \\[6pt]
+          \implies &x \in A \cup B
+        \end{align}
+      }
+  \end{columns}
+  \vspace{-0.50cm}
+  \uncover<5->{
+    \[
+      \purple{A \cap B = A \cap (A \cup B) = A}
+    \]
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -168,8 +229,9 @@
     \]
   \end{definition}
 
-  \vspace{0.30cm}
-  \fig{width = 0.40\textwidth}{figs/venn-relative-complement}
+  \fig{width = 0.40\textwidth, angle = 180}{figs/venn-relative-complement}
+
+  \pause
   \[
     A = \set{2, 5, 6} \quad B = \set{1, 2, 4, 7, 9}
   \]
@@ -182,17 +244,22 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[绝对补 (Absolute Complement)]
+  \begin{definition}[绝对补 (Absolute Complement); \purple{$\overline{A}, A', A^{c}$}]
     \red{设全集为$U$。}
     \[
-      \overline{A} = U \setminus A = \set{x \mid x \in U \land x \notin A}
+      \overline{A} = U \setminus A = \set{x \in U \mid x \notin A}
     \]
   \end{definition}
 
   \pause
   \vspace{0.30cm}
   \begin{center}
-    \blue{\bf 不存在绝对的全集 (Universal Set)!!!}
+    \blue{全集 $U$ (Universe) 是当前正在考虑的所有元素构成的集合 \\[6pt]
+    一般均默认存在}
+
+    \pause
+    \vspace{0.80cm}
+    警告: 不存在``保罗万象''的全集
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -200,8 +267,9 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    设全集为 $U$
+    \red{设全集为 $U$}
   \end{center}
+
   \[
     \overline{\overline{A}} = A
   \]
@@ -226,37 +294,83 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}
-    设全集为 $U$。
+  \begin{theorem}[``相对补''与``绝对补''之间的关系]
+    \red{设全集为 $U$。}
     \[
-      A \setminus B = A \cap \overline{B}
+      \red{\boxed{A \setminus B = A \cap \overline{B}}}
     \]
-    \[
-      A \setminus B = A \setminus (A \cap B)
-    \]
+    % \[
+    %   \teal{A \setminus B = A \setminus (A \cap B)}
+    % \]
   \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    对任意 $x$,
+  \end{center}
+  \setcounter{equation}{0}
+  \begin{align}
+    &x \in A \setminus B \\[6pt]
+    \iff & x \in A \land x \notin B \\[6pt]
+    \red{\iff} & x \in A \land (x \in U \land x \notin B) \\[6pt]
+    \iff & x \in A \land x \in \overline{B} \\[6pt]
+    \iff & x \in A \cap \overline{B}
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[德摩根律]
-    设全集为 $U$。
+  \begin{theorem}[德摩根律 (绝对补)]
+    \red{设全集为 $U$。}
 
     \[
       \overline{A \cup B} = \overline{A} \cap \overline{B}
     \]
     \[
-      \overline{A \cap B} = \overline{A} \cup \overline{B}
+      \teal{\overline{A \cap B} = \overline{A} \cup \overline{B}}
     \]
   \end{theorem}
 
   \pause
-  \begin{theorem}[德摩根律]
+  \vspace{0.30cm}
+  \begin{center}
+    对任意 $x$,
+  \end{center}
+  \setcounter{equation}{0}
+  \begin{align}
+    &x \in \overline{A \cup B} \\[6pt]
+    \iff & x \in U \land \lnot (x \in A \lor x \in B) \\[6pt]
+    \red{\iff} & x \in U \land x \notin A \land x \notin B \\[6pt]
+    \iff & (x \in U \land x \notin A) \land (x \in U \land x \notin B) \\[6pt]
+    \iff & x \in \overline{A} \land x \in \overline{B} \\[6pt]
+    \iff & x \in \overline{A} \cap \overline{B}
+  \end{align}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[德摩根律 (相对补)]
     \[
       C \setminus (A \cup B) = (C \setminus A) \cap (C \setminus B)
     \]
+    \[
+      \teal{C \setminus (A \cap B) = (C \setminus A) \cup (C \setminus B)}
+    \]
   \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \setcounter{equation}{0}
+  \begin{align}
+    &C \setminus (A \cup B) \\[6pt]
+    \red{\iff} & C \cap \overline{A \cup B} \\[6pt]
+    \iff & C \cap (\overline{A} \cap \overline{B}) \\[6pt]
+    \iff & (C \cap \overline{A}) \cap (C \cap \overline{B}) \\[6pt]
+    \iff & (C \setminus A) \cap (C \setminus B)
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -264,13 +378,13 @@
 \begin{frame}{}
   \begin{theorem}
     \[
-      A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C)
+      A \cap (B \setminus C) = (A \cap B) \setminus C
+                             = (A \cap B) \setminus (A \cap C)
+    \]
+    \[
+      A \setminus (B \setminus C) = (A \cap C) \cup (A \setminus B)
     \]
   \end{theorem}
-
-  \pause
-  \begin{proof}
-  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -281,7 +395,7 @@
       A \subseteq B \implies \overline{B} \subseteq \overline{A}
     \]
     \[
-      A \subseteq B \implies (B \setminus A) \cup A = B
+      \teal{A \subseteq B \implies (B \setminus A) \cup A = B}
     \]
   \end{theorem}
 \end{frame}
@@ -291,21 +405,22 @@
 \begin{frame}{}
   \begin{definition}[对称差 (Symmetric Difference)]
     \[
-      A \;\Delta\; B = (A \setminus B) \cup (B \setminus A)
+      A \oplus B = (A \setminus B) \cup (B \setminus A)
+        = (A \cap \overline{B}) \cup (B \cap \overline{A})
     \]
   \end{definition}
 
   \[
-    A \;\Delta\; B = \set{x \mid (x \in A) \;\red{\oplus}\; (x \in B)}
+    A \oplus B = \set{x \mid (x \in A) \;\red{\oplus}\; (x \in B)}
   \]
 
   \pause
-  \vspace{0.30cm}
   \fig{width = 0.40\textwidth}{figs/venn-symmetric-difference}
 
   \pause
   \[
-    A \;\Delta\; B = (A \cup B) \setminus (A \cap B)
+    \blue{\boxed{A \oplus B = (A \cup B) \setminus (A \cap B)
+      = (A \cup B) \cap (\overline{A} \cup \overline{B})}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -313,10 +428,9 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    A \;\Delta\; B \;\Delta\; C
+    A \oplus B \oplus C
   \]
 
-  \pause
   \fig{width = 0.40\textwidth}{figs/3set-venn-symmetric-difference}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -337,7 +451,7 @@
   \]
 
   \[
-    (A \oplus B) \oplus C = A \oplus (B \oplus C)
+    \teal{\boxed{(A \oplus B) \oplus C = A \oplus (B \oplus C)}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -345,24 +459,24 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    (A \oplus B) \oplus C = A \oplus (B \oplus C)
+    A \oplus B = \emptyset \iff A = B
   \]
 
-  \begin{proof}
-    
-  \end{proof}
-\end{frame}
-%%%%%%%%%%%%%%%
+  \[
+    A \oplus B = \overline{A} \oplus \overline{B}
+  \]
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
   \[
     A \cap (B \oplus C) = (A \cap B) \oplus (A \cap C)
   \]
 
-  \pause
+  % \pause
+  % \[
+  %   A \cup (B \oplus C) \neq (A \cup B) \oplus (A \cup C)
+  % \]
+
   \[
-    A \cup (B \oplus C) \neq (A \cup B) \oplus (A \cup C)
+    \red{A \oplus B = A \oplus C \implies B = C}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -370,17 +484,13 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    A \cup B = A \cup C \implies B = C
-  \]
-
-  \[
-    A \cap B = A \cap C \implies B = C
-  \]
-
-  \fig{width = 0.60\textwidth}{figs/is-it-true}
-
-  \[
     A \oplus B = A \oplus C \implies B = C
+  \]
+
+  \pause
+  \[
+    B = (A \oplus A) \oplus B = A \oplus (A \oplus B)
+      = A \oplus (A \oplus C) = (A \oplus A) \oplus C = C
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
