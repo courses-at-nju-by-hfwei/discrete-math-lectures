@@ -95,59 +95,91 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Josephus Problem}
-    \fig{width = 0.50\textwidth}{figs/Josephus}
+% \begin{frame}{}
+%   \begin{exampleblock}{Josephus Problem}
+%     \fig{width = 0.50\textwidth}{figs/Josephus}
+%
+%     \[
+%       J(12) = 9
+%     \]
+%   \end{exampleblock}
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    \[
-      J(12) = 9
-    \]
-  \end{exampleblock}
-\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \begin{center}
+%         $2n$ 个人
+%       \end{center}
+%       \fig{width = 0.80\textwidth}{figs/2n-people}
+%
+%       \pause
+%       \[
+%         J(2n) = 2J(n) - 1, n \ge 1
+%       \]
+%     \column{0.50\textwidth}
+%       \pause
+%       \begin{center}
+%         $2n + 1$ 个人
+%       \end{center}
+%       \fig{width = 0.80\textwidth}{figs/2n+1-people}
+%
+%       \pause
+%       \[
+%         J(2n + 1) = 2J(n) + 1, n \ge 1
+%       \]
+%   \end{columns}
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{align*}
+%     J(1) &= 1 \\[8pt]
+%     J(2n) &= 2J(n) - 1, n \ge 1 \\[8pt]
+%     J(2n + 1) &= 2J(n) + 1, n \ge 1
+%   \end{align*}
+%
+%   \pause
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \fig{width = 0.55\textwidth}{figs/concrete-mathematics-book}
+%     \column{0.50\textwidth}
+%       \fig{width = 0.70\textwidth}{figs/knuth}
+%   \end{columns}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{columns}
-    \column{0.50\textwidth}
-      \begin{center}
-        $2n$ 个人
-      \end{center}
-      \fig{width = 0.80\textwidth}{figs/2n-people}
+  \[
+    m \in \N \qquad n \in \N
+  \]
+  \[
+    a(m, n) = \begin{cases}
+      a(m-1, n) + 1, & n = 0 \land m > 0 \\[5pt]
+      a(m, n-1) + n. & n > 0
+    \end{cases}
+  \]
 
-      \pause
-      \[
-        J(2n) = 2J(n) - 1, n \ge 1
-      \]
-    \column{0.50\textwidth}
-      \pause
-      \begin{center}
-        $2n + 1$ 个人
-      \end{center}
-      \fig{width = 0.80\textwidth}{figs/2n+1-people}
-
-      \pause
-      \[
-        J(2n + 1) = 2J(n) + 1, n \ge 1
-      \]
-  \end{columns}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{align*}
-    J(1) &= 1 \\[8pt]
-    J(2n) &= 2J(n) - 1, n \ge 1 \\[8pt]
-    J(2n + 1) &= 2J(n) + 1, n \ge 1
-  \end{align*}
+  \[
+    a(m, n) = m + n (n + 1)/2
+  \]
 
   \pause
-  \begin{columns}
-    \column{0.50\textwidth}
-      \fig{width = 0.55\textwidth}{figs/concrete-mathematics-book}
-    \column{0.50\textwidth}
-      \fig{width = 0.70\textwidth}{figs/knuth}
-  \end{columns}
+  \quad \red{对 $n$ 作归纳。}
+  \pause
+  \begin{description}
+    \setlength{\itemsep}{6pt}
+    \item[基础步骤:] \uncover<4->{$n = 0$。要证 $\forall m.\; a(m, 0) = m$。} \\[6pt]
+      \uncover<5->{\blue{对 $m$ 作归纳。} (\purple{\bf Double Induction})}
+    \item[归纳假设:] \uncover<6->{
+      假设 $n = k$ 时, $\forall m.\; a(m, k) = m + k(k+1)/2$。}
+    \item[归纳步骤:] \uncover<7->{
+      考虑 $n = k + 1$。\\[6pt]
+      要证 $\forall m.\; a(m, k + 1) = m + (k+1)(k+2)/2$。}
+  \end{description}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
