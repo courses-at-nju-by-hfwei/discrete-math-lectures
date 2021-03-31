@@ -21,17 +21,25 @@
 
   \pause
   \[
-    \forall x.\; \blue{P(x)} \vdash P(c)
+    \forall x.\; \blue{P(x)} \vdash P(\blue{c}) \quad (c \;\text{是任意常元符号})
   \]
 
   \pause
   \[
-    \forall x.\; \blue{\exists y.\; (x < y)} \vdash \exists y.\; (\red{c} < y)
+    \forall x.\; \blue{\exists y.\; (x < y)} \vdash \exists y.\; (\blue{c} < y)
+      \quad (c \;\text{是任意常元符号})
+  \]
+
+  \pause
+  \[
+    \forall x.\; \blue{\exists y.\; (x < y)} \vdash \exists y.\; (\blue{z} < y)
+      \quad (z \neq y \;\text{是任意变元符号})
   \]
 
   \pause
   \[
     \forall x.\; \blue{\exists y.\; (x < y)} \nvdash \exists y.\; (\red{y} < y)
+      \quad (y \;\text{is {\it not} free for } x \text{ in } \alpha)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -71,6 +79,15 @@
       \Big\{P(t), \forall x (P(x) \to \lnot Q(x))\Big\} \vdash \lnot Q(t)
     \]
   \end{exampleblock}
+
+  \pause
+  \setcounter{equation}{0}
+  \begin{align}
+    P(t) & \quad (\text{前提}) \label{eq:1} \\[6pt]
+    \forall x.\; (P(x) \to \lnot Q(x)) & \quad \text{(前提)} \label{eq:2} \\[6pt]
+    \uncover<3->{P(t) \to \lnot Q(t) & \quad (\forall\text{-elim}, (\ref{eq:2})) \label{eq:3} \\[6pt]}
+    \uncover<4->{\lnot Q(t) & \quad (\to\text{-elim}, (\ref{eq:1}), (\ref{eq:3})) \label{eq:4}}
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -81,6 +98,19 @@
       \Big\{\forall x.\; (P(x) \to Q(x)), \forall x.\; P(x)\Big\} \vdash \forall x.\; Q(x)
     \]
   \end{exampleblock}
+
+  \pause
+  \setcounter{equation}{0}
+  \begin{align}
+    \forall x.\; (P(x) \to Q(x)) & \quad (\text{前提}) \label{eq:1} \\[6pt]
+    \forall x.\; P(x) & \quad (\text{前提}) \label{eq:2} \\[6pt]
+    \uncover<3->{[x_{0}] & \quad (\text{引入变量}) \label{eq:3} \\[6pt]}
+    \uncover<4->{P(x_{0}) \to Q(x_{0}) &
+      \quad (\forall\text{-elim}, (\ref{eq:1}), (\ref{eq:3})) \label{eq:4} \\[6pt]}
+    \uncover<5->{P(x_{0}) & \quad (\forall\text{-elim}, (\ref{eq:2}), (\ref{eq:3})) \label{eq:5} \\[6pt]}
+    \uncover<6->{Q(x_{0}) & \quad (\to\text{-elim}, (\ref{eq:4}), (\ref{eq:5})) \label{eq:6} \\[6pt]}
+    \uncover<7->{\forall x.\; Q(x) & \quad (\forall\text{-intro}, (\ref{eq:3})-(\ref{eq:6})) \label{eq:7}}
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -90,12 +120,24 @@
     \[
       \nd{\alpha[t/x]}{\exists x.\; \alpha}{\exists x\text{-intro}}
     \]
-    where $t$ is \red{\bf free} for $x$ in $\alpha$
+    where $t$ is \red{free} for $x$ in $\alpha$
+  \end{center}
+
+  \vspace{0.30cm}
+  \begin{center}
+    ``如果 $\alpha$ 对某个项 $t$ 成立, 则 $\exists x.\; \alpha$ 成立。''
   \end{center}
 
   \pause
   \[
-    P(c) \vdash \exists x.\; P(x)
+    P(\blue{c}) \vdash \exists x.\; P(x)
+      \quad c \text{ 是任意常元符号}
+  \]
+
+  \pause
+  \[
+    \teal{\forall y.\; (y = y)} \nvdash \exists x.\; \teal{\forall y.\; (x = y)}
+      \quad (y \text{ is \red{\it not} free for } x \text{ in } \teal{\alpha})
   \]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -110,34 +152,111 @@
     \[
       \nd{\exists x.\; \alpha}{\alpha[x_{0}/x]}{\exists\text{-elim}}
     \]
-  where $x_{0}$ is \red{free} for $x$ in $\beta$
+  where $x_{0}$ is \red{free} for $x$ in $\alpha$
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{$\exists$\text{-推理规则的应用}}
-  \[
-    \forall x.\; P(x) \vdash \exists x.\; P(x)
-  \]
+\begin{frame}{$\exists\text{-elim}$}
+  \begin{center}
+    \[
+      \nd{\exists x.\; \alpha \qquad [x_{0}] \qquad
+        \stackrel{\big[\alpha[x_{0}/x]\big]}{\stackrel{\vdots}{\beta}}}{\beta}{\exists\text{-elim}}
+    \]
+    where $x_{0}$ is \red{free} for $x$ in $\alpha$
+
+    \vspace{1.00cm}
+    ``\red{假设} $x_{0}$ 使得 $\alpha$ 成立, 如果从 $\alpha[x_{0}/x]$ 可以推导出 $\beta$, \\[6pt]
+      则从 $\exists x.\; \alpha$ 可以推导出 $\beta$''
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{$\exists$\text{-推理规则的应用}}
-  \[
-    \Big\{\forall x.\; (P(x) \to Q(x)), \exists x.\; P(x)\Big\}
-      \vdash \exists x.\; Q(x)
-  \]
+\begin{frame}{}
+  \begin{exampleblock}{$\exists$\text{-推理规则的应用}}
+    \[
+      \forall x.\; P(x) \vdash \exists x.\; P(x)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \setcounter{equation}{0}
+  \begin{align}
+    \forall x.\; P(x) & \quad (\text{前提})
+      \label{eq:1} \\[6pt]
+    \uncover<3->{[x_{0}] & \quad (\text{引入变量})
+      \label{eq:2} \\[6pt]}
+    \uncover<4->{P(x_{0}) & \quad (\forall\text{-elim}, (\ref{eq:1}), (\ref{eq:2}))
+      \label{eq:3} \\[6pt]}
+    \uncover<5->{\exists x.\; P(x) & \quad (\exists\text{-intro}, (\ref{eq:3}))
+      \label{eq:4}}
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{$\forall, \exists$-推理规则的应用}
-  \[
-    \Big\{\exists x.\; P(x), \forall x.\; \forall y.\; (P(x) \to Q(y))\Big\}
-      \vdash \forall y.\; Q(y)
-  \]
+\begin{frame}{}
+  \begin{exampleblock}{$\forall, \exists$\text{-推理规则的应用}}
+    \[
+      \Big\{\forall x.\; (P(x) \to Q(x)), \exists x.\; P(x)\Big\}
+        \vdash \exists x.\; Q(x)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \setcounter{equation}{0}
+  \begin{align}
+    \forall x.\; (P(x) \to Q(x)) & \quad (\text{前提})
+      \label{eq:1} \\[6pt]
+    \exists x.\; P(x) & \quad (\text{前提})
+      \label{eq:2} \\[6pt]
+    \uncover<3->{\red{[x_{0}] \quad [P(x_{0})]} & \quad (\text{引入变量与假设})
+      \label{eq:3} \\[6pt]}
+    \uncover<4->{P(x_{0}) \to Q(x_{0}) & \quad (\forall\text{-elim}, (\ref{eq:1}), (\ref{eq:3}))
+      \label{eq:4} \\[6pt]}
+    \uncover<5->{Q(x_{0}) & \quad (\to\text{-elim}, (\ref{eq:3}), (\ref{eq:4}))
+      \label{eq:5} \\[6pt]}
+    \uncover<6->{\red{\exists x.\; Q(x)} & \quad (\exists\text{-intro}, (\ref{eq:5}))
+      \label{eq:6} \\[6pt]}
+    \uncover<7->{\exists x.\; Q(x) & \quad (\exists\text{-elim}, (\ref{eq:2}),
+      (\ref{eq:3})-(\ref{eq:6})) \label{eq:7}}
+  \end{align}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$\forall, \exists$-推理规则的应用}
+    \[
+      \Big\{\exists x.\; P(x), \forall x.\; \forall y.\; (P(x) \to Q(y))\Big\}
+        \vdash \forall y.\; Q(y)
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{-0.60cm}
+  \setcounter{equation}{0}
+  \begin{align}
+    \exists x.\; P(x) & \quad \text{(前提)}
+      \label{eq:1} \\[6pt]
+    \forall x.\; \forall y.\; (P(x) \to Q(y)) & \quad \text{(前提)}
+      \label{eq:2} \\[6pt]
+    \uncover<3->{\red{[x_{0}] \quad [P(x_{0})]} & \quad \text{(引入变量与假设)}
+      \label{eq:3} \\[6pt]}
+    \uncover<4->{\forall y.\; (P(x_{0}) \to Q(y)) & \quad (\forall\text{-elim}, (\ref{eq:2}), (\ref{eq:3}))
+      \label{eq:4} \\[6pt]}
+    \uncover<5->{\blue{[y_{0}]} & \quad \text{(引入变量)}
+      \label{eq:5} \\[6pt]}
+    \uncover<6->{P(x_{0}) \to Q(y_{0}) & \quad (\forall\text{-elim}, (\ref{eq:4}), (\ref{eq:5}))
+      \label{eq:6} \\[6pt]}
+    \uncover<7->{Q(y_{0}) & \quad (\to\text{-elim}, (\ref{eq:3}), (\ref{eq:6}))
+      \label{eq:7} \\[6pt]}
+    \uncover<8->{\red{Q(y_{0})} & \quad (\exists\text{-elim}, (\ref{eq:1}), (\ref{eq:3})-(\ref{eq:7}))
+      \label{eq:8} \\[6pt]}
+    \uncover<9->{\forall y.\; Q(y) & \quad (\forall\text{-intro}, (\ref{eq:5})-(\ref{eq:8}))}
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -163,5 +282,77 @@
       \forall x.\; J(x) \to \lnot A(x) \qquad
       \exists x.\; \lnot K(x)}{\exists x.\; \lnot J(x)}
   \]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \setcounter{equation}{0}
+  \begin{align}
+    \forall x.\; A(x) \lor K(x) & \quad (\text{前提})
+      \label{eq:1} \\[6pt]
+    \forall x.\; J(x) \to \lnot A(x) & \quad (\text{前提})
+      \label{eq:2} \\[6pt]
+    \exists x.\; \lnot K(x) & \quad (\text{前提})
+      \label{eq:3} \\[6pt]
+    \uncover<2->{\red{[x_{0}] \quad [\lnot K(x_{0})]} & \quad (\text{引入变量与假设})
+      \label{eq:4} \\[6pt]}
+    \uncover<3->{A(x_{0}) \lor K(x_{0}) & \quad (\forall\text{-elim}, (\ref{eq:1}), (\ref{eq:4}))
+      \label{eq:5} \\[6pt]}
+    \uncover<4->{A(x_{0}) & \quad ((\ref{eq:4}), (\ref{eq:5}))
+      \label{eq:6} \\[6pt]}
+    \uncover<5->{J(x_{0}) \to \lnot A(x_{0}) & \quad (\forall\text{-elim}, (\ref{eq:2}), (\ref{eq:4}))
+      \label{eq:7} \\[6pt]}
+    \uncover<6->{\lnot J(x_{0}) & \quad ((\ref{eq:6}), (\ref{eq:7}))
+      \label{eq:8} \\[6pt]}
+    \uncover<7->{\red{\exists x.\; \lnot J(x)} & \quad (\exists\text{-intro}, (\ref{eq:8}))
+      \label{eq:9} \\[6pt]}
+    \uncover<8->{\exists x.\; \lnot J(x) & \quad (\exists\text{-elim}, (\ref{eq:3})-(\ref{eq:8}))
+      \label{eq:10}}
+  \end{align}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \setcounter{equation}{0}
+  \begin{align}
+    \forall x.\; A(x) \lor K(x) \label{eq:1} \\[3pt]
+    \forall x.\; J(x) \to \lnot A(x) \label{eq:2} \\[3pt]
+    \exists x.\; \lnot K(x) \label{eq:3}
+  \end{align}
+
+  \pause
+  \begin{center}
+    根据 (\ref{eq:3}), 不妨设 $\lnot K(x)$ 对 $x_{0}$ 成立:
+    \begin{align}
+      \lnot K(x_{0}) \label{eq:4}
+    \end{align}
+    \begin{columns}
+      \column{0.45\textwidth}
+        \pause
+        根据 (\ref{eq:1}), 有
+        \begin{align}
+          A(x_{0}) \lor K(x_{0}) \label{eq:5}
+        \end{align}
+        \pause
+        根据 (\ref{eq:4}) 与 (\ref{eq:5}), 有
+        \begin{align}
+          A(x_{0}) \label{eq:6}
+        \end{align}
+      \column{0.45\textwidth}
+        \pause
+        根据 (\ref{eq:2}), 有
+        \begin{align}
+          J(x_{0}) \to \lnot A(x_{0}) \label{eq:7}
+        \end{align}
+        \pause
+        根据 (\ref{eq:6}) 与 (\ref{eq:7}), 有
+        \begin{align}
+          \lnot J(x_{0}) \label{eq:8}
+        \end{align}
+        \pause
+        因此, $\exists x.\; \lnot J(x)$
+    \end{columns}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
