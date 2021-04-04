@@ -6,6 +6,7 @@
     对于任何自然数 $n$, $13^{n}$ 都可以写成两个自然数的平方之和。
   \end{theorem}
 
+  \pause
   \begin{eqnarray*}
     13^{n+1} &=& 13 \cdot \red{13^n} \\
     &=& (2^2+3^2)(\red{a^2 + b^2}) \\
@@ -159,6 +160,7 @@
   \]
   \[
     a(m, n) = \begin{cases}
+      0, & m = n = 0 \\[5pt]
       a(m-1, n) + 1, & n = 0 \land m > 0 \\[5pt]
       a(m, n-1) + n. & n > 0
     \end{cases}

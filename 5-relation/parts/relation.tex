@@ -1,0 +1,100 @@
+% relation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Relations]
+    A \red{\it relation} $R$ from $A$ to $B$ is a subset of $A \times B$:
+    \[
+      {R \subseteq A \times B}
+    \]
+  \end{definition}
+
+  \pause
+  \begin{center}
+    If $A = B$, $R$ is called a relation \blue{on} $A$.
+  \end{center}
+
+  \pause
+  \begin{definition}[Notations]
+    \[
+      (a, b) \in R \qquad R(a, b) \qquad a R b
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Relations]
+    A \red{\it relation} $R$ from $A$ to $B$ is a subset of $A \times B$:
+    \[
+      {R \subseteq A \times B}
+    \]
+  \end{definition}
+
+  \begin{exampleblock}{Examples}
+    \pause
+    \begin{itemize}[<+->]
+      \item Both $A \times B$ and $\emptyset$ are relations from $A$ to $B$.
+      \item 
+	\[
+	  <\; = \set{(a, b) \in \mathbb{R} \times \mathbb{R} \mid a \text{ is less than } b}
+	\]
+      \item 
+	\[
+	  D = \set{(a, b) \in \mathbb{N} \times \mathbb{N} \mid \exists q \in \mathbb{N}: a \cdot q = b}
+	\]
+      \item $P:$ the set of people
+	\[
+	  M = \set{(a, b) \in P \times P \mid a \text{ is the mother of } b}
+	\]
+	\[
+	  B = \set{(a, b) \in P \times P \mid a \text{ is the brother of } b}
+	\]
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{\Large Important Relations:}
+  \end{center}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{center}
+	\purple{Equivalence Relations} \teal{(1-9)} \\[10pt]
+	Functions \teal{(1-10)} \\[10pt]
+	Ordering Relations \teal{(1-12)} 
+      \end{center}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/animal-equal}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/before-that}
+
+  \begin{center}
+    \blue{
+      3 Definitions \\[10pt]
+      5 Operations \\[10pt]
+      7 Properties
+    }
+  \end{center}
+
+  \[
+    R = \set{(0, 1), (0, 2), (0, 3), (1, 1), (1, 2), (1,3), (2, 3)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\input{parts/relation-definition}
+\input{parts/relation-operation}
+\input{parts/relation-property}
+%%%%%%%%%%%%%%%

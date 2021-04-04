@@ -1,0 +1,84 @@
+% pair.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Ordered Pairs]
+    \[
+      (a, b) = (c, d) \iff a = c \land b = d
+    \]
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.25\textwidth}{figs/Kuratowski}
+
+  \begin{definition}[Ordered Pairs \teal{(Kazimierz Kuratowski; 1921)}]
+    \[
+      (a, b) \;\red{\triangleq}\; \bset{\set{a}, \set{a, b}}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Ordered Pairs \teal{(Kazimierz Kuratowski; 1921)}]
+    \[
+      (a, b) \;\red{\triangleq}\; \bset{\set{a}, \set{a, b}}
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}
+    \[
+      (a, b) = (c, d) \iff a = c \land b = d
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{proof}
+    \[
+      \bset{\set{a}, \set{a, b}} = \bset{\set{c}, \set{c, d}}
+    \]
+
+    \pause
+    \begin{columns}
+      \column{0.50\textwidth}
+        \[
+	  \blue{\textsc{Case I}: a = b}
+	\]
+      \column{0.50\textwidth}
+        \[
+	  \blue{\textsc{Case II}: a \neq b}
+	\]
+    \end{columns}
+  \end{proof}
+
+  % \begin{gather*}
+  %   \onslide<3->{\bset{\set{a}, \set{a, b}} = \bset{\set{c}, \set{c, d}} \\}
+  %   \onslide<4->{\set{a} \in \bset{\set{c}, \set{c, d}} \land \set{a, b} \in \bset{\set{c}, \set{c, d}} \\}
+  %   \onslide<5->{(\set{a} = \set{c} \lor \set{a} = \set{c, d}) \land (\set{a, b} = \set{c} \lor \set{a, b} = \set{c, d}) \\}
+  %   \onslide<6->{(\set{a} = \set{c} \land \set{a, b} = \set{c}) \lor (\set{a} = \set{c} \land \set{a, b} = \set{c, d}) \lor (\set{a} = \set{c, d} \land \set{a, b} = \set{c}) \lor (\set{a} = \set{c, d} \land \set{a, b} = \set{c, d})}
+  % \end{gather*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Ordered Pairs \teal{(Norbert Wiener; 1914)}]
+    \[
+      (a, b) \;\red{\triangleq}\; \Bset{\bset{\set{a}, \emptyset}, \bset{\set{b}}}
+    \]
+  \end{definition}
+
+  \fig{width = 0.40\textwidth}{figs/wiener}
+
+  \pause
+  \begin{theorem}
+    \[
+      (a, b) = (c, d) \iff a = c \land b = d
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,35 @@
+% cartesian-product.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Cartesian Products]
+    The \red{\it Cartesian product} $A \times B$ of $A$ and $B$ is defined as 
+    \[
+      {A \times B \triangleq \set{(a, b) \mid a \in A \land b \in B}}
+    \]
+  \end{definition}
+
+  \pause
+  \[
+    X^2 \triangleq X \times X
+  \]
+
+  \pause
+  \begin{theorem}
+    $A \times B$ \red{\it is} a set.
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+    \[
+      A \times B \triangleq \set{(a, b) \;\red{\in\; ?} \mid a \in A \land b \in B}
+    \]
+
+    \pause
+    \[
+      \red{\bset{\set{a}, \set{a, b}} \in\; \only<5>{?}\only<6->{\ps{\ps{A \cup B}}}}
+    \]
+  \end{proof}
+
+\end{frame}
+%%%%%%%%%%%%%%%

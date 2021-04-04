@@ -1,0 +1,215 @@
+% relation-property.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\Large 7 Properties}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{R \subseteq X \times X}
+  \]
+
+  \begin{definition}[Reflexive]
+    \[
+      \forall a \in X: (a, a) \in R
+    \]
+
+    \fig{width = 0.20\textwidth}{figs/reflexive}
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{definition}[Irreflexive]
+    \[
+      \forall a \in X: (a, a) \notin R
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \blue{A = \set{1, 2, 3}, R \subseteq A \times A}
+  \]
+
+  \[
+    \set{(1, 1), (1, 3), (2, 1), (2, 2), (3, 3)}
+  \]
+
+  \pause
+  \[
+    \set{(1, 2), (2, 3), (3, 1)}
+  \]
+
+  \pause
+  \[
+    \set{(1, 2), (2, 2), (2, 3), (3, 1)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{R \subseteq X \times X}
+  \]
+
+  \begin{definition}[Symmetric]
+    \[
+      \forall a, b \in X: a R b \implies b R a
+    \]
+
+    \fig{width = 0.25\textwidth}{figs/symmetric}
+  \end{definition}
+
+  \pause
+  \begin{definition}[AntiSymmetric]
+    \[
+      \forall a, b \in X: (a R b \land b R a) \implies a = b
+    \]
+  \end{definition}
+
+  \pause
+  \[
+    > \pause \text{\red{\it is} antisymmetric}.
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \blue{A = \set{1, 2, 3}, R \subseteq A \times A}
+  \]
+
+  \[
+    \set{(1, 1), (1, 2), (1, 3), (2, 1), (3, 1), (3, 3)}
+  \]
+
+  \pause
+  \[
+    \set{(1, 2), (2, 3), (2, 2), (3, 1)}
+  \]
+
+  \pause
+  \[
+    \set{(1, 1), (2, 2), (3, 3)}
+  \]
+
+  \pause
+  \[
+    \set{(1, 2), (2, 1), (2, 3)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{R \subseteq X \times X}
+  \]
+
+  \begin{definition}[Transitive]
+    \[
+      \forall a, b, c \in X: a R b \land b R c \implies a R c
+    \]
+
+    \fig{width = 0.30\textwidth}{figs/transitive}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \blue{A = \set{1, 2, 3}, R \subseteq A \times A}
+  \]
+
+  \[
+    \set{(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3)}
+  \]
+
+  \pause
+  \[
+    \set{(1, 2), (2, 3), (3, 1)}
+  \]
+
+  \pause
+  \[
+    \set{(1, 3)}
+  \]
+
+  \pause
+  \[
+    \emptyset
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{R \subseteq X \times X}
+  \]
+
+  \begin{definition}[Connex]
+    \[
+      \forall a, b \in X: a R b \lor b R a
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{definition}[Trichotomous]
+    \[
+      \forall a, b \in X:\; \text{\red{exactly one of }}\; a R b, b R a, \text{ or } a = b \text{ holds}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}
+    \[
+      R \text{ is reflexive} \iff I \subseteq R
+    \]
+  \end{theorem}
+  \[
+    I = \set{(a, a) \in A \times A \mid a \in A}
+  \]
+
+  \pause
+  \begin{theorem}
+    \[
+      R \text{ is symmetric} \iff R^{-1} = R
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}
+    \[
+      R \text{ is transitive} \iff R \circ R \subseteq R
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    (1, 2), (2, 3), (1, 3), (4, 4)
+  \]
+
+  % \pause
+  % \begin{theorem}
+  %   \[
+  %     R \text{ is symmetric and transitive} \iff R = R^{-1} \circ R
+  %   \]
+  % \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%

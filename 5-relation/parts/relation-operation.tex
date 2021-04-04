@@ -1,0 +1,222 @@
+% relation-operation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\Large 5 Operations}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Inverse]
+    The {\it inverse} of $R$ is the \purple{relation}
+    \[
+      R^{-1} = \set{(a, b) \mid (b, a) \in R}
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}
+    \[
+      (R^{-1})^{-1} = R
+    \]
+  \end{theorem}
+  
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Restriction]
+    The {\it restriction} of $R$ to $X$ is the \purple{relation}
+    \[
+      R|_{X} = \set{(a, b) \in R \mid \red{a \in X}}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Image]
+    The {\it image} of $X$ under $R$ is the \teal{set}
+    \[
+      {R[X] = \set{\red{b \in \text{ran}(R)} \mid \exists a \in X: (a, b) \in R} \pause = \cyan{\text{ran}(R|_{X})}}
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Inverse Image]
+    The {\it inverse image} of $Y$ under $R$ is the \teal{set}
+    \[
+      {R^{-1}[Y] = \set{\red{b \in \text{dom}(R)} \mid \exists b \in Y: (a, b) \in R} \pause = \cyan{\text{ran}(R^{-1}|_{Y})}}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    R \subseteq A \times B \qquad X \subseteq A \qquad Y \subseteq B
+  \]
+
+  \pause
+  \[
+    R^{-1}[R[X]] \;\red{?}\; X
+  \]
+
+  \[
+    R[R^{-1}[Y]] \;\red{?}\; Y
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \fig{width = 0.20\textwidth}{figs/be-careful}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      R[X_1 \cup X_2] = R[X_1] \cup R[X_2]
+    \]
+
+    \[
+      R[X_1 \cap X_2] \subseteq R[X_1] \cap R[X_2]
+    \]
+
+    \[
+      R[X_1 \setminus X_2] \supseteq R[X_1] \setminus R[X_2]
+    \]
+  \end{theorem}
+
+  \begin{align*}
+    \onslide<2->{&\textcolor{white}{\iff}\; b \in R[X_1 \cup X_2] \\}
+    \onslide<3->{&\iff \exists a \in X_1 \cup X_2: (a, b) \in R \\}
+    \onslide<4->{&\iff \exists a \in X_1: (a, b) \in R \lor \exists a \in X_2: (a, b) \in R \\}
+    \onslide<5->{&\iff b \in R[X_1] \lor b \in R[X_2] \\}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Composition]
+    The {\it composition} of relations $R$ and $S$ is the \purple{relation}
+    \[
+      R \circ S = \set{(a, c) \mid \exists b: (a, b) \in S \land (b, c) \in R}
+    \]
+  \end{definition}
+
+  \pause
+  \[
+    R = \set{(0, 1), (0, 2), (0, 3), (1, 1), (1, 2), (1,3), (2, 3)}
+  \]
+
+  \pause
+  \vspace{-0.60cm}
+  \[
+    R \circ R = \set{\cdots}
+  \]
+
+  \pause
+  \[
+    \le \circ \le \;\red{=}\; \pause \blue{\le}
+  \]
+
+  \pause
+  \vspace{-0.60cm}
+  \[
+    \le \circ \ge \;\red{=}\; \pause \blue{\mathbb{R} \times \mathbb{R}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      (R \circ S)^{-1} = S^{-1} \circ R^{-1}
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \red{(a, b) \in (R \circ S)^{-1}} \iff \cdots
+  \]
+  % \fig{width = 0.40\textwidth}{figs/}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      (R \circ S) \circ T = R \circ (S \circ T)
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \red{(a, b) \in (R \circ S) \circ T} \iff \cdots
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    &\textcolor{white}{\iff}\; \red{(a, b)} \in (R \circ S) \circ T \\
+    \onslide<2->{&\iff \exists c: (a, c) \in T \land (c, b) \in R \circ S \\}
+    \onslide<3->{&\iff \exists c: (a, c) \in T \land (\exists d: (c, d) \in S \land (d, b) \in R) \\}
+    \onslide<4->{&\iff \exists d: \exists c: (a, c) \in T \land (c, d) \in S \land (d, b) \in R \\}
+    \onslide<5->{&\iff \exists d: (\exists c: (a, c) \in T \land (c, d) \in S) \land (d, b) \in R \\}
+    \onslide<6->{&\iff \exists d: (a, d) \in S \circ T \land (d, b) \in R \\}
+    \onslide<7->{&\iff (a, b) \in R \circ (S \circ T)}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/wulin-relation}
+
+  \begin{center}
+    {燕小六: ``帮我照顾好我七\red{舅姥爷}和我外甥女''}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    ``舅姥爷'': 姥姥的兄弟
+  \end{center}
+
+  \pause
+  \[
+    G = \set{(a,b): a \text{ 是}\; b \text{ 的舅姥爷}} 
+  \]
+
+  \pause
+  \[
+    M = \set{(a, b) \mid a \text{ is the mother of } b}
+  \]
+  \[
+    B = \set{(a, b) \mid a \text{ is the brother of } b}
+  \]
+
+  \pause
+  \[
+    \blue{G = B \circ (M \circ M)}
+  \]
+
+  \pause
+  \[
+    \red{G = B \circ (M \circ M) = (B \circ M) \circ M}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

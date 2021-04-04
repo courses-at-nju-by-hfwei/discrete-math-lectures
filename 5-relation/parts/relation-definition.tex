@@ -1,0 +1,76 @@
+% relation-definition.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\Large 3 Definitions}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Domain]
+    \[
+      \text{dom}(R) = \set{a \mid \exists b: (a,b) \in R}
+    \]
+  \end{definition}
+
+  \pause
+  \begin{theorem}
+    $\text{dom}(R)$ \red{is} a set.
+  \end{theorem}
+
+  \pause
+  \[
+    \text{dom}(R) = \set{a \;\red{\in\; \only<3-6>{?}\only<7->{\bigcup \bigcup R}} \mid \exists b: (a, b) \in R}
+  \]
+
+  % \begin{theorem}
+  %   \[
+  %     (a, b) \in R \implies a \in \bigcup \bigcup R \land b \in \bigcup \bigcup R
+  %   \]
+  % \end{theorem}
+
+  \pause
+  \[
+    \blue{(a, b) = \set{\set{a}, \set{a, b}} \in R}
+  \]
+
+  \pause
+  \[
+    \set{a, b} \in \bigcup R
+  \]
+
+  \pause
+  \[
+    a \in \bigcup \bigcup R
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Range]
+    \[
+      \text{ran}(R) = \set{b \mid \exists a: (a,b) \in R}
+    \]
+  \end{definition}
+
+  \pause
+  \begin{theorem}
+    $\text{ran}(R)$ \red{is} a set.
+  \end{theorem}
+
+  \[
+    \text{ran}(R) = \set{b \;\red{\in\; \bigcup \bigcup R} \mid \exists a: (a, b) \in R}
+  \]
+
+  \pause
+  \begin{definition}[Field]
+    \[
+      \text{fld}(R) = \text{dom}(R) \cup \text{ran}(R)
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
