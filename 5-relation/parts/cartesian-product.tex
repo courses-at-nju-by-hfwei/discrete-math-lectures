@@ -2,8 +2,9 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Cartesian Products]
-    The \red{\it Cartesian product} $A \times B$ of $A$ and $B$ is defined as 
+  \begin{definition}[笛卡尔积 (Cartesian Products)]
+    The \red{\it Cartesian product} $A \times B$ \blue{of $A$ and $B$}
+    is defined as
     \[
       {A \times B \triangleq \set{(a, b) \mid a \in A \land b \in B}}
     \]
@@ -15,21 +16,104 @@
   \]
 
   \pause
-  \begin{theorem}
-    $A \times B$ \red{\it is} a set.
+  \fig{width = 0.50\textwidth}{figs/product-xyz-123}
+  % \[
+  %   A = \set{1, 2} \qquad B = \set{a, b}
+  % \]
+  % \[
+  %   A \times B = \set{(1, a), (1, b), (2, a), (2, b)}
+  % \]
+  % \[
+  %   B \times A = \set{(a, 1), (a, 2), (b, 1), (b, 2)}
+  % \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \text{Ranks} = \set{2, \dots, 10, J, Q, K, A}
+  \]
+  \fig{width = 0.70\textwidth}{figs/product-deck}
+  \[
+    \text{Suits} = \set{}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/product-coord}
+  \[
+    \Z^{2} \triangleq \Z \times \Z
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    X \times \emptyset = \emptyset \times X
+  \]
+
+  \pause
+  \[
+    X \times Y \;\red{\neq}\; Y \times X
+  \]
+
+  \pause
+  \[
+    (X \times Y) \times Z \;\red{\neq}\; X \times (Y \times Z)
+  \]
+  \pause
+  \[
+    \cyan{A = \set{1} \qquad (A \times A) \times A \;\red{\neq}\; A \times (A \times A)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[分配律 (Distributivity)]
+    \[
+      A \times (B \cap C) = (A \times B) \cap (A \times C)
+    \]
+    \[
+      A \times (B \cup C) = (A \times B) \cup (A \times C)
+    \]
+    \[
+      A \times (B \setminus C) = (A \times B) \setminus (A \times C)
+    \]
   \end{theorem}
 
   \pause
-  \begin{proof}
+  \fig{width = 0.60\textwidth}{figs/product-illustration}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[$n$-元笛卡尔积 ($n$-ary Cartesian Product)]
     \[
-      A \times B \triangleq \set{(a, b) \;\red{\in\; ?} \mid a \in A \land b \in B}
+      X_{1} \times X_{2} \times X_{3} \triangleq (X_{1} \times X_{2}) \times X_{3}
     \]
 
     \pause
     \[
-      \red{\bset{\set{a}, \set{a, b}} \in\; \only<5>{?}\only<6->{\ps{\ps{A \cup B}}}}
+      X_{1} \times X_{2} \times \dots \times X_{n}
+        \triangleq (X_{1} \times X_{2} \times \dots \times X_{n-1}) \times X_{n}
     \]
-  \end{proof}
+  \end{definition}
 
+  \pause
+  \vspace{0.60cm}
+  \[
+    X^{n} \triangleq \underbrace{X \times \dots \times X}_{n}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
 \end{frame}
 %%%%%%%%%%%%%%%

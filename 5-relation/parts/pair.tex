@@ -2,16 +2,16 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[Ordered Pairs]
+  \begin{definition}[有序对 (Ordered Pairs)]
     \[
       (a, b) = (c, d) \iff a = c \land b = d
     \]
-  \end{theorem}
+  \end{definition}
 
   \pause
   \fig{width = 0.25\textwidth}{figs/Kuratowski}
 
-  \begin{definition}[Ordered Pairs \teal{(Kazimierz Kuratowski; 1921)}]
+  \begin{definition}[有序对 (Ordered Pairs) \teal{(Kazimierz Kuratowski; 1921)}]
     \[
       (a, b) \;\red{\triangleq}\; \bset{\set{a}, \set{a, b}}
     \]
@@ -27,7 +27,6 @@
     \]
   \end{definition}
 
-  \pause
   \vspace{0.30cm}
   \begin{theorem}
     \[
@@ -46,12 +45,12 @@
     \begin{columns}
       \column{0.50\textwidth}
         \[
-	  \blue{\textsc{Case I}: a = b}
-	\]
+          \blue{\textsc{Case I}: a = b}
+        \]
       \column{0.50\textwidth}
         \[
-	  \blue{\textsc{Case II}: a \neq b}
-	\]
+          \blue{\textsc{Case II}: a \neq b}
+        \]
     \end{columns}
   \end{proof}
 
@@ -78,6 +77,31 @@
   \begin{theorem}
     \[
       (a, b) = (c, d) \iff a = c \land b = d
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[$n$-元组 (n-ary tuples)]
+    \[
+      (x, y, z) \triangleq ((x, y), z)
+    \]
+
+    \pause
+    \[
+      (x_{1}, x_{2}, \dots, x_{n-1}, x_{n})
+        \triangleq ((x_{1}, x_{2}, \dots, x_{n-1}), x_{n})
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{theorem}
+    \[
+      (x_{1}, \dots, x_{n}) = (y_{1}, \dots, y_{n})
+      \iff x_{1} = y_{1} \land \dots x_{n} = y_{n}
     \]
   \end{theorem}
 \end{frame}
