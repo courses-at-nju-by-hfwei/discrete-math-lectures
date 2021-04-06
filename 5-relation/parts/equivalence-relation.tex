@@ -11,11 +11,11 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Equivalence Relation]
-    $R$ is an {\it equivalence relation} on $X$ iff $R$ is 
+    $R \subseteq X \times X$ is an {\it equivalence relation} on $X$ iff $R$ is
     \begin{itemize}
-      \item reflexive 
-      \item symmetric
-      \item transitive
+      \item reflexive: $\forall a \in X.\; a R a$
+      \item symmetric: $\forall a, b \in X.\; (a R b \leftrightarrow b R a)$
+      \item transitive: $\forall a, b, c \in X.\; (a R b \land b R c \to a R c)$
     \end{itemize}
   \end{definition}
 
@@ -23,15 +23,18 @@
   \[
     =\; \in \mathbb{R} \times \mathbb{R}
   \]
-
   \pause
   \[
     \parallel\; \in \mathbb{L} \times \mathbb{L}
   \]
-
   \pause
   \[
-    a \sim b \iff a \;\%\; 12 = b \;\%\; 12
+    \text{三角形的相似关系}
+  \]
+  \pause
+  \[
+    R = \set{(x, y) \mid x \equiv y \;(\text{mod}\; k)}
+      \subseteq \Z \times \Z
   \]
 
   \pause
@@ -55,7 +58,7 @@
       \pause
       \fig{width = 0.80\textwidth}{figs/conference-hall-group}
       \begin{center}
-	``全国人民代表大会各省代表团''
+        ``全国人民代表大会\red{各省}代表团''
       \end{center}
   \end{columns}
 
@@ -82,31 +85,32 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Partition]
-    A family of sets \red{$\set{A_{\alpha}: \alpha \in I}$} is a \blue{\it partition} of $X$ if
+  \begin{definition}[划分 (Partition)]
+    A family of sets \red{$\Pi = \set{A_{\alpha} \mid \alpha \in I}$}
+    is a \blue{\it partition} of $X$ if
 
     \begin{enumerate}[(i)]
-      \item 
-	\[
-	  \forall \alpha \in I: A_{\alpha} \neq \emptyset
-	\]
-	\[
-	  \uncover<2->{\teal{(\forall \alpha \in I \; \exists x \in X: x \in A_{\alpha})}}
-	\]
-      \item 
-	\[
-	  \bigcup_{\alpha \in I} A_{\alpha} = X
-	\]
-	\[
-	  \uncover<3->{\teal{(\forall x \in X \; \exists \alpha \in I: x \in A_{\alpha})}}
-	\]
-      \item 
-	\[
-	  \forall \alpha, \beta \in I: A_{\alpha} \cap A_{\beta} = \emptyset \lor A_{\alpha} = A_{\beta}
-	\]
-	\[
-	  \uncover<4->{\teal{(\forall \alpha, \beta \in I: A_{\alpha} \cap A_{\beta} \neq \emptyset \implies A_{\alpha} = A_{\beta})}}
-	\]
+      \item (不空)
+        \[
+          \forall \alpha \in I.\; A_{\alpha} \neq \emptyset
+        \]
+        \[
+          \uncover<2->{\teal{(\forall \alpha \in I.\; \exists x \in X.\; x \in A_{\alpha})}}
+        \]
+      \item (不漏)
+        \[
+          \bigcup_{\alpha \in I} A_{\alpha} = X
+        \]
+        \[
+          \uncover<3->{\teal{(\forall x \in X.\; \exists \alpha \in I.\; x \in A_{\alpha})}}
+        \]
+      \item (不重)
+        \[
+          \forall \alpha, \beta \in I.\; A_{\alpha} \cap A_{\beta} = \emptyset \lor A_{\alpha} = A_{\beta}
+        \]
+        \[
+          \uncover<4->{\teal{(\forall \alpha, \beta \in I.\; A_{\alpha} \cap A_{\beta} \neq \emptyset \implies A_{\alpha} = A_{\beta})}}
+        \]
     \end{enumerate}
   \end{definition}
 \end{frame}
@@ -119,21 +123,58 @@
   \]
 
   \pause
-  \begin{definition}[Equivalence Class]
-    The {\it equivalence class} of $a$ {\it modulo} $R$ is a \purple{set}:
+  \begin{definition}[等价类 (Equivalence Class)]
+    The {\it equivalence class} of \blue{$a$} {\it modulo} $R$ is a set:
     \[
       \red{[a]_{R}} = \set{b \in X: a R b}
     \]
   \end{definition}
-
   \pause
-  \vspace{0.60cm}
-  \begin{definition}[Quotient Set]
-    The {\it quotient set} is a \purple{set}:
+  \[
+    =\; \in \mathbb{R} \times \mathbb{R}
+  \]
+  \pause
+  \[
+    \parallel\; \in \mathbb{L} \times \mathbb{L}
+  \]
+  \pause
+  \[
+    \text{三角形的相似关系}
+  \]
+  \pause
+  \[
+    R = \set{(x, y) \mid x \equiv y \;(\text{mod}\; k)}
+      \subseteq \Z \times \Z
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[商集 (Quotient Set)]
+    The \red{\it quotient set} \blue{of $X$ by $R$} ($X$ modulo $R$)
+    is a \purple{set}:
     \[
       X/R = \set{[a]_{R} \mid a \in X}
     \]
   \end{definition}
+  \pause
+  \[
+    =\; \in \mathbb{R} \times \mathbb{R}
+  \]
+  \pause
+  \[
+    \parallel\; \in \mathbb{L} \times \mathbb{L}
+  \]
+  \pause
+  \[
+    \text{三角形的相似关系}
+  \]
+  \pause
+  \[
+    R = \set{(x, y) \mid x \equiv y \;(\text{mod}\; k)}
+      \subseteq \Z \times \Z
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -147,36 +188,66 @@
 
   \pause
   \[
-    \forall a \in X: [a]_{R} \neq \emptyset
+    \forall a \in X.\; [a]_{R} \neq \emptyset
   \]
 
   \pause
   \[
-    \forall a \in X: \exists b \in X: a \in [b]_{R}
+    \forall a \in X.\; \exists b \in X.\; a \in [b]_{R}
   \]
 
   \pause
   \begin{theorem}
     \[
-      \forall a \in X, b \in X: [a]_{R} \cap [b]_{R} = \emptyset \lor [a]_{R} = [b]_{R}
+      \forall a \in X, b \in X.\; [a]_{R} \cap [b]_{R} = \emptyset \lor [a]_{R} = [b]_{R}
     \]
   \end{theorem}
 
   \pause
   \[
-    \blue{\forall a \in X, b \in X: [a]_{R} \cap [b]_{R} \neq \emptyset \implies [a]_{R} = [b]_{R}}
+    \blue{\forall a \in X, b \in X.\; [a]_{R} \cap [b]_{R} \neq \emptyset \to [a]_{R} = [b]_{R}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{exampleblock}{Equivalence Relation (UD Problem $10.10$)}
-%     \[
-%       \forall a, b \in X: [a]_{R} = [b]_{R} \iff a R b.
-%     \]
-%   \end{exampleblock}
-% \end{frame}
+\begin{frame}{}
+  \[
+    \forall a \in X.\; b \in X.\; [a]_{R} \cap [b]_{R} \neq \emptyset \to [a]_{R} = [b]_{R}
+  \]
+
+  \pause
+  \vspace{0.80cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \red{不妨设 $x \in [a]_{R} \land [b]_{R}$}
+      \setcounter{equation}{0}
+      \begin{align}
+        &x \in [a]_{R} \land [b]_{R} \\[6pt]
+        \uncover<3->{\implies& aRx \land xRb \\[6pt]}
+        \uncover<4->{\implies& aRb}
+      \end{align}
+    \column{0.50\textwidth}
+      \uncover<5->{\red{对于任意 $x$,}}
+      \setcounter{equation}{0}
+      \begin{align}
+        \uncover<5->{&x \in [a]_{R} \\[6pt]}
+        \uncover<6->{\iff& x R a \\[6pt]}
+        \uncover<7->{\red{\iff}& x R b \\[6pt]}
+        \uncover<8->{\iff& x \in [b]_{R}}
+      \end{align}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      \forall a, b \in X.\; ([a]_{R} = [b]_{R} \leftrightarrow a R b)
+    \]
+  \end{theorem}
+\end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -188,13 +259,13 @@
   \pause
   \begin{definition}
     \[
-      (a, b) \in R \iff \exists S \in \Pi: a \in S \land b \in S
+      (a, b) \in R \iff \exists S \in \Pi.\; a \in S \land b \in S
     \]
 
     \pause
     \vspace{-0.20cm}
     \[
-      R = \set{(a, b) \in X \times X \mid \exists S \in \Pi: a \in S \land b \in S}
+      R = \set{(a, b) \in X \times X \mid \exists S \in \Pi.\; a \in S \land b \in S}
     \]
   \end{definition}
 
@@ -207,17 +278,17 @@
 
   \pause
   \[
-    \forall x \in X: xRx
+    \forall x \in X.\; xRx
   \]
 
   \pause
   \[
-    \forall x, y \in X: xRy \implies yRx
+    \forall x, y \in X.\; xRy \to yRx
   \]
 
   \pause
   \[
-    \forall x, y, z \in X: xRy \land yRz \implies xRz
+    \forall x, y, z \in X.\; xRy \land yRz \to xRz
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -236,11 +307,11 @@
 \begin{frame}{}
   \begin{definition}
     \[
-      \sim\; \subseteq \mathbb{N}^2 \times \mathbb{N}^2
+      \sim\; \subseteq \N \times \N
     \]
 
     \[
-      (a, b) \sim (c, d) \iff a +_{\mathbb{N}} d = b +_{\mathbb{N}} c
+      (a, b) \sim (c, d) \iff a +_{\N} d = b +_{N} c
     \]
   \end{definition}
 
@@ -283,7 +354,7 @@
 \begin{frame}{}
   \begin{definition}[$+_\mathbb{Z}$]
     \[
-      [(m_1, n_1)] +_{\mathbb{Z}} [(m_2, n_2)] = [m_1 +_{\mathbb{N}} m2, n_1 +_{\mathbb{N}} n_2]
+      [(m_1, n_1)] +_{\mathbb{Z}} [(m_2, n_2)] = [m_1 +_{\mathbb{N}} m_2, n_1 +_{\mathbb{N}} n_2]
     \]
   \end{definition}
 
@@ -292,7 +363,7 @@
   \begin{definition}[$\cdot_\mathbb{Z}$]
     \begin{gather*}
       [(m_1, n_1)] \cdot_{\mathbb{Z}} [(m_2, n_2)] \\
-      = [m_1 \cdot_{\mathbb{N}} m_2 +_{\mathbb{N}} n_1 \cdot_{\mathbb{N}} n_2, 
+      = [m_1 \cdot_{\mathbb{N}} m_2 +_{\mathbb{N}} n_1 \cdot_{\mathbb{N}} n_2,
          m_1 \cdot_{\mathbb{N}} n_2 +_{\mathbb{N}} n_1 \cdot_{\mathbb{N}} m_2]
     \end{gather*}
   \end{definition}
@@ -333,10 +404,13 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    \red{How to define $\mathbb{R}$ as equivalence classes of ordered pairs of $\mathbb{Q}$?}
+    \red{如何用有理数定义实数?}
   \end{center}
 
   \pause
-  \fig{width = 0.40\textwidth}{figs/stay-tuned}
+  \fig{width = 0.70\textwidth}{figs/Dedekind-cut}
+  \begin{center}
+    Dedekind Cut (戴德金分割)
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
