@@ -4,73 +4,85 @@
 \begin{frame}{}
   \begin{center}
     \teal{\Large 3 Definitions}
+    \[
+      \dom(R) \qquad \ran(R) \qquad \fld(R)
+    \]
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Domain]
+  \begin{definition}[定义域 (Domain)]
     \[
-      \text{dom}(R) = \set{a \mid \exists b: (a,b) \in R}
+      \text{dom}(R) = \set{a \mid \exists b.\; (a,b) \in R}
     \]
   \end{definition}
 
   \pause
-  \begin{theorem}
-    $\text{dom}(R)$ \red{is} a set.
-  \end{theorem}
-
-  \pause
-  \[
-    \text{dom}(R) = \set{a \;\red{\in\; \only<3-6>{?}\only<7->{\bigcup \bigcup R}} \mid \exists b: (a, b) \in R}
-  \]
-
-  % \begin{theorem}
-  %   \[
-  %     (a, b) \in R \implies a \in \bigcup \bigcup R \land b \in \bigcup \bigcup R
-  %   \]
-  % \end{theorem}
-
-  \pause
-  \[
-    \blue{(a, b) = \set{\set{a}, \set{a, b}} \in R}
-  \]
-
-  \pause
-  \[
-    \set{a, b} \in \bigcup R
-  \]
-
-  \pause
-  \[
-    a \in \bigcup \bigcup R
-  \]
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{definition}[Range]
+  \vspace{0.80cm}
+  \begin{definition}[值域 (Range)]
     \[
       \text{ran}(R) = \set{b \mid \exists a: (a,b) \in R}
     \]
   \end{definition}
 
   \pause
-  \begin{theorem}
-    $\text{ran}(R)$ \red{is} a set.
-  \end{theorem}
-
-  \[
-    \text{ran}(R) = \set{b \;\red{\in\; \bigcup \bigcup R} \mid \exists a: (a, b) \in R}
-  \]
-
-  \pause
-  \begin{definition}[Field]
+  \vspace{0.80cm}
+  \begin{definition}[域 (Field)]
     \[
       \text{fld}(R) = \text{dom}(R) \cup \text{ran}(R)
     \]
   \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    R = \set{(x, y) \mid x = y} \subseteq \R \times \R
+  \]
+
+  \pause
+  \[
+    \dom(R) = \R \qquad \ran(R) = \R \qquad \fld(R) = \R
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    R = \set{(x, y) \mid x^2 + y^2 = 1} \subseteq \R \times \R
+  \]
+
+  \pause
+  \[
+    \dom(R) = [1, 1] \qquad \ran(R) = [-1, 1] \qquad \fld(R) = [-1, 1]
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      \text{dom}(R) \subseteq \bigcup \bigcup R \qquad
+      \text{ran}(R) \subseteq \bigcup \bigcup R
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{对任意 $a$,}
+    \begin{align}
+      &a \in \dom(R) \\[6pt]
+      \uncover<3->{\implies& \exists b.\; (a, b) \in R \\[6pt]}
+      \uncover<5->{\implies& \exists b.\; \set{\set{a}, \set{a, b}} \in R \\[6pt]}
+      \uncover<6->{\implies& \exists b.\; \set{a, b} \in \bigcup R \\[6pt]}
+      \uncover<7->{\implies& \exists b.\; a \in \bigcup\bigcup R \\[6pt]}
+      \uncover<8->{\implies& a \in \bigcup\bigcup R}
+    \end{align}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
