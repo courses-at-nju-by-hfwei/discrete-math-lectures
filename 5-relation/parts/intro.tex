@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%
 % \begin{frame}{}
 %   \fig{width = 0.20\textwidth}{figs/lamport}
-% 
+%
 %   \begin{columns}
 %     \column{0.45\textwidth}
 %       \fig{width = 0.85\textwidth}{figs/lamport-ordering}
@@ -21,10 +21,13 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    \blue{\large 我的工作日常 $\dots$}
+  \end{center}
   \begin{columns}
     \column{0.45\textwidth}
       \uncover<2->{
-	\fig{width = 0.50\textwidth}{figs/scream}
+        \fig{width = 0.50\textwidth}{figs/scream}
       }
       \fig{width = 0.90\textwidth}{figs/consistency-axioms}
     \column{0.50\textwidth}
@@ -35,6 +38,10 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    \uncover<3->{\red{\large \bf 离散数学学得好不好, \\[5pt]
+      一个重要的衡量标准就是是否完成了这种转变}}
+  \end{center}
   \begin{columns}
     \column{0.50\textwidth}
       \fig{width = 0.70\textwidth}{figs/dont-be-scared}
@@ -47,28 +54,222 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[关系 (Relations)]
-    A \red{\it relation} $R$ \blue{from $A$ to $B$} is a subset of $A \times B$:
-    \[
-      {R \subseteq A \times B}
-    \]
-  \end{definition}
+  \begin{center}
+    \textcolor{brown}{\LARGE The Relational Data Model}
 
-  \pause
-  \vspace{0.30cm}
-  \begin{definition}[Cartesian Products]
-    The \red{\it Cartesian product} $A \times B$ of $A$ and $B$ is defined as 
-    \[
-      {A \times B \triangleq \set{(a, b) \mid a \in A \land b \in B}}
-    \]
-  \end{definition}
+    \vspace{0.20cm}
+    \uncover<2->{\blue{\Large --- 如何靠\red{``关系''}赢得图灵奖?}}
+  \end{center}
 
-  \pause
-  \vspace{0.30cm}
-  \begin{theorem}[Ordered Pairs]
-    \[
-      (a, b) = (c, d) \iff a = c \land b = d
-    \]
-  \end{theorem}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \fig{width = 0.70\textwidth}{figs/codd-relational-paper}
+      {\vspace{-0.20cm}\centerline{Codd@CACM'1970}\centerline{\teal{(Turing Award'1981)}}}
+    \column{0.45\textwidth}
+      \fig{width = 0.60\textwidth}{figs/Codd}{\centerline{Edgar F. Codd (1923 -- 2003)}}
+  \end{columns}
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \R: \text{实数集}
+  \]
+
+  \pause
+  \begin{center}
+    ``Near''关系: $|a - b| < 1$
+  \end{center}
+
+  \pause
+  \[
+    R = \set{(a, b) \mid |a - b| < 1}
+  \]
+  \[
+    (0, 0.618) \;\red{\in R}\; \qquad (-0.618, 0.618) \;\red{\notin}\; R
+  \]
+
+  \pause
+  \[
+    \forall a \in X.\; (a, a) \in R
+      \pause\qquad \text{\red{(自反性)}}
+  \]
+  \pause
+  \[
+    \forall a, b \in X.\; ((a, b) \in R \to (b, a) \in R)
+      \pause\qquad \text{\red{(对称性)}}
+  \]
+  \pause
+  \[
+    \forall a, b, c \in X.\; ((a, b) \in R \land (b, c) \in R \to (a, c) \in R)
+      \pause\qquad \text{\textcolor{gray}{(传递性)}}
+  \]
+  \pause
+  \begin{center}
+    \fbox{自反性 + 反对称性 = \red{\bf 相容关系}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    X = \set{1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    $X$ 上的整除关系
+  \end{center}
+  \[
+    R = \pause \set{(1, 2), \dots, (4, 12), \dots, (12, 60), \dots, (4, 60), \dots, (60, 60)}
+  \]
+
+  \pause
+  \[
+    \forall a \in X.\; (a, a) \in R
+      \pause\qquad \text{\red{(自反性)}}
+  \]
+  \pause
+  \[
+    \forall a, b \in X.\; ((a, b) \in R \land (b, a) \in R \to a = b)
+      \pause\qquad \text{\red{(反对称性)}}
+  \]
+  \pause
+  \[
+    \forall a, b, c \in X.\; ((a, b) \in R \land (b, c) \in R \to (a, c) \in R)
+      \pause\qquad \text{\red{(传递性)}}
+  \]
+  \pause
+  \begin{center}
+    \fbox{自反性 + 反对称性 + 传递性 = \red{\bf 偏序关系}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    X = \set{1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60}
+  \]
+
+  \fig{width = 0.70\textwidth}{figs/60-poset}
+
+  \pause
+  \begin{center}
+    ``偏序''严格刻画了人类对于\red{``序''}的直观理解
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \N: \text{自然数集}
+  \]
+  \pause
+  \[
+    \le \;= \set{(a, b) \mid a \le b}
+  \]
+  \pause
+  \[
+    \forall a \in X.\; (a, a) \in R
+      \pause\qquad \text{\red{(自反性)}}
+  \]
+  \pause
+  \[
+    \forall a, b \in X.\; ((a, b) \in R \land (b, a) \in R \to a = b)
+      \pause\qquad \text{\red{(反对称性)}}
+  \]
+  \pause
+  \[
+    \forall a, b, c \in X.\; ((a, b) \in R \land (b, c) \in R \to (a, c) \in R)
+      \pause\qquad \text{\red{(传递性)}}
+  \]
+  \pause
+  \[
+    \forall a, b \in X.\; ((a, b) \in R \lor (b, a) \in R)
+      \pause\qquad \text{\red{(连接性)}}
+  \]
+  \pause
+  \begin{center}
+    \fbox{自反性 + 反对称性 + 传递性 + 连接性 = \red{\bf 全序关系}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    考虑无向图中的\blue{顶点}集合 \\[8pt]
+  \end{center}
+
+  \fig{width = 0.45\textwidth}{figs/component}
+
+  \pause
+  \begin{center}
+    顶点间的``可达(Reachability)关系'':
+    $R = \set{(a, b) \mid a \leadsto b}$
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/component}
+
+  \pause
+  \[
+    \forall a \in X.\; (a, a) \in R
+      \pause\qquad \text{\red{(自反性)}}
+  \]
+  \pause
+  \[
+    \forall a, b \in X.\; ((a, b) \in R \to (b, a) \in R)
+      \pause\qquad \text{\red{(对称性)}}
+  \]
+  \pause
+  \[
+    \forall a, b, c \in X.\; ((a, b) \in R \land (b, c) \in R \to (a, c) \in R)
+      \pause\qquad \text{\red{(传递性)}}
+  \]
+  \pause
+  \begin{center}
+    \fbox{自反性 + 对称性 + 传递性 = \red{\bf 等价关系}}
+
+    \pause
+    \vspace{0.30cm}
+    ``可达关系''将顶点划分成相互独立的``连通分量''
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{definition}[关系 (Relations)]
+%     A \red{\it relation} $R$ \blue{from $A$ to $B$} is a subset of $A \times B$:
+%     \[
+%       {R \subseteq A \times B}
+%     \]
+%   \end{definition}
+%
+%   \pause
+%   \vspace{0.30cm}
+%   \begin{definition}[Cartesian Products]
+%     The \red{\it Cartesian product} $A \times B$ of $A$ and $B$ is defined as
+%     \[
+%       {A \times B \triangleq \set{(a, b) \mid a \in A \land b \in B}}
+%     \]
+%   \end{definition}
+%
+%   \pause
+%   \vspace{0.30cm}
+%   \begin{theorem}[Ordered Pairs]
+%     \[
+%       (a, b) = (c, d) \iff a = c \land b = d
+%     \]
+%   \end{theorem}
+% \end{frame}
 %%%%%%%%%%%%%%%
