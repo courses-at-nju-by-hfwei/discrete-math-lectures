@@ -31,22 +31,25 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/product-coord}
   \[
-    \text{Ranks} = \set{2, \dots, 10, J, Q, K, A}
-  \]
-  \fig{width = 0.70\textwidth}{figs/product-deck}
-  \[
-    \text{Suits} = \set{}
+    \Z^{2} \triangleq \Z \times \Z
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.50\textwidth}{figs/product-coord}
   \[
-    \Z^{2} \triangleq \Z \times \Z
+    \text{Ranks} = \set{2, \dots, 10, J, Q, K, A}
   \]
+  \fig{width = 0.70\textwidth}{figs/product-deck}
+  \fig{width = 0.30\textwidth}{figs/suits}
+  % \[
+  %   \text{Suits} = \set{\ding{171}, {\color{red}\ding{170}},
+  %     \ding{168}, {\color{red}\ding{169}}}
+  %     % \spadesuit, \red{\varheartsuit}, \clubsuit, \red{\vardiamondsuit}
+  % \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -93,6 +96,27 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    A \times (B \cap C) = (A \times B) \cap (A \times C)
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \red{对任意\blue{有序对} $(a, b)$,}
+  \setcounter{equation}{0}
+  \begin{align}
+    &(a, b) \in A \times (B \cap C) \\[6pt]
+    \uncover<3->{\iff& a \in A \land b \in (B \cap C) \\[6pt]}
+    \uncover<4->{\iff& a \in A \land b \in B \land b \in C \\[6pt]}
+    \uncover<5->{\iff& (\blue{a \in A} \land b \in B) \land (\blue{a \in A} \land b \in C) \\[6pt]}
+    \uncover<6->{\iff& (a, b) \in A \times B \land (a, b) \in A \times C \\[6pt]}
+    \uncover<7->{\iff& (a, b) \in (A \times B) \cap (A \times C)}
+  \end{align}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{definition}[$n$-元笛卡尔积 ($n$-ary Cartesian Product)]
     \[
       X_{1} \times X_{2} \times X_{3} \triangleq (X_{1} \times X_{2}) \times X_{3}
@@ -110,10 +134,11 @@
   \[
     X^{n} \triangleq \underbrace{X \times \dots \times X}_{n}
   \]
-\end{frame}
-%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \blue{多数情况下, 我们仅处理``二元关系'', 因此也仅使用``二元笛卡尔积''}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%

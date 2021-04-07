@@ -2,64 +2,11 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[有序对 (Ordered Pairs)]
+  \begin{definition}[有序对\red{\bf 公理} (Ordered Pairs)]
     \[
       (a, b) = (c, d) \iff a = c \land b = d
     \]
   \end{definition}
-
-  \pause
-  \fig{width = 0.25\textwidth}{figs/Kuratowski}
-
-  \begin{definition}[有序对 (Ordered Pairs) \teal{(Kazimierz Kuratowski; 1921)}]
-    \[
-      (a, b) \;\red{\triangleq}\; \bset{\set{a}, \set{a, b}}
-    \]
-  \end{definition}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{definition}[Ordered Pairs \teal{(Kazimierz Kuratowski; 1921)}]
-    \[
-      (a, b) \;\red{\triangleq}\; \bset{\set{a}, \set{a, b}}
-    \]
-  \end{definition}
-
-  \vspace{0.30cm}
-  \begin{theorem}
-    \[
-      (a, b) = (c, d) \iff a = c \land b = d
-    \]
-  \end{theorem}
-
-  \pause
-  \vspace{0.30cm}
-  \begin{proof}
-    \[
-      \bset{\set{a}, \set{a, b}} = \bset{\set{c}, \set{c, d}}
-    \]
-
-    \pause
-    \begin{columns}
-      \column{0.50\textwidth}
-        \[
-          \blue{\textsc{Case I}: a = b}
-        \]
-      \column{0.50\textwidth}
-        \[
-          \blue{\textsc{Case II}: a \neq b}
-        \]
-    \end{columns}
-  \end{proof}
-
-  % \begin{gather*}
-  %   \onslide<3->{\bset{\set{a}, \set{a, b}} = \bset{\set{c}, \set{c, d}} \\}
-  %   \onslide<4->{\set{a} \in \bset{\set{c}, \set{c, d}} \land \set{a, b} \in \bset{\set{c}, \set{c, d}} \\}
-  %   \onslide<5->{(\set{a} = \set{c} \lor \set{a} = \set{c, d}) \land (\set{a, b} = \set{c} \lor \set{a, b} = \set{c, d}) \\}
-  %   \onslide<6->{(\set{a} = \set{c} \land \set{a, b} = \set{c}) \lor (\set{a} = \set{c} \land \set{a, b} = \set{c, d}) \lor (\set{a} = \set{c, d} \land \set{a, b} = \set{c}) \lor (\set{a} = \set{c, d} \land \set{a, b} = \set{c, d})}
-  % \end{gather*}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -79,6 +26,62 @@
       (a, b) = (c, d) \iff a = c \land b = d
     \]
   \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Ordered Pairs \teal{(Kazimierz Kuratowski; 1921)}]
+    \[
+      (a, b) \;\red{\triangleq}\; \bset{\set{a}, \set{a, b}}
+    \]
+  \end{definition}
+
+  \fig{width = 0.25\textwidth}{figs/Kuratowski}
+
+  \pause
+  \begin{theorem}
+    \[
+      (a, b) = (c, d) \iff a = c \land b = d
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      (a, b) = (c, d) \iff a = c \land b = d
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \Big(\bset{\set{a}, \set{a, b}} = \bset{\set{c}, \set{c, d}}\Big) \iff (a = c \land b = d)
+  \]
+
+  \pause
+
+  \begin{align*}
+    \onslide<3->{&\bset{\set{a}, \set{a, b}} = \bset{\set{c}, \set{c, d}} \\[6pt]}
+    \onslide<4->{\iff& (\set{a} = \set{c} \lor \set{a} = \set{c, d}) \land (\set{a, b} = \set{c} \lor \set{a, b} = \set{c, d}) \\[6pt]}
+    \onslide<5->{\iff& (\set{a} = \set{c} \land \set{a, b} = \set{c}) \;\lor \\[3pt]
+                     & (\set{a} = \set{c} \land \set{a, b} = \set{c, d}) \;\lor \\[3pt]
+                     & (\set{a} = \set{c, d} \land \set{a, b} = \set{c}) \;\lor \\[3pt]
+                     & (\set{a} = \set{c, d} \land \set{a, b} = \set{c, d})}
+  \end{align*}
+
+  % \begin{columns}
+  %   \column{0.50\textwidth}
+  %     \[
+  %       \blue{\textsc{Case I}: a = b}
+  %     \]
+  %   \column{0.50\textwidth}
+  %     \[
+  %       \blue{\textsc{Case II}: a \neq b}
+  %     \]
+  % \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -104,5 +107,17 @@
       \iff x_{1} = y_{1} \land \dots x_{n} = y_{n}
     \]
   \end{theorem}
+
+  \pause
+  \vspace{0.20cm}
+  \begin{center}
+    By mathematical induction.
+  \end{center}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \blue{多数情况下, 我们仅处理``二元关系'', 因此也仅使用``有序对''}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
