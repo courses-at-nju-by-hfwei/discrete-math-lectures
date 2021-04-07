@@ -62,7 +62,7 @@
 \begin{frame}{}
   \begin{theorem}[关系的逆]
     \[
-      R, S \subseteq A \times B
+      R, S \;\text{均为关系}
     \]
 
     \[
@@ -82,7 +82,7 @@
 \begin{frame}{}
   \begin{definition}[左限制 (Left-Restriction)]
     Suppose $R \subseteq X \times Y$ and $S \subseteq X$.
-    The {\it left-restriction} relation of $R$ \blue{to $S$} is
+    The {\it left-restriction} relation of $R$ \blue{to $S$} over $X$ and $Y$ is
     \[
       R|_{S} = \set{(x, y) \in R \mid \red{x \in S}}
     \]
@@ -92,9 +92,9 @@
   \vspace{0.50cm}
   \begin{definition}[右限制 (Right-Restriction)]
     Suppose $R \subseteq X \times Y$ and $S \subseteq Y$.
-    The {\it right-restriction} relation of $R$ \blue{to $S$} is
+    The {\it right-restriction} relation of $R$ \blue{to $S$} over $X$ and $Y$ is
     \[
-      R|_{S} = \set{(x, y) \in R \mid \red{y \in S}}
+      R|^{S} = \set{(x, y) \in R \mid \red{y \in S}}
     \]
   \end{definition}
 
@@ -102,7 +102,7 @@
   \vspace{0.50cm}
   \begin{definition}[限制 (Restriction)]
     Suppose $R \subseteq X \times X$ and $S \subseteq X$.
-    The {\it restriction} relation of $R$ \blue{to $S$} is
+    The {\it restriction} relation of $R$ \blue{to $S$} over $X$ is
     \[
       R|_{S} = \set{(x, y) \in R \mid \red{x \in S \land y \in S}}
     \]
@@ -112,7 +112,18 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  example
+  \[
+    R = \set{(x, y) \mid x^2 + y^2 = 1} \subseteq \R \times \R
+  \]
+
+  \pause
+  \[
+    R|_{\R^{+}} \qquad (\text{left restriction, restriction})
+  \]
+  \pause
+  \[
+    R|^{\R^{+}} \qquad (\text{right restriction})
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -137,7 +148,7 @@
   \begin{definition}[逆像 (Inverse Image)]
     The {\it inverse image} of $Y$ \blue{under $R$} is the set
     \[
-      R^{-1}[Y] = \set{\red{a \in \text{dom}(R)} \mid \exists b \in Y: (a, b) \in R}
+      R^{-1}[Y] = \set{\red{a \in \text{dom}(R)} \mid \exists b \in Y.\; (a, b) \in R}
     \]
   \end{definition}
 
@@ -187,11 +198,11 @@
   \vspace{0.30cm}
   \red{对任意 $b$,}
   \begin{align*}
-    \onslide<3->{&\textcolor{white}{\iff}\; b \in R[X_1 \cup X_2] \\[6pt]}
-    \onslide<4->{&\iff \exists a \in X_1 \;\red{\cup}\; X_2: (a, b) \in R \\[6pt]}
-    \onslide<5->{&\iff \exists a \in X_1: (a, b) \in R \lor \exists a \in X_2: (a, b) \in R \\[6pt]}
-    \onslide<6->{&\iff b \in R[X_1] \lor b \in R[X_2] \\[6pt]}
-    \onslide<7->{&\iff b \in R[X_{1}] \cup R[X_{2}]}
+    \onslide<3->{&b \in R[X_1 \cup X_2] \\[6pt]}
+    \onslide<4->{\iff& \exists a \in X_1 \;\red{\cup}\; X_2.\; (a, b) \in R \\[6pt]}
+    \onslide<5->{\iff& \exists a \in X_1.\; (a, b) \in R \lor \exists a \in X_2.\; (a, b) \in R \\[6pt]}
+    \onslide<6->{\iff& b \in R[X_1] \lor b \in R[X_2] \\[6pt]}
+    \onslide<7->{\iff& b \in R[X_{1}] \cup R[X_{2}]}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -265,6 +276,14 @@
   \[
     \le \circ \ge \;\red{=}\; \pause \blue{\mathbb{R} \times \mathbb{R}}
   \]
+  \pause
+  \[
+    \forall a, b \in \R.\; (a, b) \in \;\le \circ \ge
+  \]
+  \pause
+  \[
+    (a, \red{|a| + |b|}) \qquad (\red{|a| + |b|}, b)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -285,7 +304,7 @@
     \uncover<3->{\iff& (b, a) \in R \circ S \\[6pt]}
     \uncover<4->{\iff& \exists c.\; (b, \blue{c}) \in R \land (\blue{c}, a) \in S \\[6pt]}
     \uncover<5->{\iff& \exists c.\; (\purple{c}, b) \in R^{-1} \land (a, \purple{c}) \in S^{-1} \\[6pt]}
-    \uncover<6->{\iff& (a, c) \in S^{-1} \circ R^{-1}}
+    \uncover<6->{\iff& (a, b) \in S^{-1} \circ R^{-1}}
   \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -299,11 +318,10 @@
   \end{theorem}
 
   \pause
-  \vspace{0.50cm}
   \red{对任意 $(a, b)$,}
   \setcounter{equation}{0}
   \begin{align}
-    &\red{(a, b)} \in (R \circ S) \circ T \\[6pt]
+    &(a, b) \in (R \circ S) \circ T \\[6pt]
     \onslide<3->{\iff& \exists c.\; \Big((a, c) \in T \land (c, b) \in R \circ S\Big) \\[6pt]}
     \onslide<4->{\iff& \exists c.\; \Big((a, c) \in T \land \red{\big(}\exists d: (c, d) \in S \land (d, b) \in R\red{\big)}\Big) \\[6pt]}
     \onslide<5->{\red{\iff}& \exists d.\; \exists c.\; \Big((a, c) \in T \land (c, d) \in S \land (d, b) \in R\Big) \\[6pt]}

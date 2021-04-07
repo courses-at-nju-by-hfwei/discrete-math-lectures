@@ -133,7 +133,11 @@
 
   \pause
   \[
-    \ge \text{\red{\it is} antisymmetric}
+    \red{\ge}\; \text{is antisymmetric}
+  \]
+  \pause
+  \[
+    \red{\mid}\; \text{is antisymmetric}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -261,6 +265,23 @@
   \[
     R = \set{(1, 2), (2, 3), (1, 3), (4, 4)}
   \]
+
+  \pause
+  \red{对任意 $(a, b)$,}
+  \setcounter{equation}{0}
+  \begin{align}
+    &(a, b) \in R \circ R \\[6pt]
+    \uncover<3->{\implies& \exists c.\; (a, c) \in R \land (b, c) \in R \\[6pt]}
+    \uncover<4->{\implies& (a, b) \in R}
+  \end{align}
+
+  \vspace{0.30cm}
+  \uncover<5->{
+    \red{对任意 $a, b, c$}
+    \[
+      (a, b) \in R \land (b, c) \in R \uncover<6->{\implies (a, c) \in R}
+    \]
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 

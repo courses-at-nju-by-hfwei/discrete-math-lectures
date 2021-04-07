@@ -67,7 +67,7 @@
 \begin{frame}{}
   \begin{theorem}
     \[
-      \text{dom}(R) \subseteq \bigcup \bigcup R \qquad
+      {\text{dom}}(R) \subseteq \bigcup \bigcup R \qquad
       \text{ran}(R) \subseteq \bigcup \bigcup R
     \]
   \end{theorem}
@@ -78,10 +78,10 @@
     \begin{align}
       &a \in \dom(R) \\[6pt]
       \uncover<3->{\implies& \exists b.\; (a, b) \in R \\[6pt]}
-      \uncover<5->{\implies& \exists b.\; \set{\set{a}, \set{a, b}} \in R \\[6pt]}
-      \uncover<6->{\implies& \exists b.\; \set{a, b} \in \bigcup R \\[6pt]}
-      \uncover<7->{\implies& \exists b.\; a \in \bigcup\bigcup R \\[6pt]}
-      \uncover<8->{\implies& a \in \bigcup\bigcup R}
+      \uncover<4->{\implies& \exists b.\; \blue{\set{\set{a}, \set{a, b}}} \in R \\[6pt]}
+      \uncover<5->{\implies& \exists b.\; \set{a, b} \in \bigcup R \\[6pt]}
+      \uncover<6->{\implies& \exists b.\; a \in \bigcup\bigcup R \\[6pt]}
+      \uncover<7->{\implies& a \in \bigcup\bigcup R}
     \end{align}
   \end{center}
 \end{frame}
