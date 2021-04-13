@@ -17,7 +17,7 @@
   \begin{definition}[自反的 (Reflexive)]
     $R \subseteq X \times X$ is \red{\it reflexive} if
     \[
-      \forall a \in X: (a, a) \in R
+      \forall a \in X.\; (a, a) \in R
     \]
 
     \fig{width = 0.20\textwidth}{figs/reflexive}
@@ -279,7 +279,9 @@
   \uncover<5->{
     \red{对任意 $a, b, c$}
     \[
-      (a, b) \in R \land (b, c) \in R \uncover<6->{\implies (a, c) \in R}
+      (a, b) \in R \land (b, c) \in R
+      \uncover<6->{\implies (a, c) \in R \circ R}
+      \uncover<7->{\implies (a, c) \in R}
     \]
   }
 \end{frame}

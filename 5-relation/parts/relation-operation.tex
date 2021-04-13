@@ -213,7 +213,7 @@
     The {\it composition} of relations $R \subseteq X \times \blue{Y}$
     and $S \subseteq \blue{Y} \times Z$ is the \purple{relation}
     \[
-      R \circ S = \set{(a, c) \mid \exists b: (a, \blue{b}) \in S \land (\blue{b}, c) \in R}
+      R \circ S = \set{(a, c) \mid \exists b.\; (a, \blue{b}) \in S \land (\blue{b}, c) \in R}
     \]
   \end{definition}
 
@@ -248,7 +248,7 @@
   \fig{width = 0.60\textwidth}{figs/composition}
 
   \[
-    |R \circ S| = \pause 7
+    |S \circ R| = \pause 7
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -274,15 +274,15 @@
   \pause
   \vspace{-0.60cm}
   \[
-    \le \circ \ge \;\red{=}\; \pause \blue{\mathbb{R} \times \mathbb{R}}
+    \ge \circ \le \;\red{=}\; \pause \blue{\mathbb{R} \times \mathbb{R}}
   \]
   \pause
   \[
-    \forall a, b \in \R.\; (a, b) \in \;\le \circ \ge
+    \forall a, b \in \R.\; (a, b) \in \;\ge \circ \le
   \]
   \pause
   \[
-    (a, \red{|a| + |b|}) \qquad (\red{|a| + |b|}, b)
+    (a, \red{|a| + |b|}) \in \;\le \qquad (\red{|a| + |b|}, b) \in \;\ge
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -302,8 +302,8 @@
   \begin{align}
     &(a, b) \in (R \circ S)^{-1} \\[6pt]
     \uncover<3->{\iff& (b, a) \in R \circ S \\[6pt]}
-    \uncover<4->{\iff& \exists c.\; (b, \blue{c}) \in R \land (\blue{c}, a) \in S \\[6pt]}
-    \uncover<5->{\iff& \exists c.\; (\purple{c}, b) \in R^{-1} \land (a, \purple{c}) \in S^{-1} \\[6pt]}
+    \uncover<4->{\iff& \exists c.\; (b, \blue{c}) \in S \land (\blue{c}, a) \in R \\[6pt]}
+    \uncover<5->{\iff& \exists c.\; (\purple{c}, b) \in S^{-1} \land (a, \purple{c}) \in R^{-1} \\[6pt]}
     \uncover<6->{\iff& (a, b) \in S^{-1} \circ R^{-1}}
   \end{align}
 \end{frame}
@@ -323,7 +323,7 @@
   \begin{align}
     &(a, b) \in (R \circ S) \circ T \\[6pt]
     \onslide<3->{\iff& \exists c.\; \Big((a, c) \in T \land (c, b) \in R \circ S\Big) \\[6pt]}
-    \onslide<4->{\iff& \exists c.\; \Big((a, c) \in T \land \red{\big(}\exists d: (c, d) \in S \land (d, b) \in R\red{\big)}\Big) \\[6pt]}
+    \onslide<4->{\iff& \exists c.\; \Big((a, c) \in T \land \red{\big(}\exists d.\; (c, d) \in S \land (d, b) \in R\red{\big)}\Big) \\[6pt]}
     \onslide<5->{\red{\iff}& \exists d.\; \exists c.\; \Big((a, c) \in T \land (c, d) \in S \land (d, b) \in R\Big) \\[6pt]}
     \onslide<6->{\iff& \exists d.\; \Big(\red{\big(}\exists c.\; (a, c) \in T \land (c, d) \in S\red{\big)} \land (d, b) \in R\Big) \\[6pt]}
     \onslide<7->{\iff& \exists d.\; \Big((a, d) \in S \circ T \land (d, b) \in R\Big) \\[6pt]}
@@ -350,7 +350,7 @@
 
   \pause
   \[
-    G = \set{(a,b): a \text{ 是}\; b \text{ 的舅姥爷}}
+    G = \set{(a,b) \mid a \text{ 是}\; b \text{ 的舅姥爷}}
   \]
 
   \pause
@@ -363,12 +363,12 @@
 
   \pause
   \[
-    \blue{G = B \circ (M \circ M)}
+    \blue{G = (M \circ M) \circ B}
   \]
 
   \pause
   \[
-    G = \blue{B \circ (M \circ M)} = \red{(B \circ M) \circ M}
+    G = \blue{(M \circ M) \circ B} = \red{M \circ (M \circ B)}
   \]
 
   \pause
