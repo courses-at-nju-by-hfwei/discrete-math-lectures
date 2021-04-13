@@ -1,0 +1,262 @@
+% partial-order.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    X = \set{1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60}
+  \]
+  \[
+    X \text{ 上的\red{整除}关系}
+  \]
+
+  \fig{width = 0.70\textwidth}{figs/60-poset}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    S = \set{x, y, z}
+  \]
+  \[
+    \ps{S} \text{ 上的\red{包含 $\subseteq$}关系}
+  \]
+
+  \pause
+  \fig{width = 0.60\textwidth}{figs/Hasse-Powerset}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[偏序关系 (Partial Order/Ordering)]
+    令 $R \subseteq X \times X$ 是 $X$ 上的二元关系。\\[3pt]
+    如果 $R$ 满足以下条件, 则称 $R$ 是 $X$ 上的 \red{\bf 偏序 (关系)}: \\[6pt]
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{6pt}
+      \item $R$ 是\red{自反 (irreflexive)}的。
+        \[
+          \forall x \in X.\; x R x.
+        \]
+      \item $R$ 是\red{反对称 (antisymmetric)}的。
+        \[
+          \forall x, y \in X.\; x R y \land y R x \to x = y.
+        \]
+      \item $R$ 是\red{传递 (transitive)}的。
+        \[
+          \forall x, y, z \in X.\; x R y \land y R z \to x R z.
+        \]
+    \end{enumerate}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[严格偏序关系 (Strict Partial Order/Ordering)]
+    令 $R \subseteq X \times X$ 是 $X$ 上的二元关系。\\[3pt]
+    如果 $R$ 满足以下条件, 则称 $R$ 是 $X$ 上的 \red{\bf 严格偏序 (关系)}: \\[6pt]
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{6pt}
+      \item $R$ 是\red{反自反 (irreflexive)}的。
+        \[
+          \forall x \in X.\; x \overline{R} x.
+        \]
+      \item \gray{$R$ 是\textcolor{red!20!gray}{反对称 (antisymmetric)}的。
+        \[
+          \forall x, y \in X.\; x R y \land y R x \to x = y.
+        \]}
+      \item $R$ 是\red{传递 (transitive)}的。
+        \[
+          \forall x, y, z \in X.\; x R y \land y R z \to x R z.
+        \]
+    \end{enumerate}
+  \end{definition}
+
+  \pause
+  \vspace{-0.20cm}
+  \[
+    (1) + (3) \implies (2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/lamport}
+
+  \begin{center}
+    \teal{Leslie Lamport (1941 $\sim$)} \\[3pt]
+  \end{center}
+
+  \begin{quote}
+    For ``fundamental contributions to the theory and practice of
+      \red{\bf distributed and concurrent systems},
+      notably the invention of concepts
+      such as causality and logical clocks,
+      safety and liveness, replicated state machines,
+      and sequential consistency''
+
+    \hfill  --- \blue{Turing Award (2013)}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.75\textwidth}{figs/lamport-ordering}
+  \begin{center}
+    \red{引用量 $\ge 12525$}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.65\textwidth}{figs/lamport-std}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[事件间的``先于''关系 (``Happened Before'' Relation on Events)]
+    令 $E$ 是表示事件的集合。\\[3pt]
+    $\to \;\subseteq E \times E$ 是 $E$ 上的\red{``先于''}关系,
+    如果它是满足以下条件的\red{最小}关系: \\[5pt]
+    \begin{itemize}
+      \setlength{\itemsep}{8pt}
+      \item 对任何事件 $a \in E$, $a \not\to a$;
+      \item 如果 $a, b$ 事件属于同一个进程且 $a$ 在 $b$ 之前发生, 则 $a \to b$;
+      \item 如果 $a, b$ 分别表示同一个消息的发送事件与接收事件, 则 $a \to b$;
+      \item 如果 $a \to b$ 且 $b \to c$, 则 $a \to c$。
+    \end{itemize}
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}
+    $\to \;\subseteq E \times E$ 是 $E$ 上的严格偏序。
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[偏序集 (Partially Ordered Set; Poset)]
+    如果 $R \subseteq X \times X$ 是 $X$ 上的偏序,
+    则称 $(X, R)$ 为偏序集。
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[极大元与极小元 (Maximal/Minimal)]
+    令 $R \subseteq X \times X$ 是 $X$ 上的偏序。
+    设 $a \in X$。\\[5pt]
+
+    \pause
+    如果
+    \[
+      \forall x \in X.\; \lnot \big(x \neq a \land (a, x) \in R \big).
+    \]
+    \[
+      \forall x \in X.\; \big(x \neq a \to (a, x) \notin R \big).
+    \]
+    则称 $a$ 是 $X$ 的\red{极大元}。\\[10pt]
+
+    \pause
+    如果
+    \[
+      \forall x \in X.\; \lnot \big(x \neq a \land (x, a) \in R \big).
+    \]
+    \[
+      \forall x \in X.\; \big(x \neq a \to (x, a) \notin R \big).
+    \]
+    则称 $a$ 是 $X$ 的\red{极小元}。
+  \end{definition}
+
+  \pause
+  \begin{center}
+    \red{$Q:$ 极大/极小元是否一定存在? 如果存在, 是否唯一?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \[
+      (\R, \le)
+    \]
+    \pause
+    \begin{center}
+      无极大元、无极小元
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \begin{exampleblock}{}
+    \[
+      (\N, \le)
+    \]
+    \pause
+    \begin{center}
+      无极大元、有唯一极小元 $0$
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \begin{exampleblock}{}
+    \[
+      (\set{2, 3, 4, \dots} = \N \setminus \set{0, 1}, \mid)
+    \]
+    \pause
+    \begin{center}
+      无极大元、有无穷多个极小元 (所有的素数)
+    \end{center}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[最大元与最小元 (Greatest/Least)]
+    令 $R \subseteq X \times X$ 是 $X$ 上的偏序。
+    设 $a \in X$。\\[5pt]
+
+    \pause
+    如果
+    \[
+      \forall x \in X.\; \lnot \big(x \neq a \land (a, x) \in R \big).
+    \]
+    \[
+      \forall x \in X.\; \big(x \neq a \to (a, x) \notin R \big).
+    \]
+    则称 $a$ 是 $X$ 的\red{最大元}。\\[10pt]
+
+    \pause
+    如果
+    \[
+      \forall x \in X.\; \lnot \big(x \neq a \land (x, a) \in R \big).
+    \]
+    \[
+      \forall x \in X.\; \big(x \neq a \to (x, a) \notin R \big).
+    \]
+    则称 $a$ 是 $X$ 的\red{最小元}。
+  \end{definition}
+
+  \pause
+  \begin{center}
+    \red{$Q:$ 最大/最小元是否一定存在? 如果存在, 是否唯一?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    偏序集 $(X, R)$ 如果有最大元或最小元, 则它们是唯一的。
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
