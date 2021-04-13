@@ -1,0 +1,127 @@
+% special-elements.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[极大元与极小元 (Maximal/Minimal)]
+    令 $R \subseteq X \times X$ 是 $X$ 上的偏序。
+    设 $a \in X$。\\[5pt]
+
+    \pause
+    如果
+    \[
+      \forall x \in X.\; \lnot \big(x \neq a \land (a, x) \in R \big),
+    \]
+    \[
+      \forall x \in X.\; \big(x \neq a \to (a, x) \notin R \big),
+    \]
+    则称 $a$ 是 $X$ 的\red{极大元}。\\[10pt]
+
+    \pause
+    如果
+    \[
+      \forall x \in X.\; \lnot \big(x \neq a \land (x, a) \in R \big),
+    \]
+    \[
+      \forall x \in X.\; \big(x \neq a \to (x, a) \notin R \big),
+    \]
+    则称 $a$ 是 $X$ 的\red{极小元}。
+  \end{definition}
+
+  \pause
+  \begin{center}
+    \red{$Q:$ 极大/极小元是否一定存在? 如果存在, 是否唯一?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \[
+      (\R, \le)
+    \]
+    \pause
+    \begin{center}
+      无极大元、无极小元
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \begin{exampleblock}{}
+    \[
+      (\N, \le)
+    \]
+    \pause
+    \begin{center}
+      无极大元、有唯一极小元 $0$
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \begin{exampleblock}{}
+    \[
+      (\set{2, 3, 4, \dots} = \N \setminus \set{0, 1}, \mid)
+    \]
+    \pause
+    \begin{center}
+      无极大元、有无穷多个极小元 (所有的素数)
+    \end{center}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[最大元与最小元 (Greatest/Least)]
+    令 $R \subseteq X \times X$ 是 $X$ 上的偏序。
+    设 $a \in X$。\\[5pt]
+
+    \pause
+    如果
+    \[
+      \forall x \in X.\; (x, a) \in R,
+    \]
+    则称 $a$ 是 $X$ 的\red{最大元}。\\[10pt]
+
+    \pause
+    如果
+    \[
+      \forall x \in X.\; (a, x) \in R,
+    \]
+    则称 $a$ 是 $X$ 的\red{最小元}。
+  \end{definition}
+
+  \pause
+  \begin{center}
+    \red{$Q:$ 最大/最小元是否一定存在? 如果存在, 是否唯一?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    偏序集 $(X, R)$ 如果有最大元或最小元, 则它们是唯一的。
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%

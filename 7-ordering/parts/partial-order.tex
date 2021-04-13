@@ -30,7 +30,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[偏序关系 (Partial Order/Ordering)]
-    令 $R \subseteq X \times X$ 是 $X$ 上的二元关系。\\[3pt]
+    令 $\red{\le} \;\subseteq X \times X$ 是 $X$ 上的二元关系。\\[3pt]
     如果 $R$ 满足以下条件, 则称 $R$ 是 $X$ 上的 \red{\bf 偏序 (关系)}: \\[6pt]
     \begin{enumerate}[(1)]
       \setlength{\itemsep}{6pt}
@@ -48,6 +48,27 @@
         \]
     \end{enumerate}
   \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    R \qquad \text{\it vs.} \qquad \le
+  \]
+
+  \pause
+  \[
+    R^{-1} \qquad \text{\it vs.} \qquad \ge \;\triangleq\; \le^{-1}
+  \]
+
+  \pause
+  \[
+    a < b \;\triangleq a \le b \land a \neq b
+  \]
+  \[
+    a R b \land a \neq b
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -78,6 +99,20 @@
   \[
     (1) + (3) \implies (2)
   \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    设 $R \subseteq X \times X$ 是 $X$ 上的\red{严格偏序}。\\[5pt]
+    对于任意 $x, y, z \in X$: \\[6pt]
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{6pt}
+      \item $x < y$, $x = y$, $y < x$ 三者中\blue{\bf 至多有一个}成立;
+      \item $x \le y \le x \to x = y$。
+    \end{enumerate}
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -146,117 +181,5 @@
     如果 $R \subseteq X \times X$ 是 $X$ 上的偏序,
     则称 $(X, R)$ 为偏序集。
   \end{definition}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{definition}[极大元与极小元 (Maximal/Minimal)]
-    令 $R \subseteq X \times X$ 是 $X$ 上的偏序。
-    设 $a \in X$。\\[5pt]
-
-    \pause
-    如果
-    \[
-      \forall x \in X.\; \lnot \big(x \neq a \land (a, x) \in R \big).
-    \]
-    \[
-      \forall x \in X.\; \big(x \neq a \to (a, x) \notin R \big).
-    \]
-    则称 $a$ 是 $X$ 的\red{极大元}。\\[10pt]
-
-    \pause
-    如果
-    \[
-      \forall x \in X.\; \lnot \big(x \neq a \land (x, a) \in R \big).
-    \]
-    \[
-      \forall x \in X.\; \big(x \neq a \to (x, a) \notin R \big).
-    \]
-    则称 $a$ 是 $X$ 的\red{极小元}。
-  \end{definition}
-
-  \pause
-  \begin{center}
-    \red{$Q:$ 极大/极小元是否一定存在? 如果存在, 是否唯一?}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{}
-    \[
-      (\R, \le)
-    \]
-    \pause
-    \begin{center}
-      无极大元、无极小元
-    \end{center}
-  \end{exampleblock}
-
-  \pause
-  \begin{exampleblock}{}
-    \[
-      (\N, \le)
-    \]
-    \pause
-    \begin{center}
-      无极大元、有唯一极小元 $0$
-    \end{center}
-  \end{exampleblock}
-
-  \pause
-  \begin{exampleblock}{}
-    \[
-      (\set{2, 3, 4, \dots} = \N \setminus \set{0, 1}, \mid)
-    \]
-    \pause
-    \begin{center}
-      无极大元、有无穷多个极小元 (所有的素数)
-    \end{center}
-  \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{definition}[最大元与最小元 (Greatest/Least)]
-    令 $R \subseteq X \times X$ 是 $X$ 上的偏序。
-    设 $a \in X$。\\[5pt]
-
-    \pause
-    如果
-    \[
-      \forall x \in X.\; \lnot \big(x \neq a \land (a, x) \in R \big).
-    \]
-    \[
-      \forall x \in X.\; \big(x \neq a \to (a, x) \notin R \big).
-    \]
-    则称 $a$ 是 $X$ 的\red{最大元}。\\[10pt]
-
-    \pause
-    如果
-    \[
-      \forall x \in X.\; \lnot \big(x \neq a \land (x, a) \in R \big).
-    \]
-    \[
-      \forall x \in X.\; \big(x \neq a \to (x, a) \notin R \big).
-    \]
-    则称 $a$ 是 $X$ 的\red{最小元}。
-  \end{definition}
-
-  \pause
-  \begin{center}
-    \red{$Q:$ 最大/最小元是否一定存在? 如果存在, 是否唯一?}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{theorem}
-    偏序集 $(X, R)$ 如果有最大元或最小元, 则它们是唯一的。
-  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%

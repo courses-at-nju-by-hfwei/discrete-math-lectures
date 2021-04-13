@@ -1,0 +1,141 @@
+% func-as-set.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\LARGE Functions as Sets}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{axiom}[Axiom of Extensionality]
+    \[
+      \forall A\; \forall B\; \forall x: (x \in A \iff x \in B) \iff A = B.
+    \]
+  \end{axiom}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}[The Principle of Functional Extensionality]
+    \[
+      f, g \text{ are functions}:
+    \]
+    \[
+      f = g \iff \dom{f} = \dom{g} \land \Big(\forall x \in \dom{f}: f(x) = g(x)\Big)
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \forall f\; \forall g\; \forall (a, b): ((a, b) \in f \iff (a, b) \in g) \iff f = g.
+  \]
+
+  \pause
+  \[
+    \teal{\text{It may be that } \cod{f} \neq \cod{g}.}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    f: A \to B \qquad g: C \to D
+  \]
+
+  \begin{center}
+    \red{$Q:$ Is $f \cap g$ a function?}
+  \end{center}
+
+  \pause
+  \begin{theorem}[Intersection of Functions]
+    \[
+      f \cap g: (A \cap C) \to (B \cap D)
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    f: A \to B \qquad g: C \to D
+  \]
+
+  \begin{center}
+    \red{$Q:$ Is $f \cup g$ a function?}
+  \end{center}
+
+  \pause
+  \begin{theorem}[Union of Functions]
+    \[
+      f \cup g: (A \cup C) \to (B \cup D) \iff
+      \forall x \in \dom{f} \cap \dom{g}: f(x) = g(x)
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{exampleblock}{UD Problem 14.3 (g)}
+    \[
+      f: \mathbb{Q} \to \real{}
+    \]
+
+    \[
+      f(x) = \left\{\begin{array}{ll}
+	x + 1 & \text{if } x \in 2\integer{} \\
+	x - 1 & \text{if } x \in 3\integer{} \\
+	2     & \text{otherwise}
+      \end{array}\right.
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \teal{x \in 6\integer{}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{UD Problem 14.5}
+%     \[
+%       f: \mathcal{P}(\real{}) \to \integer{}
+%     \]
+%
+%     \[
+%       f(A) = \left\{\begin{array}{ll}
+% 	\min(A \cap \nat{}) & \text{if } A \cap \nat{} \neq \emptyset \\
+% 	-1 & \text{if } A \cap \nat{} = \emptyset
+%       \end{array}\right.
+%     \]
+%   \end{exampleblock}
+%
+%   \pause
+%   \vspace{0.50cm}
+%   \begin{center}
+%     By the \red{\it Well-Ordering Principle} of $\nat{}$
+%   \end{center}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    D: \real{} \to \real{}
+  \]
+
+  \[
+    D(x) = \left\{\begin{array}{ll}
+      1 & \text{if } x \in \mathbb{Q} \\
+      0 & \text{if } x \in \real \setminus \mathbb{Q}
+    \end{array}\right.
+  \]
+
+  \vspace{0.60cm}
+  \centerline{Dirichlet Function}
+\end{frame}
+%%%%%%%%%%%%%%%

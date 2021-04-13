@@ -1,0 +1,127 @@
+% func-composition.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\LARGE Function Composition}
+  \end{center}
+
+  \fig{width = 0.30\textwidth}{figs/function-composition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Composition]
+    \[
+      f: A \to B \qquad g: C \to D
+    \]
+    \[
+      \red{\ran{f} \subseteq C}
+    \]
+
+    The {\it composite function} $g \circ f: A \to D$ is defined as
+
+    \[
+      (g \circ f) (x) = g(f(x))
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.20cm}
+  \begin{center}
+    \red{Why not ``$\exists b$'' as below?}
+  \end{center}
+
+  \vspace{-0.30cm}
+  \begin{definition}[Composition]
+    The {\it composition} of relations $R$ and $S$ is the relation
+    \[
+      R \circ S = \set{(a, c) \mid \red{\exists b}: (a, b) \in S \land (b, c) \in R}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Associative Property for Composition]
+    \[
+      f: A \to B \quad g: B \to C \quad h: C \to D
+    \]
+
+    \[
+      h \circ (g \circ f) = (h \circ g) \circ f
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{proof}
+    \pause
+    \begin{enumerate}[(i)]
+      \item 
+	\[
+	  \dom{h \circ (g \circ f)} = \dom{(h \circ g) \circ f}
+	\]
+      \item 
+	\[
+	  (h \circ (g \circ f))(x) = ((h \circ g) \circ f)(x)
+	\]
+    \end{enumerate}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[UD Theorem 16.7]
+    \[
+      f: A \to B \qquad g: B \to C
+    \]
+
+    \begin{enumerate}[(i)]
+      \item If $f, g$ are injective, then $g \circ f$ is injective.
+      \item If $f, g$ are surjective, then $g \circ f$ is surjective.
+      \item If $f, g$ are bijective, then $g \circ f$ is bijective.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{proof}[Proof for (i)]
+    \[
+      \forall a_1, a_2 \in A: \Big( (g \circ f)(a_1) = (g \circ f)(a_2) \implies a_1 = a_2 \Big)
+    \]
+  \end{proof}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{proof}[Proof for (ii)]
+    \[
+      \forall c \in C: \Big( \exists a \in A: (g \circ f)(a) = c \Big)
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[UD Theorem 16.8]
+    \[
+      f: A \to B \qquad g: B \to C
+    \]
+
+    \begin{enumerate}[(i)]
+      \item If $g \circ f$ is surjective, then $g$ is surjective.
+      \item If $g \circ f$ is injective, then $f$ is injective.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \teal{You can also prove it by contradiction.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
