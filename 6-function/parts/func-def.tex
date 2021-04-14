@@ -23,24 +23,24 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Function]
-    $R \subseteq A \times B$ is a \red{\it function} from $A$ to $B$ if
+    $f \subseteq A \times B$ is a \red{\it function} \blue{from $A$ to $B$} if
 
     \[
-      \red{\forall} a \in A: \red{\exists!} b \in B: (a, b) \in f.
+      \red{\forall} a \in A.\; \red{\exists!} \;b \in B.\; (a, b) \in f.
     \]
   \end{definition}
 
   \pause
   \[
-    f: A \to B 
+    f: A \to B
   \]
 
   \pause
   \[
-    \dom{f} = A \qquad \cod{f} = B
+    \dom(f) = A \qquad \purple{\cod}(f) = B
   \]
   \[
-    \ran{f} = f(A) \subseteq B
+    \ran(f) = f(A) \subseteq B
   \]
 
   \pause
@@ -56,66 +56,82 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Function]
-    $R \subseteq A \times B$ is a \red{\it function} from $A$ to $B$ if
+    $f \subseteq A \times B$ is a \red{\it function} \blue{from $A$ to $B$} if
 
     \[
-      \red{\forall} a \in A: \red{\exists!} b \in B: (a, b) \in f.
+      \red{\forall} a \in A.\; \red{\exists!} \;b \in B.\; (a, b) \in f.
     \]
   \end{definition}
 
+  \vspace{0.30cm}
   \begin{alertblock}{For Proof:}
     \pause
     \[
-      \red{\forall a \in A:}
+      \red{\forall a \in A.}
     \]
     \[
-      \forall a \in A: \exists b \in B: (a, b) \in f
+      \forall a \in A.\; \exists b \in B. (a, b) \in f
     \]
 
     \pause
     \[
-      \red{\exists! b \in B:}
+      \red{\exists! b \;\in B.}
     \]
     \[
-      \forall b, b' \in B: (a, b) \in f \land (a, b') \in f \implies b = b'
+      \forall b, b' \in B.\; (a, b) \in f \land (a, b') \in f \implies b = b'
     \]
   \end{alertblock}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \fig{width = 0.50\textwidth}{figs/weierstrass-function}{\centerline{Weierstrass Function (1872)}}
-% 
-%   \[
-%     f(x)=\sum_{n=0} ^\infty a^n \cos(b^n \pi x) 
-%   \]
-% 
-%   \[
-%     0 < a < 1,\; b \in 2\nat + 1,\; ab > 1+\frac{3}{2} \pi
-%   \]
-% \end{frame}
+\begin{frame}{}
+  \[
+    I_{X} : X \to X
+  \]
+
+  \vspace{0.20cm}
+  \begin{center}
+    $X$ 上的恒等函数
+  \end{center}
+
+  \[
+    \forall x \in X.\; I_{X}(x) = x
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    f(x)=\sum_{n=0} ^\infty a^n \cos(b^n \pi x)
+  \]
+
+  \[
+    0 < a < 1,\; b \text{ is a positive odd integer},\; ab > 1+\frac{3}{2} \pi
+  \]
+
+  \fig{width = 0.50\textwidth}{figs/weierstrass-function}
+
+  \pause
+  \begin{center}
+    \teal{Weierstrass Function (1872)} \\[3pt]
+    ``处处连续, 但处处不可导''
+  \end{center}
+\end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}
-  \begin{definition}
-    The \red{\it set} of all functions from $X$ to $Y$:
+  \begin{definition}[$Y^{X}$]
+    The \red{\it set} of all functions \blue{from $X$ to $Y$}:
     \[
       Y^{X} = \set{f \mid f: X \to Y}
     \]
   \end{definition}
 
   \pause
-  \[
-    Y^{X} = \set{f \;\red{\in\; \ps{X \times Y}} \mid f: X \to Y}
-  \]
-
-  \pause
   \vspace{0.50cm}
-  \begin{center}
-    $X$ and $Y$ are finite sets with $x$ and $y$ elements, respectively.
-  \end{center}
   \[
     |X| = x \quad |Y| = y, \qquad |Y^{X}| = \pause y^{x}
   \]
@@ -123,16 +139,16 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}
-  \begin{definition}
-    The set of all functions from $X$ to $Y$:
+\begin{frame}{}
+  \begin{definition}[$Y^{X}$]
+    The \red{\it set} of all functions \blue{from $X$ to $Y$}:
     \[
       Y^{X} = \set{f \mid f: X \to Y}
     \]
   \end{definition}
 
   \[
-    \forall Y: Y^{\emptyset} = \pause \set{\emptyset}
+    \forall Y.\; Y^{\emptyset} = \pause \set{\emptyset}
   \]
 
   \pause
@@ -143,33 +159,33 @@
 
   \pause
   \[
-    \forall X \neq \emptyset: \emptyset^{X} = \pause \emptyset
+    \forall X \neq \emptyset.\; \emptyset^{X} = \pause \emptyset
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}
-  \begin{definition}
-    The set of all functions from $X$ to $Y$:
-    \[
-      Y^{X} = \set{f \mid f: X \to Y}
-    \]
-  \end{definition}
-
-  \[
-    2^{X} = \set{0, 1}^{X} \cong \ps{X}
-  \]
-
-  % \pause
-  % \fig{width = 0.60\textwidth}{figs/powerset-2-x-notation}
-\end{frame}
+% \begin{frame}{}
+%   \begin{definition}[$Y^{X}$]
+%     The \red{\it set} of all functions \blue{from $X$ to $Y$}:
+%     \[
+%       Y^{X} = \set{f \mid f: X \to Y}
+%     \]
+%   \end{definition}
+%
+%   \[
+%     2^{X} = \set{0, 1}^{X} \cong \ps{X}
+%   \]
+%
+%   % \pause
+%   % \fig{width = 0.60\textwidth}{figs/powerset-2-x-notation}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}
-  \begin{definition}
-    The set of all functions from $X$ to $Y$:
+\begin{frame}{}
+  \begin{definition}[$Y^{X}$]
+    The \red{\it set} of all functions \blue{from $X$ to $Y$}:
     \[
       Y^{X} = \set{f \mid f: X \to Y}
     \]
@@ -191,10 +207,10 @@
 
     \pause
     For every set $X$, there exists a function $I_{X}: \set{X} \to \set{X}$.
-
     \pause
     \[
-      \bigcup_{I_{X} \in A} \dom{I_{X}}
+      \bigcup_{I_{X} \in A} \dom(I_{X})
+        \pause\text{ would be the \purple{universe} that does not exist!}
     \]
   \end{center}
 \end{frame}
