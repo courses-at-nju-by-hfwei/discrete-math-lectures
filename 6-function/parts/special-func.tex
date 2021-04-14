@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    \teal{\LARGE Special Functions (\Large \emph{-jectivity})}
+    \teal{\LARGE Special Functions (\Large {\it -jectivity})}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -17,7 +17,7 @@
 
     \vspace{-0.60cm}
     \[
-      \forall a_1, a_2 \in A: a_1 \neq a_2 \implies f(a_1) \neq f(a_2)
+      \forall a_1, a_2 \in A.\; a_1 \neq a_2 \to f(a_1) \neq f(a_2)
     \]
   \end{definition}
 
@@ -25,14 +25,14 @@
   \uncover<3->{
     \begin{alertblock}{For Proof:}
       \begin{itemize}
-	\item To prove that $f$ \blue{\it is} 1-1:
-	  \[
-	    \forall a_1, a_2 \in A: f(a_1) = f(a_2) \implies a_1 = a_2
-	  \]
-	\item<4-> To show that $f$ \blue{\it is not} 1-1:
-	  \[
-	    \exists a_1, a_2 \in A: a_1 \neq a_2 \land f(a_1) = f(a_2)
-	  \]
+        \item To prove that $f$ \blue{\it is} 1-1:
+          \[
+            \forall a_1, a_2 \in A.\; f(a_1) = f(a_2) \to a_1 = a_2
+          \]
+        \item<4-> To show that $f$ \blue{\it is not} 1-1:
+          \[
+            \red{\exists} a_1, a_2 \in A.\; a_1 \neq a_2 \land f(a_1) = f(a_2)
+          \]
       \end{itemize}
     \end{alertblock}
   }
@@ -48,7 +48,7 @@
 
     \vspace{-0.60cm}
     \[
-      \ran{f} = B
+      \ran(f) = B
     \]
   \end{definition}
 
@@ -56,15 +56,15 @@
   \uncover<3->{
     \begin{alertblock}{For Proof:}
       \begin{itemize}
-	\item To prove that $f$ \blue{\it is} onto:
-	  \[
-	    \forall b \in B \; \Big(\red{\exists} a \in A: f(a) = b \Big)
-	  \]
-	\item<4-> To show that $f$ \blue{\it is not} onto:
-	  \[
-	    \red{\exists} b \in B\; \Big(\red{\forall} a \in A: f(a) \neq b \Big)
-	  \]
-	\end{itemize}
+        \item To prove that $f$ \blue{\it is} onto:
+          \[
+            \forall b \in B. \; \big(\red{\exists} a \in A.\; f(a) = b \big)
+          \]
+        \item<4-> To show that $f$ \blue{\it is not} onto:
+          \[
+            \red{\exists} b \in B.\; \big(\red{\forall} a \in A.\; f(a) \neq b \big)
+          \]
+        \end{itemize}
     \end{alertblock}
   }
 \end{frame}
@@ -72,7 +72,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Bijective (one-to-one correspondence) 一一对应]
+  \begin{definition}[Bijective (one-to-one correspondence) 双射; 一一对应]
     \[
       f: A \to B \qquad \uncover<2->{f: A \red{\;\xleftrightarrow[onto]{1-1}\;} B}
     \]
@@ -85,7 +85,35 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \input{parts/cantor-theorem}
+\begin{frame}{}
+  \[
+    f: \Z \to \N, \qquad f(x) = x^2 + 1
+  \]
+
+  \pause
+  \[
+    f: \N \to \Q, \qquad f(x) = \frac{1}{x}
+  \]
+
+  \pause
+  \[
+    f: \N \to \N, \qquad f(x) = 2^{x}
+  \]
+
+  \pause
+  \[
+    f: \Z \times \N \to \Q, \qquad f(z, n) = \frac{z}{n+1}
+  \]
+
+  \pause
+  \[
+    f: \R^{2} \to \R^{2}, \qquad f(x,y) = (x+1, y+1)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\input{parts/cantor-theorem}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -94,11 +122,11 @@
 %     \[
 %       a, b, c, d \in \real{},\; a < b,\; c < d
 %     \]
-% 
+%
 %     \vspace{0.30cm}
 %     \centerline{Define a bijective function:}
 %     \vspace{0.10cm}
-% 
+%
 %     \[
 %       f: [a,b] \xleftrightarrow[onto]{1-1} [c,d]
 %     \]
