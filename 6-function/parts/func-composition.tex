@@ -6,7 +6,7 @@
     \teal{\LARGE Function Composition}
   \end{center}
 
-  \fig{width = 0.30\textwidth}{figs/function-composition}
+  \fig{width = 0.40\textwidth}{figs/function-composition}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -17,10 +17,10 @@
       f: A \to B \qquad g: C \to D
     \]
     \[
-      \red{\ran{f} \subseteq C}
+      \red{\ran(f) \subseteq C}
     \]
 
-    The {\it composite function} $g \circ f: A \to D$ is defined as
+    The \red{\it composite function} $g \circ f: A \to D$ is defined as
 
     \[
       (g \circ f) (x) = g(f(x))
@@ -60,14 +60,14 @@
   \begin{proof}
     \pause
     \begin{enumerate}[(i)]
-      \item 
-	\[
-	  \dom{h \circ (g \circ f)} = \dom{(h \circ g) \circ f}
-	\]
-      \item 
-	\[
-	  (h \circ (g \circ f))(x) = ((h \circ g) \circ f)(x)
-	\]
+      \item
+        \[
+          \dom(h \circ (g \circ f)) = \dom((h \circ g) \circ f)
+        \]
+      \item
+        \[
+          (h \circ (g \circ f))(x) = ((h \circ g) \circ f)(x)
+        \]
     \end{enumerate}
   \end{proof}
 \end{frame}
@@ -75,7 +75,35 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[UD Theorem 16.7]
+  \[
+    (h \circ (g \circ f))(x) = ((h \circ g) \circ f)(x)
+  \]
+
+  \vspace{0.50cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \setcounter{equation}{0}
+      \begin{align}
+        &(h \circ (g \circ f))(x) \\[6pt]
+        =\; &h((g \circ f) (x)) \\[6pt]
+        =\; &h(g(f(x)))
+      \end{align}
+    \column{0.50\textwidth}
+      \pause
+      \setcounter{equation}{0}
+      \begin{align}
+        &((h \circ g) \circ f)(x) \\[6pt]
+        =\; &((h \circ g) (f(x))) \\[6pt]
+        =\; &h(g(f(x)))
+      \end{align}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[]
     \[
       f: A \to B \qquad g: B \to C
     \]
@@ -86,42 +114,72 @@
       \item If $f, g$ are bijective, then $g \circ f$ is bijective.
     \end{enumerate}
   \end{theorem}
-
-  \pause
-  \vspace{0.30cm}
-  \begin{proof}[Proof for (i)]
-    \[
-      \forall a_1, a_2 \in A: \Big( (g \circ f)(a_1) = (g \circ f)(a_2) \implies a_1 = a_2 \Big)
-    \]
-  \end{proof}
-
-  \pause
-  \vspace{0.30cm}
-  \begin{proof}[Proof for (ii)]
-    \[
-      \forall c \in C: \Big( \exists a \in A: (g \circ f)(a) = c \Big)
-    \]
-  \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[UD Theorem 16.8]
+  \[
+    f: A \to B \qquad g: B \to C
+  \]
+  \begin{center}
+    If $f, g$ are injective, then $g \circ f$ is injective.
+  \end{center}
+
+  \pause
+  \[
+    \forall a_1, a_2 \in A.\;
+      \Big( (g \circ f)(a_1) = (g \circ f)(a_2) \to a_1 = a_2 \Big)
+  \]
+
+  \pause
+  \setcounter{equation}{0}
+  \begin{align}
+    &(g \circ f)(a_1) = (g \circ f)(a_2) \\[6pt]
+    \uncover<3->{\implies &g(f(a_{1})) = g(f(a_{2})) \\[6pt]}
+    \uncover<4->{\implies &f(a_{1}) = f(a_{2}) \\[6pt]}
+    \uncover<5->{\implies &a_{1} = a_{2}}
+  \end{align}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    f: A \to B \qquad g: B \to C
+  \]
+  \begin{center}
+    If $f, g$ are surjective, then $g \circ f$ is surjective.
+  \end{center}
+
+  \pause
+  \[
+    \forall c \in C.\; \Big( \exists a \in A.\; (g \circ f)(a) = c \Big)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[]
     \[
       f: A \to B \qquad g: B \to C
     \]
 
     \begin{enumerate}[(i)]
-      \item If $g \circ f$ is surjective, then $g$ is surjective.
+      \item \teal{If $g \circ f$ is surjective, then $g$ is surjective.}
       \item If $g \circ f$ is injective, then $f$ is injective.
     \end{enumerate}
   \end{theorem}
 
   \pause
-  \vspace{0.30cm}
-  \begin{center}
-    \teal{You can also prove it by contradiction.}
-  \end{center}
+  \red{对任意 $a_{1}, a_{2}$,}
+  \setcounter{equation}{0}
+  \begin{align}
+    &f(a_{1}) = f(a_{2}) \\[6pt]
+    \uncover<3->{\implies & g(f(a_{1})) = g(f(a_{2})) \\[6pt]}
+    \uncover<4->{\implies & (g \circ f) (a_{1}) = (g \circ f) (a_{2}) \\[6pt]}
+    \uncover<5->{\implies & a_{1} = a_{2}}
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
