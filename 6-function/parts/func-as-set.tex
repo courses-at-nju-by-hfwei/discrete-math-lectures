@@ -10,31 +10,24 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{axiom}[Axiom of Extensionality]
-    \[
-      \forall A\; \forall B\; \forall x: (x \in A \iff x \in B) \iff A = B.
-    \]
-  \end{axiom}
-
-  \pause
-  \vspace{0.50cm}
-  \begin{theorem}[The Principle of Functional Extensionality]
+  \begin{theorem}[函数的外延性原理 (The Principle of Functional Extensionality)]
     \[
       f, g \text{ are functions}:
     \]
     \[
-      f = g \iff \dom{f} = \dom{g} \land \Big(\forall x \in \dom{f}: f(x) = g(x)\Big)
+      f = g \iff \dom(f) = \dom(g)
+        \land \big(\forall x \in \dom(f).\; f(x) = g(x) \big)
     \]
   \end{theorem}
 
   \pause
   \[
-    \forall f\; \forall g\; \forall (a, b): ((a, b) \in f \iff (a, b) \in g) \iff f = g.
+    f = g \iff \forall (a, b).\; ((a, b) \in f \leftrightarrow (a, b) \in g).
   \]
 
   \pause
   \[
-    \teal{\text{It may be that } \cod{f} \neq \cod{g}.}
+    \red{\text{It may be that } \cod(f) \neq \cod(g).}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -70,72 +63,72 @@
 
   \pause
   \begin{theorem}[Union of Functions]
-    \[
+    {\[
       f \cup g: (A \cup C) \to (B \cup D) \iff
-      \forall x \in \dom{f} \cap \dom{g}: f(x) = g(x)
-    \]
+      \forall x \in \dom(f) \cap \dom(g).\; f(x) = g(x)
+    \]}
   \end{theorem}
 
   \pause
-  \begin{exampleblock}{UD Problem 14.3 (g)}
+  \begin{exampleblock}{}
     \[
-      f: \mathbb{Q} \to \real{}
+      f: \mathbb{Q} \to \R
     \]
 
     \[
       f(x) = \left\{\begin{array}{ll}
-	x + 1 & \text{if } x \in 2\Z{} \\
-	x - 1 & \text{if } x \in 3\Z{} \\
-	2     & \text{otherwise}
+        x + 1, & \text{if } x \in 2\Z{} \\
+        x - 1, & \text{if } x \in 3\Z{} \\
+        2,     & \text{otherwise}
+      \end{array}\right.
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \[
+      f: \ps{\R} \to \Z
+    \]
+
+    \[
+      f(A) = \left\{\begin{array}{ll}
+        \min(A \cap \N) & \text{if } A \cap \N \neq \emptyset \\
+          -1 & \text{if } A \cap \N = \emptyset
       \end{array}\right.
     \]
   \end{exampleblock}
 
   \pause
-  \vspace{-0.30cm}
-  \[
-    \teal{x \in 6\Z{}}
-  \]
+  \vspace{0.50cm}
+  \begin{center}
+    \[
+      \dom(f) \cap \dom(g) = \emptyset
+    \]
+    By the \red{\it Well-Ordering Principle} of $\N$
+  \end{center}
 \end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{exampleblock}{UD Problem 14.5}
-%     \[
-%       f: \mathcal{P}(\real{}) \to \Z{}
-%     \]
-%
-%     \[
-%       f(A) = \left\{\begin{array}{ll}
-% 	\min(A \cap \nat{}) & \text{if } A \cap \nat{} \neq \emptyset \\
-% 	-1 & \text{if } A \cap \nat{} = \emptyset
-%       \end{array}\right.
-%     \]
-%   \end{exampleblock}
-%
-%   \pause
-%   \vspace{0.50cm}
-%   \begin{center}
-%     By the \red{\it Well-Ordering Principle} of $\nat{}$
-%   \end{center}
-% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    D: \real{} \to \real{}
+    D: \R \to \R
   \]
 
   \[
     D(x) = \left\{\begin{array}{ll}
-      1 & \text{if } x \in \mathbb{Q} \\
-      0 & \text{if } x \in \real \setminus \mathbb{Q}
+      1 & \text{if } x \in \Q \\
+      0 & \text{if } x \in \R \setminus \Q
     \end{array}\right.
   \]
 
   \vspace{0.60cm}
-  \centerline{Dirichlet Function}
+  \begin{center}
+    {Dirichlet Function} \\[5pt]
+    \teal{``处处不连续''}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
