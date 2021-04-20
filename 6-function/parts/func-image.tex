@@ -3,24 +3,27 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Restriction]
-    The {\it restriction} of a function $f$ to $X$ is the \purple{function}:
+    The \red{\it restriction} of a function $f: A \to B$ to $X$
+    is the \blue{function}:
 
     \[
-      f|_{X} = \set{(x, y) \in f \mid x \in X}
+      f|_{X} = \set{(x, y) \in f \mid \purple{x \in X}}
     \]
   \end{definition}
 
   \pause
   \[
-    f: A \to B
+    \text{It is \cyan{unnecessary} that } X \subseteq A,\;
+    \text{though it is \cyan{usually} the case.}
   \]
 
   \pause
   \[
     f|_{X}: \purple{A \cap X} \to B
   \]
+
   \[
-    f|_{X}(x) = f(x), \forall x \in A \cap X
+    \forall x \in A \cap X.\; f|_{X}(x) = f(x)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -28,28 +31,87 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[像 (Image)]
-    The {\it image} of $X$ under a function $f$ is the set
+    The \red{\it image} of $X$ under a function $f: A \to B$ is the set
     \[
-      {f(X) = \set{b \mid \exists a \in X.\; (a, b) \in f}}
-    \]
-  \end{definition}
-
-  \vspace{0.50cm}
-  \begin{definition}[逆像 (Inverse Image)]
-    The {\it inverse image} of $Y$ under a function $f$ is the set
-    \[
-      {f^{-1}(Y) = \set{a \mid \exists b \in Y.\; (a, b) \in f}}
+      {f(X) = \set{y \mid \exists \purple{x \in X}.\; (x, y) \in f}}
     \]
   \end{definition}
 
   \pause
   \[
-    \textcolor{gray}{X \subseteq \dom(f),\; Y \subseteq \ran(f)}
-    \text{ are not necessary}
+    \text{It is \teal{unnecessary} that } X \subseteq \dom(f) = A,
+    \text{though it is \teal{usually} the case.}
   \]
+
   \pause
   \[
-    f \text{ may not be \red{invertible} in } f^{-1}(Y)
+    f(X) = f(\purple{A \cap X})
+  \]
+
+  \pause
+  \[
+    f(\set{a}) = \set{b} \quad \text{简记为} \quad f(a) = b
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[像 (Image)]
+    The \red{\it image} of $X$ under a function $f: A \to B$ is the set
+    \[
+      {f(X) = \set{y \mid \exists \purple{x \in X}.\; (x, y) \in f}}
+    \]
+  \end{definition}
+
+  \vspace{0.30cm}
+  \[
+    \red{\boxed{y \in f(X) \iff \exists x \in X.\; y = f(x)}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[逆像 (Inverse Image)]
+    The \red{\it inverse image} of $Y$ under a function $f: A \to B$ is the set
+    \[
+      {f^{-1}(Y) = \set{x \mid \exists \purple{y \in Y}.\; (x, y) \in f}}
+    \]
+  \end{definition}
+
+  \pause
+  \[
+    \text{It is \teal{unnecessary} that } Y \subseteq \ran(f),
+    \text{though it is \teal{usually} the case.}
+  \]
+
+  \pause
+  \[
+    f^{-1}(Y) = f^{-1}(\purple{Y \cap \ran(f)})
+  \]
+
+  \pause
+  \[
+    f^{-1}(\set{b}) = \set{a}
+      \quad\text{\blue{可简记为}}\quad f^{-1}(b) = \set{a}
+      \quad\text{\red{不能简记为}}\quad f^{-1}(b) = a
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[逆像 (Inverse Image)]
+    The \red{\it inverse image} of $Y$ under a function $f: A \to B$ is the set
+    \[
+      {f^{-1}(Y) = \set{x \mid \exists \purple{y \in Y}.\; (x, y) \in f}}
+    \]
+  \end{definition}
+
+  \vspace{0.30cm}
+  \[
+    \red{\boxed{x \in f^{-1}(Y) \iff f(x) \in Y}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -57,26 +119,28 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    \red{\boxed{x \in X \cap \dom(f) \implies f(x) \in f(X)}}
-  \]
-  \pause
-  \[
-    X \subseteq \dom(f): \blue{\boxed{x \in X \implies f(x) \in f(X)}}
+    \red{\boxed{y \in f(X) \iff \exists x \in X.\; y = f(x)}}
   \]
 
-  \pause
-  \vspace{0.60cm}
-  \[
-    \red{\boxed{y \in f(X) \iff \exists x \in X \cap \dom(f).\; y = f(x)}}
-  \]
-  \pause
-  \[
-    X \subseteq \dom(f): \blue{\boxed{y \in f(X) \iff \exists x \in X.\; y = f(x)}}
-  \]
-
-  \vspace{0.60cm}
   \[
     \red{\boxed{x \in f^{-1}(Y) \iff f(x) \in Y}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    f: A \to B
+  \]
+
+  \[
+    a \in A_{0} \red{\;\centernot\implies\;} f(a) \in f(A_{0})
+  \]
+
+  \pause
+  \[
+    a \in A_{0} \purple{\;\cap\; A} \blue{\;\implies\;} f(a) \in f(A_{0})
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -89,28 +153,41 @@
       \xout{A_1, A_2 \subseteq A,\; B_1, B_2 \subseteq B}
     \]
 
-    \vspace{-0.10cm}
     \begin{enumerate}[(i)]
-      \setlength{\itemsep}{10pt}
       \item \purple{$f$ preserves only $\subseteq$ and $\cup$:}
         \begin{enumerate}[(1)]
-          \setlength{\itemsep}{4pt}
+          \setlength{\itemsep}{8pt}
           \item $A_1 \subseteq A_2 \implies f(A_1) \subseteq f(A_2)$
-          \item $f(A_1 \cup A_2) = f(A_1) \cup f(A_2)$
+          \item \teal{$f(A_1 \cup A_2) = f(A_1) \cup f(A_2)$}
           \item $f(A_1 \cap A_2) \subseteq f(A_1) \cap f(A_2)$
           \item $f(A_1 \setminus A_2) \supseteq f(A_1) \setminus f(A_2)$
         \end{enumerate}
-      \item \purple{$f^{-1}$ preserves $\subseteq, \cup, \cap,$ and $\setminus$:}
-        \begin{enumerate}[(1)]
-          \setlength{\itemsep}{4pt}
-          \setcounter{enumii}{4}
-          \item $B_1 \subseteq B_2 \implies f^{-1}(B_1) \subseteq f^{-1}(B_2)$
-          \item $f^{-1}(B_1 \cup B_2) = f^{-1}(B_1) \cup f^{-1}(B_2)$
-          \item $f^{-1}(B_1 \cap B_2) = f^{-1}(B_1) \cap f^{-1}(B_2)$
-          \item $f^{-1}(B_1 \setminus B_2) = f^{-1}(B_1) \setminus f^{-1}(B_2)$
-        \end{enumerate}
     \end{enumerate}
   \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      f: A \to B
+    \]
+    \[
+      A_1 \subseteq A_2 \implies f(A_1) \subseteq f(A_2)
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \red{对任意 $b$,}
+  \setcounter{equation}{0}
+  \begin{align}
+    &b \in f(A_{1}) \\[6pt]
+    \uncover<3->{\iff & \exists a \in A_{1}.\; b = f(a) \\[6pt]}
+    \uncover<4->{\red{\implies} & \exists a \in A_{2}.\; b = f(a) \\[6pt]}
+    \uncover<5->{\iff & b \in f(A_{2})}
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -126,21 +203,121 @@
   \end{theorem}
 
   \pause
+  \vspace{0.30cm}
   \red{对任意 $b$,}
-  \begin{align*}
-    \onslide<2->{&\textcolor{white}{\implies}\; b \in f(A_1 \cap A_2) \\[6pt]}
-    \onslide<3->{&\implies \exists a \in A_1 \cap A_2 \;\red{\cap\; A}.\; b = f(a) \\[6pt]}
-    \onslide<4->{&\implies \exists a \in A.\; a \in A_1 \land a \in A_2 \land b = f(a) \\[6pt]}
-    \onslide<5->{&\implies \big(\exists a \in A \cap A_1.\; b = f(a)\big)
-      \land \big(\exists a \in A \cap A_2.\; b = f(a)\big) \\[6pt]}
-    \onslide<6->{&\implies b \in f(A_1) \cap f(A_2) \\}
-  \end{align*}
+  \setcounter{equation}{0}
+  \begin{align}
+    &b \in f(A_1 \cap A_2) \\[6pt]
+    \onslide<3->{\iff & \exists a \in A_1 \cap A_2.\; b = f(a) \\[6pt]}
+    \onslide<4->{\red{\implies}& \big(\exists a \in A_{1}.\; b = f(a)\big)
+      \land \big(\exists a \in A_{2}.\; b = f(a)\big) \\[6pt]}
+    \onslide<5->{\iff & b \in f(A_{1}) \land b = f(A_{2}) \\[6pt]}
+    \onslide<6->{\iff & b \in f(A_1) \cap f(A_2)}
+  \end{align}
 
-  \vspace{-0.30cm}
   \begin{center}
-    \onslide<7->{\red{$Q:$ When does $f(A_1 \cap A_2) \red{\;=\;} f(A_1) \cap f(A_2)$ hold?} \\[10pt]}
+    \onslide<7->{\red{$Q:$ When does $f(A_1 \cap A_2) \red{\;=\;} f(A_1) \cap f(A_2)$ hold?} \\[5pt]}
     \onslide<8->{\teal{$f$ is injective.}}
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      f: A \to B
+    \]
+    \[
+      f(A_1 \setminus A_2) \red{\;\supseteq\;} f(A_1) \setminus f(A_2)
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \red{对任意 $b$,}
+  \setcounter{equation}{0}
+  \begin{align}
+    &b \in f(A_{1}) \setminus f(A_{2}) \\[6pt]
+    \uncover<3->{\iff & b \in f(A_{1}) \land b \notin f(A_{2}) \\[6pt]}
+    \uncover<4->{\iff & (\exists a_{1} \in A_{1}.\; b = f(a_{1})) \land
+      (\forall a_{2} \in A_{2}.\; b \neq f(a_{2})) \\[6pt]}
+    \uncover<6->{\red{\implies} & \exists a \in A_{1} \setminus A_{2}.\; b = f(a) \\[6pt]}
+    \uncover<5->{\iff & b \in f(A_{1} \setminus A_{2})}
+  \end{align}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Properties of $f$ and $f^{-1}$]
+    \[
+      f: A \to B \qquad
+      \xout{A_1, A_2 \subseteq A,\; B_1, B_2 \subseteq B}
+    \]
+
+    \begin{enumerate}[(i)]
+      \setcounter{enumi}{1}
+      \item \purple{$f^{-1}$ preserves $\subseteq$, $\cup$, $\cap$, and $\setminus$:}
+        \begin{enumerate}[(1)]
+          \setlength{\itemsep}{8pt}
+          \setcounter{enumii}{4}
+          \item $B_1 \subseteq B_2 \implies f^{-1}(B_1) \subseteq f^{-1}(B_2)$
+          \item \teal{$f^{-1}(B_1 \cup B_2) = f^{-1}(B_1) \cup f^{-1}(B_2)$}
+          \item $f^{-1}(B_1 \cap B_2) = f^{-1}(B_1) \cap f^{-1}(B_2)$
+          \item \teal{$f^{-1}(B_1 \setminus B_2) = f^{-1}(B_1) \setminus f^{-1}(B_2)$}
+        \end{enumerate}
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      f: A \to B
+    \]
+    \[
+      B_1 \subseteq B_2 \implies f^{-1}(B_1) \subseteq f^{-1}(B_2)
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \red{对任意 $a$,}
+  \setcounter{equation}{0}
+  \begin{align}
+    &a \in f^{-1}(B_{1}) \\[6pt]
+    \uncover<3->{\iff & f(a) \in B_{1} \\[6pt]}
+    \uncover<4->{\red{\implies} & f(a) \in B_{2} \\[6pt]}
+    \uncover<5->{\iff & a \in f^{-1}(B_{2})}
+  \end{align}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      f: A \to B
+    \]
+    \[
+      f^{-1}(B_1 \cap B_2) = f^{-1}(B_1) \cap f^{-1}(B_2)
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \red{对任意 $a$,}
+  \setcounter{equation}{0}
+  \begin{align}
+    &a \in f^{-1}(B_{1} \cap B_{2}) \\[6pt]
+    \uncover<3->{\iff & f(a) \in B_{1} \cap B_{2} \\[6pt]}
+    \uncover<4->{\iff & f(a) \in B_{1} \land f(a) \in B_{2} \\[6pt]}
+    \uncover<5->{\iff & a \in f^{-1}(B_{1}) \land a \in f^{-1}(B_{2}) \\[6pt]}
+    \uncover<6->{\iff & a \in f^{-1}(B_{1}) \cap f^{-1}(B_{2})}
+  \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -151,7 +328,6 @@
       f: A \to B
     \]
 
-    \vspace{-0.10cm}
     \begin{enumerate}[(i)]
       \setcounter{enumi}{2}
       \item $f$ and $f^{-1}$: \\[8pt]
@@ -159,7 +335,7 @@
           \setlength{\itemsep}{10pt}
           \setcounter{enumii}{8}
             \item $\purple{A_0 \subseteq A} \implies A_0 \subseteq f^{-1}(f(A_0))$
-            \item $B_0 \supseteq f(f^{-1}(B_0))$
+            \item \teal{$B_0 \supseteq f(f^{-1}(B_0))$}
         \end{enumerate}
     \end{enumerate}
   \end{theorem}
@@ -178,42 +354,43 @@
   \end{theorem}
 
   \pause
+  \vspace{0.30cm}
   \red{对任意 $b$,}
   \setcounter{equation}{0}
   \begin{align}
     &a \in A_{0} \\[6pt]
-    \uncover<3->{\implies & a \in A_{0} \subseteq A \\[6pt]}
-    \uncover<4->{\implies & f(a) \in f(A) \\[6pt]}
-    \uncover<5->{\implies & a \in f^{-1}(f(A_{0}))}
+    \uncover<3->{\implies & a \in A_{0} \purple{\;\cap\; A} \\[6pt]}
+    \uncover<4->{\red{\implies} & f(a) \in f(A_{0}) \\[6pt]}
+    \uncover<5->{\iff & a \in f^{-1}(f(A_{0}))}
   \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{theorem}[]
-    \[
-      f: A \to B
-    \]
-    \[
-      B_0 \supseteq f(f^{-1}(B_0))
-    \]
-  \end{theorem}
-
-  \pause
-  \red{对任意 $b$,}
-  \setcounter{equation}{0}
-  \begin{align}
-    \onslide<2->{&\textcolor{white}{\implies}\; b \in f(f^{-1}(B_0)) \\[6pt]}
-    \onslide<3->{&\implies \exists a \in f^{-1}(B_0).\; b = f(a) \\[6pt]}
-    \onslide<4->{&\implies \exists a \in A.\; f(a) \in B_0 \land b = f(a) \\[6pt]}
-    \onslide<5->{&\implies b \in B_0 \\}
-  \end{align}
-
-  \begin{center}
-    \onslide<6->{\red{$Q$: When does $B_0 = f(f^{-1}(B_0))$ hold?} \\[10pt]}
-
-    \onslide<7->{\teal{$f$ is surjective and $B_0 \subseteq \ran(f)$.}}
-  \end{center}
-\end{frame}
+% \begin{frame}{}
+%   \begin{theorem}[]
+%     \[
+%       f: A \to B
+%     \]
+%     \[
+%       B_0 \supseteq f(f^{-1}(B_0))
+%     \]
+%   \end{theorem}
+%
+%   \pause
+%   \vspace{0.30cm}
+%   \red{对任意 $b$,}
+%   \setcounter{equation}{0}
+%   \begin{align}
+%     &b \in f(f^{-1}(B_0)) \\[6pt]
+%     \onslide<3->{\iff & \exists a \in f^{-1}(B_0).\; b = f(a) \\[6pt]}
+%     \onslide<4->{\iff & \exists a \in A.\; f(a) \in B_0 \land b = f(a) \\[6pt]}
+%     \onslide<5->{\red{\implies} & b \in B_0}
+%   \end{align}
+% 
+%   \begin{center}
+%     \onslide<6->{\red{$Q$: When does $B_0 = f(f^{-1}(B_0))$ hold?} \\[8pt]}
+%     \onslide<7->{\teal{$f$ is surjective and $B_0 \subseteq \ran(f)$.}}
+%   \end{center}
+% \end{frame}
 %%%%%%%%%%%%%%%
