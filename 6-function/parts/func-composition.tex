@@ -20,19 +20,18 @@
       \red{\ran(f) \subseteq C}
     \]
 
-    The \red{\it composite function} $g \circ f: A \to D$ is defined as
+    The \red{\it composite function} \blue{$g \circ f: A \to D$} is defined as
 
     \[
       (g \circ f) (x) = g(f(x))
     \]
   \end{definition}
 
-  \pause
-  \vspace{0.20cm}
   \begin{center}
-    \red{Why not ``$\exists b$'' as below?}
+    \uncover<3->{\red{Why not ``$\exists b$'' as below?}}
   \end{center}
 
+  \pause
   \vspace{-0.30cm}
   \begin{definition}[Composition]
     The {\it composition} of relations $R$ and $S$ is the relation
@@ -66,7 +65,7 @@
         \]
       \item
         \[
-          (h \circ (g \circ f))(x) = ((h \circ g) \circ f)(x)
+          \forall x \in A.\; (h \circ (g \circ f))(x) = ((h \circ g) \circ f)(x)
         \]
     \end{enumerate}
   \end{proof}
@@ -109,8 +108,9 @@
     \]
 
     \begin{enumerate}[(i)]
+      \setlength{\itemsep}{6pt}
       \item If $f, g$ are injective, then $g \circ f$ is injective.
-      \item If $f, g$ are surjective, then $g \circ f$ is surjective.
+      \item \teal{If $f, g$ are surjective, then $g \circ f$ is surjective.}
       \item If $f, g$ are bijective, then $g \circ f$ is bijective.
     \end{enumerate}
   \end{theorem}
@@ -119,12 +119,14 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \[
-    f: A \to B \qquad g: B \to C
-  \]
-  \begin{center}
-    If $f, g$ are injective, then $g \circ f$ is injective.
-  \end{center}
+  \begin{theorem}
+    \[
+      f: A \to B \qquad g: B \to C
+    \]
+    \begin{center}
+      If $f, g$ are injective, then $g \circ f$ is injective.
+    \end{center}
+  \end{theorem}
 
   \pause
   \[
@@ -133,10 +135,11 @@
   \]
 
   \pause
+  \vspace{-0.30cm}
   \setcounter{equation}{0}
   \begin{align}
     &(g \circ f)(a_1) = (g \circ f)(a_2) \\[6pt]
-    \uncover<3->{\implies &g(f(a_{1})) = g(f(a_{2})) \\[6pt]}
+    \uncover<3->{\iff &g(f(a_{1})) = g(f(a_{2})) \\[6pt]}
     \uncover<4->{\implies &f(a_{1}) = f(a_{2}) \\[6pt]}
     \uncover<5->{\implies &a_{1} = a_{2}}
   \end{align}
@@ -144,19 +147,19 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \[
-    f: A \to B \qquad g: B \to C
-  \]
-  \begin{center}
-    If $f, g$ are surjective, then $g \circ f$ is surjective.
-  \end{center}
-
-  \pause
-  \[
-    \forall c \in C.\; \Big( \exists a \in A.\; (g \circ f)(a) = c \Big)
-  \]
-\end{frame}
+% \begin{frame}{}
+%   \[
+%     f: A \to B \qquad g: B \to C
+%   \]
+%   \begin{center}
+%     If $f, g$ are surjective, then $g \circ f$ is surjective.
+%   \end{center}
+%
+%   \pause
+%   \[
+%     \forall c \in C.\; \Big( \exists a \in A.\; (g \circ f)(a) = c \Big)
+%   \]
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -167,19 +170,60 @@
     \]
 
     \begin{enumerate}[(i)]
-      \item \teal{If $g \circ f$ is surjective, then $g$ is surjective.}
-      \item If $g \circ f$ is injective, then $f$ is injective.
+      \item \teal{If $g \circ f$ is injective, then $f$ is injective.}
+      \item If $g \circ f$ is surjective, then $g$ is surjective.
     \end{enumerate}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{theorem}[]
+%     \[
+%       f: A \to B \qquad g: B \to C
+%     \]
+%
+%     \begin{center}
+%       \teal{If $g \circ f$ is injective, then $f$ is injective.}
+%     \end{center}
+%   \end{theorem}
+%
+%   \pause
+%   \vspace{0.30cm}
+%   \red{对任意 $a_{1}, a_{2}$,}
+%   \setcounter{equation}{0}
+%   \begin{align}
+%     &f(a_{1}) = f(a_{2}) \\[6pt]
+%     \uncover<3->{\implies & g(f(a_{1})) = g(f(a_{2})) \\[6pt]}
+%     \uncover<4->{\implies & (g \circ f) (a_{1}) = (g \circ f) (a_{2}) \\[6pt]}
+%     \uncover<5->{\implies & a_{1} = a_{2}}
+%   \end{align}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[]
+    \[
+      f: A \to B \qquad g: B \to C
+    \]
+
+    \begin{center}
+      If $g \circ f$ is surjective, then $g$ is surjective.
+    \end{center}
   \end{theorem}
 
   \pause
+  \vspace{0.30cm}
   \red{对任意 $a_{1}, a_{2}$,}
   \setcounter{equation}{0}
   \begin{align}
-    &f(a_{1}) = f(a_{2}) \\[6pt]
-    \uncover<3->{\implies & g(f(a_{1})) = g(f(a_{2})) \\[6pt]}
-    \uncover<4->{\implies & (g \circ f) (a_{1}) = (g \circ f) (a_{2}) \\[6pt]}
-    \uncover<5->{\implies & a_{1} = a_{2}}
+    & g \circ f \text{ is surjective}\\[6pt]
+    \uncover<3->{\iff & \forall c \in C.\; \exists a \in A.\; (g \circ f)(a) = c \\[6pt]}
+    \uncover<4->{\iff & \forall c \in C.\; \exists a \in A.\; g(f(a)) = c \\[6pt]}
+    \uncover<5->{\red{\implies} & \forall c \in C.\; \exists b \in B.\; g(b) = c \\[6pt]}
+    \uncover<6->{\iff & g \text{ is surjective}}
   \end{align}
 \end{frame}
 %%%%%%%%%%%%%%%
