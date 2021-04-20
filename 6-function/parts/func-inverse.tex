@@ -6,89 +6,110 @@
     \teal{\LARGE Inverse Functions}
   \end{center}
 
-  \fig{width = 0.40\textwidth}{figs/inverse-function}
+  \fig{width = 0.20\textwidth}{figs/inverse-function-wiki}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Inverse]
-    Let $f: A \to B$ be a \red{bijective} function. \\[5pt]
+  \[
+    f: A \to B
+  \]
 
-    The {\it inverse} of $f$ is the \teal{function} \purple{$f^{-1}$}: $B \to A$ defined by
+  \vspace{0.60cm}
+  \begin{center}
+    \red{What is the condition for $f^{-1}$ to be a function from $B$ to $A$?}
     \[
-      f^{-1}(b) = a \iff f(a) = b.
+      f^{-1}: B \to A
     \]
-  \end{definition}
-
-  \pause
-  \fig{width = 0.30\textwidth}{figs/info}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Invertible]
-    $f: X \to Y$ is {\it invertible} if there exists $g: Y \to X$ such that
+  \begin{definition}[反函数 (Inverse Function)]
+    Let $f: A \to B$ be a function. \\[5pt]
 
-    \[
-      f(x) = y \iff g(y) = x.
-    \]
+    The \red{\it inverse} of $f$ is a \teal{function}
+    from $B$ to $A$, denoted \blue{$f^{-1}: B \to A$} \\[3pt]
+    if $f$ is bijective. \\[8pt]
+
+    \pause
+    We call $f^{-1}$ \blue{the} \red{\it inverse function} of $f$.
   \end{definition}
 
   \pause
+  \vspace{0.50cm}
+  \[
+    f \text{ is bijective}: \red{\boxed{f(x) = y \iff f^{-1}(y) = x}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{definition}[Invertible]
+%     $f: X \to Y$ is {\it invertible} if there exists $g: Y \to X$ such that
+%
+%     \[
+%       f(x) = y \iff g(y) = x.
+%     \]
+%   \end{definition}
+%
+%   \pause
+%   \begin{theorem}
+%     $f$ is invertible $\iff$ $f$ is bijective.
+%   \end{theorem}
+%
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \pause
+%       \begin{center}
+% 	\blue{$f$ is invertible $\implies$ $f$ is bijective} \pause \\[10pt]
+% 	$g$ is a function $\implies$ $f$ is injective \\[5pt]
+% 	$\dom{g} = Y \implies f \text{ is surjective}$
+%       \end{center}
+%     \column{0.50\textwidth}
+%       \pause
+%       \begin{center}
+% 	\blue{$f$ is bijective $\implies$ $f$ is invertible} \pause \\[10pt]
+% 	To show that $g$ defined above is indeed a function from $Y$ to $X$.
+%       \end{center}
+%   \end{columns}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{theorem}
-    $f$ is invertible $\iff$ $f$ is bijective.
+    Suppose that $f: A \to B$ is bijective.
+    Then, its inverse function $f^{-1}: B \to A$ is unique.
   \end{theorem}
 
-  \begin{columns}
-    \column{0.50\textwidth}
-      \pause
-      \begin{center}
-	\blue{$f$ is invertible $\implies$ $f$ is bijective} \pause \\[10pt]
-	$g$ is a function $\implies$ $f$ is injective \\[5pt]
-	$\dom{g} = Y \implies f \text{ is surjective}$
-      \end{center}
-    \column{0.50\textwidth}
-      \pause
-      \begin{center}
-	\blue{$f$ is bijective $\implies$ $f$ is invertible} \pause \\[10pt]
-	To show that $g$ defined above is indeed a function from $Y$ to $X$.
-      \end{center}
-  \end{columns}
+  \pause
+  \[
+    \text{\red{By Contradiction}}
+  \]
+
+  \pause
+  \[
+    f(x) = y \iff f^{-1}(y) = x
+  \]
+  \[
+    f(x) = y \iff g(y) = x
+  \]
+
+  \pause
+  \[
+    \forall y \in B.\; f^{-1}(y) = g(y)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Invertible]
-    $f: X \to Y$ is {\it invertible} if there exists $g: Y \to X$ such that
-
-    \[
-      f(x) = y \iff g(y) = x.
-    \]
-  \end{definition}
-
-  \pause
-  \vspace{0.30cm}
-  \begin{theorem}
-    $g: Y \to X$ is unique.
-  \end{theorem}
-
-  \pause
-  \[
-    \text{\teal{By Contradiction}}
-  \]
-
-  \pause
-  \[
-    \blue{f^{-1} \triangleq g}
-  \]
-
-  \pause
-  \[
-    \red{\boxed{f(x) = y \iff f^{-1}(y) = x}}
-  \]
+  examples
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -96,14 +117,14 @@
 \begin{frame}{}
   \begin{theorem}[]
     \[
-      \red{f: A \to B \text{ is bijective}}
+      \red{\boxed{f: A \to B \text{ is bijective}}}
     \]
 
     \begin{enumerate}[(i)]
       \item $f \circ f^{-1} = I_B$
       \item $f^{-1} \circ f = I_A$
       \vspace{0.30cm}
-      \item $f^{-1} \text{ is bijective}.$
+      \item \teal{$f^{-1} \text{ is bijective}$}
       \vspace{0.30cm}
       \item $g: B \to A \land f \circ g = I_B \implies g = f^{-1}$
       \item $g: B \to A \land g \circ f = I_A \implies g = f^{-1}$
@@ -111,53 +132,68 @@
   \end{theorem}
 
   \pause
+  \vspace{0.30cm}
   \begin{center}
-    \teal{The ways to find/check $f^{-1}$.}
+    \blue{The ways to find/check $f^{-1}$.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      \red{f: A \to B \text{ is bijective}}
+    \]
+    \[
+      f \circ f^{-1} = I_{B}
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \red{对任意 $b \in B$,}
+  \[
+    (f \circ f^{-1})(b) = f(f^{-1}(b))
+  \]
+  \pause
+  \begin{center}
+    Suppose that $a = f^{-1}(b)$
+    \[
+      \red{\boxed{a = f^{-1}(b) \iff f(a) = b}}
+    \]
   \end{center}
 
   \pause
-  \vspace{-0.30cm}
   \[
-    g = \purple{f^{-1} \circ (f \circ g) = f^{-1} \circ I_B} = f^{-1}
+    (f \circ f^{-1})(b) = f(f^{-1}(b)) = \red{f(a)} = b
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{alertblock}{Bijective $\implies$ Inverse:}
-%     \[
-%       f: A \to B \text{ is bijective }
-%     \]
-%     \[ 
-%       \implies 
-%     \]
-%     \[
-%       \exists g: B \to A\; \Big( f \circ g = i_B \land g \circ f = i_A \Big) \pause \red{\;\land\; g = f^{-1}}
-%     \]
-%   \end{alertblock}
-% 
-%   \pause
-%   \vspace{0.50cm}
-%   \begin{theorem}[Inverse $\implies$ Bijective]
-%     \[
-%       \exists g: B \to A\; \Big( g \circ f = i_A \land f \circ g = i_B \Big) 
-%     \]
-%     \[ 
-%       \implies 
-%     \]
-%     \[
-%       f: A \to B \text{ is bijective} \pause \red{\;\land\; g = f^{-1}}
-%     \]
-%   \end{theorem}
-% \end{frame}
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      \red{f: A \to B \text{ is bijective}}
+    \]
+    \[
+      g: B \to A \land f \circ g = I_B \implies g = f^{-1}
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    g = \purple{(f^{-1} \circ f) \circ g = f^{-1} \circ (f \circ g) = f^{-1} \circ I_B} = f^{-1}
+  \]
+\end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}[Inverse of Composition]
     \[
-      f: A \to B \quad g: B \to C \text{ are bijective}
+      \text{Both } f: A \to B \text{ and } g: B \to C \text{ are bijective}
     \]
 
     \begin{enumerate}[(i)]
@@ -166,15 +202,16 @@
     \end{enumerate}
   \end{theorem}
 
+  \pause
   \begin{proof}[Proof for (ii)]
+    \pause
     \begin{center}
-      \teal{It suffices to check \red{either} one of the following identities:}
+      \blue{It suffices to check \red{either} one of the following identities:}
     \end{center}
 
     \[
       (f^{-1} \circ g^{-1}) \circ (g \circ f) = I_A
     \]
-
     \[
       (g \circ f) \circ (f^{-1} \circ g^{-1}) = I_C
     \]
@@ -191,30 +228,21 @@
 
     \begin{enumerate}[(i)]
       \setcounter{enumi}{2}
-      \item $f \circ g = I_B \land g \circ f = I_A \implies g = f^{-1}$
+      \item \teal{$f \circ g = I_B \land g \circ f = I_A \implies g = f^{-1}$}
     \end{enumerate}
   \end{theorem}
 
   \pause
   \begin{center}
-    \teal{You need to check \red{both} identities.}
+    \red{You do {\it not} know that $f$ is bijective.} \\[5pt]
+    \blue{You need to check \red{both} identities.}
   \end{center}
 
   \pause
-  \begin{theorem}[]
-    \[
-      f: A \to B \qquad g: B \to C
-    \]
-
-    \begin{enumerate}[(i)]
-      \item If $g \circ f$ is surjective, then $g$ is surjective.
-      \item If $g \circ f$ is injective, then $f$ is injective.
-    \end{enumerate}
-  \end{theorem}
-
-  \pause
+  \vspace{0.20cm}
   \begin{center}
-    \teal{First show that $f$ is bijective, and then use the Theorem.}
+    \fig{width = 0.40\textwidth}{figs/recall}
+    Use two previous theorems
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
