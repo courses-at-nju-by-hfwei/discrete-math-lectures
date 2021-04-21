@@ -108,20 +108,31 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{definition}[线性拓展 (Linear Extension)]
+    设 $(X, \preceq)$ 是偏序集, $(X, \preceq')$ 是全序集。
+    如果
+    \[
+      \forall x, y \in X.\; x \preceq y \to x \preceq' y,
+    \]
+    则称 $\preceq'$ 是 $\preceq$ 的\red{线性拓展}。
+  \end{definition}
+
+  \fig{width = 0.40\textwidth}{figs/dag-topo}
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    \blue{5, 7, 3, 11, 8, 2, 9, 10} \qquad \cyan{3, 5, 7, 8, 11, 2, 9, 10}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
+  \begin{theorem}
+    设 $(X, \preceq)$ 是偏序集, 则 $\preceq$ 的线性拓展必定存在。
+  \end{theorem}
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/dag-topo}
 \end{frame}
 %%%%%%%%%%%%%%%

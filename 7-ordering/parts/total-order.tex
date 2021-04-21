@@ -2,84 +2,45 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \pause
-  \[
-    \forall a \in X.\; (a, a) \in R
-      \pause\qquad \text{\red{(自反性)}}
-  \]
-  \pause
-  \[
-    \forall a, b \in X.\; ((a, b) \in R \land (b, a) \in R \to a = b)
-      \pause\qquad \text{\red{(反对称性)}}
-  \]
-  \pause
-  \[
-    \forall a, b, c \in X.\; ((a, b) \in R \land (b, c) \in R \to (a, c) \in R)
-      \pause\qquad \text{\red{(传递性)}}
-  \]
-  \pause
-  \[
-    \forall a, b \in X.\; ((a, b) \in R \lor (b, a) \in R)
-      \pause\qquad \text{\red{(连接性)}}
-  \]
-  \pause
-  \begin{center}
-    \fbox{自反性 + 反对称性 + 传递性 + 连接性 = \red{\bf 全序关系}}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
   \begin{definition}[全序关系 (Total Order)]
-    令 $\red{\le} \;\subseteq X \times X$ 是 $X$ 上的\blue{偏序}。\\[3pt]
-    如果 $R$ 满足以下条件, 则称 $R$ 是 $X$ 上的 \red{\bf 全序 (关系)}: \\[6pt]
+    令 $\red{\preceq} \;\subseteq X \times X$ 是 $X$ 上的\blue{偏序}。\\[5pt]
+    如果 $\preceq$ 满足以下\red{连接性}, 则称 $\preceq$ 是 $X$ 上的\red{全序关系}:
+
     \[
-      \forall a, b \in X.\; a R b \lor b R a.
+      \forall a, b \in X.\; a \preceq b \lor b \preceq a.
     \]
   \end{definition}
-\end{frame}
-%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
   \[
-    \N: \text{自然数集}
-  \]
-  \pause
-  \[
-    \le \;= \set{(a, b) \mid a \le b}
+    (\R, \le) \qquad (\R, \ge)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[严格全序关系 (Total Order)]
-    令 $\red{\le} \;\subseteq X \times X$ 是 $X$ 上的\blue{严格偏序}。\\[3pt]
-    如果 $R$ 满足以下条件, 则称 $R$ 是 $X$ 上的 \red{\bf 严格全序 (关系)}: \\[6pt]
-    \[
-      \forall a, b \in X.\; a R b \lor b R a.
-    \]
+  \begin{definition}[严格全序关系 (Strict Total Order)]
+    令 $\red{\prec} \;\subseteq X \times X$ 是 $X$ 上的\blue{关系}。\\[3pt]
+    如果 $\prec$ 满足以下条件, 则称 $\prec$ 是 $X$ 上的\red{严格全序关系}: \\[6pt]
+    \begin{description}
+      \item[(1) 反自反 (Irreflexivity):]
+        \[
+          \forall x \in X.\; \lnot (x \prec x)
+        \]
+      \item[(2) 传递性 (Transitive):]
+        \[
+          \forall x, y, z \in X.\; x \prec y \land y \prec z \to x \prec z
+        \]
+      \item[(3) 三歧性 (Trichotomous):]
+        \[
+          \forall x, y \in X.\;
+            (\text{\red{exactly one of}}\; x \prec y, x = y, \;\text{or}\; y \prec x \text{ holds})
+        \]
+    \end{description}
   \end{definition}
-\end{frame}
-%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  设 $R \subseteq X \times X$ 是 $X$ 上的\red{严格偏序}, \\[5pt]
-  则对于任意 $x, y, z \in X$: \\[6pt]
-  $x < y$, $x = y$, $y < x$ 三者中有且仅有一个成立。
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  linear extension
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+  \[
+    (\R, <) \qquad (\R, >)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

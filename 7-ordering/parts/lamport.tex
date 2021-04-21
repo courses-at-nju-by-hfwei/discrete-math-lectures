@@ -1,0 +1,60 @@
+% lamport.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/lamport}
+
+  \begin{center}
+    \teal{Leslie Lamport (1941 $\sim$)} \\[3pt]
+  \end{center}
+
+  \begin{quote}
+    For ``fundamental contributions to the theory and practice of
+      \red{\bf distributed and concurrent systems},
+      notably the invention of concepts
+      such as causality and logical clocks,
+      safety and liveness, replicated state machines,
+      and sequential consistency''
+
+    \hfill  --- \blue{Turing Award (2013)}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.75\textwidth}{figs/lamport-ordering}
+  \begin{center}
+    \red{引用量 $\ge 12525$}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.65\textwidth}{figs/lamport-std}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[事件间的``先于''关系 (``Happened Before'' Relation on Events)]
+    令 $E$ 是表示事件的集合。\\[3pt]
+    $\to \;\subseteq E \times E$ 是 $E$ 上的\red{``先于''}关系,
+    如果它是满足以下条件的\red{最小}关系: \\[5pt]
+    \begin{itemize}
+      \setlength{\itemsep}{8pt}
+      \item 对任何事件 $a \in E$, $a \not\to a$;
+      \item 如果 $a, b$ 事件属于同一个进程且 $a$ 在 $b$ 之前发生, 则 $a \to b$;
+      \item 如果 $a, b$ 分别表示同一个消息的发送事件与接收事件, 则 $a \to b$;
+      \item 如果 $a \to b$ 且 $b \to c$, 则 $a \to c$。
+    \end{itemize}
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}
+    $\to \;\subseteq E \times E$ 是 $E$ 上的严格偏序。
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
