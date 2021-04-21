@@ -3,31 +3,26 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[极大元与极小元 (Maximal/Minimal)]
-    令 $R \subseteq X \times X$ 是 $X$ 上的偏序。
+    令 $\preceq \;\subseteq X \times X$ 是 $X$ 上的偏序。
     设 $a \in X$。\\[5pt]
 
     \pause
     如果
     \[
-      \forall x \in X.\; \lnot \big(x \neq a \land (a, x) \in R \big),
-    \]
-    \[
-      \forall x \in X.\; \big(x \neq a \to (a, x) \notin R \big),
+      \forall x \in X.\; \lnot \big(a \prec x \big),
     \]
     则称 $a$ 是 $X$ 的\red{极大元}。\\[10pt]
 
     \pause
     如果
     \[
-      \forall x \in X.\; \lnot \big(x \neq a \land (x, a) \in R \big),
-    \]
-    \[
-      \forall x \in X.\; \big(x \neq a \to (x, a) \notin R \big),
+      \forall x \in X.\; \lnot \big(x \prec a \big),
     \]
     则称 $a$ 是 $X$ 的\red{极小元}。
   \end{definition}
 
   \pause
+  \vspace{0.30cm}
   \begin{center}
     \red{$Q:$ 极大/极小元是否一定存在? 如果存在, 是否唯一?}
   \end{center}
@@ -72,26 +67,27 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[最大元与最小元 (Greatest/Least)]
-    令 $R \subseteq X \times X$ 是 $X$ 上的偏序。
+  \begin{definition}[最大元与最小元 (Maximum/Minimum; Greatest/Least; Largest/Smallest)]
+    令 $\preceq \;\subseteq X \times X$ 是 $X$ 上的偏序。
     设 $a \in X$。\\[5pt]
 
     \pause
     如果
     \[
-      \forall x \in X.\; (x, a) \in R,
+      \forall x \in X.\; x \preceq a,
     \]
     则称 $a$ 是 $X$ 的\red{最大元}。\\[10pt]
 
     \pause
     如果
     \[
-      \forall x \in X.\; (a, x) \in R,
+      \forall x \in X.\; a \preceq x,
     \]
     则称 $a$ 是 $X$ 的\red{最小元}。
   \end{definition}
 
   \pause
+  \vspace{0.30cm}
   \begin{center}
     \red{$Q:$ 最大/最小元是否一定存在? 如果存在, 是否唯一?}
   \end{center}
@@ -101,8 +97,19 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}
-    偏序集 $(X, R)$ 如果有最大元或最小元, 则它们是唯一的。
+    偏序集 $(X, \preceq)$ 如果有最大元或最小元, 则它们是唯一的。
   \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{假设存在两个最大元 $x$ 与 $y$。}
+
+    \pause
+    \[
+      x \preceq y \land y \preceq x \pause \implies x = y
+    \]
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -130,9 +137,15 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}
-    设 $(X, \preceq)$ 是偏序集, 则 $\preceq$ 的线性拓展必定存在。
+    设 $(X, \preceq)$ 是偏序集且 \red{$X$是有限集}, 则 $\preceq$ 的线性拓展必定存在。
   \end{theorem}
 
   \fig{width = 0.40\textwidth}{figs/dag-topo}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}
+    设 $(X, \preceq)$ 是偏序集且 \red{$X$是有限集}, 则极小元一定存在。
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
