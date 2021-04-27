@@ -1,0 +1,471 @@
+% compare-equal.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.35\textwidth}{figs/equal-logo}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[$|A| = |B| \;(A \approx B)$ (1878)]
+    $A$ and $B$ are \red{\it equipotent} if there exists a \purple{\it bijection} from $A$ to $B$.
+  \end{definition}
+
+  \pause
+  \[
+    \overline{\overline{A}} \quad \text{(two \red{abstractions})}
+  \]
+
+  \pause
+  \[
+    \text{\blue{\small Abstract from elements: }} \set{1,2,3} \quad \text{\it vs.} \quad \set{a,b,c}
+  \]
+
+  \pause
+  \[
+    \text{\blue{\small Abstract from order: }} \set{1,2,3,\cdots} \quad \text{\it vs.} \quad \set{1,3,5,\cdots, 2,4,6,\cdots}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[$|A| = |B| \;(A \approx B)$ (1878)]
+    $A$ and $B$ are \red{\it equipotent} if there exists a \purple{\it bijection} from $A$ to $B$.
+  \end{definition}
+
+  \vspace{0.30cm}
+  \begin{center}
+    \red{$Q:$ Is ``$\approx$'' an equivalence relation?}
+  \end{center}
+
+  \pause
+  \begin{theorem}[\uncover<3->{\purple{The ``Equivalence Concept'' of Equipotent}}]
+    For any sets $A$, $B$, $C$:
+    \begin{enumerate}[(a)]
+      \item $A \approx B$
+      \item $A \approx B \implies B \approx A$
+      \item $A \approx B \land B \approx C \implies A \approx C$
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Finite]
+    $X$ is finite if
+    \[
+      \exists n \in \N: |X| = \red{n}.
+    \]
+  \end{definition}
+
+  \pause
+  \[
+    |X| = |\set{0, 1, \cdots, n-1}|
+  \]
+
+  \pause
+  \begin{theorem}[]
+    Let $A$ be a finite set.
+    There is a \red{\it unique} $n \in \mathbb{N}$ such that $A \approx \set{0, 1, \cdots, n-1}$.
+  \end{theorem}
+
+  % \pause
+  % \vspace{0.30cm}
+  % \begin{center}
+  %   {\red{\it $Q:$ How to prove that a set is infinite?}} \\[8pt]
+  %   \pause
+  %   {\blue{By contradiction.}}
+  % \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Infinite]
+    $X$ is infinite if it is not finite:
+    \[
+      \forall n \in \N: |X| \neq n.
+    \]
+  \end{definition}
+
+  \pause
+  \begin{theorem}[]
+    $\N$ is infinite. \uncover<8->{\teal{(So are $\Z$, $\Q$, $\R$.)}}
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{\it By Contradiction.}
+
+    \pause
+    \vspace{-0.30cm}
+    \[
+      \exists n \in \N: |\N| = n.
+    \]
+
+    \pause
+    \vspace{-0.30cm}
+    \[
+      \exists f: \N \xleftrightarrow[onto]{1-1} \set{0, 1, \cdots, n-1}
+    \]
+
+    \pause
+    \vspace{-0.30cm}
+    \[
+      g \triangleq \purple{f|_{\set{0, 1, \ldots, n}}}: \set{0, 1, \cdots, n} \to \set{0, 1, \cdots, n-1}
+    \]
+
+    \pause
+    \vspace{-0.30cm}
+    \[
+      \text{\red{By the Pigeonhole Principle}}: g \text{ is not 1-1} \pause \implies f \text{ is not 1-1}
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Infinite]
+    For any set $X$,
+    \begin{description}[Countably Infinite]
+      \item[Countably Infinite]
+	\[
+	  |X| = |\N| \red{\;\triangleq \aleph_{0}}
+	\]
+      \item[Countable]
+	\[
+	  \text{(finite $\lor$ countably infinite)}
+	\]
+      \item[Uncountable]
+	\[
+	  \text{($\lnot$ countable)}
+	\]
+	\[
+	  \text{(infinite) $\land$ \Big($\lnot$ (countably infinite)\Big)}
+	\]
+    \end{description}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/aleph0}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$\Z$ is Countable.]
+    \[
+      |\Z| = |\N|
+    \]
+  \end{theorem}
+
+  \fig{width = 0.60\textwidth}{figs/integers}
+
+  \pause
+  \[
+    0 \quad 1 \quad -1 \quad 2 \quad -2 \quad \cdots
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$\Q$ is Countable. (Cantor 1873-11; Published in 1874)]
+    \[
+      |\Q| = |\N|
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{exampleblock}{$|\Q| = |\N|$}
+    \[
+      q \in \red{\Q^{+}}: a / b \; (a,b \in \N^{+})
+    \]
+
+    \pause
+    \vspace{-0.30cm}
+    \begin{columns}
+      \column{0.50\textwidth}
+	\fig{width = 0.50\textwidth}{figs/cantor-monumento}
+      \column{0.50\textwidth}
+	\fig{width = 0.60\textwidth}{figs/counting-Q}
+    \end{columns}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$\N \times \N$ is Countable.]
+    \[
+      |\N \times \N| = |\N|
+    \]
+  \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/n-n-countable}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	\pi: \N \times \N \to \N
+      \]
+
+      \pause
+      \[
+	\pi(k_1, k_2) = \frac{1}{2} (k_1 + k_2)(k_1 + k_2 + 1) + k_2
+      \]
+  \end{columns}
+
+  \pause
+  \begin{center}
+    \red{Cantor Pairing Function}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$\N^{n}$ is Countable.]
+    \[
+      |\N^{n}| = |\N|
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{theorem}
+    The Cartesian product of \red{finitely many} countable sets is countable.
+  \end{theorem}
+
+  \pause
+  \[
+    \purple{\N^{n} \quad \text{\it vs.} \quad \N^{\N}}
+  \]
+
+  \pause
+  \[
+    \pi^{(n)}:\N^n \to \N
+  \]
+
+  \pause
+  \[
+    \pi^{(n)}(k_1, \ldots, k_{n-1}, k_n) = \pi (\red{\pi^{(n-1)}}(k_1, \ldots, k_{n-1}) , k_n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    Any \red{finite} union of countable sets is countable.
+  \end{theorem}
+
+  \pause
+  \[
+    A = \set{a_n \mid n \in \N} \quad B = \set{b_n \mid n \in \N} \quad C = \set{c_n \mid n \in \N}
+  \]
+
+  \pause
+  \[
+    a_0 \quad b_0 \quad c_0 \quad a_1 \quad b_1 \quad c_1 \cdots
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    The union of \red{countably many} countable sets is countable.
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/countable-union-countable}
+  \begin{center}
+    \teal{Counting by Diagonals.}  \\[15pt] \pause
+    \red{We need Axiom of (Countable) Choice!}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\Huge Beyond}
+  \end{center}
+
+  \fig{width = 0.30\textwidth}{figs/aleph0}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$\R$ is Uncountable. (Cantor 1873-12; Published in 1874)]
+    \[
+      |\R| \neq |\N|
+    \]
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/very-important}
+
+  \pause
+  \begin{center}
+    Different ``Sizes'' of Infinity \\[10pt] \pause
+    Cantor's Diagonal Argument \teal{(1890)}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$\R$ is Uncountable. (Cantor 1873-12; Published in 1874)]
+    \[
+      |\R| \neq |\N|
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{By Contradiction.}
+
+    \pause
+    \[
+      f: \R \xleftrightarrow[onto]{1-1} \N
+    \]
+
+    \pause
+    \fig{width = 0.13\textwidth}{figs/r-uncountable}
+
+    \pause
+    \red{By Diagonal Argument.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Infinite Sequences of $0$'s and $1$'s}
+%     Is the set of all infinite sequences of $0$'s and $1$'s finite,
+%     countably infinite, or uncountable?
+%   \end{exampleblock}
+%
+%   \pause
+%   \fig{width = 0.35\textwidth}{figs/diagonal-argument-01}
+%   \begin{center}
+%     \red{By Diagonal Argument.}
+%   \end{center}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+%
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Infinite Sequences of $0$'s and $1$'s}
+%     Is the set of all infinite sequences of $0$'s and $1$'s finite,
+%     countably infinite, or uncountable?
+%   \end{exampleblock}
+%
+%   \[
+%     f: \set{\set{0,1}^{\ast}} \to \N
+%   \]
+%
+%   \pause
+%   \[
+%     \purple{f(x_0 x_1 \cdots) = \sum_{i=0}^{\infty} x_i 2^{i}}
+%   \]
+%
+%   \pause
+%   \fig{width = 0.20\textwidth}{figs/wrong}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \scalebox{5.5}{$\mathfrak{c} \triangleq |\R|$}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$|\R|$ (Cantor 1877)]
+    \[
+      |(0,1)| = \red{|\R| = |\R \times \R|} \blue{\;= |\R^{n \in \N}|}
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+    \pause
+    \[
+      f(x) = \tan \frac{(2x-1)\pi}{2}
+    \]
+    \[
+      |(0,1)| = |(-\frac{\pi}{2}, \frac{\pi}{2})| = |\R|
+    \]
+
+    \pause
+    \[
+      (x = 0.\blue{a_1 a_2 a_3 \cdots}, y = 0.\red{b_1 b_2 b_3 \cdots}) \pause \mapsto 0.\blue{a_1}\red{b_1}\blue{a_2}\red{b_2}\blue{a_3}\red{b_3}\cdots
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \R \times \R \approx \R
+  \]
+
+  \pause
+  \[
+    (x = 0.\blue{a_1 a_2 a_3 \cdots}, y = 0.\red{b_1 b_2 b_3 \cdots}) \pause \mapsto 0.\blue{a_1}\red{b_1}\blue{a_2}\red{b_2}\blue{a_3}\red{b_3}\cdots
+  \]
+
+  \pause
+  \fig{width = 0.25\textwidth}{figs/flawed}
+
+  \begin{center}
+    \href{https://www.maa.org/sites/default/files/pdf/pubs/AMM-March11\_Cantor.pdf}{\teal{Was Cantor Surprised?}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$|\R|$ (Cantor 1877)]
+    \[
+      |(0,1)| = \red{|\R| = |\R \times \R|} \blue{\;= |\R^{n}|}
+    \]
+  \end{theorem}
+
+  \vspace{0.60cm}
+  \begin{quote}
+    \begin{center}
+      ``Je le vois, mais je ne le crois pas !'' \\[4pt]
+      \red{``I see it, but I don't believe it !''} \\[5pt]
+      \hfill --- Cantor's letter to Dedekind (1877).
+    \end{center}
+  \end{quote}
+
+  \pause
+  \begin{center}
+    {\purple{\it $Q:$ Then, what is ``dimension''?}}
+  \end{center}
+
+  \pause
+  \begin{theorem}[Brouwer (Topological Invariance of Dimension)]
+    There is no \red{continuous} bijections between $\R^m$ and $\R^n$ for $m \neq n$.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\input{parts/cantor-theorem}

@@ -1,0 +1,191 @@
+% finite.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\LARGE Finite Sets}
+  \end{center}
+
+  \fig{width = 0.40\textwidth}{figs/confusion}
+
+  \pause
+  \begin{quote}
+    \begin{center}
+      {\large \red{``关于有穷, 我原以为我是懂的''}}
+    \end{center}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{学生反馈 (改编版)}
+%     \begin{quote}
+%       \begin{center}
+% 	``明明很显然的事情，为什么要那么繁琐的证明?\\[6pt]
+% 	依靠直觉不可以吗?''
+%       \end{center}
+%     \end{quote}
+%   \end{exampleblock}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Finite]
+    $X$ is finite if
+    \[
+      \exists n \in \N: |X| = n
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{theorem}[Pigeonhole Principle]
+    \[
+      f: \set{1, \cdots, m} \to \set{1, \cdots, n} \; (m,n \in \N^{+}, m > n)
+    \]
+
+    $f$ is not one-to-one.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$A \setminus \set{a}$}
+    Let $A$ be a nonempty finite set with $|A| = n$ and let $a \in A$.
+
+    Prove that $A \setminus \set{a}$ is finite and $|A \setminus \set{a}| = n - 1$.
+  \end{exampleblock}
+
+  \pause
+  \[
+    f: A \xleftrightarrow[onto]{1-1} \set{1, \cdots, n}
+  \]
+
+  \pause
+  \[
+    f|_{A \setminus \set{a}}: A \setminus \set{a} \xleftrightarrow[onto]{1-1} \set{1, \cdots, n} \setminus \set{f(a)} \;
+    \only<4->{\red{\xleftrightarrow[onto]{1-1} \set{1, \cdots, n - 1}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$|A| \le |B|$}
+    $A$ and $B$ are finite sets and $f: A \to B$ is one-to-one.
+
+    Show that $|A| \le |B|$.
+  \end{exampleblock}
+
+  \pause
+  \fig{width = 0.35\textwidth}{figs/gaoshenme}
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{By contradiction and the pigeonhole principle.}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{enumerate}[(a)]
+      \item $A$ is a finite set and $B \subseteq A$. \textcolor{gray}{We showed that $B$ is finite (Corollary $20.11$)}. Show that $|B| \le |A|$.
+	\pause
+	\[
+	  \teal{\text{one-to-one} \;f: B \to A}
+	\]
+      \item \pause $A$ is a finite set and $B \subseteq A$. Show that if $B \neq A$, then $|B| < |A|$.
+	% \pause
+	% \[
+	%   \red{\sout{B \neq A, |B| \le |A| \implies |B| < |A|}}
+	% \]
+	\pause
+	% \vspace{-0.80cm}
+	\[
+	  \teal{\exists a: a \in A \land a \notin B \qquad f: B \to A \setminus \set{a} \qquad |B| \le |A \setminus \set{a}|}
+	\]
+      \item \pause If two finite sets $A$ and $B$ satisfy $B \subseteq A$ and $|A| \le |B|$, then $A = B$.
+	\pause
+	\[
+	  \teal{\text{By contradiction and (b).}}
+	\]
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Cardinality of $|\text{ran}(f)|$}
+    Let $A$ and $B$ be sets with $A$ finite.
+
+    \[
+      f: A \to B
+    \]
+
+    Prove that $|\text{ran}(f)| \le |A|$.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \teal{\text{one-to-one} \;g: \text{ran}(f) \to A}
+  \]
+  \pause
+  \centerline{\red{\footnotesize (No Axiom of Choice Here)}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{$f: A \to A$}
+    Let $A$ be a finite set.
+    \[
+      f: A \to A
+    \]
+    Prove that
+    \[
+      f \text{ is one-to-one } \iff f \text{ is onto}.
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.45\textwidth}
+      \[
+	\implies
+      \]
+      \centerline{By contradiction.}
+      \pause
+      \[
+	f': A \to A \setminus \set{a}
+      \]
+      \pause
+    \column{0.45\textwidth}
+      \[
+	\Longleftarrow
+      \]
+      \pause \vspace{-0.30cm}
+      \[
+	\forall y \in A\; \exists x \in A: y = f(x)
+      \]
+      \pause \vspace{-0.30cm}
+      \[
+	\teal{\forall y, \text{choose $x$}: (g: g(y) = x)}
+      \]
+      \pause \vspace{-0.30cm}
+      \[
+	g \text{ is bijective.}
+      \]
+      \pause \vspace{-0.30cm}
+      \[
+	\teal{f(g(y)) = f(x) = y \implies f = g^{-1}}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

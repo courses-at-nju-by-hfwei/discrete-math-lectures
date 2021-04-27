@@ -1,0 +1,197 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/less-logo}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[$|A| \le |B|$]
+    $|A| \le |B|$ if there exists an \red{\it one-to-one} function $f$ from $A$ into $B$.
+  \end{definition}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{center}
+    {\red{\it $Q:$ What about onto function $f: A \to B$?}} \\[8pt] \pause
+    {\blue{$|B| \le |A|$ \pause {\footnotesize (Axiom of Choice)}}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[$|A| < |B|$]
+    $|A| < |B| \iff |A| \le |B| \land |A| \neq |B|$
+  \end{definition}
+
+  \pause
+  \[
+    |\N| < |\R|
+  \]
+
+  \[
+    |X| < |2^{X}|
+  \]
+
+  \[
+    |\N| < |2^{\N}|
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Countable Revisited]
+    $X$ is countable:
+    \[
+      (\exists n \in \N: |X| = n) \red{\;\lor\;} |X| = |\N|
+    \]
+  \end{definition}
+
+  \pause
+  \begin{theorem}[Proof for Countable]
+    $X$ is countable iff
+    \[
+      \blue{|X| \le |\N|.}
+    \]
+    \pause
+    $X$ is countable iff there exists a \red{\it one-to-one} function
+    \[
+      f: X \to \N.
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{exampleblock}{Subsets of Countable Set}
+    Every subset $B$ of a countable set $A$ is countable.
+  \end{exampleblock}
+
+  \pause
+  \[
+    f: A \xrightarrow{1-1} \N \qquad \pause \teal{g = f|_{B}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Set Union}
+%     Give an example, if possible, of
+%     \begin{enumerate}[(a)]
+%       \setcounter{enumi}{2}
+%       \item a countably infinite collection of \blue{\it pairwise disjoint} nonempty sets whose union is finite.
+%       \setcounter{enumi}{1}
+%       \pause
+%       \item a countably infinite collection of nonempty sets whose union is finite.
+%     \end{enumerate}
+%   \end{exampleblock}
+%
+%   \pause
+%   \[
+%     \Big(\set{A_i: i \in R} \quad A_{i} = \set{1}\Big) \;\red{= \set{\set{1}}}
+%   \]
+%
+%   \pause
+%   \[
+%     |A| = n \implies |2^{A}| = 2^n
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Slope}
+    \begin{enumerate}[(a)]
+      \item The set of all lines with rational slopes
+    \end{enumerate}
+  \end{exampleblock}
+
+  \pause
+  \[
+    (\Q, \;\red{\R})
+  \]
+
+  \pause
+  \[
+    \teal{|\R| \le \;\red{|\Q \times \R|}\; \le |\R \times \R| = |\R|}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\large \red{\it $Q:$ Is ``$\le$'' a partial order?}}
+  \end{center}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}[Cantor-Schr\"{o}der–Bernstein (1887)]
+    \[
+      |X| \le |Y| \land |Y| \le |X| \implies |X| = |Y|
+    \]
+    \pause
+    \[
+      \exists\; \text{\blue{one-to-one} } f: X \to Y \land g: Y \to X \implies \exists\; \text{\blue{bijection} } h: X \to Y
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{columns}
+    \column{0.30\textwidth}
+      \fig{width = 0.50\textwidth}{figs/proof-cantor-bernstein-book}
+    \column{0.30\textwidth}
+      \pause
+      \fig{width = 0.50\textwidth}{figs/fudan-set-theory-book}
+    \column{0.30\textwidth}
+      \pause
+      \fig{width = 0.50\textwidth}{figs/qrcode-cantor-bernstein-wiki}
+      \vspace{-0.60cm}
+      \begin{center}
+	{\teal{\footnotesize Schr\"{o}der–Bernstein theorem @ wiki}}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\large \red{\it $Q:$ Is ``$\le$'' a total order?}}
+  \end{center}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}[PCC]
+    \begin{center}
+      Principle of Cardinal Comparability (PCC) $\iff$ Axiom of Choice
+    \end{center}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[]
+    \[
+      |\R| = |\ps{\N}|
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    |\R| \le |\ps{\N}|  \qquad |\ps{\N}| \le |\R|
+  \]
+
+  \pause
+  \[
+    \mathfrak{c} \triangleq |\R| = |\ps{\N}| = |2^{\N}| \triangleq 2^{\aleph_{0}}
+  \]
+
+  \pause
+  \[
+    \red{\boxed{\mathfrak{c} = 2^{\aleph_{0}}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
