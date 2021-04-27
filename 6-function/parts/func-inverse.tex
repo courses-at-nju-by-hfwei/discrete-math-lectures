@@ -109,7 +109,29 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  examples
+  \[
+    f(x) = (2x + 8)^{3}
+  \]
+
+  \pause
+  \[
+    f^{-1}(y) = \frac{\sqrt[3]{y} - 8}{2}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    f(x) = x - \sin x
+  \]
+
+  \pause
+  \[
+    f^{-1}(y) = \sum_{n=1}^\infty
+      \frac{y^{n/3}}{n!} \lim_{ \theta \to 0}
+      \left(\frac{\mathrm{d}^{\,n-1}}{\mathrm{d} \theta^{\,n-1}}
+        \left(\frac \theta { \sqrt[3]{ \theta - \sin( \theta )} } \right)^n
+      \right).
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -203,12 +225,19 @@
   \end{theorem}
 
   \pause
+  \[
+    f(x) = 3x \qquad g(x) = x + 5
+  \]
+  \pause
+  \[
+    (g \circ f)(x) = 3x + 5  \qquad (g \circ f)^{-1}(x) = \frac{x-5}{3}
+  \]
+  \pause
   \begin{proof}[Proof for (ii)]
     \pause
     \begin{center}
       \blue{It suffices to check \red{either} one of the following identities:}
     \end{center}
-
     \[
       (f^{-1} \circ g^{-1}) \circ (g \circ f) = I_A
     \]

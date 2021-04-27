@@ -3,16 +3,44 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[全序关系 (Total Order)]
-    令 $\red{\preceq} \;\subseteq X \times X$ 是 $X$ 上的\blue{偏序}。\\[5pt]
-    如果 $\preceq$ 满足以下\red{连接性}, 则称 $\preceq$ 是 $X$ 上的\red{全序关系}:
-
-    \[
-      \forall a, b \in X.\; a \preceq b \lor b \preceq a.
-    \]
+    令 $\red{\preceq} \;\subseteq X \times X$ 是 $X$ 上的\blue{关系}。\\[3pt]
+    如果 $\preceq$ 满足以下性质, 则称 $\preceq$ 是 $X$ 上的\red{全序关系}: \\[6pt]
+    \begin{description}
+      \item[\gray{(1) 自反 (Reflexivity):}]
+        \[
+          \gray{\forall x \in X.\; x \preceq x}
+        \]
+      \item[(2) 对称性 (Symmetric):]
+        \[
+          \forall x, y \in X.\; x \preceq y \to y \preceq x
+        \]
+      \item[(3) 传递性 (Transitive):]
+        \[
+          \forall x, y, z \in X.\; x \preceq y \land y \preceq z \to x \preceq z
+        \]
+      \item[\red{(4) 连接性 (Connex; Totality):}]
+        \[
+          \forall x, y \in X.\; x \preceq y \lor y \preceq x.
+        \]
+    \end{description}
   \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \[
     (\R, \le) \qquad (\R, \ge)
+  \]
+
+  \vspace{0.60cm}
+  \begin{center}
+    全序关系 = 偏序关系 + \red{连接性}
+  \end{center}
+
+  \vspace{0.30cm}
+  \[
+    (4) \implies (1)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -25,22 +53,62 @@
     \begin{description}
       \item[(1) 反自反 (Irreflexivity):]
         \[
-          \forall x \in X.\; \lnot (x \prec x)
+          \gray{\forall x \in X.\; \lnot (x \prec x)}
         \]
       \item[(2) 传递性 (Transitive):]
         \[
           \forall x, y, z \in X.\; x \prec y \land y \prec z \to x \prec z
         \]
-      \item[(3) 三歧性 (Trichotomous):]
+      \item[\red{(3) 半连接性 (Semi-Connex):}]
         \[
-          \forall x, y \in X.\;
-            (\text{\red{exactly one of}}\; x \prec y, x = y, \;\text{or}\; y \prec x \text{ holds})
+          \forall x, y \in X.\; \lnot (x = y) \to ((x \prec y) \lor (y \prec x))
         \]
     \end{description}
   \end{definition}
 
+  \vspace{-0.20cm}
   \[
     (\R, <) \qquad (\R, >)
   \]
+  \pause
+  \vspace{-0.50cm}
+  \begin{center}
+    严格全序关系 = 严格偏序关系 + \red{半连接性}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    关系 $R \subseteq X \times X$ 是\red{连接的}
+    $\iff$ $R$ 是\blue{半连接}且\blue{自反}的。
+  \end{theorem}
+  \[
+    \forall x, y \in X.\; x \preceq y \lor y \preceq x
+  \]
+  \[
+    \forall x, y \in X.\; \lnot (x = y) \to ((x \prec y) \lor (y \prec x))
+  \]
+
+  \[
+    \cyan{\forall x, y \in X.\; x R y \lor y R x}
+  \]
+  \[
+    \cyan{\forall x, y \in X.\; \lnot (x = y) \to ((x R y) \lor (y R x))}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    设 $\prec\; \subseteq X \times X$ 是 $X$ 上的\red{严格全序关系}。\\[5pt]
+    $\prec$ 满足\red{三歧性 (Trichotomous)}:
+    \[
+      \forall x, y \in X.\;
+        (\text{\red{exactly one of}}\; x \prec y, x = y, \;\text{or}\; y \prec x \text{ holds})
+    \]
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%

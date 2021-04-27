@@ -3,19 +3,53 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[良序 (Well-Ordering)]
-    设 $(X, \preceq)$ 是\blue{全序集}。 \\[5pt]
+    设 $(X, \preceq)$ 是\blue{偏序集}。 \\[5pt]
     如果$X$ 的任意\cyan{非空}子集都有最小元, 则称 $(X, \preceq)$ 为\red{良序集}。
   \end{definition}
 
   \pause
   \[
-    (\N, \le) \qquad \gray{\Z, \le} \qquad \gray{\R, \le}
+    (\N, \le) \qquad \gray{(\Z, \le)} \qquad \gray{(\R, \le)}
   \]
 
   \pause
-  \vspace{0.50cm}
+  \vspace{0.30cm}
   \begin{center}
-    数学归纳法 \qquad 良序集
+    \red{数学归纳法 \qquad 良序集}
+  \end{center}
+
+  \pause
+  \begin{theorem}
+    良序集 $(X, \preceq)$ 一定是全序集。
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    对任意两个元素 $x, y \in X$, 考虑 $\set{x, y}$ 非空子集。
+    \pause
+    \[
+      x \preceq y \lor y \preceq x
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    每个\red{有限的}全序集 $(X, \preceq)$ 一定是良序集。
+  \end{theorem}
+
+  \pause
+  \[
+    X = \set{x_{1}, x_{2}, \dots, x_{n}}
+  \]
+  \pause
+  \begin{center}
+    \red{反设 $(X, \preceq)$ 不是良序集。} \pause \\[15pt]
+    \blue{存在非空子集 $\emptyset \neq Y \subseteq X$, $Y$ 中没有最小元素。} \pause \\[15pt]
+    \purple{则 $Y$ 中存在不可比元素 \only<6->{\cyan{\quad ($Y$ 是有限的!)}}}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%

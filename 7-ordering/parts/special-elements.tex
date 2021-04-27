@@ -31,6 +31,12 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/powerset}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{}
     \[
       (\R, \le)
@@ -42,6 +48,7 @@
   \end{exampleblock}
 
   \pause
+  \vspace{0.30cm}
   \begin{exampleblock}{}
     \[
       (\N, \le)
@@ -51,8 +58,11 @@
       无极大元、有唯一极小元 $0$
     \end{center}
   \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
 
-  \pause
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{}
     \[
       (\set{2, 3, 4, \dots} = \N \setminus \set{0, 1}, \mid)
@@ -62,6 +72,9 @@
       无极大元、有无穷多个极小元 (所有的素数)
     \end{center}
   \end{exampleblock}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/infinite-divisors}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -109,6 +122,10 @@
     \[
       x \preceq y \land y \preceq x \pause \implies x = y
     \]
+    \vspace{-0.60cm}
+    \begin{center}
+      \cyan{(反对称性)}
+    \end{center}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -147,5 +164,74 @@
   \begin{theorem}
     设 $(X, \preceq)$ 是偏序集且 \red{$X$是有限集}, 则极小元一定存在。
   \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[上界 (Upper Bound) 与下界 (Lower Bound)]
+    设 $(X, \preceq)$ 是\blue{偏序集}。对于 $Y \subseteq X$, 如果
+    \[
+      \exists \red{x \in X}.\; \forall y \in Y.\; y \preceq x,
+    \]
+    则称 $x$ 为 $Y$ 的\red{上界}。
+
+    \vspace{0.30cm}
+    类似地, 如果
+    \[
+      \exists \red{x \in X}.\; \forall y \in Y.\; x \preceq y,
+    \]
+    则称 $x$ 为 $Y$ 的\red{下界}。
+  \end{definition}
+
+  \fig{width = 0.55\textwidth}{figs/bound}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[最小上界 (Least Upper Bound; LUB)]
+    设 $(X, \preceq)$ 是\blue{偏序集}, $Y \subseteq X$ 是 $X$ 的子集,
+    $x \in X$ 是 $Y$ 的任一\cyan{上界}。 \\[5pt]
+    如果对于 $B$ 的所有\cyan{下界} $x'$, 均有 $x \preceq x'$,
+    则称 $x$ 是 $Y$ 的\red{最小上界}。
+  \end{definition}
+
+  \fig{width = 0.55\textwidth}{figs/bound}
+
+  \begin{definition}[最大下界 (Greatest Lower Bound; GLB)]
+    设 $(X, \preceq)$ 是\blue{偏序集}, $Y \subseteq X$ 是 $X$ 的子集,
+    $x \in X$ 是 $Y$ 的任一\cyan{下界}。 \\[5pt]
+    如果对于 $B$ 的所有\cyan{下界} $x'$, 均有 $x' \preceq x$,
+    则称 $x$ 是 $Y$ 的\red{最大下界}。
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[格 (Lattice)]
+    设 $(X, \preceq)$ 是\blue{偏序集}。\\[6pt]
+    如果任意两个元素都有最小上界与最大下界, 则称 $(X, \preceq)$ 为\red{格}。
+  \end{definition}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/Hasse-Powerset}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.90\textwidth}{figs/60-poset}
+  \end{columns}
+
+  \pause
+  \vspace{-0.60cm}
+  \fig{width = 0.25\textwidth}{figs/lattice-integer}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/stop-here}
 \end{frame}
 %%%%%%%%%%%%%%%

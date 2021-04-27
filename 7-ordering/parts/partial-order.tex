@@ -42,7 +42,7 @@
   \begin{definition}[偏序关系 (Partial Order)]
     令 $\red{\preceq} \;\subseteq X \times X$ 是 $X$ 上的二元关系。\\[3pt]
     如果 $\preceq$ 满足以下条件, 则称 $\preceq$ 是 $X$ 上的\red{偏序关系}, \\[3pt]
-    并称 $(\preceq, X)$ 为\red{偏序集 (poset; Partially Ordered Set)}: \\[6pt]
+    并称 $(X, \preceq)$ 为\red{偏序集 (poset; Partially Ordered Set)}: \\[6pt]
     \begin{enumerate}[(1)]
       \setlength{\itemsep}{6pt}
       \item $\preceq$ 是\blue{自反 (irreflexive)}的。
@@ -84,9 +84,9 @@
         \[
           a \prec b \triangleq a \preceq b \land a \neq b
         \]
-      \item[被覆盖 (covered by):]
+      \item[$a$被$b$覆盖 (covered by):]
         \[
-          a b \triangleq a \prec b \land
+          a \prec b \land
             (\forall c \in X.\; (c \neq a \land c \neq b) \to \lnot (a \preceq c \preceq b))
         \]
     \end{description}
@@ -129,6 +129,10 @@
       \item 设 $S \subseteq X$ 且 $S$ 中元素两两\blue{不可比}, 则称 $S$ 是\red{反链}。
     \end{itemize}
   \end{definition}
+
+  \begin{center}
+    规定: 单元素集合既是链, 也是反链
+  \end{center}
 
   \fig{width = 0.50\textwidth}{figs/Hasse-Powerset}
 \end{frame}
@@ -194,11 +198,20 @@
     \begin{enumerate}[(1)]
       \setlength{\itemsep}{6pt}
       \item $x \prec y$, $x = y$, $y \prec x$ 三者中\blue{至多有一个}成立;
-      \item $x \preceq y \preceq x \to x = y$。
+      \item $(x \preceq y \land y \preceq x) \to x = y$。
         \[
           (x \preceq y \triangleq x \prec y \lor x = y)
         \]
     \end{enumerate}
   \end{theorem}
+
+  \pause
+  \begin{align*}
+    & x \preceq y \land y \preceq x \\[5pt]
+    \iff & (x \prec y \lor x = y) \land (y \prec x \lor x = y) \\[5pt]
+    \iff & x = y \lor (x \prec y \land y \prec x) \\[5pt]
+    \implies & x = y \lor \text{False} \\[5pt]
+    \implies & x = y
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
