@@ -9,7 +9,8 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[$|A| = |B| \;(A \approx B)$ (1878)]
-    $A$ and $B$ are \red{\it equipotent} if there exists a \purple{\it bijection} from $A$ to $B$.
+    $A$ and $B$ are \red{\it equipotent (等势)}
+    if there exists a \purple{\it bijection} from $A$ to $B$.
   \end{definition}
 
   \pause
@@ -49,6 +50,13 @@
       \item $A \approx B \land B \approx C \implies A \approx C$
     \end{enumerate}
   \end{theorem}
+
+  \vspace{0.30cm}
+  \uncover<4->{
+    \begin{center}
+      \cyan{Do not care too much.}
+    \end{center}
+  }
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -57,20 +65,27 @@
   \begin{definition}[Finite]
     $X$ is finite if
     \[
-      \exists n \in \N: |X| = \red{n}.
+      \exists n \in \N: |X| = |\red{n}| = |\red{\set{0, 1, \dots, n-1}}|.
     \]
   \end{definition}
 
   \pause
+  \vspace{0.20cm}
   \[
-    |X| = |\set{0, 1, \cdots, n-1}|
+    \text{简记为 }\; |X| = n
   \]
 
   \pause
-  \begin{theorem}[]
-    Let $A$ be a finite set.
-    There is a \red{\it unique} $n \in \mathbb{N}$ such that $A \approx \set{0, 1, \cdots, n-1}$.
-  \end{theorem}
+  \vspace{0.30cm}
+  \begin{center}
+    集合 $X$ 是有穷的当且仅当它与某个自然数等势。
+  \end{center}
+
+  % \pause
+  % \begin{theorem}[]
+  %   Let $A$ be a finite set.
+  %   There is a \red{\it unique} $n \in \mathbb{N}$ such that $A \approx \set{0, 1, \cdots, n-1}$.
+  % \end{theorem}
 
   % \pause
   % \vspace{0.30cm}
@@ -92,13 +107,13 @@
   \end{definition}
 
   \pause
-  \begin{theorem}[]
-    $\N$ is infinite. \uncover<8->{\teal{(So are $\Z$, $\Q$, $\R$.)}}
+  \begin{theorem}[\red{Existence of Infinite Sets!}]
+    $\N$ is infinite. \uncover<9->{\cyan{(So are $\Z$, $\Q$, $\R$.)}}
   \end{theorem}
 
   \pause
   \begin{center}
-    \red{\it By Contradiction.}
+    \purple{\it By Contradiction.}
 
     \pause
     \vspace{-0.30cm}
@@ -121,7 +136,7 @@
     \pause
     \vspace{-0.30cm}
     \[
-      \text{\red{By the Pigeonhole Principle}}: g \text{ is not 1-1} \pause \implies f \text{ is not 1-1}
+      \text{\teal{By the Pigeonhole Principle}}: g \text{ is not 1-1} \pause \implies f \text{ is not 1-1}
     \]
   \end{center}
 \end{frame}
@@ -131,22 +146,22 @@
 \begin{frame}{}
   \begin{definition}[Infinite]
     For any set $X$,
-    \begin{description}[Countably Infinite]
+    \begin{description}[<+->][Countably Infinite]
       \item[Countably Infinite]
-	\[
-	  |X| = |\N| \red{\;\triangleq \aleph_{0}}
-	\]
+        \[
+          |X| = |\N| \red{\;\triangleq \aleph_{0}}
+        \]
       \item[Countable]
-	\[
-	  \text{(finite $\lor$ countably infinite)}
-	\]
+        \[
+          \text{(finite $\lor$ countably infinite)}
+        \]
       \item[Uncountable]
-	\[
-	  \text{($\lnot$ countable)}
-	\]
-	\[
-	  \text{(infinite) $\land$ \Big($\lnot$ (countably infinite)\Big)}
-	\]
+        \[
+          \text{($\lnot$ countable)}
+        \]
+        \[
+          \text{(infinite) $\land$ \Big($\lnot$ (countably infinite)\Big)}
+        \]
     \end{description}
   \end{definition}
 \end{frame}
@@ -193,9 +208,9 @@
     \vspace{-0.30cm}
     \begin{columns}
       \column{0.50\textwidth}
-	\fig{width = 0.50\textwidth}{figs/cantor-monumento}
+        \fig{width = 0.55\textwidth}{figs/cantor-monumento}
       \column{0.50\textwidth}
-	\fig{width = 0.60\textwidth}{figs/counting-Q}
+        \fig{width = 0.65\textwidth}{figs/counting-Q}
     \end{columns}
   \end{exampleblock}
 \end{frame}
@@ -215,12 +230,15 @@
     \column{0.50\textwidth}
       \pause
       \[
-	\pi: \N \times \N \to \N
+        \pi: \N \times \N \to \N
       \]
 
       \pause
       \[
-	\pi(k_1, k_2) = \frac{1}{2} (k_1 + k_2)(k_1 + k_2 + 1) + k_2
+        \pi(k_1, k_2) = \frac{1}{2} (k_1 + k_2)(k_1 + k_2 + 1) + k_2
+      \]
+      \[
+        \pi(2, 1) = 7
       \]
   \end{columns}
 
@@ -246,7 +264,7 @@
 
   \pause
   \[
-    \purple{\N^{n} \quad \text{\it vs.} \quad \N^{\N}}
+    \red{\N^{n} \quad \text{\it vs.} \quad \N^{\N}}
   \]
 
   \pause
@@ -256,7 +274,12 @@
 
   \pause
   \[
+    \pi^{2}(k_1, k_2) = \frac{1}{2} (k_1 + k_2)(k_1 + k_2 + 1) + k_2
+  \]
+  \pause
+  \[
     \pi^{(n)}(k_1, \ldots, k_{n-1}, k_n) = \pi (\red{\pi^{(n-1)}}(k_1, \ldots, k_{n-1}) , k_n)
+    \quad (n \ge 3)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -288,8 +311,8 @@
   \pause
   \fig{width = 0.40\textwidth}{figs/countable-union-countable}
   \begin{center}
-    \teal{Counting by Diagonals.}  \\[15pt] \pause
-    \red{We need Axiom of (Countable) Choice!}
+    \teal{Counting by Diagonals} % \\[15pt] \pause
+    % \red{We need Axiom of (Countable) Choice!}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -313,6 +336,7 @@
   \end{theorem}
 
   \pause
+  \vspace{0.50cm}
   \fig{width = 0.30\textwidth}{figs/very-important}
 
   \pause
@@ -332,21 +356,24 @@
   \end{theorem}
 
   \pause
+  \vspace{0.20cm}
   \begin{center}
     \red{By Contradiction.}
-
     \pause
     \[
       f: \R \xleftrightarrow[onto]{1-1} \N
     \]
 
     \pause
-    \fig{width = 0.13\textwidth}{figs/r-uncountable}
-
-    \pause
-    \red{By Diagonal Argument.}
+    \fig{width = 0.16\textwidth}{figs/r-uncountable}
   \end{center}
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+    % 实数不能表示为有理数的有序对。
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 % %%%%%%%%%%%%%%%
@@ -390,6 +417,13 @@
   \[
     \scalebox{5.5}{$\mathfrak{c} \triangleq |\R|$}
   \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    \teal{$\R$ 是一个连续统 (Continuum)} \\[8pt]
+    \cyan{\url{https://en.wikipedia.org/wiki/Continuum\_(set\_theory)}}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -402,20 +436,13 @@
   \end{theorem}
 
   \pause
-  \begin{proof}
-    \pause
-    \[
-      f(x) = \tan \frac{(2x-1)\pi}{2}
-    \]
-    \[
-      |(0,1)| = |(-\frac{\pi}{2}, \frac{\pi}{2})| = |\R|
-    \]
-
-    \pause
-    \[
-      (x = 0.\blue{a_1 a_2 a_3 \cdots}, y = 0.\red{b_1 b_2 b_3 \cdots}) \pause \mapsto 0.\blue{a_1}\red{b_1}\blue{a_2}\red{b_2}\blue{a_3}\red{b_3}\cdots
-    \]
-  \end{proof}
+  \vspace{0.50cm}
+  \[
+    f(x) = \tan \frac{(2x-1)\pi}{2}
+  \]
+  \[
+    |(0,1)| = |(-\frac{\pi}{2}, \frac{\pi}{2})| = |\R|
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 

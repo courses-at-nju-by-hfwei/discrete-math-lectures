@@ -10,12 +10,12 @@
     $|A| \le |B|$ if there exists an \red{\it one-to-one} function $f$ from $A$ into $B$.
   \end{definition}
 
-  \pause
-  \vspace{0.80cm}
-  \begin{center}
-    {\red{\it $Q:$ What about onto function $f: A \to B$?}} \\[8pt] \pause
-    {\blue{$|B| \le |A|$ \pause {\footnotesize (Axiom of Choice)}}}
-  \end{center}
+  % \pause
+  % \vspace{0.80cm}
+  % \begin{center}
+  %   {\red{\it $Q:$ What about onto function $f: A \to B$?}} \\[8pt] \pause
+  %   {\blue{$|B| \le |A|$ \pause {\footnotesize (Axiom of Choice)}}}
+  % \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -50,6 +50,7 @@
   \end{definition}
 
   \pause
+  \vspace{0.60cm}
   \begin{theorem}[Proof for Countable]
     $X$ is countable iff
     \[
@@ -61,15 +62,24 @@
       f: X \to \N.
     \]
   \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
 
-  \pause
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{Subsets of Countable Set}
-    Every subset $B$ of a countable set $A$ is countable.
+    Every \blue{subset} $B$ of a \red{countable} set $A$ is countable.
   \end{exampleblock}
 
   \pause
+  \vspace{0.60cm}
   \[
-    f: A \xrightarrow{1-1} \N \qquad \pause \teal{g = f|_{B}}
+    \exists \red{f: A \xrightarrow{1-1} \N}
+  \]
+
+  \pause
+  \[
+    \blue{g = f|_{B}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -133,7 +143,8 @@
     \]
     \pause
     \[
-      \exists\; \text{\blue{one-to-one} } f: X \to Y \land g: Y \to X \implies \exists\; \text{\blue{bijection} } h: X \to Y
+      \exists\; f: X \xrightarrow{1-1} Y \land g: Y \xrightarrow{1-1} X
+      \implies \exists\; h: X \xleftrightarrow[\text{onto}]{1-1} Y
     \]
   \end{theorem}
 
@@ -149,7 +160,7 @@
       \fig{width = 0.50\textwidth}{figs/qrcode-cantor-bernstein-wiki}
       \vspace{-0.60cm}
       \begin{center}
-	{\teal{\footnotesize Schr\"{o}der–Bernstein theorem @ wiki}}
+        {\href{https://en.wikipedia.org/wiki/Schr\%C3\%B6der\%E2\%80\%93Bernstein\_theorem}{\teal{\footnotesize Schr\"{o}der–Bernstein theorem @ wiki}}}
       \end{center}
   \end{columns}
 \end{frame}
@@ -175,23 +186,26 @@
 \begin{frame}{}
   \begin{theorem}[]
     \[
-      |\R| = |\ps{\N}|
+      |\R| = |\ps{\N}| = |\ps{\Q}|
     \]
   \end{theorem}
 
   \pause
   \[
-    |\R| \le |\ps{\N}|  \qquad |\ps{\N}| \le |\R|
+    |\R| \le |\ps{\Q}|  \qquad |\ps{\Q}| \le |\R|
   \]
+  \pause
+  \begin{center}
+    \teal{\url{https://en.wikipedia.org/wiki/Cardinality\_of\_the\_continuum\#Cardinal\_equalities}}
+  \end{center}
 
   \pause
   \[
-    \mathfrak{c} \triangleq |\R| = |\ps{\N}| = |2^{\N}| \triangleq 2^{\aleph_{0}}
+    \red{\mathfrak{c}} \triangleq |\R| = |\ps{\N}| = |2^{\N}|
+      \triangleq \red{2^{\aleph_{0}}}
   \]
 
   \pause
-  \[
-    \red{\boxed{\mathfrak{c} = 2^{\aleph_{0}}}}
-  \]
+  \fig{width = 0.30\textwidth}{figs/cantor-monumento}
 \end{frame}
 %%%%%%%%%%%%%%%
