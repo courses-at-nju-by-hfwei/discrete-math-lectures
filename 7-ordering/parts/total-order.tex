@@ -10,9 +10,9 @@
         \[
           \gray{\forall x \in X.\; x \preceq x}
         \]
-      \item[(2) 对称性 (Symmetric):]
+      \item[(2) 反对称性 (Antisymmetric):]
         \[
-          \forall x, y \in X.\; x \preceq y \to y \preceq x
+          \forall x, y \in X.\; (x \preceq y \land y \preceq x) \to x = y
         \]
       \item[(3) 传递性 (Transitive):]
         \[
@@ -37,11 +37,6 @@
   \begin{center}
     全序关系 = 偏序关系 + \red{连接性}
   \end{center}
-
-  \vspace{0.30cm}
-  \[
-    (4) \implies (1)
-  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -79,25 +74,26 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{theorem}
-    关系 $R \subseteq X \times X$ 是\red{连接的}
-    $\iff$ $R$ 是\blue{半连接}且\blue{自反}的。
-  \end{theorem}
-  \[
-    \forall x, y \in X.\; x \preceq y \lor y \preceq x
-  \]
-  \[
-    \forall x, y \in X.\; \lnot (x = y) \to ((x \prec y) \lor (y \prec x))
-  \]
-
-  \[
-    \cyan{\forall x, y \in X.\; x R y \lor y R x}
-  \]
-  \[
-    \cyan{\forall x, y \in X.\; \lnot (x = y) \to ((x R y) \lor (y R x))}
-  \]
-\end{frame}
+% \begin{frame}{}
+%   \begin{theorem}
+%     关系 $R \subseteq X \times X$ 是\red{连接的}
+%     $\iff$ $R$ 是\blue{半连接}且\blue{自反}的。
+%   \end{theorem}
+%   \[
+%     \forall x, y \in X.\; x \preceq y \lor y \preceq x
+%   \]
+%   \[
+%     \forall x, y \in X.\; \lnot (x = y) \to ((x \prec y) \lor (y \prec x))
+%   \]
+%
+%   \pause
+%   \[
+%     \cyan{\forall x, y \in X.\; x R y \lor y R x}
+%   \]
+%   \[
+%     \cyan{\forall x, y \in X.\; \lnot (x = y) \to ((x R y) \lor (y R x))}
+%   \]
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
