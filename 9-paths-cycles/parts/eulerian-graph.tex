@@ -1,0 +1,163 @@
+% eulerian-graph.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.70\textwidth}{figs/Konigsberg}
+
+  \pause
+  \begin{center}
+    {\it ``to devise a walk through the \red{city} \\
+    that would cross each of those \blue{bridges} \violet{once and only once}''}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Konigsberg}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/bridges}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/bridges}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/bridges-graph}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    {\it ``to devise a walk through the \red{graph} \\
+    that would cross each of those \blue{edges} \violet{once and only once}''}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Graph (图)]
+    An \red{(undirected simple) graph} is a \blue{pair} $G = (V, E)$ where \\[6pt]
+    \begin{itemize}
+      \setlength{\itemsep}{5pt}
+      \item $V$ is a set of \purple{vertices} (顶点);
+      \item $E \subseteq \set{\violet{\set{x, y}} \mid x, y \in V \land \cyan{x \neq y}}$
+        is a set of \purple{edges}
+    \end{itemize}
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.35\textwidth}{figs/simple-graph}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/bridges-graph}
+
+  \pause
+  \begin{center}
+    {Undirected \red{Multigraph}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/multigraph-loop}
+
+  \pause
+  \vspace{-0.50cm}
+  \begin{center}
+    {Undirected Multigraph Permitting \red{Loops}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Walk (道路)]
+    Given a graph $G$, a (finite) \red{walk} in $G$ is a sequence of edges of the form
+    \[
+      \set{v_{0}, v_{1}}, \set{v_{1}, v_{2}}, \dots, \set{v_{m-1}, v_{m}}.
+    \]
+    \[
+      (v_{0} \to v_{1} \to v_{2} \to \dots \to v_{m})
+    \]
+    \pause
+    \vspace{-0.80cm}
+    \begin{center}
+      It is a \red{walk} from the \blue{initial vertex} $v_{0}$ to the \blue{final vertex} $v_{m}$.
+    \end{center}
+  \end{definition}
+
+  \pause
+  \[
+    D \to \purple{E} \to B \to A \to \purple{E} \to F
+  \]
+  \fig{width = 0.50\textwidth}{figs/walk}
+  \pause
+  \[
+    D \to \purple{E} \;\cyan{\to}\; B \;\cyan{\to}\; \purple{E} \to F
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Trail (迹)]
+    A \red{trail} is a \blue{walk} in which all the \cyan{edges} are distinct.
+  \end{definition}
+
+  \pause
+  \[
+    D \to \purple{E} \to B \to A \to \purple{E} \to F
+  \]
+  \fig{width = 0.50\textwidth}{figs/walk}
+  \[
+    D \to \purple{E} \;\cyan{\to}\; B \;\cyan{\to}\; \purple{E} \to F
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Path (路径)]
+    A \red{path} is a \blue{trial} in which all \purple{vertices} are distinct,
+    except possibly $v_{0} = v_{m}$.
+  \end{definition}
+
+  \pause
+  \[
+    D \to \purple{E} \to B \to A \to \purple{E} \to F
+  \]
+  \fig{width = 0.50\textwidth}{figs/walk}
+  \[
+    D \to \purple{E} \to F
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Closed Walk/Trail/Path]
+    A walk, trail, or path is \red{closed} if $v_{0} = v_{m}$.
+  \end{definition}
+
+  \pause
+  \fig{width = 0.50\textwidth}{figs/walk}
+
+  \pause
+  \begin{definition}[Cycle]
+    A \red{cycle} is a \blue{closed path} with at least one edge.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
