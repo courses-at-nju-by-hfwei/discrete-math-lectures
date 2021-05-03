@@ -131,8 +131,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Path (路径)]
-    A \red{path} is a \blue{trial} in which all \purple{vertices} are distinct,
-    except possibly $v_{0} = v_{m}$.
+    A \red{path} is a \blue{trial} in which all \purple{vertices} are distinct.
   \end{definition}
 
   \pause
@@ -159,5 +158,107 @@
   \begin{definition}[Cycle]
     A \red{cycle} is a \blue{closed path} with at least one edge.
   \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\it ``to devise a walk through the \red{graph} \\
+    that would cross each of those \blue{edges} \violet{once and only once}''}
+
+    \fig{width = 0.60\textwidth}{figs/bridges-graph}
+
+    \pause
+    {\it to find a \violet{trail} that contains all \blue{edges} of the \red{graph}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    v_{0} \to v_{1} \to \dots \to \red{v_{i}} \to \dots \to v_{m}
+  \]
+
+  \fig{width = 0.60\textwidth}{figs/bridges-graph}
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    v_{i} \notin \set{v_{0}, v_{m}} \implies
+    \red{\degree(v_{i})} \text{ is even}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}[Necessary Condition for Eulerian Trails]
+    If a graph has \red{Eulerian trails},
+    then \blue{zero or two} vertices have an \blue{odd} degree.
+  \end{lemma}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/bridges-graph}
+
+  \pause
+  \begin{center}
+    4 vertices of odd degree $\implies$ has no Eulerian trails
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Euler's Theorem]
+    A graph has \red{Eulerian trails} iff
+    it contains \blue{zero or two} vertices that have an \blue{odd} degree.
+  \end{theorem}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    Euler stated but did \red{\it not}
+    prove the ``$\Longleftarrow$ ({\it \red{if}})'' direction.
+
+    \pause
+    \vspace{0.60cm}
+    Carl Hierholzer \teal{$(1840 \sim 1871)$} gave the first complete proof in 1873.
+
+    \pause
+    \vspace{0.60cm}
+    Pierre-Henry Fleury gave another proof in 1883.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Euler's Theorem (Carl Hierholzer)]
+    A \purple{connected} graph has \red{Eulerian cycles} iff
+    \blue{every vertex} has \blue{even} degree.
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.50\textwidth}{figs/Hierholzer}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  alg
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  edge-disjoint cycle decomposition
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  directed graphs
 \end{frame}
 %%%%%%%%%%%%%%%
