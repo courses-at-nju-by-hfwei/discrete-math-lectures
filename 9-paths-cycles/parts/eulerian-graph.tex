@@ -53,7 +53,6 @@
     \end{itemize}
   \end{definition}
 
-  \pause
   \vspace{0.30cm}
   \fig{width = 0.35\textwidth}{figs/simple-graph}
 \end{frame}
@@ -63,7 +62,6 @@
 \begin{frame}{}
   \fig{width = 0.60\textwidth}{figs/bridges-graph}
 
-  \pause
   \begin{center}
     {Undirected \red{Multigraph}}
   \end{center}
@@ -74,7 +72,6 @@
 \begin{frame}{}
   \fig{width = 0.60\textwidth}{figs/multigraph-loop}
 
-  \pause
   \vspace{-0.50cm}
   \begin{center}
     {Undirected Multigraph Permitting \red{Loops}}
@@ -167,7 +164,7 @@
     {\it ``to devise a walk through the \red{graph} \\
     that would cross each of those \blue{edges} \violet{once and only once}''}
 
-    \fig{width = 0.60\textwidth}{figs/bridges-graph}
+    \fig{width = 0.50\textwidth}{figs/bridges-graph}
 
     \pause
     {\it to find a \violet{trail} that contains all \blue{edges} of the \red{graph}}
@@ -181,7 +178,7 @@
     v_{0} \to v_{1} \to \dots \to \red{v_{i}} \to \dots \to v_{m}
   \]
 
-  \fig{width = 0.60\textwidth}{figs/bridges-graph}
+  \fig{width = 0.50\textwidth}{figs/bridges-graph}
 
   \pause
   \vspace{-0.50cm}
@@ -202,7 +199,6 @@
   \pause
   \fig{width = 0.40\textwidth}{figs/bridges-graph}
 
-  \pause
   \begin{center}
     4 vertices of odd degree $\implies$ has no Eulerian trails
   \end{center}
@@ -238,27 +234,93 @@
   \begin{theorem}[Euler's Theorem (Carl Hierholzer)]
     A \purple{connected} graph has \red{Eulerian cycles} iff
     \blue{every vertex} has \blue{even} degree.
+    \begin{center}
+      \teal{(Such graphs are called Eulerian graphs.)}
+    \end{center}
   \end{theorem}
 
   \pause
+  \vspace{0.30cm}
   \fig{width = 0.50\textwidth}{figs/Hierholzer}
+  \begin{center}
+    cycle + cycle + cycle + $\dots$
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  alg
+  \fig{width = 0.50\textwidth}{figs/blank}
+  \begin{center}
+    Can you repeat the Carl Hierholzer's algorithm?
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  edge-disjoint cycle decomposition
+  \begin{lemma}
+    If every vertex of a graph $G$ has degree $\ge 2$,
+    then $G$ contains a cycle.
+  \end{lemma}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{\it By Extremality.}
+    \pause
+    \vspace{0.50cm}
+
+    Let $P: u \to \dots$ be a \blue{\it maximal} path in $G$.
+
+    \fig{width = 0.50\textwidth}{figs/path-cycle}
+    \pause
+    \[
+      \degree(u) \ge 2
+    \]
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  directed graphs
+  \begin{theorem}[Euler's Theorem (Carl Hierholzer)]
+    A \purple{connected} graph has \red{Eulerian cycles} iff
+    \blue{every vertex} has \blue{even} degree.
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{\it By induction on the number of \cyan{edges} $m$.}
+
+    \pause
+    \vspace{0.30cm}
+    \fig{width = 0.50\textwidth}{figs/euler-proof}
+    \[
+      G' = G - C
+    \]
+  \end{center}
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}{}
+    Every Eulerian graph decomposes into cycles.
+  \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/euler-proof}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Hierholzer}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   directed graphs
+% \end{frame}
 %%%%%%%%%%%%%%%
