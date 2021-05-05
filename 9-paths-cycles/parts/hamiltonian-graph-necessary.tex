@@ -2,27 +2,195 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.60\textwidth}{figs/necessary}
+  \begin{center}
+    ``If $G$ is Hamiltonian, then $G$ must be somewhat connected.''
+
+    \fig{width = 0.60\textwidth}{figs/necessary}
+
+    \pause
+    ``If $G$ is not so connected, then $G$ is non-Hamiltonian.''
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}{}
+    If $G = (V, E)$ is Hamiltonian,
+    then for each nonempty set $S \subset V$, \\[3pt]
+    the graph $G - S$ has \red{$\le |S|$} \blue{components}.
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{definition}[Components (连通分支)]
+    A \red{component} of an \blue{undirected graph}
+    is an \cyan{subgraph} in which any two vertices are connected to each other by paths,
+    and which is connected to no additional vertices in the rest of the graph.
+  \end{definition}
+
+  \vspace{0.20cm}
+  \fig{width = 0.40\textwidth}{figs/components}
+
+  \pause
+  \vspace{-0.20cm}
+  \[
+    \red{c(G)} = 3
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}{}
+    If $G = (V, E)$ is Hamiltonian, then
+    \[
+      \forall S \subset V.\; c(G - S) \le |S|.
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    S \neq V
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    $C_{\lfloor (n + 1)/ 2 \rfloor}$ and $C_{\lceil (n+1)/2 \rceil}$
+    sharing a vertex
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.60\textwidth}{figs/necessary}
+  \begin{exampleblock}{}
+    \begin{itemize}
+      \item A \red{complete bipartite} graph $K_{m, n}$ is Hamiltonian
+        \blue{iff} $m = n \ge 2$.
+    \end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.50cm}
+  \fig{width = 0.40\textwidth}{figs/bipartite-non-hamiltonian}
+
+  \begin{center}
+    A \cyan{non-Hamiltonian} bipartite graph with $m = n = 10$
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}{}
+    If $G = (V, E)$ is Hamiltonian,
+    \[
+      \forall S \subset V.\; c(G - S) \le |S|.
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \fig{width = 0.35\textwidth}{figs/Hamiltonian-necessary}
+
+  \pause
+  \begin{center}
+    ``When a Hamiltonian cycle \red{leaves a component} of $G - S$, \\[3pt]
+    it can go only to a \blue{distinct vertex in $S$}.''
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}{}
+    If $G = (V, E)$ is Hamiltonian,
+    \[
+      \forall S \subset V.\; c(G - S) \le |S|.
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    The condition is \red{\it not} sufficient.
+
+    \pause
+    \fig{width = 0.30\textwidth}{figs/necessary-not-sufficient}
+
+    \pause
+    \begin{center}
+      \blue{All edges incident to vertices of \cyan{degree 2} must be used.}
+    \end{center}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Chessboard Problem (``马踏棋盘''问题)}
+    Is it possible for a ``knight'' to visit every field of
+    a $4 \times 4$ or \teal{$5 \times 5$} chessboard exactly once
+    and return to the starting point?
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \fig{width = 0.60\textwidth}{figs/chessboard}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/chessboard-5-5}
+
+  \[
+    G = (U, V, E): |U| = 12, |V| = 13
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/chessboard-4-4}
+
+  \pause
+  \vspace{0.20cm}
+  \begin{center}
+    Removing the middle \blue{4 squares} leaves \blue{$\ge 5$} components.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Chessboard Problem}
+    \fig{width = 0.65\textwidth}{figs/chessboard-4-n}
+    \[
+      \teal{4 \times n}
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Travelling Salesman/Salesperson Problem (TSP; 旅行商问题)]
+    Given a list of cities and the distances between each pair of cities, \\[3pt]
+    what is the \red{shortest} possible route \\[3pt]
+    that visits each city \blue{exactly once} and returns to the origin city?
+  \end{definition}
+
+  \fig{width = 0.30\textwidth}{figs/TSP}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.35\textwidth}{figs/TSP-book}
 \end{frame}
 %%%%%%%%%%%%%%%
