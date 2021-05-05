@@ -1,0 +1,211 @@
+% hamiltonian-graph-examples.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/examples}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{itemize}
+      \item Every \red{cycle} is Hamiltonian
+    \end{itemize}
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \fig{width = 0.40\textwidth}{figs/C6}
+  \[
+    C_{6}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{itemize}
+      \item A \red{complete} graph (完全图) with $|V| > 2$ is Hamiltonian.
+    \end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/K1}
+      \[
+        K_{1}
+      \]
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/K2}
+      \[
+        K_{2}
+      \]
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/K3}
+      \[
+        K_{3}
+      \]
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/K5}
+      \[
+        K_{5}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{itemize}
+      \item A \red{complete bipartite} graph $K_{m, n}$ is Hamiltonian
+        iff $m = n$.
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Bipartite Graph (Bigraph; 二部图)]
+    A \red{bipartite graph} $G = (U, V, E)$ is a graph
+    whose \blue{vertices} \purple{can} be divided into
+    two disjoint sets $U$ and $V$ such that
+    every edge connects a vertex in $U$ to one in $V$.
+  \end{definition}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/bipartite-graph}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.60\textwidth}{figs/K-3-3-plain}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Complete Bipartite Graph (Biclique; 完全二部图)]
+    A \red{complete bipartite graph} $G = (U, V, E)$ is \blue{bipartite graph}
+    where every vertex of $U$ is connected to every vertex of $V$.
+    \[
+      \blue{K_{m, n}}: m = |U|, n = |V|
+    \]
+  \end{definition}
+
+  \pause
+  \begin{columns}
+    \column{0.33\textwidth}
+      \fig{width = 0.75\textwidth}{figs/K-1-7}
+      \[
+        K_{1, 5} \quad (\text{star})
+      \]
+    \column{0.33\textwidth}
+      \fig{width = 0.80\textwidth}{figs/K-3-3}
+      \[
+        K_{3, 3} \quad (\text{utility graph})
+      \]
+    \column{0.33\textwidth}
+      \fig{width = 0.80\textwidth}{figs/K-4-7}
+      \[
+        K_{4, 7}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{itemize}
+      \item A \red{complete bipartite} graph $K_{m, n}$ is Hamiltonian
+        iff $m = n$.
+    \end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.60\textwidth}{figs/K-3-3}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/K-5-3}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{itemize}
+      \item Every \red{platonic solid} (正多面体), considered as a graph, is Hamiltonian.
+    \end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.20\textwidth}
+      \fig{width = 0.90\textwidth}{figs/T4}
+      \begin{center}
+        \teal{Tetrahedron}
+      \end{center}
+    \column{0.20\textwidth}
+      \fig{width = 0.90\textwidth}{figs/Cube6}
+      \begin{center}
+        \teal{Cube}
+      \end{center}
+    \column{0.20\textwidth}
+      \fig{width = 0.90\textwidth}{figs/O8}
+      \begin{center}
+        \teal{Octahedron}
+      \end{center}
+    \column{0.20\textwidth}
+      \fig{width = 0.90\textwidth}{figs/D12}
+      \begin{center}
+        \teal{Dodecahedron}
+      \end{center}
+    \column{0.20\textwidth}
+      \fig{width = 0.90\textwidth}{figs/I20}
+      \begin{center}
+        \teal{Icosahedron}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.26\textwidth}{figs/Hamiltonian-platonic-graphs}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}{}
+    \begin{itemize}
+      \item \red{Petersen graph} is \blue{\it not} Hamiltonian.
+        \fig{width = 0.20\textwidth}{figs/Petersen}
+        \begin{center}
+          \teal{Julius Petersen ($1839 \sim 1910$)}
+        \end{center}
+    \end{itemize}
+  \end{theorem}
+
+  \pause
+  \begin{columns}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Petersen-graph}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Petersen-graph-unit}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Petersen-graph-crossing}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Petersen-graph-hypo-Hamiltonian}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

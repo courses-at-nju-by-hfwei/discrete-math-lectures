@@ -1,0 +1,127 @@
+% hamiltonian-graph-sufficient.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/sufficient}
+
+  \begin{center}
+    ``If $G$ has enough edges, then $G$ is Hamiltonian.''
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Ore's Theorem, 1960]
+    Let $G$ be a \blue{simple} graph with \blue{$n \ge 3$} vertices. If
+    \[
+      \degree(u) + \degree(v) \ge n
+    \]
+    for \cyan{each pair} of \purple{non-adjacent} vertices $u$ and $v$,
+    then $G$ is \red{Hamiltonian}.
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/Ore-example}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{\it By Contradiction.}
+
+    \pause
+    \vspace{0.30cm}
+    Let $G$ be a \cyan{\it non-Hamiltonian} (simple) graph with $n \ge 3$ vertices.
+
+    \pause
+    \vspace{0.30cm}
+    Suppose that $G$ meets the \blue{Ore's Condition}. \\[3pt]
+    We need to derive a contradiction.
+
+    \pause
+    \vspace{0.80cm}
+    \red{\it By Extremality.} \\[3pt] \pause
+    Adding edges cannot violate the \blue{Ore's Condition}. \\[3pt] \pause
+    Thus we may consider only \red{\it maximal} non-Hamiltonian graphs: \\[3pt]
+    \cyan{adding any edge gives a Hamiltonian graph}.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    By its ``maximality'', $G$ contains a \blue{Hamiltonian path}
+    \[
+      v_{1} \to v_{2} \to \dots \to v_{n}
+    \]
+
+    \pause
+    \vspace{-0.60cm}
+    \[
+      v_{1} \text{ and } v_{n} \text{ are \red{non-adjacent}}
+    \]
+
+    \pause
+    \vspace{-0.60cm}
+    \[
+      \degree(v_{1}) + \degree(v_{2}) \ge n
+    \]
+
+    \pause
+    \fig{width = 0.50\textwidth}{figs/Ore-proof}
+    There must be some vertex \purple{$v_{i}$ adjacent to $v_{1}$} \\[3pt]
+    such that \purple{$v_{i-1}$ is adjacent to $v_{n}$}.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Dirac's Theorem (1952; Gabriel Andrew Dirac)]
+    A \blue{simple} graph $G = (V, E)$
+    with \blue{$n \ge 3$} vertices is \red{Hamiltonian}
+    \[
+      \forall v \in V.\; \degree(v) \ge n/2.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \delta(G) \triangleq \min_{v \in V} \degree(v)
+  \]
+  \[
+    \cyan{\delta(G) \ge n/2}
+  \]
+
+  \pause
+  \fig{width = 0.85\textwidth}{figs/Ore-family}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Dirac's Theorem (1952)]
+    A \blue{simple} graph $G = (V, E)$
+    with \blue{$n \ge 3$} vertices is \red{Hamiltonian}
+    \[
+      \cyan{\delta(G) \ge n/2}
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \delta(G) = \lfloor (n-1)/2 \rfloor
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{Counterexample:}
+    $C_{\lfloor (n + 1)/ 2 \rfloor}$ and $C_{\lceil (n+1)/2 \rceil}$
+    sharing a vertex
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
