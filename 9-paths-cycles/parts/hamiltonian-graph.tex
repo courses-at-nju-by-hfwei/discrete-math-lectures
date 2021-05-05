@@ -1,0 +1,380 @@
+% hamiltonian-graph.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Dodecahedron: \blue{12 faces}, 20 vertices, and 30 edges
+
+    \fig{width = 0.40\textwidth}{figs/dodecahedron}
+
+    \pause
+    \red{Is there a \red{cycle} that visits each \red{vertex} exactly once?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/Dodecahedron-Diagram}
+  \vspace{-0.50cm}
+  \begin{center}
+    \red{Is there a \red{cycle} that visits each \red{vertex} exactly once?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Hamiltonian Path]
+    A \red{Hamiltonian path} is a \blue{path}
+    that visits each \blue{vertex} \purple{exactly once}.
+  \end{definition}
+
+  \fig{width = 0.50\textwidth}{figs/Hamiltonian-Path-Cycle}
+
+  \begin{definition}[Hamiltonian Cycle]
+    A \red{Hamiltonian cycle} is a \blue{Hamiltonian path} that is a \purple{cycle}.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Hamiltonian Graph]
+    A graph is a \red{Hamiltonian graph} if it has a \blue{Hamiltonian cycle}.
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{definition}[Semi-Hamiltonian Graph]
+    A \blue{non-Hamiltonian} graph is \red{semi-Hamiltonian}
+    if it has a \blue{Hamiltonian path}.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/Hamilton}
+      \begin{center}
+        \teal{William Rowan Hamilton $(1805 \sim 1865)$}
+      \end{center}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Quaternion-Bridge}
+      \begin{center}
+        \teal{(October 16, 1843)}
+      \end{center}
+      \[
+        i^2 = j^{2} = k^{2} = ijk = -1
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Hamiltonian-path-solution}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/Hamiltonian-path-solution-3d}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{What is ``THE'' theorem for finding a Hamiltonian path/cycle
+        \\ or determining its existence?}
+
+    \pause
+    \vspace{0.80cm}
+    I do not know.
+
+    \pause
+    \vspace{0.80cm}
+    Nobody knows.
+
+    \pause
+    \vspace{0.80cm}
+    We will probably never know it.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/millionaire}
+
+  \begin{theorem}
+    The Hamiltonian Path/Cycle problem is NP-complete.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Typical (Positive/Negative) Graph Examples
+
+    \vspace{0.80cm}
+    Sufficient Conditions
+
+    \vspace{0.80cm}
+    Necessary Conditions
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{itemize}
+      \item A \red{complete} graph (完全图) with $|V| > 2$ is Hamiltonian.
+    \end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/K1}
+      \[
+        K_{1}
+      \]
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/K2}
+      \[
+        K_{2}
+      \]
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/K3}
+      \[
+        K_{3}
+      \]
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/K5}
+      \[
+        K_{5}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{itemize}
+      \item Every \red{cycle} is Hamiltonian
+    \end{itemize}
+  \end{exampleblock}
+
+  \vspace{0.60cm}
+  \fig{width = 0.40\textwidth}{figs/C6}
+  \[
+    C_{6}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{itemize}
+      \item Every \red{platonic solid} (正多面体), considered as a graph, is Hamiltonian.
+    \end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{columns}
+    \column{0.20\textwidth}
+      \fig{width = 0.90\textwidth}{figs/T4}
+      \begin{center}
+        \teal{Tetrahedron}
+      \end{center}
+    \column{0.20\textwidth}
+      \fig{width = 0.90\textwidth}{figs/Cube6}
+      \begin{center}
+        \teal{Cube}
+      \end{center}
+    \column{0.20\textwidth}
+      \fig{width = 0.90\textwidth}{figs/O8}
+      \begin{center}
+        \teal{Octahedron}
+      \end{center}
+    \column{0.20\textwidth}
+      \fig{width = 0.90\textwidth}{figs/D12}
+      \begin{center}
+        \teal{Dodecahedron}
+      \end{center}
+    \column{0.20\textwidth}
+      \fig{width = 0.90\textwidth}{figs/I20}
+      \begin{center}
+        \teal{Icosahedron}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.26\textwidth}{figs/Hamiltonian-platonic-graphs}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{}
+    \begin{itemize}
+      \item \red{Petersen graph} is \blue{\it not} Hamiltonian.
+        \fig{width = 0.20\textwidth}{figs/Petersen}
+        \begin{center}
+          \teal{Julius Petersen ($1839 \sim 1910$)}
+        \end{center}
+    \end{itemize}
+  \end{exampleblock}
+
+  \pause
+  \begin{columns}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Petersen-graph}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Petersen-graph-unit}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Petersen-graph-crossing}
+    \column{0.25\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Petersen-graph-hypo-Hamiltonian}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/sufficient}
+
+  \begin{center}
+    ``If $G$ has enough edges, then $G$ is Hamiltonian.''
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Ore's Theorem, 1960]
+    Let $G$ be a \blue{simple} graph with \blue{$n \ge 3$} vertices. If
+    \[
+      \degree(u) + \degree(v) \ge n
+    \]
+    for \cyan{each pair} of \purple{non-adjacent} vertices $u$ and $v$,
+    then $G$ is \red{Hamiltonian}.
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/Ore-example}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{\it By Contradiction.}
+
+    \pause
+    \vspace{0.30cm}
+    Let $G$ be a \cyan{\it non-Hamiltonian} (simple) graph with $n \ge 3$ vertices.
+
+    \pause
+    \vspace{0.30cm}
+    Suppose that $G$ meets the \blue{Ore's Condition}. \\[3pt]
+    We need to derive a contradiction.
+
+    \pause
+    \vspace{0.80cm}
+    \red{\it By Extremality.} \\[3pt] \pause
+    Adding edges cannot violate the \blue{Ore's Condition}. \\[3pt] \pause
+    Thus we may consider only \red{\it maximal} non-Hamiltonian graphs: \\[3pt]
+    \cyan{adding any edge gives a Hamiltonian graph}.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    By its ``maximality'', $G$ contains a \blue{Hamiltonian path}
+    \[
+      v_{1} \to v_{2} \to \dots \to v_{n}
+    \]
+
+    \pause
+    \vspace{-0.60cm}
+    \[
+      v_{1} \text{ and } v_{n} \text{ are \red{non-adjacent}}
+    \]
+
+    \pause
+    \vspace{-0.60cm}
+    \[
+      \degree(v_{1}) + \degree(v_{2}) \ge n
+    \]
+
+    \pause
+    \fig{width = 0.50\textwidth}{figs/Ore-proof}
+    There must be some vertex \purple{$v_{i}$ adjacent to $v_{1}$} \\[3pt]
+    such that \purple{$v_{i-1}$ is adjacent to $v_{n}$}.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Dirac's Theorem (1952; Gabriel Andrew Dirac)]
+    A \blue{simple} graph $G = (V, E)$
+    with \blue{$n \ge 3$} vertices is \red{Hamiltonian}
+    \[
+      \forall v \in V.\; \degree(v) \ge n/2.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \delta(G) \triangleq \min_{v \in V} \degree(v)
+  \]
+  \[
+    \cyan{\delta(G) \ge n/2}
+  \]
+
+  \pause
+  \fig{width = 0.80\textwidth}{figs/Ore-family}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Dirac's Theorem (1952)]
+    A \blue{simple} graph $G = (V, E)$
+    with \blue{$n \ge 3$} vertices is \red{Hamiltonian}
+    \[
+      \cyan{\delta(G) \ge n/2}
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \delta(G) = \lfloor (n-1)/2 \rfloor
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{Counterexample:}
+    $C_{\lfloor (n + 1)/ 2 \rfloor}$ and $C_{\lceil (n+1)/2 \rceil}$
+    sharing a vertex
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
