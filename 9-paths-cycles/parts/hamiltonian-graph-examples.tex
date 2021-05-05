@@ -209,3 +209,71 @@
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}{}
+    The Petersen graph is non-Hamiltonian.
+  \end{theorem}
+
+  \fig{width = 0.40\textwidth}{figs/Petersen-graph}
+
+  \pause
+  \begin{center}
+    The Petersen graph has \red{\it no} cycles of length \blue{$< 5$}.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{\it By Contradiction.}
+
+    \pause
+    \vspace{0.30cm}
+    Suppose that it has a Hamiltonian cycle $C$.
+
+    \fig{width = 0.30\textwidth}{figs/C10}
+
+    \pause
+    $v_{0}$ is adjacent to $v_{4}$, $v_{5}$, or $v_{6}$.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{center}
+        \textsc{Case I:} $v_{0}$ is adjacent to $v_{4}$
+      \end{center}
+      \fig{width = 0.60\textwidth}{figs/C10-v0-v4}
+
+      \pause
+      \begin{center}
+        $v_{5}$ is adjacent to $v_{1}$ or $v_{9}$
+
+        \pause
+        \vspace{0.30cm}
+        \red{cycle of length 4!}
+      \end{center}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+        \textsc{Case II:} $v_{0}$ is adjacent to $v_{5}$
+      \end{center}
+      \fig{width = 0.60\textwidth}{figs/C10}
+
+      \pause
+      \begin{center}
+        $v_{1}$ is adjacent to $v_{7}$
+
+        \pause
+        \vspace{0.30cm}
+        \red{back to \textsc{Case I}!}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
