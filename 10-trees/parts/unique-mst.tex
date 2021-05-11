@@ -1,0 +1,70 @@
+% unique-mst.tex
+
+%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Uniqueness of MST]
+    Let $G$ be an edge-weighted undirected graph. \\
+    If each edge has a \purple{distinct} weight,
+    then there is a \red{unique} {\it MST} of $G$.
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\red{By Contradiction.}}
+
+  \pause
+  \[
+    \exists \text{ MSTs } T_1 \neq T_2
+  \]
+
+  \pause
+  \[
+    \Delta E = \set{e \mid e \in T_1 \setminus T_2 \lor e \in T_2 \setminus T_1}
+  \]
+
+  \pause
+  \[
+    e = \min \Delta E
+  \]
+
+  \pause
+  \[
+    e \in T_1 \setminus T_2 \;\text{\small \it (w.l.o.g)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/mst-unique}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    T_2 + \set{e} \implies C
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \exists (e' \in C) \red{\;\notin\; T_1} \pause \implies e' \in T_{2} \setminus T_{1} \implies e' \in \Delta E \pause \implies w(e') > w(e)
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \[
+    T' = T_{2} + \set{e} - \set{e'} \implies w(T') < w(T_{2})
+  \]
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Condition for Uniqueness of MST}
+    \centerline{Unique MST $\centernot\implies$ Distinct weights}
+  \end{exampleblock}
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/unique-mst-partition}
+\end{frame}
+%%%%%%%%%%%%%

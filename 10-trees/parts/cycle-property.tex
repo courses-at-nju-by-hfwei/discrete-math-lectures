@@ -1,0 +1,53 @@
+% file: sections/cycle-property.tex
+
+%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\teal{\Large Cycle Property}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{block}{Cycle Property}
+    \begin{itemize}
+      \item Let $C$ be any cycle in $G$
+      \item Let $e = (u,v)$ be \red{\it a} maximum-weight edge in $C$
+    \end{itemize}
+
+    \centerline{Then $\red{\exists} \text{ MST } T \text{ of } G: e \notin T$.}
+  \end{block}
+
+  \fig{width = 0.50\textwidth}{figs/cycle-property}
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    T' = \underbrace{T - \set{e}}_{\red{\text{if } e \;\in\; T}} + \set{e'}
+  \]
+
+  \pause
+  \begin{center}
+    {``a'' $\to$ ``the'' \red{$\implies$} ``$\exists$'' $\to$ ``$\forall$''}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{proof}
+%     Basic idea: pick any MST $T$ of $G$
+%     \begin{itemize}
+%       \item $e \notin T$
+%       \item $e \in T \Rightarrow e \notin T'$
+% 	\begin{itemize}
+% 	  \item $T - \set{e}$ $\Rightarrow$ $(S, V \setminus S)$
+% 	  \item $\exists e' = (u', v') \in C$ ($e' \in P_{u,v}$) across the cut
+% 	  \item \textcolor{red}{$T' = T - \set{e} + \set{e'}$}: spanning tree
+% 	  \item $w(e') \leq w(e) \Rightarrow w(T') \leq w(T) \Rightarrow w(T') = w(T)$
+% 	\end{itemize}
+%     \end{itemize}
+%   \end{proof}
+% \end{frame}
+%%%%%%%%%%%%%

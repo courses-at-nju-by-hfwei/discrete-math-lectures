@@ -85,6 +85,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/mst-example}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -100,6 +101,55 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/mst-example}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%
+\input{parts/cut-property}
+\input{parts/cycle-property}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/Kruskal}
+
+  \begin{center}
+    \teal{Joseph Kruskal ($1928 \sim 2010$)}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Anti-Kruskal Algorithm}
+    \centerline{\href{https://en.wikipedia.org/wiki/Reverse-delete_algorithm}{Reverse-delete algorithm \teal{\small (wiki; clickable)}}}
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    {\purple{Cycle Property}}
+  \end{center}
+
+  \[
+    \red{T \subseteq F \implies \exists\; T': T' \subseteq F - \set{e}}
+  \]
+
+  \pause
+  \vspace{0.20cm}
+  \begin{center}
+    {\it ``On the Shortest Spanning Subtree of a Graph \\
+    and the Traveling Salesman Problem''} \\
+    \hfill --- \red{Kruskal}, $1956$.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/mst-example}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -115,35 +165,10 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/mst-example}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.40\textwidth}{figs/Kruskal}
-
-  \begin{center}
-    \teal{Joseph Kruskal ($1928 \sim 2010$)}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
+\input{parts/unique-mst}
 %%%%%%%%%%%%%%%
