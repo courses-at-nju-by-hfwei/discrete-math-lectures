@@ -27,13 +27,105 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.30\textwidth}{figs/keep-calm-prove-it}
+  \begin{definition}[Internal Vertex (内部顶点); Leaf (叶子)]
+    In a tree $T$ with \blue{$\ge 2$} vertices, for a vertex $v$ in $T$, if
+    \[
+      \deg(v) = 1
+    \]
+    then $v$ is called a \red{leaf};
+    otherwise, $v$ is an \red{internal vertex}.
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.50\textwidth}{figs/CaterpillarTree}
+
+  \pause
+  \begin{lemma}
+    Any tree $T$ with \blue{$\ge 2$} vertices contains \red{$\ge 1$} leaf.
+  \end{lemma}
+
+  \pause
+  \begin{center}
+    Otherwise, $\forall v \in V.\; \degree(v) \ge 2 \implies T \text{ has cycles}$.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}
+  \begin{lemma}
+    Any tree $T$ with \blue{$\ge 2$} vertices contains \red{$\ge 2$} leaves.
+  \end{lemma}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \sum_{v \in V} \degree(v) = 2n - 2
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    Consider the two endpoints of any \red{maximal} (nontrivial) path in $T$.
+    \pause \\[5pt]
+    They are leaves of $T$.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{lemma}
+    Deleting a \red{leaf} from a tree $T$ with $n$ vertices
+    produces a tree with $n-1$ vertices.
+  \end{lemma}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \fig{width = 0.40\textwidth}{figs/G-leaf}
+
+    \vspace{0.20cm}
+    $G' = G - v$ is \violet{connected} and \purple{acyclic}.
+
+    \pause
+    \vspace{0.50cm}
+    \blue{A leaf does \red{\it not} belong to any paths connecting two other vertices.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Irreducible Tree]
+    An \red{irreducible tree} is a tree $T$ where
+    \[
+      \forall v \in V(T).\; \degree(v) \neq 2.
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/trees-10}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/trees-movie}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \blue{Homeomorphically} Irreducible Trees of size $n = 10$
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[\cyan{(We call it)} Tree Theorem]
     Let $T$ be an undirected graph with $n$ vertices. \\[3pt]
     Then the following statements are \red{equivalent}:
     \begin{enumerate}[(1)]
@@ -46,6 +138,12 @@
       \item $T$ is acyclic, but the addition of any edge creates exactly one cycle.
     \end{enumerate}
   \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/keep-calm-prove-it}
 \end{frame}
 %%%%%%%%%%%%%%%
 
