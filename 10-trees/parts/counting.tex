@@ -1,1 +1,124 @@
 % counting.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/trees-movie}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Cayley's Formula]
+    The number $T_{n}$ of \red{labeled} trees on $n \ge 2$ vertices is $n^{n-2}$.
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/Cayley-Formula-4}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/Arthur-Cayley}
+  \begin{center}
+    \teal{Arthur Cayley ($1821 \sim 1895$)}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.45\textwidth}{figs/the-book-6}
+
+  \begin{center}
+    \blue{Chapter 33: Cayley's formula for the number of trees}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.20\textwidth}
+    \column{0.60\textwidth}
+        \begin{center}
+          {\large By \red{Double Counting}}. \\[8pt]
+          \hfill --- Jim Pitman
+        \end{center}
+    \column{0.20\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{1.00cm}
+  \begin{center}
+    \teal{\url{https://en.wikipedia.org/wiki/Double\_counting\_(proof\_technique)\#Counting_trees}}
+
+    \pause
+    \vspace{0.80cm}
+    How many ways are there of forming a \red{rooted tree} \\[3pt]
+    from an \blue{empty graph} by adding \purple{directed edges} one by one?
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Choose one of the $\red{T_{n}}$ labeled trees on $n$ vertices.
+
+    \pause
+    \vspace{0.60cm}
+    Choose one of its \purple{$n$} vertices as root.
+
+    \pause
+    \vspace{0.60cm}
+    Choose one of the \blue{$(n-1)!$} possible sequences \\
+    in which to add its $n-1$ directed edges.
+  \end{center}
+
+  \[
+    \red{T_n} \purple{n}\blue{(n-1)}! = T_n n!
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Suppose that we have added \cyan{$n-k$} directed edges.
+
+    \pause
+    \vspace{0.30cm}
+    We obtain a rooted forest with \blue{$k$ trees}.
+
+    \pause
+    \vspace{0.30cm}
+    There are $\red{n}\blue{(k-1)}$ choices for the next edge to add.
+  \end{center}
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/Cayley-Formula-adding-one-edge}
+
+  \pause
+  \[
+    \prod_{\purple{k=2}}^{\purple{n}} \red{n}\blue{(k-1)}
+      = n^{n-1} (n-1)! = n^{n-2} n!
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    T_n n! = n^{n-2}n!
+  \]
+
+  \pause
+  \[
+    T_{n} = n^{n-2}
+  \]
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/enjoy-it}
+\end{frame}
+%%%%%%%%%%%%%%%
