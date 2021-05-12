@@ -1,33 +1,45 @@
 % cut-property.tex
 
-%%%%%%%%%%%%
+%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{center}
-    {\teal{\Large Cut Property}}
-  \end{center}
+  \begin{theorem}[Cut Property]
+    \begin{description}
+      \item[$X:$] A part of some MST $T$ of $G$
+      \item[$(S, V \setminus S):$] A \purple{\it cut} such that $X$ does \purple{\it not} cross $(S, V \setminus S)$
+    ­  \item[$e:$] \red{A} lightest edge across $(S, V \setminus S)$
+    \end{description}
+
+    \begin{center}
+      {Then \blue{$X \cup \set{e}$} is a part of \red{some} MST $T'$ of $G$.}
+    \end{center}
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Cut Property (Version I)}
+  \fig{width = 0.90\textwidth}{figs/cut-property-example}
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Cut Property]
     \begin{description}
-      \item[$X:$] A part of some MST $T_1$ of $G$
-      \item[$(S, V \setminus S):$] A \teal{\it cut} such that $X$ does \teal{\it not} cross $(S, V \setminus S)$
-    ­ \item[$e:$] \red{A} lightest edge across $(S, V \setminus S)$
+      \item[$X:$] A part of some MST $T$ of $G$
+      \item[$(S, V \setminus S):$] A \purple{\it cut} such that $X$ does \purple{\it not} cross $(S, V \setminus S)$
+    ­  \item[$e:$] \red{A} lightest edge across $(S, V \setminus S)$
     \end{description}
 
-    \pause
-    \vspace{0.30cm}
     \begin{center}
-      {Then \blue{$X \cup \set{e}$} is a part of \red{some} MST $T_2$ of $G$.}
+      {Then \blue{$X \cup \set{e}$} is a part of \red{some} MST $T'$ of $G$.}
     \end{center}
-  \end{exampleblock}
+  \end{theorem}
 
   \pause
   \vspace{0.60cm}
   \begin{center}
-    {\red{\large Correctness of Prim's and Kruskal's algorithms.}}
+    {\red{\large Correctness of Kruskal's and Prim's algorithms.}}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%
@@ -35,19 +47,45 @@
 %%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    {\teal{\large By Exchange Argument.}}
+    {\red{\large By Exchange Argument.}}
   \end{center}
 
   \pause
-  \vspace{0.30cm}
   \fig{width = 0.50\textwidth}{figs/cut-property}
 
   \pause
+  \begin{center}
+    If $e \in T$, we are done. \pause Otherwise, construct $T'$.
+  \end{center}
+
+  \pause
   \[
-    T' = \underbrace{\underbrace{T}_{\blue{X \subseteq T}} + \set{e}}_{\red{\text{if } e \;\notin\; T}} - \set{e'}
+    T' = \underbrace{\underbrace{T}_{\blue{X \subseteq T}} +\; \set{e}}_{\red{\text{if } e \;\notin\; T}} - \set{e'}
   \]
 
   \pause
+  \[
+    w(e) \le w(e') \implies T' \text{ is also an MST}
+  \]
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Cut Property]
+    \begin{description}
+      \item[$X:$] A part of some MST $T$ of $G$
+      \item[$(S, V \setminus S):$] A \purple{\it cut} such that $X$ does \purple{\it not} cross $(S, V \setminus S)$
+    ­  \item[$e:$] \red{A} lightest edge across $(S, V \setminus S)$
+    \end{description}
+
+    \begin{center}
+      {Then \blue{$X \cup \set{e}$} is a part of \red{some} MST $T'$ of $G$.}
+    \end{center}
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
   \begin{center}
     {``a'' $\to$ ``the'' \red{$\implies$} ``some'' $\to$ ``all''}
   \end{center}
@@ -55,28 +93,28 @@
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Cut Property (Version II)}
-    \begin{center}
-      A cut $(S, V \setminus S)$ \\[6pt]
-      Let $e = (u,v)$ be \red{\emph{a}} lightest edge across $(S, V \setminus S)$
-      \[
-        \red{\exists \text{ MST $T$ of } G: e \in T}
-      \]
-    \end{center}
-  \end{exampleblock}
-
-  \fig{width = 0.40\textwidth}{figs/cut-property-no-name}
-
-  \pause
-  \vspace{-0.50cm}
-  \[
-    T' = \underbrace{T + \set{e}}_{\red{\text{if } e \;\notin\; T}} - \set{e'}
-  \]
-
-  \pause
-  \begin{center}
-    {``a'' $\to$ ``the'' \red{$\implies$} ``$\exists$'' $\to$ ``$\forall$''}
-  \end{center}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{Cut Property (Version II)}
+%     \begin{center}
+%       A cut $(S, V \setminus S)$ \\[6pt]
+%       Let $e = (u,v)$ be \red{\emph{a}} lightest edge across $(S, V \setminus S)$
+%       \[
+%         \red{\exists \text{ MST $T$ of } G: e \in T}
+%       \]
+%     \end{center}
+%   \end{exampleblock}
+%
+%   \fig{width = 0.40\textwidth}{figs/cut-property-no-name}
+%
+%   \pause
+%   \vspace{-0.50cm}
+%   \[
+%     T' = \underbrace{T + \set{e}}_{\red{\text{if } e \;\notin\; T}} - \set{e'}
+%   \]
+%
+%   \pause
+%   \begin{center}
+%     {``a'' $\to$ ``the'' \red{$\implies$} ``$\exists$'' $\to$ ``$\forall$''}
+%   \end{center}
+% \end{frame}
 %%%%%%%%%%%%%

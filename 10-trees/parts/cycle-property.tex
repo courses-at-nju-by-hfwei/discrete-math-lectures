@@ -1,33 +1,50 @@
-% file: sections/cycle-property.tex
-
-%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{center}
-    {\teal{\Large Cycle Property}}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%
+% cycle-property.tex
 
 %%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{block}{Cycle Property}
+  \begin{theorem}[Cycle Property]
     \begin{itemize}
-      \item Let $C$ be any cycle in $G$
+      \item Let $C$ be any cycle in connected undirected $G$
       \item Let $e = (u,v)$ be \red{\it a} maximum-weight edge in $C$
     \end{itemize}
 
-    \centerline{Then $\red{\exists} \text{ MST } T \text{ of } G: e \notin T$.}
-  \end{block}
+    \begin{center}
+      {Then $\red{\exists} \text{ MST } T \text{ of } G: e \notin T$.}
+    \end{center}
+  \end{theorem}
 
+  \pause
+  \begin{center}
+    Choose any MST $T$ of $G$. \pause \\[3pt]
+    If $e \notin T$, we are done. Otherwise, construct $T'$.
+  \end{center}
+
+  \pause
   \fig{width = 0.50\textwidth}{figs/cycle-property}
 
   \pause
   \vspace{-0.30cm}
   \[
-    T' = \underbrace{T - \set{e}}_{\red{\text{if } e \;\in\; T}} + \set{e'}
+    T' = \underbrace{T - \set{e}}_{\red{\text{if } e \;\in\; T}} +\; \set{e'}
   \]
+\end{frame}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Cycle Property]
+    \begin{itemize}
+      \item Let $C$ be any cycle in connected undirected $G$
+      \item Let $e = (u,v)$ be \red{\it a} maximum-weight edge in $C$
+    \end{itemize}
+
+    \begin{center}
+      {Then $\red{\exists} \text{ MST } T \text{ of } G: e \notin T$.}
+    \end{center}
+  \end{theorem}
 
   \pause
+  \vspace{0.30cm}
   \begin{center}
     {``a'' $\to$ ``the'' \red{$\implies$} ``$\exists$'' $\to$ ``$\forall$''}
   \end{center}

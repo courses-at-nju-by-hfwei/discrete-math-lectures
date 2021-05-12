@@ -2,9 +2,44 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/st-grid}
+
+  \begin{center}
+    \red{Spanning Trees} (trees \cyan{in} graphs)
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Subgraph (子图)]
+    A graph $S$ is a \red{subgraph} of $G$ if
+    \[
+      \blue{V(S) \subseteq V(G)} \land \cyan{E(S) \subseteq E(G)}
+      \land \red{\bigcup E(S) \subseteq V(S)}
+    \]
+  \end{definition}
+
+  \pause
+  \fig{width = 0.45\textwidth}{figs/st-example}
+
+  \pause
+  \vspace{-0.30cm}
+  \begin{definition}[Induced Subgraph (诱导子图)]
+    A graph $S$ is an \red{induced subgraph} of $G$ if
+    $S$ is a \blue{subgraph} of $G$ \\ such that
+    \[
+      \set{\set{u, v} \in E(G) \mid u \in V(S), v \in V(S)} \subseteq E(S).
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{definition}[Spanning Tree (生成树)]
-    A \red{spanning tree} $T$ of an \cyan{undirected} graph $G$
-    is a \purple{subgraph} that is a \blue{tree} with all vertices of $G$.
+    A \red{spanning tree} $T$ of an \cyan{undirected} graph $G$ is a \purple{subgraph} \\
+    that is a \blue{tree} with all vertices of $G$.
   \end{definition}
 
   \pause
@@ -13,20 +48,9 @@
     \column{0.50\textwidth}
       \fig{width = 0.60\textwidth}{figs/st-grid}
     \column{0.50\textwidth}
+      \pause
       \fig{width = 0.70\textwidth}{figs/st-4}
   \end{columns}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{definition}[Subgraph (子图)]
-  \end{definition}
-
-  \pause
-  \vspace{0.50cm}
-  \begin{definition}[Induced Subgraph (诱导子图)]
-  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -39,7 +63,11 @@
   \pause
   \vspace{0.50cm}
   \begin{center}
-    Repeatedly \blue{deleting vertices in cycles} until the graph is \purple{acyclic}.
+    Repeatedly \blue{deleting edges in cycles} until the graph is \purple{acyclic}.
+
+    \pause
+    \vspace{0.30cm}
+    The remaining graph is a spanning tree of $G$.
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -57,7 +85,7 @@
 
   \pause
   \begin{center}
-    Existence? \qquad Uniqueness? \qquad Algorithms?
+    \violet{\large Existence? \qquad Uniqueness? \qquad Algorithms?}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -85,6 +113,13 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    Repeatedly adding \red{the next lowest-weight} edge \\[5pt]
+    that will \blue{not form a cycle}
+    until $n-1$ edges are added.
+  \end{center}
+
+  \pause
   \fig{width = 0.60\textwidth}{figs/mst-example}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -101,10 +136,16 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    Repeatedly adding the \red{cheapest} possible edge \\[5pt]
+    from \blue{the partially built tree} to another vertex, \\[5pt]
+    until $n-1$ edges are added.
+  \end{center}
+
+  \pause
   \fig{width = 0.60\textwidth}{figs/mst-example}
 \end{frame}
 %%%%%%%%%%%%%%%
-
 
 %%%%%%%%%%%%%%%
 \input{parts/cut-property}
@@ -112,61 +153,61 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.40\textwidth}{figs/Kruskal}
-
-  \begin{center}
-    \teal{Joseph Kruskal ($1928 \sim 2010$)}
-  \end{center}
-\end{frame}
+% \begin{frame}{}
+%   \fig{width = 0.40\textwidth}{figs/Kruskal}
+%
+%   \begin{center}
+%     \teal{Joseph Kruskal ($1928 \sim 2010$)}
+%   \end{center}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Anti-Kruskal Algorithm}
-    \centerline{\href{https://en.wikipedia.org/wiki/Reverse-delete_algorithm}{Reverse-delete algorithm \teal{\small (wiki; clickable)}}}
-  \end{exampleblock}
-
-  \pause
-  \vspace{0.30cm}
-  \begin{center}
-    {\purple{Cycle Property}}
-  \end{center}
-
-  \[
-    \red{T \subseteq F \implies \exists\; T': T' \subseteq F - \set{e}}
-  \]
-
-  \pause
-  \vspace{0.20cm}
-  \begin{center}
-    {\it ``On the Shortest Spanning Subtree of a Graph \\
-    and the Traveling Salesman Problem''} \\
-    \hfill --- \red{Kruskal}, $1956$.
-  \end{center}
-\end{frame}
+% \begin{frame}{}
+%   \begin{exampleblock}{Anti-Kruskal Algorithm}
+%     \centerline{\href{https://en.wikipedia.org/wiki/Reverse-delete_algorithm}{Reverse-delete algorithm \teal{\small (wiki; clickable)}}}
+%   \end{exampleblock}
+%
+%   \pause
+%   \vspace{0.30cm}
+%   \begin{center}
+%     {\purple{Cycle Property}}
+%   \end{center}
+%
+%   \[
+%     \red{T \subseteq F \implies \exists\; T': T' \subseteq F - \set{e}}
+%   \]
+%
+%   \pause
+%   \vspace{0.20cm}
+%   \begin{center}
+%     {\it ``On the Shortest Spanning Subtree of a Graph \\
+%     and the Traveling Salesman Problem''} \\
+%     \hfill --- \red{Kruskal}, $1956$.
+%   \end{center}
+% \end{frame}
 %%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.60\textwidth}{figs/mst-example}
-\end{frame}
+% \begin{frame}{}
+%   \fig{width = 0.60\textwidth}{figs/mst-example}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.40\textwidth}{figs/Boruvka}
-
-  \begin{center}
-    \teal{Otakar Borůvka ($1899 \sim 1995$)}
-  \end{center}
-\end{frame}
+% \begin{frame}{}
+%   \fig{width = 0.40\textwidth}{figs/Boruvka}
+%
+%   \begin{center}
+%     \teal{Otakar Borůvka ($1899 \sim 1995$)}
+%   \end{center}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.60\textwidth}{figs/mst-example}
-\end{frame}
+% \begin{frame}{}
+%   \fig{width = 0.60\textwidth}{figs/mst-example}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
