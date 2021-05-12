@@ -2,7 +2,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.50\textwidth}{figs/trees-movie}
+  \fig{width = 0.60\textwidth}{figs/trees-movie}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -55,9 +55,27 @@
 
     \pause
     \vspace{0.80cm}
-    How many ways are there of forming a \red{rooted tree} \\[3pt]
+    How many ways are there of forming a \red{directed rooted tree} \\[3pt]
     from an \blue{empty graph} by adding \purple{directed edges} one by one?
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Rooted Tree (有根树)]
+    A \red{rooted tree} is a \blue{tree}
+    where one vertex has been \purple{designated the root}.
+  \end{definition}
+
+  \pause
+  \fig{width = 0.60\textwidth}{figs/rooted-tree}
+
+  \pause
+  \begin{definition}[Directed Rooted Tree (有向有根树)]
+    A \red{directed rooted tree} is a \blue{rooted tree}
+    where all edges directed \\ \cyan{away from} or \cyan{towards} the root.
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -115,7 +133,7 @@
 
   \pause
   \[
-    T_{n} = n^{n-2}
+    \blue{\boxed{T_{n} = n^{n-2}}}
   \]
 
   \pause
