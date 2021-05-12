@@ -7,7 +7,7 @@
   \end{definition}
 
   \pause
-  \vspace{0.60cm}
+  \vspace{0.80cm}
   \begin{definition}[Forest (森林)]
     A \red{forest} is a \purple{acyclic} \blue{undirected} graph.
   \end{definition}
@@ -24,11 +24,17 @@
   \end{columns}
 
   \pause
-  \fig{width = 0.40\textwidth}{figs/Cayley-Graph}
-
-  \pause
-  \vspace{0.30cm}
+  \vspace{0.80cm}
   \fig{width = 0.70\textwidth}{figs/trees}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/Cayley-Graph}
+  \begin{center}
+    \teal{Cayley Graph} (4-regular tree)
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -99,82 +105,247 @@
     \pause
     \vspace{0.50cm}
     \blue{A leaf does \red{\it not} belong to any paths connecting two other vertices.}
+
+    \pause
+    \vspace{0.80cm}
+    \red{This lemma can be used in induction for trees!}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Irreducible Tree]
-    An \red{irreducible tree} is a tree $T$ where
-    \[
-      \forall v \in V(T).\; \degree(v) \neq 2.
-    \]
-  \end{definition}
-
-  \pause
-  \vspace{0.30cm}
-  \begin{columns}
-    \column{0.50\textwidth}
-      \fig{width = 0.80\textwidth}{figs/trees-10}
-    \column{0.50\textwidth}
-      \pause
-      \fig{width = 0.80\textwidth}{figs/trees-movie}
-  \end{columns}
-
-  \pause
-  \vspace{0.30cm}
-  \begin{center}
-    \blue{Homeomorphically} Irreducible Trees of size $n = 10$
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{theorem}[\cyan{(We call it)} Tree Theorem]
+  \begin{theorem}[\cyan{(We call it)} Characterization of Trees]
     Let $T$ be an undirected graph with $n$ vertices. \\[3pt]
     Then the following statements are \red{equivalent}:
     \begin{enumerate}[(1)]
       \setlength{\itemsep}{6pt}
       \item $T$ is a tree;
-      \item $T$ is acyclic, and has $n-1$ edges;
-      \item $T$ is connected, and has $n-1$ edges;
+      \item $T$ is acyclic, and has $m = n-1$ edges;
+      \item $T$ is connected, and has $m = n-1$ edges;
       \item $T$ is connected, and each edge is a \cyan{bridge};
       \item Any two vertices of $T$ are connected by exactly one path;
       \item $T$ is acyclic, but the addition of any edge creates exactly one cycle.
     \end{enumerate}
   \end{theorem}
+
+  \pause
+  \[
+    \red{(1)} \implies (2) \implies (3) \implies (4) \implies (5) \implies (6) \implies \red{(1)}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.30\textwidth}{figs/keep-calm-prove-it}
+  \begin{theorem}[Characterization of Trees]
+    \begin{enumerate}[(1)]
+        \setlength{\itemsep}{6pt}
+        \item $T$ is a tree;
+        \item $T$ is acyclic, and has $m = n-1$ edges.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{By induction on the number $n$ of vertices of trees.}
+  \end{center}
+
+  \begin{description}[Induction Hypothesis:]
+    \setlength{\itemsep}{8pt}
+    \item[Basis Step:]
+      \uncover<3->{$n = 1$. $m = 0 = n - 1$.}
+    \item[Induction Hypothesis:]
+      \uncover<4->{Any trees with $n-1$ vertices has $n-2$ edges.}
+    \item[Induction Step:]
+      \uncover<5->{Consider a tree $T$ with $n \ge 2$ vertices. \\[5pt]}
+      \uncover<6->{\blue{$T$ has a leaf $v$.} \\[5pt]}
+      \uncover<7->{For \red{$T' = T - v$}, $m(T') = (n-1)-1 = n-2$.}
+      \uncover<8->{
+        \[
+          m(T) = (n-2) + 1 = n - 1.
+        \]
+      }
+  \end{description}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[Characterization of Trees]
+    \begin{enumerate}[(1)]
+        \setcounter{enumi}{1}
+        \setlength{\itemsep}{6pt}
+        \item $T$ is acyclic, and has $n-1$ edges;
+        \item $T$ is connected, and has $n-1$ edges.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{By Contradiction.}
+
+    \pause
+    \vspace{0.30cm}
+    Suppose that $T$ is {\it disconnected}.
+
+    \pause
+    \vspace{0.30cm}
+    \blue{$T$ is a forest, consisting of $k \ge 2$ trees $T_{1}, T_{2}, \dots$.}
+
+    \pause
+    \vspace{0.30cm}
+    \red{By (2), for each $T_{i}$, $m(T_{i}) = n(T_{i}) - 1$.}
+
+    \pause
+    \[
+      m(T) = \sum_{i=1}^{k} m(T_{i}) = n - k \neq n - 1.
+    \]
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[Characterization of Trees]
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{2}
+      \setlength{\itemsep}{6pt}
+      \item $T$ is connected, and has $n-1$ edges;
+      \item $T$ is connected, and each edge is a \cyan{bridge}.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/bridge}
+
+  \begin{definition}[Bridge (桥)]
+    A \red{bridge} of a graph $G$ is an \blue{edge $e$} such that
+    \[
+      c(G - \blue{e}) > c(G).
+    \]
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[Characterization of Trees]
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{2}
+      \setlength{\itemsep}{6pt}
+      \item $T$ is connected, and has $n-1$ edges;
+      \item $T$ is connected, and each edge is a \cyan{bridge}.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    Consider any edge \blue{$e$} of $T$.
+  \end{center}
+
+  \pause
+  \vspace{-0.20cm}
+  \[
+    m(T - \blue{e}) = (n - 1) - 1 = n - 2.
+  \]
+
+  \pause
+  \vspace{-0.20cm}
+  \begin{center}
+    $T - \blue{e}$ must be disconnected.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[Characterization of Trees]
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{3}
+      \setlength{\itemsep}{6pt}
+      \item $T$ is connected, and each edge is a \cyan{bridge};
+      \item Any two vertices of $T$ are connected by exactly one path.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    Consider any two vertices $u$ and $v$.
+
+    \pause
+    \vspace{0.30cm}
+    $T$ is connected $\implies$ $u$ and $v$ are connected by $\ge 1$ path.
+
+    \pause
+    \vspace{0.60cm}
+    \red{If $u$ and $v$ are connected by two paths}, \\[3pt]
+    the edges on these two paths are not bridges.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[Characterization of Trees]
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{4}
+      \setlength{\itemsep}{6pt}
+      \item Any two vertices of $T$ are connected by exactly one path;
+      \item $T$ is acyclic, but the addition of any edge creates exactly one cycle.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{If $T$ has a cycle $C$}, \\[3pt]
+    any two vertices in $C$ is connected by $\ge 2$ paths.
+
+    \pause
+    \vspace{0.60cm}
+    Consider the addition of edge $\set{u, v}$ to $T$. \\[3pt]
+    It creates a cycle, consisting of $\set{u, v}$ and the path from $u$ to $v$.
+
+    \pause
+    \begin{lemma}
+      If two distinct cycles of a graph $G$ share \blue{a common edge $e$}, \\[3pt]
+      then $G$ has a cycle that does \purple{not} contain $e$.
+    \end{lemma}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Characterization of Trees]
+    \begin{enumerate}[(1)]
+      \setcounter{enumi}{5}
+      \setlength{\itemsep}{6pt}
+      \item $T$ is acyclic, but the addition of any edge creates exactly one cycle;
+      \setcounter{enumi}{0}
+      \item $T$ is a tree.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{Suppose that $T$ is disconnected.}
+
+    \pause
+    \vspace{0.60cm}
+    $T$ is a forest, consisting of $\ge 2$ trees $T_{1}, T_{2}, \dots$
+
+    \pause
+    \vspace{0.30cm}
+    Choose $u \in V(T_{1})$, $v \in V(T_{2})$.
+
+    \vspace{0.30cm}
+    $T + \set{u, v}$ does \red{not} create cycles.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
