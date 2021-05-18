@@ -2,30 +2,191 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}{}
-    If $G$ is a \teal{connected} undirected graph \teal{without loops},
-    then $G$ is \red{$k$-colorable} if its vertices can be colored
-    in \purple{$\le k$} colors so that adjacent vertices have different colors.
+  \begin{definition}[$k$-Colorable ($k$-可着色的)]
+    If $G$ is a \gray{connected} undirected graph \teal{without loops}, \\
+    then $G$ is \red{$k$-colorable} if its vertices can be colored in \purple{$\le k$} colors
+    \\ so that adjacent vertices have different colors.
   \end{definition}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/Petersen-3coloring}
+  \begin{center}
+    The Petersen graph is \purple{$\ge 3$}-colorable.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{definition}[$k$-Chromatic ($k$-色数的)]
+    If $G$ is $k$-colorable, but is not $(k-1)$-colorable,
+    then $G$ is $k$-chromatic.
+
+    \[
+      \chi(G) = k
+    \]
+  \end{definition}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/Petersen-3coloring}
+  \begin{center}
+    The Petersen graph is \purple{3}-chromatic.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{lemma}
+    The empty graph (null graph) is $1$-chromatic.
+  \end{lemma}
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/empty-graph}
+    \column{0.50\textwidth}
+      \uncover<4->{\fig{width = 0.90\textwidth}{figs/complete-graphs}}
+  \end{columns}
+
+  \pause
+  \begin{lemma}
+    $K_{n}$ is $n$-chromatic.
+  \end{lemma}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}
+    A graph is 2-colorable iff \pause it is \red{bipartite}.
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[Characterization of Bipartite Graphs]
+    A graph is 2-colorable iff it is \red{bipartite}.
+
+    \pause
+    \vspace{0.30cm}
+    A graph is \red{bipartite} iff it does not contain any \purple{odd} cycles.
+  \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/K-5-3}
+      \[
+        K_{5, 3}
+      \]
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.70\textwidth}{figs/bipartite-graph-no-cycles}
+  \end{columns}
+
+  \pause
+  \begin{lemma}
+    Every tree is bipartite and is thus $2$-colorable.
+  \end{lemma}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{Lemma}[Characterization of Bipartite Graphs (\!$\implies$\!)]
+    If a graph is \red{bipartite},
+    then it does not contain any \purple{odd} cycles.
+  \end{Lemma}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{Lemma}[Characterization of Bipartite Graphs ($\Longleftarrow$)]
+    If a graph does not contain any \purple{odd} cycles,
+    then it is \red{bipartite}.
+  \end{Lemma}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+alg
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}{}
+    The $3$-coloring problem (i.e., testing whether a graph is $3$-colorable or not)
+    is \textsf{NP-complete}.
+  \end{theorem}
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 1.00\textwidth}{figs/odd-cycles}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/Petersen-3coloring}
+  \end{columns}
+
+  \pause
+  \begin{theorem}{}
+    The $4$-coloring problem is also \textsf{NP-complete}.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    Let $G$ be a \red{simple} connected graph. Then,
+    \[
+      \chi(G) \le \Delta(G) + 1.
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{By induction on the number of vertices of $G$.}
+
+    \pause
+    \vspace{0.20cm}
+    \begin{description}[<+->][Induction Hypothesis:]
+      \setlength{\itemsep}{5pt}
+      \item[Basis Step:] $n = 1$. $\chi(G) = 1$, $\Delta(G) = 0$.
+      \item[Induction Hypothesis:] Suppose that for any simple connected graph $G$
+        with $n$ vertices,
+        \[
+          \chi(G) \le \Delta(G) + 1.
+        \]
+      \item[Induction Step:] Consider a simple connected graph $G$ with $n+1$ vertices.
+        \uncover<7->{\qquad\qquad \red{$\deg(v) \le \Delta(G)$}}
+        \uncover<6->{\fig{width = 0.50\textwidth}{figs/Delta+1-induction}}
+    \end{description}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  alg
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Brooks's Theorem \teal{(R. Leonard Brooks; 1941)}]
+    Let $G$ be a \red{simple} connected graph which is neither a \blue{complete graph}
+    nor a \blue{odd cycle}. Then
+    \[
+      \chi(G) \le \Delta(G).
+    \]
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/K6-coloring}
 \end{frame}
 %%%%%%%%%%%%%%%
