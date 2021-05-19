@@ -155,10 +155,214 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    \red{\Large A planar graph should not has too many edges.}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[Euler's Formula, 1750]
+    Let $G$ be a \blue{plane drawing} of a \cyan{connected} planar graph,
+    and let $n$, $m$, and \red{$f$} denote respectively the number of vertices,
+    edges, and \red{faces} of $G$.
+    \[
+      n - m + \red{f} = 2
+    \]
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/euler-formula-example}
+  \pause
+  \[
+    n - m + \red{f} = 20 - 30 + \red{12} = 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Euler's Formula, 1750]
+    Let $G$ be a \blue{plane drawing} of a \cyan{connected} planar graph,
+    and let $n$, $m$, and \red{$f$} denote respectively the number of vertices,
+    edges, and \red{faces} of $G$.
+    \[
+      n - m + \red{f} = 2
+    \]
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/euler-formula-tree}
+  \pause
+  \[
+    n - m + \red{f} = n - (n - 1) + \red{1} = 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{By induction on the number of \blue{edges} of $G$.}
+
+    \pause
+    \vspace{0.30cm}
+    \begin{description}[<+->][Induction Hypothesis:]
+      \setlength{\itemsep}{8pt}
+      \item[Basis Step:] $m = 0$. We have $n = 1$ and $f = 1$.
+      \item[Induction Hypothesis:]
+        It holds for \cyan{plane graphs} with $\le m$ edges.
+      \item[Induction Step:] Consider a plane graph $G$ with $m+1$ edges. \\[5pt]
+        \uncover<5->{If $G$ is a tree, we are done. \\[5pt]}
+        \uncover<6->{Otherwise, $G$ contains a cycle. \\[5pt]}
+        \uncover<7->{Let $e$ be an edge in some cycle of $G$. \\[5pt]}
+        \uncover<8->{Consider $G' = G - e$.}
+        \uncover<9->{
+          \[
+            n - (m - 1) + \red{(f - 1)} = 2
+          \]
+        }
+        \uncover<10->{Therefore,
+          \[
+            n - m + \red{f} = 2
+          \]
+        }
+    \end{description}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    Let $G$ be a simple connected planar graph with $n \ge 3$ vertices
+    and $m$ edges. Then
+    \[
+      m \le 3n -6.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    n - m + f = 2
+  \]
+  \pause
+  \[
+    3f \le 2m
+  \]
+  \pause
+  \begin{center}
+    \red{Double Counting:} \\[3pt]
+    each face is bounded by $\ge 3$ edges; \\
+    each edge bounds $2$ faces
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    $K_{5}$ is non-planar.
+  \end{theorem}
+
+  \pause
+  \[
+    m \le 3n -6
+  \]
+
+  \pause
+  \[
+    10 \le 3 \times 5 - 6
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    $K_{3, 3}$ is non-planar.
+  \end{theorem}
+
+  \pause
+  \[
+    m \le 3n -6
+  \]
+
+  \pause
+  \[
+    9 \le 3 \times 6 - 6
+  \]
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/failed}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    Let $G$ be a simple connected planar graph with $n \ge 3$ vertices
+    and $m$ edges. \red{If $G$ has no triangles}, then
+    \[
+      m \le 2n - 4.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    n - m + f = 2
+  \]
+
+  \pause
+  \[
+    4f \le 2m
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    $K_{3, 3}$ is non-planar.
+  \end{theorem}
+
+  \pause
+  \[
+    m \le 2n -4
+  \]
+
+  \pause
+  \[
+    9 \le 2 \times 6 - 4
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    Every simple planar graph contains a vertex of degree $\le 5$.
+  \end{theorem}
+
+  \pause
+  \[
+    m \le 3n - 6
+  \]
+
+  \pause
+  \begin{center}
+    Suppose that, \red{by contradiction}, $\delta(G) \ge 6$.
+  \end{center}
+
+  \pause
+  \[
+    6n \le 2m
+  \]
+
+  \pause
+  \[
+    3n \le m \le 3n - 6
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
