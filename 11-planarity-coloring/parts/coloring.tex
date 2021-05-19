@@ -179,14 +179,38 @@ alg
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}[Brooks's Theorem \teal{(R. Leonard Brooks; 1941)}]
-    Let $G$ be a \red{simple} connected graph which is neither a \blue{complete graph}
-    nor a \blue{odd cycle}. Then
+    Let $G$ be a \red{simple} connected graph other than a \blue{complete graph}
+    or an \blue{odd cycle}. Then
+    \[
+      \chi(G) \le \Delta(G).
+    \]
+  \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/K6-coloring}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/Petersen-3coloring}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Brooks's Theorem \teal{(R. Leonard Brooks; 1941)}]
+    Let $G$ be a \red{simple} connected graph other than a \blue{complete graph}
+    or an \blue{odd cycle}. Then
     \[
       \chi(G) \le \Delta(G).
     \]
   \end{theorem}
 
   \pause
-  \fig{width = 0.40\textwidth}{figs/K6-coloring}
+  \fig{width = 0.25\textwidth}{figs/Book-West}
+  \begin{center}
+    \teal{Theorem 5.1.22}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%

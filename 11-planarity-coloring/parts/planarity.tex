@@ -2,16 +2,154 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{definition}[Planar Graph (平面图)]
+    A \red{planar graph} is a graph that
+    \purple{can} be drawn in the plane without \cyan{edge crossings}.
+  \end{definition}
+
+  \pause
+  \fig{width = 0.60\textwidth}{figs/K4-allinone}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{theorem}[K. Wagner (1936); I. F\'{a}ry (1948)]
+    Every \blue{simple} planar graph can be drawn with \red{straight lines}.
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[\teal{Kazimierz Kuratowski, 1930}]
+    The \blue{utility graph} $K_{3, 3}$ is non-planar.
+    \fig{width = 0.25\textwidth}{figs/K-3-3-Bipartite}
+  \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.70\textwidth}{figs/3-utilities-problem}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.70\textwidth}{figs/3-utilities-problem-plane}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/K-3-3-Proof-without-Words}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/K-3-3-cycle}
+
+  \pause
+  \fig{width = 0.80\textwidth}{figs/K-3-3-Nonplanar-Proof}
+
+  \pause
+  \vspace{-0.60cm}
+  \[
+    \red{\text{cr}}(K_{3, 3}) = 1
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    $K_{5}$ is non-planar.
+    \fig{width = 0.25\textwidth}{figs/K5}
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.70\textwidth}{figs/K5-Nonplanar-Proof}
+
+  \pause
+  \vspace{-0.60cm}
+  \[
+    \red{\text{cr}}(K_{5}) = 1
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    The Petersen graph is non-planar.
+  \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Petersen-Graph}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/Petersen-Graph-Crossing}
+  \end{columns}
+
+  \pause
+  \[
+    \red{\text{cr}}(\text{Petersen Graph}) = 2
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Kazimierz Kuratowski, 1930]
+    A graph is planar iff it contains no \blue{subgraph}
+    \red{homeomorphic} to \cyan{$K_{5}$} or \cyan{$K_{3, 3}$}.
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/Kuratowski}
+
+  \pause
+  \begin{quote}
+    \begin{center}
+      ``The $K$ in $K_{5}$ stands for Kazimierz,\\
+      and the $K$ in $K_{3, 3}$ stands for Kuratowski.''
+    \end{center}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Kazimierz Kuratowski, 1930]
+    A graph is planar iff it contains no \blue{subgraph}
+    \red{homeomorphic} to \cyan{$K_{5}$} or \cyan{$K_{3, 3}$}.
+  \end{theorem}
+
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.60\textwidth}{figs/homeomorphism-example-1}
+    \column{0.50\textwidth}
+      \fig{width = 0.60\textwidth}{figs/homeomorphism-example-2}
+  \end{columns}
+
+  \begin{definition}[Homeomorphic]
+    Two graphs are \red{homeomorphic} if
+    one can be obtained from another by \blue{inserting or contracting}
+    vertices of \cyan{degree 2}.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    The Petersen graph is non-planar.
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \transduration<0-83>{0}
+    \multiinclude[<+->][format = png, graphics = {width=0.60\textwidth}]{figs/Kuratowski-Petersen}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
