@@ -13,7 +13,7 @@
   \pause
   \vspace{0.60cm}
   \begin{theorem}[K. Wagner (1936); I. F\'{a}ry (1948)]
-    Every \blue{simple} planar graph can be drawn with \red{straight lines}.
+    Every simple planar graph can be drawn with \red{straight lines}.
   \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -39,6 +39,10 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \fig{width = 0.50\textwidth}{figs/K-3-3-Proof-without-Words}
+
+  \begin{center}
+    Proof without Words
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -52,7 +56,7 @@
   \pause
   \vspace{-0.60cm}
   \[
-    \red{\text{cr}}(K_{3, 3}) = 1
+    \red{\text{cr}}(K_{3, 3}) = 1 \quad (\text{crossing number})
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -71,27 +75,6 @@
   \vspace{-0.60cm}
   \[
     \red{\text{cr}}(K_{5}) = 1
-  \]
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{theorem}
-    The Petersen graph is non-planar.
-  \end{theorem}
-
-  \begin{columns}
-    \column{0.50\textwidth}
-      \fig{width = 0.80\textwidth}{figs/Petersen-Graph}
-    \column{0.50\textwidth}
-      \pause
-      \fig{width = 0.80\textwidth}{figs/Petersen-Graph-Crossing}
-  \end{columns}
-
-  \pause
-  \[
-    \red{\text{cr}}(\text{Petersen Graph}) = 2
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -118,10 +101,11 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[Kazimierz Kuratowski, 1930]
-    A graph is planar iff it contains no \blue{subgraph}
-    \red{homeomorphic} to \cyan{$K_{5}$} or \cyan{$K_{3, 3}$}.
-  \end{theorem}
+  \begin{definition}[Homeomorphic]
+    Two graphs are \red{homeomorphic} if
+    one can be obtained from another by \blue{inserting or contracting}
+    vertices of \cyan{degree 2}.
+  \end{definition}
 
   \pause
   \begin{columns}
@@ -130,12 +114,6 @@
     \column{0.50\textwidth}
       \fig{width = 0.60\textwidth}{figs/homeomorphism-example-2}
   \end{columns}
-
-  \begin{definition}[Homeomorphic]
-    Two graphs are \red{homeomorphic} if
-    one can be obtained from another by \blue{inserting or contracting}
-    vertices of \cyan{degree 2}.
-  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -145,11 +123,33 @@
     The Petersen graph is non-planar.
   \end{theorem}
 
-  \pause
+  \fig{width = 0.40\textwidth}{figs/Petersen-Graph}
+
+  \vspace{-0.60cm}
   \begin{center}
-    \transduration<0-83>{0}
-    \multiinclude[<+->][format = png, graphics = {width=0.60\textwidth}]{figs/Kuratowski-Petersen}
+    \teal{\url{https://github.com/courses-at-nju-by-hfwei/discrete-math-lectures/blob/main/11-planarity-coloring/figs/Kuratowski-Petersen.gif}}
   \end{center}
+  % \begin{center}
+  %   \transduration<0-83>{0}
+  %   \multiinclude[<+->][format = png, graphics = {width=0.60\textwidth}]{figs/Kuratowski-Petersen}
+  % \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/Petersen-Graph}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/Petersen-Graph-Crossing}
+  \end{columns}
+
+  \pause
+  \[
+    \red{\text{cr}}(\text{Petersen Graph}) = 2
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -193,7 +193,9 @@
   \end{theorem}
 
   \pause
-  \fig{width = 0.40\textwidth}{figs/euler-formula-tree}
+  \vspace{0.30cm}
+  \fig{width = 0.60\textwidth}{figs/euler-formula-tree}
+
   \pause
   \[
     n - m + \red{f} = n - (n - 1) + \red{1} = 2
@@ -249,7 +251,7 @@
   \]
   \pause
   \[
-    3f \le 2m
+    \blue{3f \le 2m}
   \]
   \pause
   \begin{center}
@@ -265,6 +267,8 @@
   \begin{theorem}
     $K_{5}$ is non-planar.
   \end{theorem}
+
+  \fig{width = 0.30\textwidth}{figs/K5}
 
   \pause
   \[
@@ -283,6 +287,8 @@
   \begin{theorem}
     $K_{3, 3}$ is non-planar.
   \end{theorem}
+
+  \fig{width = 0.20\textwidth}{figs/K-3-3-Bipartite}
 
   \pause
   \[
@@ -316,7 +322,7 @@
 
   \pause
   \[
-    4f \le 2m
+    \blue{4f \le 2m}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
