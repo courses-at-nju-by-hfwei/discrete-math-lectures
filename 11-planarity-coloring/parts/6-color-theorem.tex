@@ -1,1 +1,30 @@
 % 6-color-theorem.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    Every \cyan{simple} \red{planar} graph is \blue{6-colorable}.
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{By induction on the number of vertices.}
+
+    \pause
+    \vspace{0.30cm}
+    \begin{description}[<+->][Induction Hypothesis:]
+      \setlength{\itemsep}{6pt}
+      \item[Basis Step:] $n = 1$. Trivial.
+      \item[Induction Hypothesis:]
+        Suppose that it holds for simple planar graphs with $n \ge 1$ vertices.
+      \item[Induction Step:]
+        Consider a simple planar graph $G$ with $n+1$ vertices. \\[5pt]
+        \uncover<6->{\purple{$G$ contains a vertex $v$ of degree $\le 5$.} \\[5pt]}
+        \uncover<7->{$G' = G - v$ is 6-colorable. \\[5pt]}
+        \uncover<8->{Thus, $G$ is 6-colorable.}
+        \uncover<9->{\quad \cyan{($\deg(v) \le 5$)}}
+    \end{description}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%

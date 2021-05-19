@@ -1,1 +1,100 @@
 % 5-color-theorem.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Percy John Heawood (1890)]
+    Every \cyan{simple} \red{planar} graph is \blue{5-colorable}.
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{By induction on the number of vertices.}
+
+    \pause
+    \vspace{0.30cm}
+    \begin{description}[<+->][Induction Hypothesis:]
+      \setlength{\itemsep}{6pt}
+      \item[Basis Step:] $n = 1$. Trivial.
+      \item[Induction Hypothesis:]
+        Suppose that it holds for simple planar graphs with $n \ge 1$ vertices.
+      \item[Induction Step:]
+        Consider a simple planar graph $G$ with $n+1$ vertices. \\[5pt]
+        \uncover<6->{\purple{$G$ contains a vertex $v$ of degree $\le 5$.} \\[5pt]}
+        \uncover<7->{$G' = G - v$ is \red{5-colorable}. \\[5pt]}
+        \uncover<8->{If \red{\cyan{$\deg(v) < 5$}}, $G$ is 5-colorable.}
+    \end{description}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Now assume that $\deg(v) = 5$. \\[5pt]
+    \fig{width = 0.30\textwidth}{figs/S5}
+    \[
+      \set{v, v_{1}}, \set{v, v_{2}}, \set{v, v_{3}}, \set{v, v_{4}}, \set{v, v_{5}}
+    \]
+
+    \pause
+    \vspace{0.30cm}
+    If $v_{1}$, $v_{2}$, $v_{3}$, $v_{4}$, and $v_{5}$ uses $< 5$ colors,
+    we are done.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Now assume that \red{$v_{1}$}, \green{$v_{2}$}, \blue{$v_{3}$},
+    \purple{$v_{4}$}, and \teal{$v_{5}$} uses $5$ colors.
+    \fig{width = 0.25\textwidth}{figs/S5}
+
+    \pause
+    \vspace{0.30cm}
+    Suppose that there is \cyan{\it no} $\red{v_{1}} \sim \blue{v_{3}}$ path in $G' = G - v$, \\
+    all of whose vertices are colored \red{red} or \blue{blue}.
+
+    \pause
+    \vspace{0.30cm}
+    Let $S$ be the set of all \red{red} or \blue{blue} vertices of $G - v$ \\
+    connected to \red{$v_{1}$} by a red-blue path.
+    \pause
+    \[
+      v_{1} \in S,\quad v_{3} \notin S
+    \]
+
+    \pause
+    Interchange the colors of the vertices in $S$
+
+    \pause
+    \vspace{0.30cm}
+    Coloring $v$ \red{red} produces a 5-coloring of $G$.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Now assume that there \cyan{\it is} a $\red{v_{1}} \sim \blue{v_{3}}$ path in $G' = G - v$, \\
+    all of whose vertices are colored \red{red} or \blue{blue}.
+    \fig{width = 0.25\textwidth}{figs/S5}
+
+    \pause
+    \vspace{0.30cm}
+    There cannot be $\green{v_{2}} \sim \purple{v_{4}}$ path in $G' = G - v$, \\
+    all of whose vertices are colored \green{green} or \purple{purple}.
+
+    \pause
+    \vspace{0.20cm}
+    (Otherwise, $G'$ and thus $G$ is non-planar.)
+
+    \pause
+    \vspace{0.50cm}
+    By similar argument, $G$ is $5$-colorable.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%

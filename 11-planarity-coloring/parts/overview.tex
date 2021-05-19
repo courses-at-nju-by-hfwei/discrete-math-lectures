@@ -20,91 +20,91 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[Four Color (Map) Theorem \teal{(informal)}]
-    Every \red{map} can be colored with only \blue{four} colors such that \\
-    no two \purple{adjacent} \cyan{regions} share the same color.
-  \end{theorem}
-
-  \begin{columns}
-    \column{0.50\textwidth}
-      \pause
-      \fig{width = 0.80\textwidth}{figs/non-contiguous-region}
-        \begin{center}
-          {Regions should be \teal{contiguous}.}
-        \end{center}
-    \column{0.50\textwidth}
-      \pause
-      \fig{width = 1.00\textwidth}{figs/triangulation}
-      \begin{center}
-        \purple{Adjacent} regions share a segment.
-      \end{center}
-  \end{columns}
+  \fig{width = 0.50\textwidth}{figs/4-color-example}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[Four Color (Map) Theorem \teal{(informal)}]
-    Every \red{map} can be colored with only \blue{four} colors such that \\
-    no two \purple{adjacent} \cyan{regions} share the same color.
-  \end{theorem}
-
-  \pause
-  \fig{width = 0.30\textwidth}{figs/do-you-believe}
+  \fig{width = 0.50\textwidth}{figs/must-4-color}
 
   \pause
   \begin{center}
-    What if we have a map in which \\
-    every region is adjacent to $\ge 5$ other regions?
+    Every region is adjacent to the other $3$ regions.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{theorem}[Four Color (Map) Theorem \teal{(informal)}]
+%     Every \red{map} can be colored with only \blue{four} colors such that \\
+%     no two \purple{adjacent} \cyan{regions} share the same color.
+%   \end{theorem}
+%
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \pause
+%       \fig{width = 0.80\textwidth}{figs/non-contiguous-region}
+%         \begin{center}
+%           {Regions should be \teal{contiguous}.}
+%         \end{center}
+%     \column{0.50\textwidth}
+%       \pause
+%       \fig{width = 1.00\textwidth}{figs/triangulation}
+%       \begin{center}
+%         \purple{Adjacent} regions share a segment.
+%       \end{center}
+%   \end{columns}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    What if we have a map which contains \blue{$5$} regions so that \\[5pt]
+    every region is adjacent to the other \red{$4$} regions?
+  \end{center}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/impossible}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    What does \blue{Four Color Theorem} to do with \red{Graph Theory}?
+  \end{center}
+
+  \fig{width = 0.40\textwidth}{figs/must-4-color}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.75\textwidth}{figs/4CT-Graph-Coloring}
+
+  \pause
+  \vspace{0.40cm}
+  \begin{center}
+    Every map produces a \red{planar} graph.
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[Four Color (Map) Theorem \teal{(informal)}]
-    Every \red{map} can be colored with only \blue{four} colors such that \\
-    no two \purple{adjacent} \cyan{regions} share the same color.
-  \end{theorem}
-
-  \pause
-  \vspace{0.50cm}
-  \begin{center}
-    What does it to do with \violet{\textsc{\LARGE graph theory}}?
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{theorem}[Four Color (Map) Theorem \teal{(informal)}]
-    Every \red{map} can be colored with only \blue{four} colors such that \\
-    no two \purple{adjacent} \cyan{regions} share the same color.
-  \end{theorem}
-
-  \pause
-  \fig{width = 0.80\textwidth}{figs/map2graph}
-
-  \pause
-  \begin{theorem}[Four Color Theorem \teal{(Appel and Haken, 1976)}]
-    Every \cyan{simple} \red{planar} graph is \blue{4-colorable}.
-  \end{theorem}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{theorem}[Four Color Theorem \teal{(Appel and Haken, 1976)}]
+  \begin{theorem}[Four Color Theorem \teal{\small (Kenneth Appel, Wolfgang Haken; 1976)}]
     Every \cyan{simple} \red{planar} graph is \blue{4-colorable}.
   \end{theorem}
 
+  \fig{width = 0.30\textwidth}{figs/4CT-People}
+
   \pause
-  \vspace{0.30cm}
   \begin{center}
     I will \red{\it not} show its proof (which I don't understand either)!
   \end{center}
-
-  \fig{width = 0.40\textwidth}{figs/keep-calm-relax}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -115,8 +115,8 @@
   \end{theorem}
 
   \pause
-  \vspace{1.00cm}
-  \begin{theorem}[Percy John Heawood]
+  \vspace{1.50cm}
+  \begin{theorem}[Percy John Heawood (1890)]
     Every \cyan{simple} \red{planar} graph is \blue{5-colorable}.
   \end{theorem}
 \end{frame}
