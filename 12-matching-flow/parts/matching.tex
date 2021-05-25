@@ -271,5 +271,91 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{definitions}[Vertex Cover (点覆盖)]
+    A \red{vertex cover} of a graph $G$ is a set $Q \subseteq V(G)$
+    that \blue{covers} all edges.
+    \[
+      \forall e \in E(G).\; e \cap Q \neq \emptyset
+    \]
+  \end{definitions}
+
+  \fig{width = 0.35\textwidth}{figs/vertex-color-eyes}
 \end{frame}
 %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  % \fig{width = 0.60\textwidth}{figs/}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/Konig-theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+    examples
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[K\"{o}nig (1931), Egerv\'{a}ry (1931)]
+    If $G$ is a bipartite graph, then
+    the maximum size of a mathching in $G$ equals
+    the minimum size of a vertex cover of $G$
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.80\textwidth}{figs/Konig-theorem-West}
+
+  \pause
+  \[
+    R = Q \cap X \qquad T = Q \cap Y
+  \]
+
+  \pause
+  \[
+    H \triangleq (R \cup (Y - T))\text{-induced subgraph of } G
+  \]
+  \[
+    H' \triangleq (T \cup (X - R))\text{-induced subgraph of } G
+  \]
+
+  \pause
+  \begin{center}
+    $G$ has no edges from $X - R$ to $Y - T$.
+
+    \pause
+    \vspace{0.30cm}
+    \blue{\fbox{$H$ has a $R$-perfect matching and $H'$ has a $T$-perfect matching.}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \blue{\fbox{$H$ has a $R$-perfect matching and $H'$ has a $T$-perfect matching.}}
+    \fig{width = 0.80\textwidth}{figs/Konig-theorem-West}
+
+    \pause
+    \red{By contradition.}
+
+    \pause
+    \vspace{0.30cm}
+    $\exists S \subseteq R.\; \card{N_{H}(S)} < \card{S}$
+
+    \pause
+    \[
+      T \cup (R \;\red{-\; S + N_{H}(S)}) \text{ is a smaller vertex cover than } Q
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%g
