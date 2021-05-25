@@ -8,7 +8,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{The Marriage Problem (1935)}
+  \begin{exampleblock}{The Marriage Problem (Philip Hall, 1935)}
     If there is a finite set of \red{girls},
     each of whom knows several \blue{boys}, \\[3pt]
     \purple{under what conditions} can all the girls marry boys in such a way that \\[3pt]
@@ -25,19 +25,25 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{columns}
-    \column{0.50\textwidth}
-      \fig{width = 0.80\textwidth}{figs/Hall-X-Y}
-    \column{0.50\textwidth}
-      \fig{width = 0.80\textwidth}{figs/Hall-X-Y}
-  \end{columns}
+  \fig{width = 0.40\textwidth}{figs/Hall-X-Y}
 
   \pause
   \vspace{0.30cm}
+  \begin{definition}[Matching (匹配)]
+    A \red{matching} in a graph $G$ is a set of edges with \blue{no shared endpoints}.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/Hall-X-Y}
+
+  \vspace{0.30cm}
   \begin{definition}[$X$-Perfect Matching ($X$-Saturating Matching)]
-    Let $G = (X, Y, E)$ be a bipartite graph. \\[3pt]
-    An \red{$X$}-perfect matching of $G$ is a \purple{matching}
-    which covers each vertex in $X$.
+    {\small Let $G = (X, Y, E)$ be a bipartite graph. \\[3pt]
+    An \red{$X$-perfect matching} of $G$ is a \purple{matching}
+    which covers each vertex in $X$.}
   \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -60,7 +66,7 @@
 \begin{frame}{}
   \begin{theorem}[Hall Theorem; 1935]
     Let $G = (X, Y, E)$ be a bipartite graph.
-    There is a \red{$X$}-perfect matching of $G$ \purple{iff}
+    There is an \red{$X$-perfect matching} of $G$ \purple{iff}
     \[
       \forall W \subseteq X.\; \card{W} \le \card{N_{G}(W)}
     \]
@@ -144,6 +150,21 @@
       \forall W \subseteq X.\; \card{W} \le \card{N_{G}(W)}
     \]
   \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[$M$-alternating Paths]
+      
+  \end{definition}
+
+  % \fig{width = 0.30\textwidth}{figs/}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{definition}[$M$-augmenting Paths]
+  \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -357,5 +378,11 @@
       T \cup (R \;\red{-\; S + N_{H}(S)}) \text{ is a smaller vertex cover than } Q
     \]
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  independent sets and covers
 \end{frame}
 %%%%%%%%%%%%%%%g

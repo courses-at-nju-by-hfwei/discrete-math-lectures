@@ -1,0 +1,247 @@
+% network-flow.tex
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{definition}[Network (网络)]
+    A \red{network} is a \purple{digraph} with
+    \begin{itemize}
+      \setlength{\itemsep}{5pt}
+      \item a distinguished \blue{source vertex} $s$,
+      \item a distinguished \blue{sink vertex} $t$,
+      \item a \blue{capacity} $c(e) \ge 0$ on each edge $e$
+    \end{itemize}
+  \end{definition}
+
+  \fig{width = 0.60\textwidth}{figs/flow-value-1}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{definition}[Flow (流)]
+    A \red{flow} $f$ is a \cyan{function} that assigns a value $f(e)$ to each edge $e$.
+  \end{definition}
+
+  \fig{width = 0.60\textwidth}{figs/flow-value-1}
+
+  \pause
+  \[
+    f^{+}(v) = \sum_{vw \;\in\; E} f(vw)
+    \pause \qquad
+    f^{-}(v) = \sum_{uv \;\in\; E} f(uv)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{definition}[Feasible]
+    A \blue{flow} $f$ is \red{feasible} if it satisfies
+    \begin{description}
+      \item[Capacity Constraints:]
+        \[
+          \forall e \in E(G).\; 0 \le f(e) \le c(e)
+        \]
+      \item[Conservation Constraints:]
+        \[
+          \forall v \in V(G) - \set{s, t}.\; f^{+}(v) = f^{-}(v)
+        \]
+    \end{description}
+  \end{definition}
+
+  \fig{width = 0.60\textwidth}{figs/flow-value-1}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{definition}[Value (值)]
+    The \red{value} $\val(f)$ of a \blue{flow} $f$ is
+    \[
+      \val(f) = f^{-}(t) = f^{+}(s).
+    \]
+  \end{definition}
+
+  \vspace{0.30cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/flow-value-1}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.90\textwidth}{figs/flow-value-2}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Maximum Flow (最大流)]
+    A \red{maximum flow} is a \blue{feasible flow} of maximum \blue{value}.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/flow-value-1}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/flow-value-2}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    s \to x \;\red{\to}\; v \to t
+  \]
+
+  \pause
+  \begin{definition}[$f$-augmenting Paths (增广路径)]
+    \[
+      \min_{e \in E(P)} \epsilon(e)
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{definition}[Source/Sink Cut (割)]
+    In a network, a \red{source/sink cut} $[S, T]$
+    consists of the edges \blue{from} a \cyan{source set} $S$
+    \blue{to} a \cyan{sink set} $T$, where
+    \[
+      V = S \;\red{\uplus}\; T \land s \in S \land t \in T
+    \]
+  \end{definition}
+
+  \vspace{0.50cm}
+  \fig{width = 0.50\textwidth}{figs/ST-cut}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/ST-cut}
+
+  \begin{definition}[Capacity of Cut (割的容量)]
+    \[
+      \capacity(S, T) = \sum_{u \in S, v \in T, uv \in E} c(uv)
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/flow-value-1}
+
+  \vspace{0.50cm}
+  \begin{definition}[Minimum Cut (最小割)]
+    A \red{minimum cut} is a \blue{cut} of minimum value.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{theorem}[Weak Duality (弱对偶定理)]
+    Let $f$ be any feasible \red{flow} and $[S, T]$ be any source/sink \red{cut}.
+    \[
+      \val(f) \le \capacity(S, T).
+    \]
+  \end{theorem}
+
+  \fig{width = 0.50\textwidth}{figs/ST-cut}
+
+  \pause
+  \[
+    \val(f) = f^{+}(S) - f^{-}(S) \pause \le f^{+}(S) \pause \le \capacity(S, T)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{lemma}
+    \[
+      \max_{f} \val(f) \le \min_{[S, T]} \capacity(S, T)
+    \]
+  \end{lemma}
+
+  \fig{width = 0.50\textwidth}{figs/flow-value-2}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{center}
+    \red{What if $\val(f) = \capacity(S, T)$ for some flow $f$ and some cut $[S, T]$?}
+  \end{center}
+
+  \pause
+  \[
+    \val(f) = f^{+}(S) - f^{-}(S) \;\red{=}\; f^{+}(S) \;\red{=}\; \capacity(S, T)
+  \]
+
+  \pause
+  \[
+    f^{-1}(S) = 0 \land f^{+}(S) = \capacity(S, T)
+  \]
+
+  \pause
+  \fig{width = 0.50\textwidth}{figs/flow-value-2}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{theorem}[Max-flow Min-cut Theorem (Ford and Fulkerson; 1956)]
+    \[
+      \max_{f} \val(f) = \min_{[S, T]} \capacity(S, T)
+    \]
+    \begin{center}
+      \red{(Strong Duality)}
+    \end{center}
+  \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.50\textwidth}{figs/Ford}
+      \begin{center}
+        \teal{L. R. Ford Jr. ($1927 \sim 2017$)}
+      \end{center}
+    \column{0.50\textwidth}
+      \fig{width = 0.50\textwidth}{figs/Fulkerson}
+      \begin{center}
+        \teal{D. R. Fulkerson ($1924 \sim 1976$)}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/maxflow-mincut}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+\end{frame}
+%%%%%%%%%%%%%%%g
