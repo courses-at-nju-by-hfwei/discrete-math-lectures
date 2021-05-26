@@ -12,7 +12,7 @@
     \end{itemize}
   \end{definition}
 
-  \fig{width = 0.60\textwidth}{figs/flow-value-1}
+  \fig{width = 0.60\textwidth}{figs/West-network-example}
 \end{frame}
 %%%%%%%%%%%%%%%g
 
@@ -227,21 +227,150 @@
 
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
-  
+  \begin{theorem}
+    A feasible flow $f$ is maximum iff there are no $f$-augmenting paths.
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{We construct a cut $[S, T]$ with $\val(f) = \capacity(S, T)$.}
+
+    \pause
+    \vspace{0.30cm}
+    $S \triangleq$
+
+    \pause
+    \[
+      T \triangleq V - S
+    \]
+    \pause
+    \[
+        f^{-1}(S) = 0 \land f^{+}(S) = \capacity(S, T)
+    \]
+    \pause
+    \[
+      \val(f) = f^{+}(S) - f^{-}(S) \;\red{=}\; f^{+}(S) \;\red{=}\; \capacity(S, T)
+    \]
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%g
 
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
+  \begin{exampleblock}{The Ford-Fulkerson Method}
+    Repeatedly \red{finding} \blue{$f$}-augmenting paths
+    until \cyan{no more ones exist}.
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \only<2>{\fig{width = 0.70\textwidth}{figs/West-network-example}}
+  \only<3>{\fig{width = 0.75\textwidth}{figs/CLRS-network-example}}
 \end{frame}
 %%%%%%%%%%%%%%%g
 
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
+  \begin{exampleblock}{The Edmonds-Karp Algorithm}
+    Using \red{BFS} (Breadth-first Search) to find $f$-augmenting paths.
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \only<2>{\fig{width = 0.70\textwidth}{figs/West-network-example}}
+  \only<3>{\fig{width = 0.75\textwidth}{figs/CLRS-network-example}}
 \end{frame}
 %%%%%%%%%%%%%%%g
 
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
+  \begin{theorem}[Hall Theorem; 1935]
+    There is an \red{$X$-perfect matching} of $G$ \purple{iff}
+    \[
+      \forall W \subseteq X.\; \card{W} \le \card{N_{G}(W)}
+    \]
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.50\textwidth}{figs/Flow-Hall}
+  \[
+    \forall x \in X.\; c(s, x) = 1 \quad \forall y \in Y.\; c(y, t) = 1
+    \quad \forall x \in X, y \in Y.\; c(x, y) = \infty
+  \]
+
+  \pause
+  \begin{center}
+    \blue{We need to show that $\max\limits_{f} \val(f) = \card{X}$.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{center}
+    We need to show that
+    $\min\limits_{[S, \overline{S}]} \capacity(S, \overline{S}) = \card{X}.$
+  \end{center}
+  \fig{width = 0.50\textwidth}{figs/Flow-Hall}
+
+  \pause
+  \[
+    \min\limits_{[S, \overline{S}]} \capacity(S, \overline{S}) \le \card{X}
+  \]
+
+  \pause
+  \begin{center}
+    \blue{Therefore, we need to show that
+      $\min\limits_{[S, \overline{S}]} \capacity(S, \overline{S}) \ge \card{X}.$
+    }
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{center}
+    Let $[S, \overline{S}]$ be a minimum cut.
+    We need to show that $\capacity(S, \overline{S}) = \card{X}$.
+
+    \vspace{0.30cm}
+    \only<1-2>{\fig{width = 0.50\textwidth}{figs/Flow-Hall}}
+    \only<3->{\fig{width = 0.50\textwidth}{figs/Flow-Hall-Cut}}
+
+    \uncover<2->{
+    \[
+      \red{\boxed{N(S \cap X) \subseteq (S \cap Y)}}
+    \]}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/Flow-Hall-Cut}
+
+  \pause
+  \vspace{-0.30cm}
+  \begin{align*}
+    \capacity(S, \overline{S}) &= \sum_{u \in S, v \in \overline{S}} c(x, y) \\
+      \uncover<3->{&= \sum_{v \in \overline{S} \cap X} c(\red{s}, v) +
+         \sum_{u \in S \cap Y} c(u, \red{t}) \\}
+      \uncover<4->{&= \card{X} - \card{S \cap X} + \card{S \cap Y}} \\
+      \uncover<5->{&\;\red{\ge}\; \card{X} - \card{S \cap X} + \;\red{\card{N(S \cap X)}}} \\
+      \uncover<6->{&\;\blue{\ge}\; \card{X}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{theorem}[K\"{o}nig (1931), Egerv\'{a}ry (1931)]
+    If $G$ is a bipartite graph, then
+    the maximum size of a mathching in $G$ equals
+    the minimum size of a vertex cover of $G$
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \fig{width = 0.35\textwidth}{figs/keep-calm-and-try-yourself}
 \end{frame}
 %%%%%%%%%%%%%%%g
