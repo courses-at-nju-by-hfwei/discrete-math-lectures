@@ -137,6 +137,37 @@
   \begin{itemize}
     \item \textsc{Case II:} There is a set of $k < m$ girls in $X$
       who know $k$ boys in $Y$.
+
+      \begin{center}
+        \pause
+        \vspace{0.30cm}
+        There $k$ girls can be married \red{by induction} to the $k$ boys.
+
+        \pause
+        \[
+          G' = G - \set{\text{these $k$ girls}} - \set{\text{these $k$ boys}}
+        \]
+
+        \pause
+        $G'$ satisfies the Hall's Condition.
+
+        \pause
+        \vspace{0.30cm}
+        \red{By contradition:} \\[6pt]
+        Suppose that in $G'$, there are $l \le m - k$ girls who know $< l$ boys.
+
+        \pause
+        \vspace{0.30cm}
+        Then, in $G$, there are $k + l$ girls who know $< k + l$ boys.
+
+        \pause
+        \vspace{0.50cm}
+        There is a $(X - \set{\text{these $k$ girls}})$-perfer matching in $G'$.
+
+        \pause
+        \vspace{0.30cm}
+        Therefore, there is a $(X - \set{x})$-perfer matching in $G$.
+      \end{center}
   \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -156,14 +187,19 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[$M$-alternating Paths]
-      
+    Let $M$ be a matching.
+    An \red{$M$-alternating path} is a path that alternates
+    between edges in $M$ and edges not in $M$.
   \end{definition}
 
-  % \fig{width = 0.30\textwidth}{figs/}
+  \vspace{0.80cm}
+  \fig{width = 0.80\textwidth}{figs/M-augmenting-path}
 
   \pause
-  \vspace{0.30cm}
+  \vspace{0.60cm}
   \begin{definition}[$M$-augmenting Paths]
+    An \red{$M$-augmenting path} is an \blue{$M$-alternating path}
+    whose endpoints are \blue{unsaturated} by $M$.
   \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -237,6 +273,7 @@
     We show that there is a bijection from $T$ to $S - \set{u}$.
 
     \pause
+    \vspace{0.30cm}
     $M$ matches $T$ with $S - \set{u}$.
   \end{center}
 \end{frame}
@@ -255,38 +292,16 @@
     \]
 
     \pause
-    \red{By contradition: $N(S) \not\subseteq T$
-                          \pause $\implies \exists y \in Y - T.\; y \in N(s)$}
-    \pause
     \[
-      \exists y \in Y - T.\; \exists s \in S.\; \set{s, y} \in E
+      \blue{\text{We need to show that } N(S) \subseteq T}
     \]
 
     \pause
-    \[
-      s \neq u \pause \implies s \in S - \set{u} \pause
-                      \implies \set{s, y} \notin M \pause
-                      \implies y \in T
-    \]
+    \begin{center}
+      Consider the neighbors of $x \in S$: \pause
+      $x = u, \pause\quad x \in S - \set{u}$
+    \end{center}
   \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{theorem}[Hall Theorem; 1935]
-    Let $G = (X, Y, E)$ be a bipartite graph.
-    There is a \red{$X$}-perfect matching of $G$ \purple{iff}
-    \[
-      \forall W \subseteq X.\; \card{W} \le \card{N_{G}(W)}
-    \]
-  \end{theorem}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  algorithm
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -295,9 +310,6 @@
   \begin{definitions}[Vertex Cover (点覆盖)]
     A \red{vertex cover} of a graph $G$ is a set $Q \subseteq V(G)$
     that \blue{covers} all edges.
-    \[
-      \forall e \in E(G).\; e \cap Q \neq \emptyset
-    \]
   \end{definitions}
 
   \fig{width = 0.35\textwidth}{figs/vertex-color-eyes}
@@ -306,34 +318,40 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  % \fig{width = 0.60\textwidth}{figs/}
+  \fig{width = 0.70\textwidth}{figs/Matching-VC}
+
+  \pause
+  \fig{width = 0.35\textwidth}{figs/PetersenGraph}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.60\textwidth}{figs/Konig-theorem}
-\end{frame}
-%%%%%%%%%%%%%%%
+  \begin{theorem}[Weak Duality Theorem (弱对偶定理)]
+    Let $G$ be a graph.
+    The maximum size of a mathching in $G$ \\
+    \red{$\le$} the minimum size of a vertex cover of $G$.
+  \end{theorem}
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-    examples
-\end{frame}
-%%%%%%%%%%%%%%%
+  \pause
+  \fig{width = 0.50\textwidth}{figs/Konig-theorem}
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+  \pause
   \begin{theorem}[K\"{o}nig (1931), Egerv\'{a}ry (1931)]
-    If $G$ is a bipartite graph, then
-    the maximum size of a mathching in $G$ equals
-    the minimum size of a vertex cover of $G$
+    Let $G$ be a \red{bipartite} graph.
+    The maximum size of a mathching in $G$ \\
+    \red{equals} the minimum size of a vertex cover of $G$
   \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    \red{Given a vertex cover $Q$, we construct a matching $M$ of the same size.}
+  \end{center}
+
+  \pause
   \fig{width = 0.80\textwidth}{figs/Konig-theorem-West}
 
   \pause
@@ -378,11 +396,5 @@
       T \cup (R \;\red{-\; S + N_{H}(S)}) \text{ is a smaller vertex cover than } Q
     \]
   \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%g
-
-%%%%%%%%%%%%%%%g
-\begin{frame}{}
-  independent sets and covers
 \end{frame}
 %%%%%%%%%%%%%%%g
