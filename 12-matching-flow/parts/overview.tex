@@ -2,7 +2,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}
-  \fig{width = 0.40\textwidth}{figs/hard-to-understand}
+  \fig{width = 0.50\textwidth}{figs/hard-to-understand}
 
   \begin{center}
     \red{3 Theorems + 1 Algorithm}
@@ -12,15 +12,50 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    To \blue{maximize} the size of a mathematical structure $\mathcal{S}$ in $G$
+
+    \vspace{0.30cm}
+    \fig{width = 0.50\textwidth}{figs/optimization}
+
+    \pause
+    \vspace{0.30cm}
+    \begin{theorem}
+      $\mathcal{S}$ is maximum \purple{iff} $G$ does not contain \red{$\mathcal{S}$-augmenting} objects.
+    \end{theorem}
+
+    \pause
+    \vspace{0.30cm}
+    \begin{exampleblock}{Algorithm}
+      Repeatedly finding $\mathcal{S}$-augmenting objects until no more ones exist.
+    \end{exampleblock}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
+  \begin{center}
+    To \blue{maximize} the size of a mathematical structure $\mathcal{S}$ in $G$
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+    \vspace{0.30cm}
+    \fig{width = 0.50\textwidth}{figs/optimization}
+
+    \pause
+    \vspace{0.30cm}
+    To \blue{minimize} the size of its \red{dual} mathematical structure $\mathcal{S}'$ in $G$
+
+    \pause
+    \vspace{0.30cm}
+    \begin{theorem}[Weak Duality Theorem]
+      The size of a maximum $\mathcal{S}$ \red{$\le$} The size of a minimum $\mathcal{S'}$
+    \end{theorem}
+
+    \pause
+    \vspace{0.30cm}
+    \begin{theorem}[Strong Duality Theorem]
+      The size of a maximum $\mathcal{S}$ \red{=} The size of a minimum $\mathcal{S'}$
+    \end{theorem}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
