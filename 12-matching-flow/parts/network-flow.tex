@@ -12,6 +12,7 @@
     \end{itemize}
   \end{definition}
 
+  \vspace{0.30cm}
   \fig{width = 0.60\textwidth}{figs/West-network-example}
 \end{frame}
 %%%%%%%%%%%%%%%g
@@ -22,34 +23,61 @@
     A \red{flow} $f$ is a \cyan{function} that assigns a value $f(e)$ to each edge $e$.
   \end{definition}
 
+  \vspace{0.30cm}
+  \fig{width = 0.60\textwidth}{figs/flow-value-1}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{definition}[Feasible Flow]
+    A \blue{flow} $f$ is \red{feasible} if it satisfies
+    \begin{description}[Capacity Constraints:]
+      \item[Capacity Constraints:]
+        \[
+          \forall e \in E.\; 0 \le f(e) \le c(e)
+        \]
+      \item[Flow Conservation:]
+        \[
+          \forall v \in V.\; f^{+}(v) = f^{-}(v)
+        \]
+    \end{description}
+  \end{definition}
+
+  \fig{width = 0.60\textwidth}{figs/flow-value-1}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \[
+    f^{+}(v) = \sum_{(v, w) \;\in\; E} f(v, w) \qquad
+    f^{-}(v) = \sum_{(u, v) \;\in\; E} f(u, v)
+  \]
+
   \fig{width = 0.60\textwidth}{figs/flow-value-1}
 
   \pause
   \[
-    f^{+}(v) = \sum_{vw \;\in\; E} f(vw)
-    \pause \qquad
-    f^{-}(v) = \sum_{uv \;\in\; E} f(uv)
+    f^{+}(U) = \sum_{u \in U, v \in \overline{U}, (u, v) \in E} f(u, v) \pause\qquad
+    f^{-}(U) = \sum_{v \in \overline{U}, u \in U, (v, u) \in E} f(v, u)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%g
 
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
-  \begin{definition}[Feasible]
-    A \blue{flow} $f$ is \red{feasible} if it satisfies
-    \begin{description}
-      \item[Capacity Constraints:]
-        \[
-          \forall e \in E(G).\; 0 \le f(e) \le c(e)
-        \]
-      \item[Conservation Constraints:]
-        \[
-          \forall v \in V(G) - \set{s, t}.\; f^{+}(v) = f^{-}(v)
-        \]
-    \end{description}
-  \end{definition}
-
   \fig{width = 0.60\textwidth}{figs/flow-value-1}
+
+  \pause
+  \[
+    \forall U \subseteq (V - \set{s, t}).\; f^{+}(U) = f^{-}(U)
+  \]
+
+  \pause
+  \[
+    s \in U \land t \notin U \implies f^{+}(U) - f^{-}(U) = \pause f^{+}(s)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%g
 
@@ -81,6 +109,10 @@
 
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
+  \[
+    s -- x \;\red{--}\; v -- t
+  \]
+  \vspace{-0.30cm}
   \begin{columns}
     \column{0.50\textwidth}
       \fig{width = 0.90\textwidth}{figs/flow-value-1}
@@ -90,16 +122,55 @@
 
   \pause
   \vspace{0.30cm}
-  \[
-    s \to x \;\red{\to}\; v \to t
-  \]
-
-  \pause
   \begin{definition}[$f$-augmenting Paths (增广路径)]
+    When $f$ is a feasible flow, an \red{$f$-augmenting path} is a $s \sim t$ path $P$ \\
+    \blue{in the underlying graph} such that for each edge $e \in E(P)$,
+    \begin{enumerate}[(a)]
+      \item if $P$ follows $e$ in the forward direction, then $f(e) < c(e)$;
+      \item if $P$ follows $e$ in the backward direction, then $f(e) > 0$.
+    \end{enumerate}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{definition}[$f$-augmenting Paths]
+    Let $P$ be an $f$-augmenting path.
+
     \[
-      \min_{e \in E(P)} \epsilon(e)
+      \epsilon(e) = \begin{cases}
+        c(e) - f(e) & \text{ if } e \text{ is forward on } P \\
+        f(e)        & \text{ if } e \text{ is backward on } P
+      \end{cases}
     \]
   \end{definition}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/flow-value-1}
+    \column{0.50\textwidth}
+      \fig{width = 0.90\textwidth}{figs/flow-value-2}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    An $f$-augmenting path leads to a flow with \red{larger} value.
+    \[
+      \min_{e \;\in\; E(P)} \epsilon(e)
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%g
+
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/CLRS-flow-19}
+
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.60\textwidth}{figs/CLRS-flow-19}
 \end{frame}
 %%%%%%%%%%%%%%%g
 
@@ -110,7 +181,7 @@
     consists of the edges \blue{from} a \cyan{source set} $S$
     \blue{to} a \cyan{sink set} $T$, where
     \[
-      V = S \;\red{\uplus}\; T \land s \in S \land t \in T
+      (T = V - S) \land (s \in S) \land (t \in T)
     \]
   \end{definition}
 
@@ -125,7 +196,7 @@
 
   \begin{definition}[Capacity of Cut (割的容量)]
     \[
-      \capacity(S, T) = \sum_{u \in S, v \in T, uv \in E} c(uv)
+      \capacity(S, T) = \sum_{u \in S, v \in T, uv \in E} c(u, v)
     \]
   \end{definition}
 \end{frame}
@@ -133,12 +204,16 @@
 
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
-  \fig{width = 0.50\textwidth}{figs/flow-value-1}
+  \fig{width = 0.50\textwidth}{figs/West-network-example}
 
-  \vspace{0.50cm}
+  \pause
   \begin{definition}[Minimum Cut (最小割)]
     A \red{minimum cut} is a \blue{cut} of minimum value.
   \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \fig{width = 0.50\textwidth}{figs/CLRS-network-example}
 \end{frame}
 %%%%%%%%%%%%%%%g
 
@@ -168,28 +243,31 @@
     \]
   \end{lemma}
 
-  \fig{width = 0.50\textwidth}{figs/flow-value-2}
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{What if $\val(f) = \capacity(S, T)$ for some flow $f$ and some cut $[S, T]$?}
+
+    \pause
+    \vspace{0.50cm}
+    \blue{$f$ is maximum and $[S, T]$ is minimum}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%g
 
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
-  \begin{center}
-    \red{What if $\val(f) = \capacity(S, T)$ for some flow $f$ and some cut $[S, T]$?}
-  \end{center}
-
-  \pause
   \[
     \val(f) = f^{+}(S) - f^{-}(S) \;\red{=}\; f^{+}(S) \;\red{=}\; \capacity(S, T)
   \]
 
   \pause
   \[
-    f^{-1}(S) = 0 \land f^{+}(S) = \capacity(S, T)
+    \blue{\boxed{f^{-1}(S) = 0 \land f^{+}(S) = \capacity(S, T)}}
   \]
 
-  \pause
-  \fig{width = 0.50\textwidth}{figs/flow-value-2}
+  \only<3>{\fig{width = 0.60\textwidth}{figs/flow-value-2}}
+  \only<4->{\fig{width = 0.60\textwidth}{figs/ClRS-flow-23}}
 \end{frame}
 %%%%%%%%%%%%%%%g
 
@@ -221,6 +299,10 @@
 
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/CLRS-flow-23}
+
+  \pause
+  \vspace{0.30cm}
   \fig{width = 0.60\textwidth}{figs/maxflow-mincut}
 \end{frame}
 %%%%%%%%%%%%%%%g
@@ -237,16 +319,29 @@
     \red{We construct a cut $[S, T]$ with $\val(f) = \capacity(S, T)$.}
 
     \pause
-    \vspace{0.30cm}
-    $S \triangleq$
+    \fig{width = 0.60\textwidth}{figs/maxflow-mincut}
+    \[
+      S \triangleq \set{\text{the vertices reachable from $s$
+      along \red{partial} $f$-augmenting paths}}
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%g
 
-    \pause
+%%%%%%%%%%%%%%%g
+\begin{frame}{}
+  \begin{center}
+    \[
+      S \triangleq \set{\text{the vertices reachable from $s$
+      along \red{partial} $f$-augmenting paths}}
+    \]
     \[
       T \triangleq V - S
     \]
+    \fig{width = 0.60\textwidth}{figs/maxflow-mincut}
     \pause
     \[
-        f^{-1}(S) = 0 \land f^{+}(S) = \capacity(S, T)
+      f^{-1}(S) = 0 \land f^{+}(S) = \capacity(S, T)
     \]
     \pause
     \[
