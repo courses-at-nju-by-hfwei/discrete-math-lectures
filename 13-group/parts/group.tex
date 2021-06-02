@@ -1,0 +1,323 @@
+% group.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Group (群)]
+    A \red{group $(G, \ast)$} is a \blue{set $G$}
+    together with a \blue{binary operation $\ast$}
+    such that the following four \red{group axioms} are satisfied:
+
+    \pause
+    \vspace{0.30cm}
+    \begin{description}[<+->][Associativity:]
+      \item[Closure (封闭):]
+        \[
+          \forall a, b \in G.\; a \ast b \in G
+        \]
+      \item[Associativity (结合律):]
+        \[
+          \forall a, b, c \in G.\; (a \ast b) \ast c = a \ast (b \ast c)
+        \]
+      \item[Identity (单位元):]
+        \[
+          \exists e \in G.\; \forall a \in G.\; e \ast a = a \ast e = a
+        \]
+      \item[Inverse (逆元):] Let $e$ be \red{the} identity of $G$.
+        \[
+          \forall a \in G.\; \exists b \in G.\; a \ast b = b \ast a = e
+        \]
+        \red{The} inverse of $a$ is denoted $a^{-1}$.
+    \end{description}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Commutative Group (交换群); Abelian Group (阿贝尔群)]
+    Let $(G, \ast)$ be a group. If $\ast$ is commutative,
+    \[
+      \forall a, b \in G.\; a \ast b = b \ast a,
+    \]
+    then $(G, \ast)$ is a commutative group.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+    \[
+      (\Z, +)
+    \]
+
+    \pause
+    \[
+      (\Q \setminus \set{0}, \times)
+    \]
+
+    \pause
+    \[
+      (1, -1, \text{\bf i}, -\text{\bf i})
+    \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Group of $n$-th Roots of Unity ($n$次单位根群)}
+    \begin{align*}
+      U_{n} &= \set{z \in \mathbb{C} \mid z^{n} = 1} \\
+            &= \set{\cos \frac{2k\pi}{n} + \text{\bf i} \sin \frac{2k\pi}{n} \mid k = 0, 1, \dots, n-1}
+    \end{align*}
+  \end{exampleblock}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/unit-root}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Quaternion Group (四元群)}
+    \[
+      (1, i, j, k, -1, -i, -j, -k)
+    \]
+    \begin{columns}
+      \column{0.50\textwidth}
+        \fig{width = 0.50\textwidth}{figs/Q-CayleyTable}
+        \begin{center}
+          \teal{Cayley Table}
+        \end{center}
+      \column{0.50\textwidth}
+        \fig{width = 0.80\textwidth}{figs/Bridge-ijk}
+    \end{columns}
+    \[
+      i^2 = j^2 = k^2 = 1 \qquad ij = k, ji = -k, jk = i, kj = -i, ki = j, ik = -j
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}
+    Let \red{$G$} be a group.
+    \begin{enumerate}[<+->][(1)]
+      \setlength{\itemsep}{8pt}
+      \item The identity is unique.
+      \item The inverse of each element is unique.
+      \item $\forall a \in G.\; (a^{-1})^{-1} = a$.
+      \item $\forall a, b \in G.\; (ab)^{-1} = b^{-1}a^{-1}$.
+      \item $\forall a, b, c \in G.\; (ab = ac \implies b = c) \land (ba = ca \implies b = c)$.
+      \item $\forall a, b \in G.\; \blue{\exists!}\; x \in G.\; ax = b \land ya = b$.
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    (\ps{A}, \cup)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Additive Group of Integers Modulo $m$ (模 $m$ 剩余类加群)}
+    \[
+      (\Z_{m} = \set{0, 1, \dots, m-1}, +_{m})
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    (\Z_{6} = \set{0, 1, 2, 3, 4, 5}, \red{\times_{6}})
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Multiplicative Group of Integers Modulo $m$ (模 $m$ 剩余类乘法群)}
+    \[
+      U(m) = \set{a \in \Z_{m} \mid \red{(a, m) = 1}}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{theorem}[Bézout's Identity]
+    \[
+      (a, b) = d \implies \exists u, v \in \Z.\; au + bv = d
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    (a, m) = 1 \implies \exists u, v \in \Z.\; au + mv = 1
+  \]
+  \pause
+  \[
+    \red{a^{-1} = u}
+  \]
+  \pause
+  \[
+    \blue{(u, m) = 1 \pause\qquad ua = au = au + mv = 1\mod{m}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    When $p$ is a prime,
+    \[
+      \Z^{\ast}_{p} \triangleq U(p) = \set{1, 2, \dots, p-1}
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{Multiplicative Group of Integers Modulo $m$ (模 $m$ 剩余类乘法群)}
+    \[
+      U(m) = \set{a \in \Z_{m} \mid \red{(a, m) = 1}}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    \big\lvert U(m) \big\rvert = \varphi(m)
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Euler's Totient Function (1763)]
+    \[
+      \varphi(m) = n \prod_{p \mid n \;\land\; p \text{is a prime}}
+        \left(1 - \frac{1}{p} \right)
+    \]
+  \end{definition}
+
+  \pause
+  \[
+    \varphi(20) = 20 (1 - \frac{1}{2}) (1 - \frac{1}{5}) = 8
+  \]
+
+  \pause
+  \[
+    U(20) = \set{1, 3, 7, 9, 11, 13, 17, 19}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}
+    Let $G$ be an Abelian group of \red{order} $n$.
+    \[
+      \forall a \in G.\; a^n = e.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    G = \set{a_{1}, a_{2}, \dots, a_{n}}
+  \]
+
+  \pause
+  \[
+    aG \triangleq \set{aa_{1}, aa_{2}, \dots, aa_{n}} \;\red{= G}
+  \]
+
+  \pause
+  \[
+    \prod_{i=1}^{n} (a a_i) = a_{1} \dots a_{n}
+  \]
+
+  \pause
+  \[
+    a^{n} a_{1} \dots a_{n} = a_{1} \dots a_{n} \pause \implies a^{n} = e
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[Euler Theorem (1736)]
+    Let $m \in \Z^{+}$ and $a \in \Z$.
+    If $(a, m) = 1$, then
+    \[
+      a^{\varphi(m)} \equiv 1 \mod{m}
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    7^{222} \mod{10}
+  \]
+
+  \pause
+  \[
+    (7, 10) = 1 \qquad \varphi(10) = 4
+  \]
+
+  \pause
+  \[
+    7^{4} \equiv 1 \mod{10}
+  \]
+
+  \pause
+  \[
+    7^{222} \equiv 7^{4 \times 55 + 2} \equiv 7^{2} \equiv 9 \mod{10}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[Euler Theorem]
+    Let $m \in \Z^{+}$ and $a \in \Z$.
+    If $(a, m) = 1$, then
+    \[
+      a^{\varphi(m)} \equiv 1 \mod{m}
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    U_{m} = \set{a \in \Z_{m} \mid (a, m) = 1}
+  \]
+
+  \pause
+  \[
+    (a, m) = 1 \implies a \in U_{m}
+  \]
+
+  \pause
+  \[
+    a^{\varphi(m)} \equiv 1 \mod{m}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[Fermat's Little Theorem (1640)]
+    Let $p$ be a prime. Then for any $a \in \Z^{+}$,
+    \[
+      a^{p-1} \equiv 1 \mod{p}
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \varphi(p) = p - 1
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
