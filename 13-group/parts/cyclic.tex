@@ -2,27 +2,208 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}
-  \begin{definition}[Cyclic Group (循环群)]
+  \begin{definition}[Order of Elements (元素的阶)]
+    Let $G$ be a group, $e$ be the identity of $G$. \\[3pt]
+    The \red{order} of $e$ is the \blue{smallest} positive integer $r$
+    such that \red{$a^{r} = e$}.
+
+    \[
+      \text{ord}\; a = r
+    \]
   \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    If such $r$ does not exist, then $\text{ord}\; a = \infty$.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}
+  \[
+    \Z_{6} = \set{0, 1, 2, 3, 4, 5}
+  \]
+
+  \pause
+  \[
+    \Z^{\ast}_{5} = \set{1, 2, 3, 4}
+  \]
+
+  \pause
+  \[
+    (\Z, +)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    Let $G$ be a group and $e$ be the identity of $G$.
+    \[
+      \big((\text{ord}\; a = n) \land (\exists m \in \Z.\; a^{m} = e) \big)
+        \implies n \mid m.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    m = nq + r \qquad (0 \le r \;\red{< n})
+  \]
+
+  \pause
+  \begin{center}
+    \red{If $r$ > 0,}
+    \[
+      a^{r} = a^{m - nq} = a^m \cdot (a^{n})^{-q} = e \cdot e = e
+    \]
+    \pause
+    \[
+      \blue{\text{ord}\; a \neq n}
+    \]
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{definition}[Cyclic Group (循环群)]
+    Let $G$ be a group. If
+    \[
+      \exists a \in G.\; G = \red{\langle a \rangle}
+        \triangleq \set{a^{0} = e, a, a^{2}, a^{3}, \dots},
+    \]
+    then $G$ is a \red{cyclic group}.
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    If $G = \langle a \rangle$, then $a$ is \blue{a} \red{generator} (生成元) of $G$.
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}
+  \[
+    (\Z, +) \text{ is an \red{infinite} cyclic group}
+  \]
+
+  \pause
+  \[
+    (\Z, +) = \langle 1 \rangle = \langle -1 \rangle
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    (\Z_{n}, +) \text{ is a \red{finite} cyclic group of order } n
+  \]
+
+  \pause
+  \[
+    (\Z_{m}, +) = \langle 1 \rangle
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}
+  \[
+    \Z^{\ast}_{5} = \set{1, 2, 3, 4}
+  \]
+
+  \pause
+  \[
+    \Z^{\ast}_{5} = \langle 2 \rangle = \langle 3 \rangle
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \begin{enumerate}[<+->][(1)]
+      \setlength{\itemsep}{6pt}
+      \item Let $G = \set{e, a, a^{-1}, a^2, a^{-2}, \dots}$
+        be an infinite cyclic group.
+        \[
+          \forall k, l \in \Z.\; (a^k = a^l \to k = l).
+        \]
+      \item Let $G = \set{e, a, a^2, \dots, a^{n-1}}$
+        be a finite cyclic group of order $n$.
+        \[
+          \forall k, l \in \Z.\; (a^{k} = a^{l} \leftrightarrow n \mid (k-l)).
+        \]
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[Structure Theorem of Cyclic Groups (循环群结构定理)]
+    Let $G = \langle a \rangle$ be a cyclic group.
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{6pt}
+      \item If $G = \langle a \rangle$ is an infinite cyclic group,
+        then $G \cong (\Z, +)$.
+      \item If $G = \langle a \rangle$ is an finite cyclic group of order $n$,
+        then $G \cong (\Z_{n}, +)$.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \begin{align*}
+    \phi:\; &\Z \to G \\
+    &k \mapsto a^{k}, \quad \forall k \in \Z
+  \end{align*}
+
+  \pause
+  \begin{align*}
+    \phi:\; &\Z_{n} \to G \\
+    &k \mapsto a^{k}, \quad \forall k \in \Z_{n}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[Generators of Cyclic Groups]
+    Let $G = \langle a \rangle$ be a cyclic group.
+    \begin{enumerate}[<+->][(1)]
+      \setlength{\itemsep}{6pt}
+      \item If $|G| = \infty$, then $a$ and $a^{-1}$ are the only generators of $G$;
+      \item If $|G| = n$, then $a^{r}$ is a generator of $G$ iff $(r, n) = 1$.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \[
+    \text{ord}\; a^{r} = \frac{n}{(n, r)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    (\Z_{12}, +)
+  \]
+
+  \[
+    \text{Generators}: 1, 5, 7, 11
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Subgroups of Cyclic Groups]
+    Every subgroup of a cyclic group is cyclic.
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
