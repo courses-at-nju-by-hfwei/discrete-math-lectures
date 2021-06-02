@@ -69,6 +69,27 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}
+  \begin{theorem}
+    Let $G$ be a group and $e$ be its identity.
+    \[
+      \text{ord}\; a = n
+        \implies \forall m \in \Z.\; \text{ord}\; a^{m} = \frac{n}{(n, m)}
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{align*}
+    &(a^m)^d = e \\[5pt]
+    \uncover<3->{\iff & a^{md} = e \\[5pt]}
+    \uncover<4->{\iff & \red{n \mid md} \\[5pt]}
+    \uncover<5->{\iff & \frac{n}{(m, n)} \mid \frac{m}{(m, n)}d \\[5pt]}
+    \uncover<6->{\iff & \frac{n}{(m, n)} \mid d}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
   \begin{definition}[Cyclic Group (循环群)]
     Let $G$ be a group. If
     \[
@@ -149,10 +170,8 @@
     Let $G = \langle a \rangle$ be a cyclic group.
     \begin{enumerate}[(1)]
       \setlength{\itemsep}{6pt}
-      \item If $G = \langle a \rangle$ is an infinite cyclic group,
-        then $G \cong (\Z, +)$.
-      \item If $G = \langle a \rangle$ is an finite cyclic group of order $n$,
-        then $G \cong (\Z_{n}, +)$.
+      \item If $|G| = \infty$, then $G \cong (\Z, +)$.
+      \item If $|G| = n$, then $G \cong (\Z_{n}, +)$.
     \end{enumerate}
   \end{theorem}
 
