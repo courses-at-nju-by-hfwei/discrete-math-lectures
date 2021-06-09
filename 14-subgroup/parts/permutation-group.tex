@@ -1,0 +1,191 @@
+% permutation-group.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Symmetric Group (对称群; $\text{Sym}(M)$)]
+    Let $M \neq \emptyset$ be a set. \\
+    All the \blue{permutations/bijective functions} of $M$,
+    together with the \blue{composition} operation,
+    is a group, called the \red{symmetric group} of $M$.
+  \end{definition}
+
+  \[
+    M = \set{1, 2, \dots, n}
+  \]
+  \[
+    S_{n} \triangleq \text{Sym}(M)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    S_{3}
+  \]
+
+  \begin{align*}
+    &\begin{pmatrix}
+      1 & 2 & 3 \\
+      1 & 2 & 3
+    \end{pmatrix} \qquad
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      1 & 3 & 2
+    \end{pmatrix} \qquad
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      3 & 2 & 1
+    \end{pmatrix} \\[6pt]
+    &\begin{pmatrix}
+      1 & 2 & 3 \\
+      2 & 1 & 3
+    \end{pmatrix} \qquad
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      3 & 1 & 2
+    \end{pmatrix} \qquad
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      2 & 3 & 1
+    \end{pmatrix}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \sigma = \begin{pmatrix}
+      1 & 2 & 3 \\
+      3 & 1 & 2
+    \end{pmatrix} \qquad
+    \tau = \begin{pmatrix}
+      1 & 2 & 3 \\
+      3 & 2 & 1
+    \end{pmatrix}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \sigma \tau = \begin{pmatrix}
+      1 & 2 & 3 \\
+      3 & 1 & 2
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      3 & 2 & 1
+    \end{pmatrix} = \pause
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      2 & 1 & 3
+    \end{pmatrix}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \tau \sigma = \begin{pmatrix}
+      1 & 2 & 3 \\
+      3 & 2 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      3 & 1 & 2
+    \end{pmatrix} = \pause
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      1 & 3 & 2
+    \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    \red{\sigma \tau \neq \tau \sigma}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+    \red{Cyclic Notation} (轮换表示法) \& \blue{Transposition} (对换)
+  \end{center}
+  \[
+    \sigma = \begin{pmatrix}
+      1 & 2 & 3 & 4 & 5 & 6 \\
+      4 & 3 & 6 & 1 & 5 & 2
+    \end{pmatrix}
+  \]
+
+  \pause
+  \begin{align*}
+    \sigma &= (1\; 4) (2\; 3\; 6) (5) \\[6pt]
+      \uncover<3->{&= \red{(1\; 4) (2\; 3\; 6)} \\[6pt]}
+      \uncover<4->{&= (2\; 3\; 6) (1\; 4) \\[6pt]}
+      \uncover<5->{&= (2\; 3\; 6) (4\; 1) \\[6pt]}
+      \uncover<6->{&= (3\; 6\; 2) (4\; 1) \\[6pt]}
+      \uncover<7->{&= \blue{(3\; 6) (6\; 2) (4\; 1)}}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    S_{3}
+  \]
+
+  \begin{align*}
+    &\begin{pmatrix}
+      1 & 2 & 3 \\
+      1 & 2 & 3
+    \end{pmatrix} \qquad
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      1 & 3 & 2
+    \end{pmatrix} \qquad
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      3 & 2 & 1
+    \end{pmatrix} \\[6pt]
+    &\begin{pmatrix}
+      1 & 2 & 3 \\
+      2 & 1 & 3
+    \end{pmatrix} \qquad
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      3 & 1 & 2
+    \end{pmatrix} \qquad
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      2 & 3 & 1
+    \end{pmatrix}
+  \end{align*}
+
+  \pause
+  \[
+    (1) \quad (1\; 2) \quad (1\; 3)
+    \quad (2\; 3) \quad (1\; 2\; 3) \quad (1\; 3\; 2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Permutation Group (置换群)]
+    Let $M \neq \emptyset$ be a set. \\
+    A \red{permutation group} of $M$ is a \blue{subgroup} of $\text{Sym}(M)$.
+  \end{definition}
+
+  \pause
+  \[
+    S_{3} = \set{(1), (1\; 2), (1\; 3), (2\; 3), (1\; 2\; 3), (1\; 3\; 2)}
+  \]
+  \pause
+  \[
+    H = \set{(1), (1\; 2)} \le S_{3}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,127 @@
+% subgroup.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Subgroup (子群)]
+    Let $(G, \ast)$ be a group and \blue{$\emptyset \neq H \subseteq G$}. \\[6pt]
+    If $(H, \ast)$ is a group, then
+    we call $H$ a \red{subgroup} of $G$, denoted \red{$H \le G$}.
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    H = G, H = \set{e} \text{ are two \purple{trivial} (平凡) subgroups}.
+  \]
+
+  \pause
+  \begin{center}
+    If $H \subset G$, then $H$ is a \purple{proper} subgroup (真子群).
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    (H = \set{mz \mid z \in \Z}, +) \le (\Z, +)
+  \]
+
+  \pause
+  \[
+    H = \set{1, 2, 4} \le G = \Z^{\ast}_{7} = \set{1, 2, 3, 4, 5, 6}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}
+    Suppose that $H \le G$.
+    \begin{enumerate}[(1)]
+      \item The \blue{identity} of $H$ is the same with that of $G$.
+        \[
+          e_{H} = e_{G}
+        \]
+      \item The \blue{inversion} of $a$ in $H$ is the same with that in $G$.
+        \[
+          \forall a \in H.\; a^{-1}_{H} = a^{-1}_{G}
+        \]
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \[
+    e_{H} e_{H} = e_{H} = e_{H} e_{G} \pause \implies e_{H} = e_{G}
+  \]
+  \pause
+  \[
+    a a^{-1}_{H} = e_{H} = e_{G} = a a^{-1}_{G} \implies a^{-1}_{H} = a^{-1}(G)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}
+    Let $G$ be a group and $\blue{\emptyset} \neq H \subseteq G$.
+    $H \le G$ \purple{iff}
+    \[
+      \forall a, b \in H.\; \red{a b^{-1}} \in H.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    e = a a^{-1} \in H
+  \]
+
+  \pause
+  \[
+    a^{-1} = e a^{-1} \in H
+  \]
+
+  \pause
+  \[
+    ab = a(b^{-1})^{-1} \in H
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}
+    Suppose that $H_{1} \le G, H_{2} \le G$.
+    \[
+      H_{1} \cap H_{2} \le G.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    H_{1} = 2\Z \le \Z \qquad H_{2} = 3\Z \le \Z
+  \]
+
+  \pause
+  \[
+    H_{1} \cap H_{2} = 6\Z \le \Z
+  \]
+
+  \pause
+  \[
+    H_{1} \cup H_{2} ?
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}
+%   \begin{exampleblock}{Center of Group (中心)}
+%     Let $G$ be a group. Let
+%     \[
+%       C(G) \triangleq \set{g \in G \mid gx = xg, \forall x \in G}.
+%     \]
+%     \teal{Then $C(G) \le G$}.
+%   \end{exampleblock}
+% \end{frame}
+%%%%%%%%%%%%%%%

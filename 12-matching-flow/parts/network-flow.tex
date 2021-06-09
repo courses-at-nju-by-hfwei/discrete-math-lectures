@@ -424,34 +424,38 @@
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
   \begin{center}
-    Let $[S, \overline{S}]$ be a minimum cut.
-    We need to show that $\capacity(S, \overline{S}) = \card{X}$.
+    Let $[S, \overline{S}]$ be a cut.
+    We need to show that $\capacity(S, \overline{S}) \ge \card{X}$.
 
     \vspace{0.30cm}
-    \only<1-2>{\fig{width = 0.50\textwidth}{figs/Flow-Hall}}
-    \only<3->{\fig{width = 0.50\textwidth}{figs/Flow-Hall-Cut}}
-
-    \uncover<2->{
+    \fig{width = 0.50\textwidth}{figs/Flow-Hall}
     \[
-      \red{\boxed{N(S \cap X) \subseteq (S \cap Y)}}
-    \]}
+      \red{\boxed{N(S \cap X) \not\subseteq (S \cap Y)}}
+    \]
+    \pause
+    \[
+      \capacity(S, \overline{S}) = \infty \ge \card{X}
+    \]
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%g
 
 %%%%%%%%%%%%%%%g
 \begin{frame}{}
+  \[
+    \red{\boxed{N(S \cap X) \subseteq (S \cap Y)}}
+  \]
   \fig{width = 0.50\textwidth}{figs/Flow-Hall-Cut}
 
   \pause
-  \vspace{-0.30cm}
+  \vspace{-0.60cm}
   \begin{align*}
     \capacity(S, \overline{S}) &= \sum_{u \in S, v \in \overline{S}} c(x, y) \\
       \uncover<3->{&= \sum_{v \in \overline{S} \cap X} c(\red{s}, v) +
          \sum_{u \in S \cap Y} c(u, \red{t}) \\}
       \uncover<4->{&= \card{X} - \card{S \cap X} + \card{S \cap Y}} \\
-      \uncover<5->{&\;\red{\ge}\; \card{X} - \card{S \cap X} + \;\red{\card{N(S \cap X)}}} \\
-      \uncover<6->{&\;\blue{\ge}\; \card{X}}
+      \uncover<5->{&\;\red{\ge}\; \card{X} - \card{S \cap X} + \;\red{\card{N(S \cap X)}}}
+      \uncover<6->{\;\blue{\ge}\; \card{X}}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%g
