@@ -1,0 +1,181 @@
+% normal-subgroup.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    S_{3} = \set{(1), (1\; 2), (1\; 3), (2\; 3), (1\; 2\; 3), (1\; 3\; 2)}
+  \]
+  \[
+    H = \set{(1), (1\; 2)} \le S_{3}
+  \]
+
+  \pause
+  \vspace{-0.50cm}
+  \begin{gather*}
+    (1) H = H = (1\; 2) H \\[6pt]
+    (1\; 3) H = \set{(1\; 3), (1\; 2\; 3)} = (1\; 2\; 3)H \\[6pt]
+    (2\; 3) H = \set{(2\; 3), (1\; 3\; 2)} = (1\; 3\; 2)H
+  \end{gather*}
+  \pause
+  \vspace{-0.80cm}
+  \begin{gather*}
+    H(1) = H = H (1\; 2) \\[6pt]
+    H(1\; 3) = \set{(1\; 3), (1\; 3\; 2)} = (1\; 3\; 2)H \\[6pt]
+    H(2\; 3) = \set{(2\; 3), (1\; 2\; 3)} = (1\; 2\; 3)H
+  \end{gather*}
+
+  \pause
+  \vspace{0.10cm}
+  \begin{center}
+    It is possible that \red{$aH \neq Ha$}.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    S_{3} = \set{(1), (1\; 2), (1\; 3), (2\; 3), (1\; 2\; 3), (1\; 3\; 2)}
+  \]
+  \[
+    H = \set{(1), (1\; 2\; 3), (1\; 3\; 2)} \le S_{3}
+  \]
+
+  \pause
+  \begin{gather*}
+    (1)H = (1\;2\;3)H = (1\;3\;2)H = H \le S_{3} \\[6pt]
+    (1\;2) H = (1\;3)H = (2\;3)H = \set{(1\;2), (1\;3), (2\;3)}
+  \end{gather*}
+
+  \pause
+  \[
+    \blue{\forall a \in S_{3}.\; aH = Ha}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Normal Subgroup (正规子群)]
+    Suppose that $H \le G$. If
+    \[
+      \forall a \in G.\; aH = Ha,
+    \]
+    then $H$ is a \red{normal subgroup} of $G$, denoted $H \triangleleft G$.
+  \end{definition}
+
+  \pause
+  \[
+    aH = Ha \red{\centernot\implies} \forall h \in H.\; ah = ha
+  \]
+
+  \pause
+  \[
+    aH = Ha \blue{\implies} \forall h \in H.\; \blue{\exists h' \in H.\;} ah = h'a
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}
+    \[
+      H \triangleleft G \iff \forall \red{a \in G}, \blue{h \in H}.\; aha^{-1} \in H
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{align*}
+    aH = Ha &\implies aHa^{-1} = (Ha)a^{-1} = H(aa^{-1}) = H \\
+            &\implies aHa^{-1} \subseteq H \\
+            &\implies \forall h \in H.\; aha^{-1} \in H
+  \end{align*}
+
+  \pause
+  \[
+    aha^{-1} \in H \implies ah = (aha^{-1})a \in Ha \implies aH \subseteq Ha
+  \]
+  \pause
+  \[
+    a^{-1}ha = a^{-1}h(a^{-1})^{-1} \in H \implies ha \in aH \implies Ha \subseteq aH
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{exampleblock}{}
+    \[
+      S_{3} = \set{(1), (1\; 2), (1\; 3), (2\; 3), (1\; 2\; 3), (1\; 3\; 2)}
+    \]
+    \[
+      H = \set{(1), (1\; 2\; 3), (1\; 3\; 2)} \triangleleft S_{3}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \[
+    \red{\forall \sigma \in S_{3}, \tau \in H.\; \sigma \tau \sigma^{-1} \in H}
+  \]
+
+  \pause
+  \begin{theorem}
+    \[
+      \sigma \tau \sigma^{-1} = \begin{pmatrix}
+        \sigma(1) & \sigma(2) & \dots & \sigma(n) \\
+        \sigma(\tau(1)) & \sigma(\tau(2)) & \dots & \sigma(\tau(n))
+      \end{pmatrix}
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    (1\;2) (1\;2\;3) (1\;2)^{-1} = \begin{pmatrix}
+      2 & 1 & 3 \\
+      1 & 3 & 2
+    \end{pmatrix} = (1\; 3\; 2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[正规子群的陪集]
+    Suppose that $H \triangleleft G$.
+    \[
+      G/H = \set{aH \mid a \in G}
+    \]
+    is the \red{coset} of $H$ in $G$.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Quotient Group (商群)]
+    Suppose that $H \triangleleft G$.
+    Define
+    \[
+      aH \cdot bH = (ab)H.
+    \]
+    Then $(G/H, \cdot)$ is a group, called the \red{quotient group} of $G$ by $H$
+    (denoted \blue{$G/H$}).
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    aH \cdot bH = (ab)H \text{ is \red{well-defined}}
+  \]
+
+  \pause
+  \[
+    aH = a'H \land bH = b'H \implies aH \cdot bH = a'H \cdot b'H
+  \]
+  \begin{center}
+    结果与代表元的选取无关
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
