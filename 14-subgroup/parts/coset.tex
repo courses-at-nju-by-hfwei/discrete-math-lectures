@@ -1,0 +1,190 @@
+% coset.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Coset (陪集))]
+    Suppose that $H \le G$.
+    For $a \in G$,
+    \[
+      aH = \set{ah \mid h \in H}, \quad Ha = \set{ha \mid h \in H},
+    \]
+    is called the \red{left coset (左陪集)}
+    and \red{right coset} of $H$ in $G$, respectively.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    S_{3} = \set{(1), (1\; 2), (1\; 3), (2\; 3), (1\; 2\; 3), (1\; 3\; 2)}
+  \]
+
+  \[
+    H = \set{(1), (1\; 2)} \le S_{3}
+  \]
+
+  \pause
+  \begin{gather*}
+    (1) H = H = (1\; 2) H \le S_{3} \\[6pt]
+    (1\; 3) H = \set{(1\; 3), (1\; 2\; 3)} = (1\; 3)H \\[6pt]
+    (2\; 3) H = \set{(2\; 3), (1\; 3\; 2)} = (2\; 3)H
+  \end{gather*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    S_{3} = \set{(1), (1\; 2), (1\; 3), (2\; 3), (1\; 2\; 3), (1\; 3\; 2)}
+  \]
+
+  \[
+    H = \set{(1), (1\; 2\; 3), (1\; 3\; 2)} \le S_{3}
+  \]
+
+  \pause
+  \begin{gather*}
+    (1)H = (1\;2\;3)H = (1\;3\;2)H = H \le S_{3} \\[6pt]
+    (1\;2) H = (1\;3)H = (2\;3)H = \set{(1\;2), (1\;3), (2\;3)}
+  \end{gather*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    Suppose that $H \le G$, $a, b \in G$.
+    \begin{enumerate}[(1)]
+      \item
+        \[
+          |aH| = |H| = |bH|
+        \]
+      \item
+        \[
+          a \in aH
+        \]
+      \item
+        \[
+          aH = H \iff a \in H \iff aH \le G
+        \]
+      \item
+        \[
+          aH = bH \iff a^{-1}b \in H
+        \]
+      \item
+        \[
+          \forall a, b \in G.\; (aH = bH) \lor (aH \cap bH = \emptyset)
+        \]
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    aH = bH \iff a^{-1}b \in H
+  \]
+
+  \pause
+  \[
+    \boxed{a^{-1}b \in H \iff a^{-1}b H = H}
+  \]
+
+  \pause
+  \[
+    aH = bH \implies a^{-1}aH = a^{-1}bH \implies a^{-1}bH = H \implies a^{-1}b \in H
+  \]
+
+  \pause
+  \[
+    a^{-1}b H = H \implies a(a^{-1}bH) = aH \implies bH = aH
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \forall a, b \in G.\; (aH = bH) \lor (aH \cap bH = \emptyset)
+  \]
+
+  \pause
+  \[
+    \forall a, b \in G.\; (aH \cap bH \neq \emptyset \to aH = bH)
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    Take any $g \in aH \cap bH$.
+  \end{center}
+
+  \pause
+  \[
+    \blue{\exists h_{1}, h_{2} \in H.\;
+      (ah_{1} = g = ah_{2}) \land (h_{1}H = H = h_{2}H)}
+  \]
+
+  \pause
+  \[
+    aH = a(h_{1}H) = (ah_{1})H = (bh_{2})H = b(h_{2}H) = bH
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+    A \cyan{balanced} \red{partition} of $G$ by its subgraph $H$
+  \end{center}
+
+  \fig{width = 0.50\textwidth}{figs/partition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[Lagrange's Theorem]
+    Suppose that $H \le G$. Then
+    \[
+      |G| = [G : H] \cdot |H|
+    \]
+  \end{theorem}
+
+  \vspace{0.50cm}
+  \begin{definition}[Index (指标)]
+    \[
+      G/H = \set{gH \mid g \in G}
+    \]
+
+    \[
+      [G : H] \triangleq |G/H|
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    H \le G \implies |H| \mid |G|
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    There are \red{\it no} subgraphs of order 5, 7, or 8 of a group of order 12.
+  \end{center}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}
+    \begin{itemize}
+      \item There are only 2 groups of order 4.
+      \item There are only 2 groups of order 6.
+    \end{itemize}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
