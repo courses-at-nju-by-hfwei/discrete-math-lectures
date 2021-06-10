@@ -1,0 +1,311 @@
+% homo-theorem.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[Homomorphism (同态)]
+    Let $(G, \cdot)$ and $(G', \ast)$ be two groups.
+    Let $\phi$ be a function such that
+    \[
+      \forall a, b \in G.\; \phi(ab) = \phi(a)\phi(b).
+    \]
+    Then $\phi$ is a \red{homomorphism} from $G$ to $G'$.
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    If $\phi$ is a bijection, then $G$ and $G'$ are called \red{isomorphic}.
+    \[
+      \phi: G \cong G'
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{}
+%     \[
+%       (\R, +) \cong (\R^{+}, \ast)
+%     \]
+%
+%     \[
+%       \phi(x) = e^{x}
+%     \]
+%   \end{exampleblock}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Klein Four-group (四元群; $K_{4}$)}
+%     \fig{width = 0.30\textwidth}{figs/4group}
+%     \[
+%       a^2 = b^2 = c^2 = (ab)^{2} = e
+%     \]
+%     \[
+%       ab = c = ba \quad ac = b = ca \quad bc = a = cb
+%     \]
+%
+%     \pause
+%     \[
+%       U(8) = \set{1, 3, 5, 7}
+%     \]
+%   \end{exampleblock}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \phi:\; & \Z \to \R^{\ast} \\[6pt]
+            & n \mapsto (-1)^{n}
+  \end{align*}
+
+  \pause
+  \[
+    \phi(m + n) = (-1)^{m+n} = \phi(m) \phi(n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \phi:\; & \Z \to \Z_{6} \\
+            & a \mapsto [a]_{6}
+  \end{align*}
+
+  \[
+    \phi(a + b) = [a + b]_{6} = \phi(a) + \phi(b)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \phi:\; & \R[x] \to \R[x] \\
+            & f(x) \mapsto f'(x)
+  \end{align*}
+
+  \vspace{0.30cm}
+  \begin{center}
+    $\R[x]:$ 全体实系数多项式关于多项式的加法构成的群
+  \end{center}
+
+  \[
+    \phi(f(x) + g(x)) = (f(x) + g(x))' = \phi(f(x)) + \phi(g(x))
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    Suppose that \blue{$\phi$ is a homomorphism from $G$ to $G'$}. \\
+    Let $e$ and $e'$ are identities of $G$ and $G'$, respectively.
+
+    \begin{enumerate}[(1)]
+      \setlength{\itemsep}{6pt}
+      \item $\phi(e) = e'$
+      \item \teal{$\phi(a^{-1}) = (\phi(a))^{-1}$}
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \[
+    e' \phi(e) = \phi(e) = \phi(e e) = \phi(e) \phi(e) \implies \phi(e) = e'
+  \]
+
+  \pause
+  \[
+    \phi(a)\phi(a^{-1}) = \phi(aa^{-1}) = \phi(e) = e' = \phi(a)(\phi(a))^{-1}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}
+    Suppose that \blue{$\phi$ is a homomorphism from $G$ to $G'$}. \\
+    \begin{enumerate}[(1)]
+      \item
+        \[
+          H \le G \implies \phi(H) \le G'
+        \]
+      \item
+        \[
+          H \triangleleft G \implies \phi(H) \triangleleft G'
+        \]
+      \pause
+      \item
+        \[
+          K \le G' \implies \phi^{-1}(K) \le G
+        \]
+      \item
+        \[
+          K \triangleleft G' \implies \phi^{-1}(K) \triangleleft G
+        \]
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}[核 (Kernel)]
+    Suppose that \blue{$\phi$ is a homomorphism from $G$ to $G'$}. \\
+    Let $e'$ be the identity of $G'$.
+    \[
+      \phi^{-1}(\set{e'}) = \set{a \in G \mid \phi(a) = e'}
+    \]
+    is the \red{kernel} of $\phi$, denoted $\text{Ker}\; \phi$.
+  \end{definition}
+
+  \pause
+  \[
+    \text{Ker}\; \phi \triangleleft G
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \phi:\; & \Z \to \R^{\ast} \\[6pt]
+            & n \mapsto (-1)^{n}
+  \end{align*}
+
+  \[
+    \text{Ker}\; \phi = \pause 2\Z
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \phi:\; & \Z \to \Z_{6} \\[6pt]
+            & a \mapsto [a]_{6}
+  \end{align*}
+
+  \[
+    \text{Ker}\; \phi = \pause 6\Z
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \phi:\; & \R[x] \to \R[x] \\
+            & f(x) \mapsto f'(x)
+  \end{align*}
+
+  \vspace{0.30cm}
+  \begin{center}
+    $\R[x]:$ 全体实系数多项式关于多项式的加法构成的群
+  \end{center}
+
+  \[
+    \text{Ker}\; \phi = \pause \R
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{theorem}[Fundamental Homomorphism Theorem]
+    Suppose that \blue{$\phi$ is a homomorphism from $G$ to $G'$}. Then
+    \[
+      G/\text{Ker}\; \phi \cong \phi(G).
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{同态核可以看作群 $G$ 与其同态像 $\phi(G)$ 之间相似程度的一种度量}
+  \end{center}
+
+  \pause
+  \fig{width = 0.35\textwidth}{figs/homo-theorem}
+  \[
+    N = \text{Ker}\; \phi
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    G/(N \triangleq \text{Ker}\; h) \cong (h(G) \triangleq \text{im}\; h)
+  \]
+
+  \fig{width = 0.70\textwidth}{figs/homo-theorem-proof}
+
+  \vspace{-0.80cm}
+  \[
+    aN \mapsto h(a)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \phi:\; & \Z \to \R^{\ast} \\[6pt]
+            & n \mapsto (-1)^{n}
+  \end{align*}
+
+  \[
+    \text{Ker}\; \phi = 2\Z
+  \]
+
+  \pause
+  \[
+    \Z/(2\Z) = (2\Z, 2\Z + 1) \cong \phi(\Z) = (-1, 1)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \phi:\; & \Z \to \Z_{6} \\[6pt]
+            & a \mapsto [a]_{6}
+  \end{align*}
+
+  \[
+    \text{Ker}\; \phi = 6\Z
+  \]
+
+  \pause
+  \[
+    \Z/(6\Z) = \set{0 + H, 1 + H, \dots, 5 + H} \cong \phi(\Z) = \Z_{6}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \phi:\; & \R[x] \to \R[x] \\
+            & f(x) \mapsto f'(x)
+  \end{align*}
+
+  \vspace{0.30cm}
+  \begin{center}
+    $\R[x]:$ 全体实系数多项式关于多项式的加法构成的群
+  \end{center}
+
+  \[
+    \text{Ker}\; \phi = \R
+  \]
+
+  \pause
+  \[
+    \R[x]/\R \cong \phi(\R[x]) = \R[x]
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

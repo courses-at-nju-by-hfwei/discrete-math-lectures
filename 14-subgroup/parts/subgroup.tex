@@ -8,23 +8,23 @@
     we call $H$ a \red{subgroup} of $G$, denoted \red{$H \le G$}.
   \end{definition}
 
-  \pause
-  \vspace{0.50cm}
-  \[
-    H = G, H = \set{e} \text{ are two \purple{trivial} (平凡) subgroups}.
-  \]
+  % \pause
+  % \vspace{0.50cm}
+  % \[
+  %   H = G, H = \set{e} \text{ are two \purple{trivial} (平凡) subgroups}.
+  % \]
 
-  \pause
-  \begin{center}
-    If $H \subset G$, then $H$ is a \purple{proper} subgroup (真子群).
-  \end{center}
+  % \pause
+  % \begin{center}
+  %   If $H \subset G$, then $H$ is a \purple{proper} subgroup (真子群).
+  % \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}
   \[
-    (H = \set{mz \mid z \in \Z}, +) \le (\Z, +)
+    (m\Z, +) \le (\Z, +)
   \]
 
   \pause
@@ -39,24 +39,24 @@
   \begin{theorem}
     Suppose that $H \le G$.
     \begin{enumerate}[(1)]
-      \item The \blue{identity} of $H$ is the same with that of $G$.
+      \item The \blue{identity} $e$ of $H$ is the same with that $e'$ of $G$.
         \[
-          e_{H} = e_{G}
+          e = e'
         \]
       \item The \blue{inversion} of $a$ in $H$ is the same with that in $G$.
         \[
-          \forall a \in H.\; a^{-1}_{H} = a^{-1}_{G}
+          a^{-1}_{H} = a^{-1}_{G}
         \]
     \end{enumerate}
   \end{theorem}
 
   \pause
   \[
-    e_{H} e_{H} = e_{H} = e_{H} e_{G} \pause \implies e_{H} = e_{G}
+    e e = e = e e' \implies e = e'
   \]
   \pause
   \[
-    a a^{-1}_{H} = e_{H} = e_{G} = a a^{-1}_{G} \implies a^{-1}_{H} = a^{-1}(G)
+    a a^{-1}_{H} = e_{H} = e_{G} = a a^{-1}_{G} \implies a^{-1}_{H} = a^{-1}_{G}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -78,12 +78,12 @@
 
   \pause
   \[
-    a^{-1} = e a^{-1} \in H
+    \forall a \in H.\; a^{-1} = e a^{-1} \in H
   \]
 
   \pause
   \[
-    ab = a(b^{-1})^{-1} \in H
+    \forall a, b \in H.\; ab = a(b^{-1})^{-1} \in H
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -102,15 +102,14 @@
     H_{1} = 2\Z \le \Z \qquad H_{2} = 3\Z \le \Z
   \]
 
-  \pause
   \[
     H_{1} \cap H_{2} = 6\Z \le \Z
   \]
 
-  \pause
-  \[
-    H_{1} \cup H_{2} ?
-  \]
+  % \pause
+  % \[
+  %   H_{1} \cup H_{2} ?
+  % \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
