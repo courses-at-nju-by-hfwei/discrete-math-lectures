@@ -1,0 +1,110 @@
+% relation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    R \subseteq A \times A
+  \]
+
+  \[
+    \begin{cases}
+      R^{0} = I_{A} \\[6pt]
+      R^{n+1} = R \circ R^{n}
+    \end{cases}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Representing Relations as \gray{Matrices}/Digraphs
+  \end{center}
+
+  \[
+    A = \set{1, 2, 3, 4}
+  \]
+  \[
+    R = \set{(1, 1), (1, 2), (2, 1), (2, 2), (2, 3), (2, 4), (3, 4), (4, 1)}
+  \]
+
+  \pause
+  \[
+    R^{2} \qquad R^{3}
+  \]
+  \pause
+  \[
+    \red{R+} = \bigcup_{i=1}^{\infty} R \qquad
+    \blue{R^{\ast}} = \bigcup_{i=0}^{\infty} R
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Reflexive Closure (自反闭包)]
+    The \red{reflexive closure} $\textsf{cl}_{\text{ref}}(R)$
+    of a relation $R \subseteq X \times X$ is
+    the \red{smallest} reflexive relation on $X$ that contains $R$.
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \textsf{cl}_{\text{ref}}(R) = R \cup I_{X}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Symmetric Closure (对称闭包)]
+    The \red{symmetric closure} $\textsf{cl}_{\text{sym}}(R)$
+    of a relation $R \subseteq X \times X$
+    is the \red{smallest} symmetric relation on $X$ that contains $R$.
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    \textsf{cl}_{\text{sym}}(R) = R \cup R^{-1}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Transitive Closure (传递闭包)]
+    The \red{transitive closure} $\textsf{cl}_{\text{trn}}(R)$
+    of a relation $R \subseteq X \times X$
+    is the \red{smallest} transitive relation on $X$ that contains $R$.
+  \end{definition}
+
+  \pause
+  \[
+    \textsf{cl}_{\text{trn}}(R) = R^{+}
+  \]
+
+  \pause
+  \begin{columns}
+    \column{0.35\textwidth}
+    \column{0.30\textwidth}
+      \begin{itemize}
+        \item $R^{+}$ contains $R$
+        \item $R^{+}$ is transitive
+        \item $R^{+}$ is minimal
+      \end{itemize}
+    \column{0.35\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    If $T$ is any transitive relation containing $R$, then $R^{+} \subset T$.
+
+    \pause
+    \vspace{0.20cm}
+    \red{By induction on $i$, we can show that $R^{i} \subseteq T$.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
