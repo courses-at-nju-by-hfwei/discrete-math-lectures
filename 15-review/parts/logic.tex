@@ -1,0 +1,71 @@
+% logic.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \vdash \qquad \models
+  \]
+
+  \begin{theorem}
+    \[
+      \Sigma \vdash \alpha \red{\iff} \Sigma \models \alpha
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\to} \qquad \blue{\implies}
+  \]
+  \[
+    \red{\leftrightarrow} \qquad \blue{\iff}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    ``$\to$'' and ``$\leftrightarrow$'' are used in a \red{single} formula. \\[5pt]
+    ``$\implies$'' and ``$\iff$'' are used to connect \blue{two} formulas.
+  \end{center}
+
+  \pause
+  \begin{align*}
+    &x \in A \setminus B \\[6pt]
+    \iff & x \in A \land x \notin B \\[6pt]
+    \iff & x \in A \land (x \in U \land x \notin B) \\[6pt]
+    \iff & x \in A \land x \in \overline{B} \\[6pt]
+    \iff & x \in A \cap \overline{B}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{align*}
+    p \oplus q &\triangleq (p \lor q) \land \lnot (p \land q) \\
+               &= (p \land \lnot q) \lor (\lnot q \land q)
+  \end{align*}
+  \begin{table}
+    \centering
+    \begin{tabular}[]{|c|c|c|}
+      \hline
+      $p$ & $q$ & \red{$p \oplus q$} \\ \hline \hline
+      0   & 0   & 0 \\ \hline
+      0   & 1   & 1 \\ \hline
+      1   & 0   & 1 \\ \hline
+      1   & 1   & 0 \\ \hline
+    \end{tabular}
+  \end{table}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    p \oplus q = q \oplus r
+  \]
+  \[
+    (p \oplus q) \oplus r = p \oplus (q \oplus r)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

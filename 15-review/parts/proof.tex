@@ -1,0 +1,299 @@
+% proof.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    $\sqrt{2}$ is irrational.
+  \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.55\textwidth}{figs/sqrt2}
+    \column{0.50\textwidth}
+      \fig{width = 0.55\textwidth}{figs/crises-book}
+  \end{columns}
+  \begin{center}
+    The First Crisis in Mathematics
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Bézout's Identity]
+    \[
+      (a, b) = d \implies \exists u, v \in \Z.\; au + bv = d
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.35\textwidth}{figs/pigeonhole-principle}
+
+  \begin{theorem}[Pigeonhole Principle]
+    If $n$ \red{objects} are placed in $r$ \blue{boxes}, where $r < n$,
+    then at least one of the boxes contains $\ge 2$
+    ($\ge \lceil \frac{n}{r} \rceil$) object.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Numbers}
+    Consider the numbers $1, 2, \dots, 2n$, and take any $n+1$ of them. \\
+    There are two among these $n+1$ numbers which are \red{relatively prime}.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    There must be two numbers which are \blue{only 1 apart}.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Numbers}
+    Consider the numbers $1, 2, \dots, 2n$, and take any $n+1$ of them. \\
+    There are two among these $n+1$ numbers such as one \red{divides} the other.
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \[
+      a = 2^{k} m, \quad (1 \le m \le 2n-1 \text{ is odd})
+    \]
+
+    There $n+1$ numbers have only $n$ different odd parts.
+
+    \vspace{0.30cm}
+    There must be two numbers \blue{with the same odd part}.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Hand-shaking}
+    If there are $n > 1$ people who can shake hands with one another, \\
+    there are two people who shake hands with the same number of people.
+  \end{exampleblock}
+
+  \pause
+  \[
+    \red{0} \sim \blue{n-1}
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    Either the '0' hole or the 'n − 1' hole or both must be empty.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Sums}
+    Suppose we are given $n$ integers $a_{1}, a_{2}, \dots, a_{n}$. \\
+    Then there is a set of \blue{consecutive numbers}
+    $a_{k+1}, a_{k+2}, \dots, a_{l}$ \\
+    whose sum $\sum_{i=k+1}^{l} a_{i}$ is a multiple of $n$.
+  \end{exampleblock}
+
+  \pause
+  \[
+    A_{i} = \sum_{k=1}^{k=i} a_{i}
+  \]
+
+  \pause
+  \[
+    A_{0}, A_{1}, A_{2}, \dots, A_{n}
+  \]
+
+  \pause
+  \[
+    \exists 0 \le i < j \le n.\; A_{i} = A_{j} \mod{n}
+  \]
+
+  \pause
+  \[
+    A_{j} - A_{i} = a_{i+1} + \dots + a_{j} = 0 \mod{n}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Championship Match}
+    ``胡司令'' (胡荣华) 要安排一次长达 77 天的象棋练习赛。\\[5pt]
+    他想每天至少要有一场比赛, 但是总共不超过 132 场比赛。 \\[5pt]
+    请证明, 无论如何安排, 他都要在连续的若干天内恰好完成 21 场比赛。
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    Let \red{$a_{i}$} denote the number of games
+    he plays \red{up through the $i$-th day}.
+  \end{center}
+
+  \pause
+  \[
+    a_{1}, a_{2}, \dots, a_{76}, a_{77},
+    a_{1} + 21, a_{2} + 21, \dots, a_{76} + 21, a_{77} + 21
+  \]
+  \pause
+  \begin{center}
+    There must be $\ge 2$ elements having the same value.
+  \end{center}
+  \pause
+  \[
+    \text{It must be } a_{i} + 21 = a_{j}.
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Sequences}
+    In any sequence $a_{1}, a_{2}, \dots, a_{mn+1}$ of $mn+1$ \blue{distinct} numbers, \\
+    there exists an \red{increasing} subsequence
+    \[
+      a_{i_{1}} < a_{i_{2}} < \dots < a_{i_{m+1}} \quad (i_{1} < i_{2} < \dots < i_{m+1})
+    \]
+    of length \cyan{$m+1$}, or a \red{decreasing} subsequence
+    \[
+      a_{j_{1}} > a_{j_{2}} > \dots > a_{j_{n+1}} \quad (j_{1} > i_{2} < \dots > j_{n+1})
+    \]
+    of length \cyan{$n+1$}, or both.
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/Erdos}
+
+  \begin{center}
+    \teal{Paul Erdős ($1913 \sim 1996$)}
+  \end{center}
+
+  \begin{center}
+    Chapter 28 of ``Proofs from THE Book''
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.40\textwidth}
+      \fig{width = 0.80\textwidth}{figs/A-cup-B}
+      \[
+	|A \cup B| = |A| + |B| - |A \cap B|
+      \]
+    \column{0.60\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/A-cup-B-cup-C}
+      \begin{align*}
+        \left|A \cup B \cup C \right| &= |A| + |B| + |C| \\
+	  &- |A \cap B| - |A \cap C| - |B \cap C| \\
+	  &+ |A \cap B \cap C|
+      \end{align*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Inclusion-Exclusion Principle]
+    \begin{align*}
+      \left|\bigcup_{i=1}^n A_i\right| =
+        \sum_{i=1}^n |A_i| &- \sum_{1 \leqslant i < j \leqslant n} |A_i\cap A_j| \\[8pt]
+	&+ \sum_{1 \leqslant i < j < k \leqslant n} |A_i \cap A_j\cap A_k| \\[8pt]
+	&- \cdots \\[8pt]
+	&+ (-1)^{n-1} \left|A_1\cap\cdots\cap A_n\right|.
+    \end{align*}
+  \end{theorem}
+
+  \pause
+  \begin{align*}
+    \left|\bigcap_{i=1}^n \bar{A_i}\right| = \left|S - \bigcup_{i=1}^n A_i \right|
+      = |S| &- \sum_{i=1}^n |A_i|
+        + \sum_{1 \leqslant i < j \leqslant n} |A_i\cap A_j| \\[8pt]
+        &- \cdots + (-1)^n |A_1\cap\cdots\cap A_n|.
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Counting Integers}
+    How many integers in ${1, \ldots, 100}$ are not divisible by 2, 3 or 5?
+  \end{exampleblock}
+
+  \pause
+  \[
+    100 - (50 + 33 + 20) + (16 + 10 + 6) - 3 = 26.
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Counting Derangements (错排)}
+    Suppose there is a deck of $n$ cards numbered from 1 to $n$. \\
+    Suppose a card numbered $i$ is in the \red{correct} position
+    if it is the $i$-th card in the deck.
+    How many ways can the cards be shuffled \red{without any cards}
+    being in the correct position?
+  \end{exampleblock}
+
+  \pause
+  \[
+    A_{m}: \text{all of the orderings of cards with the } m\text{-th card correct}
+  \]
+
+  \pause
+  \begin{align*}
+    \red{\left|\bigcap_{i=1}^n \overline{A_i}\right|}
+      = \left|S - \bigcup_{i=1}^n A_i \right|
+      = \cyan{n!} &- \sum_{i=1}^n |A_i|
+        + \sum_{1 \leqslant i < j \leqslant n} |A_i\cap A_j| \\[8pt]
+        &- \cdots + (-1)^n |A_1\cap\cdots\cap A_n|.
+  \end{align*}
+
+  \pause
+  \[
+    \blue{S_{k}} \triangleq \sum_{1 \le i_{1} < i_{2} < \dots < i_{k} \le n}
+      \left| A_{i_{1}} \cap A_{i_{2}} \cap \dots \cap A_{i_{k}} \right|
+      = \pause \binom{n}{k} (n-k)! = \frac{n!}{k!}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \blue{S_{k}} = \frac{n!}{k!}
+  \]
+
+  \begin{align*}
+    \red{\left|\bigcap_{i=1}^n \overline{A_i}\right|}
+      &= n! - \frac{n!}{1!} + \frac{n!}{2!} - \dots + (-1)^{n}\frac{n!}{n!} \\
+      &= n! \sum_{k=0}^{n} \frac{(-1)^{k}}{k!}
+  \end{align*}
+
+  \pause
+  \[
+    n \to \infty \implies \sum_{k=0}^{n} \frac{(-1)^{k}}{k!} \to e^{-1}
+      \approx 0.368
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
