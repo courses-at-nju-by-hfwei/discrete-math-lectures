@@ -1,0 +1,123 @@
+% tree.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Rooted Tree (有根树)]
+    A \red{rooted tree} is a \blue{tree}
+    where one vertex has been \purple{designated the root}.
+  \end{definition}
+
+  \fig{width = 0.60\textwidth}{figs/rooted-tree}
+
+  \pause
+  \begin{definition}[Directed Rooted Tree (有向有根树)]
+    A \red{directed rooted tree} is a \blue{rooted tree}
+    where all edges directed \\ \cyan{away from} or \cyan{towards} the root.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}
+    Parent, Child; \quad Sibling; \quad Ancestor, Descendant
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[$k$-ary Trees ($k$-叉树)]
+    A \red{$k$-ary tree} is a rooted tree
+    in which each vertex has \blue{$\le k$} children.
+
+    \vspace{0.20cm}
+    $2$-ary trees are often called \red{binary trees}.
+  \end{definition}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Complete $k$-Tree (完全 $k$-叉树)]
+    A \red{complete $k$-tree} is a $k$-ary tree in which each vertex, \\
+    other than leaves, has \blue{$= k$} children.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/dfs-binary-tree}
+
+  \begin{center}
+    Depth-First Search (DFS)
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/dfs-binary-tree}
+
+  \begin{description}
+    \centering
+    \item[\red{Pre-order} (前序) Traversal:] $F, B, A, D, C, E, G, I, H$
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/dfs-binary-tree}
+
+  \begin{description}
+    \centering
+    \item[\green{In-order} (中序) Traversal:] $A, B, C, D, E, F, G, H, I$
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/dfs-binary-tree}
+
+  \begin{description}
+    \centering
+    \item[\blue{Post-order} (后序) Traversal:] $A, C, E, D, B, H, I, G, F$
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/tree-expression}
+
+  \begin{columns}
+    \column{0.10\textwidth}
+    \column{0.80\textwidth}
+      \begin{description}[<+->][Postfix Expression (后缀表达式):]
+        \item[Prefix Expression (前缀表达式):]
+          $+ * A - B C + D E$
+        \item[Infix Expression (中缀表达式):]
+          $A * \gray{(}B - C\gray{)} + \gray{(}D + E\gray{)}$
+        \item[Postfix Expression (后缀表达式):]
+          $A B C - * D E + +$
+      \end{description}
+    \column{0.10\textwidth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/bfs-binary-tree}
+
+  \begin{description}
+    \centering
+    \item[Breadth-First Search (BFS):] $F, B, G, A, D, I, C, E, H$
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  Huffman Code
+\end{frame}
+%%%%%%%%%%%%%%%
