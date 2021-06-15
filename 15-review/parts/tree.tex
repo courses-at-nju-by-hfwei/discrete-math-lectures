@@ -118,6 +118,64 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  Huffman Code
+  \fig{width = 0.35\textwidth}{figs/Huffman}
+
+  \begin{center}
+    \teal{David A. Huffman ($1925 \sim 1999$)}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \begin{table}
+      \centering
+      \renewcommand*{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|c|}
+	\hline
+        $C[1 \dots n]$ & $a$ & $b$ & $c$ & $d$ & $e$ & $f$ \\ \hline
+	$F[1 \dots n]$ & 45 & 13 & 12 & 16 & 9 & 5 \\ \hline
+	Fixed Length Code & 000 & 001 & 010 & 011 & 100 & 101 \\ \hline
+	Variable Length Code & 0 & 101 & 100 & 111 & 1101 & 1100 \\ \hline
+      \end{tabular}
+    \end{table}
+
+    \vspace{0.80cm}
+    Prefix code (前缀码): \red{No} code is a \red{prefix} of some other code
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{The Encoding Problem}
+    To find the \red{optimal} binary prefix code for $C$ and $F$.
+  \end{exampleblock}
+
+  \vspace{0.50cm}
+  \begin{center}
+    Let $E$ be a binary prefix code for $C$ and $F$.
+    The length $L(E)$ is
+  \end{center}
+  \[
+    L(E) = \sum_{c \in C} f_{c} \cdot l_{E}(c)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{table}
+    \centering
+    \renewcommand*{\arraystretch}{1.3}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+      $C[1 \dots n]$ & $a$ & $b$ & $c$ & $d$ & $e$ & $f$ \\ \hline
+      $F[1 \dots n]$ & 45 & 13 & 12 & 16 & 9 & 5 \\ \hline
+    \end{tabular}
+  \end{table}
+
+  \fig{width = 0.40\textwidth}{figs/Huffman-CLRS}
 \end{frame}
 %%%%%%%%%%%%%%%
