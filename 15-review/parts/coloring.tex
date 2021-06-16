@@ -2,5 +2,130 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/4-colored-map-wiki}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.70\textwidth}{figs/4CT-Graph-Coloring}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Dual Graph (对偶图)]
+    The \red{dual graph} of a \blue{plane graph} $G$
+    is a graph $G'$
+    \begin{itemize}
+      \item $G'$ has a \cyan{vertex} for each face of $G$;
+      \item $G'$ has an \cyan{edge} for each pair of faces in $G$
+        that are separated from each other by an edge,
+	and a \cyan{self-loop} when the same face appears on both sides of an edge.
+    \end{itemize}
+  \end{definition}
+
+  \fig{width = 0.40\textwidth}{figs/dual-graph-wiki}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/C8}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/dipole-graph}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    The dual graph $G'$ depends on \red{the choice of embedding} of the graph $G$.
+  \end{center}
+
+  \fig{width = 0.50\textwidth}{figs/noniso-dual-graphs}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    $G$ is a bipartite graph $\iff$ $\chi(G) = 2$ \red{$\iff$} $G$ has no odd cycles.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.55\textwidth}{figs/polynomial-3vertex}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Chromatic Polynomial (色多项式; 非严格定义)]
+    The \red{chromatic polynomial} $P(G, k)$ counts the \blue{number of colorings} \\
+    of graph $G$ as a function of the number $k$ of \blue{colors}.
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.98\textwidth}{figs/chromatic-polynomial-table}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Recurrence for Chromatic Polynomial]
+    Given a graph $G$ and an edge $e \in E(G)$, then
+    \[
+      P(G, k) = P(\red{G - e}, k) - P(\red{G/e}, k)
+    \]
+  \end{theorem}
+
+  \fig{width = 0.50\textwidth}{figs/edge-contraction}
+  \[ G/e: \text{边的收缩} \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    P(G, k) = P(\red{G - e}, k) - P(\red{G/e}, k)
+  \]
+
+  \pause
+  \[
+    P(G - e, k) = \violet{P(G/e, k)} + \purple{P(G, k)}
+  \]
+  \fig{width = 0.50\textwidth}{figs/edge-contraction}
+
+  \begin{center}
+    In $G - \set{u, v}$, \violet{$\text{Color}(u) = \text{Color}(v)$}
+    or \purple{$\text{Color}(u) \neq \text{Color}(v)$}.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    P(G, k) = P(\red{G - e}, k) - P(\red{G/e}, k)
+  \]
+
+  \fig{width = 0.30\textwidth}{figs/C4}
+
+  \pause
+  \vspace{-0.80cm}
+  \begin{align*}
+    P(C_{4}, k) &= P(P_{4}, k) - P(K_{3}, k) \\[3pt]
+    		&= k(k-1)^{3} - k(k-1)(k-2) \\[3pt]
+		&= k(k-1)(k^2 - 3k + 3) \\[3pt]
+		&= (k-1)^4 + (-1)^{4} (k-1)
+  \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
