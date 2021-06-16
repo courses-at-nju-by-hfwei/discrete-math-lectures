@@ -1,0 +1,80 @@
+% function.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/fx}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Injection (one-to-one; 1-1)
+
+    \vspace{0.60cm}
+    Surjection
+
+    \vspace{0.60cm}
+    Bijection (one-to-one correspondence)
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Characteristic Function (特征函数) of a Subset]
+    For a given subset $A \subseteq X$,
+    \[
+      \chi_{A}: X \to \set{0, 1}
+    \]
+    \[
+      \chi_{A}(x) = 1 \iff x \in A.
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.50\textwidth}{figs/powset}
+  \[
+    \chi_{A}: X \to \set{0, 1} \quad\text{\it vs.}\quad \ps{X}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Natural Function]
+    Let $R \subseteq A \times A$ be an equivalence relation.
+    The following function $f$
+    \[
+      f: A \to A/R
+    \]
+    \[
+      f: a \mapsto R(a)
+    \]
+    is called the \red{natural function} on $A$.
+  \end{definition}
+
+  \fig{width = 0.30\textwidth}{figs/set-partition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Asymptotic Growth Rates of Functions
+  \end{center}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/growth-rate}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/qrcode-efficiency}
+  \end{columns}
+
+  \vspace{0.30cm}
+  \begin{center}
+    \teal{\small \url{https://www.bilibili.com/video/BV175411T7ph?share_source=copy_web}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
