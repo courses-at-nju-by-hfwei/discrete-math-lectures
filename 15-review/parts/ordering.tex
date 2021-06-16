@@ -1,0 +1,32 @@
+% ordering.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.50\textwidth}{figs/ordering-logo}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Order Isomorphism (同构)]
+    Given two \blue{posets} $(S, \le_{S})$ and $(T, \le_{T})$,
+    an \red{order isomorphism} from $(S, \le_{S})$ to $(T, \le_{T})$
+    is a \blue{bijection} from $S$ to $T$ such that
+    \[
+      \forall x, y \in S.\; x \le_{S} y \leftrightarrow f(x) \le_{T} f(y).
+    \]
+  \end{definition}
+
+  \pause
+  \[
+    (\R, \le) \xrightarrow[f:\; x \;\mapsto\; -x]{f:\; \R \;\to\; \R} (\R, \ge)
+  \]
+
+  \pause
+  \vspace{0.30cm}
+  \begin{definition}[Order Automorphism (自同构)]
+    An \blue{order isomorphism} from a poset to \blue{itself}
+    is an \red{order automorphism}.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
