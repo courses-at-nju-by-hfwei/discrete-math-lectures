@@ -31,3 +31,4 @@ Lectures on [Discrete Mathematics @ software.nju.edu.cn](https://github.com/orgs
   - Cayley's Formula
   - 5-Color Theorem
   - Network flow, Hall theorem, Maximum-matching theorem, Dilworth theorem
+  - increasing/decreasing subsequences (Paul Erdos)
