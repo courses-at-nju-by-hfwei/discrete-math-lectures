@@ -27,8 +27,17 @@ Lectures on [Discrete Mathematics @ software.nju.edu.cn](https://github.com/orgs
 
 ## TODO
 - OCW
-  - 15-Puzzle
-  - Cayley's Formula
-  - 5-Color Theorem
-  - Network flow, Hall theorem, Maximum-matching theorem, Dilworth theorem
-  - increasing/decreasing subsequences (Paul Erdos)
+  - Logic
+  - Proof
+    - Lossless Compression (Pigeonhole Principle)
+    - Increasing/Decreasing Subsequences (Paul Erdos)
+    - [Art gallery problem](https://en.wikipedia.org/wiki/Art\_gallery\_problem)
+  - Set Theory
+    - Cantor-Schröder–Bernstein
+  - Group Theory
+    - 15-Puzzle
+    - Burnside Lemma (in Group Theory)
+  - Graph Theory
+    - 5-Color Theorem
+    - Cayley's Formula (Counting Trees)
+    - Network flow, Hall theorem, Maximum-matching theorem, Dilworth theorem
