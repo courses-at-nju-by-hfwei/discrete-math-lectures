@@ -16,6 +16,18 @@ Lectures on [Discrete Mathematics @ software.nju.edu.cn](https://github.com/orgs
 | 2 | 2021-03-11 | [1-prop-logic](/1-prop-logic) | |
 | 3 | 2021-03-18 | [2-predicate-logic](2-predicate-logic) | |
 | 4 | 2021-03-25 | [3-mathematical-induction](/3-mathematical-induction) | |
+| 5 | 2021-04-01 | [4-set](/4-set) | |
+| 6 | 2021-04-08 | [5-relation](/5-relation) | |
+| 7 | 2021-04-15 | [6-function](/6-function) | |
+| 8 | 2021-04-22 | [7-ordering](/7-ordering) | |
+| 9 | 2021-04-29 | [8-infinity](/8-infinity) | |
+| 10 | 2021-05-06 | [9-set](/9-set) | |
+| 11 | 2021-05-13 | [10-trees](/10-trees) | |
+| 12 | 2021-05-20 | [11-planarity-coloring](/11-planarity-coloring) | |
+| 13 | 2021-05-27 | [12-matching-flow](/12-matching-flow) | |
+| 14 | 2021-05-29 | [13-group](/13-group) | |
+| 15 | 2021-06-03 | [14-subgroup](/14-subgroup) | |
+| 16 | 2021-06-10 | [15-review](/15-review) | |
 
 
 ## 后续课程建设计划
