@@ -21,7 +21,7 @@ Lectures on [Discrete Mathematics @ software.nju.edu.cn](https://github.com/orgs
 | 7 | 2021-04-15 | [6-function](/6-function) | |
 | 8 | 2021-04-22 | [7-ordering](/7-ordering) | |
 | 9 | 2021-04-29 | [8-infinity](/8-infinity) | |
-| 10 | 2021-05-06 | [9-set](/9-set) | |
+| 10 | 2021-05-06 | [9-paths-cycles](/9-paths-cycles) | |
 | 11 | 2021-05-13 | [10-trees](/10-trees) | |
 | 12 | 2021-05-20 | [11-planarity-coloring](/11-planarity-coloring) | |
 | 13 | 2021-05-27 | [12-matching-flow](/12-matching-flow) | |
